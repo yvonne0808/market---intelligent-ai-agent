@@ -1,0 +1,60 @@
+feeds:
+  - name: "丁香园 Insight 数据库"
+    url: "http://localhost:8001/feeds/MP_WXS_3975077766.atom?limit=100"
+    category: "新药研发"
+    tags: ["创新药", "药企动态", "NMPA", "临床试验", "新药上市", "药企出海"]
+    priority: "high"
+
+  - name: "米内网"
+    url: "http://localhost:8001/feeds/MP_WXS_2397481861.atom?limit=50"
+    category: "医药产业数据"
+    tags: ["医药市场", "销售额", "药企动态", "零售市场", "医院市场", "产业研究"]
+    priority: "medium"
+
+  - name: "新康界"
+    url: "http://localhost:8001/feeds/MP_WXS_3098139616.atom?limit=50"
+    category: "医药产业动态"
+    tags: ["医药市场", "药企动态", "商业化", "医药政策", "产业研究"]
+    priority: "medium"
+
+  - name: "医药经济报"
+    url: "http://localhost:8001/feeds/MP_WXS_2391722613.atom?limit=50"
+    category: "医药产业动态"
+    tags: ["医药市场", "药企动态", "医药政策", "商业化", "产业研究"]
+    priority: "medium"
+
+  - name: "医药健闻"
+    url: "http://localhost:8001/feeds/MP_WXS_3542967122.atom?limit=50"
+    category: "医药产业动态"
+    tags: ["医药行业", "药企动态", "创新药", "商业化", "产业研究"]
+    priority: "medium"
+
+  - name: "思宇MedTech"
+    url: "http://localhost:8001/feeds/MP_WXS_3221733998.atom?limit=50"
+    category: "医疗器械产业"
+    tags: ["医疗器械", "MedTech", "器械企业", "创新器械", "产业研究"]
+    priority: "medium"
+
+  - name: "动脉网"
+    url: "http://localhost:8001/feeds/MP_WXS_2391320846.atom?limit=50"
+    category: "医疗健康产业"
+    tags: ["医疗健康", "投融资", "创新医疗", "医疗器械", "产业研究"]
+    priority: "medium"
+
+  - name: "IQVIA艾昆纬"
+    url: "http://localhost:8001/feeds/MP_WXS_3085844336.atom?limit=50"
+    category: "医药市场洞察"
+    tags: ["医药市场", "商业化", "真实世界研究", "市场准入", "产业研究"]
+    priority: "medium"
+
+collector:
+  fetch_full_content: true
+  extract_images: true
+  backfill_existing_images: false
+  ocr_images: false
+  ocr_language: "chi_sim+eng"
+  sleep_seconds_min: 1
+  sleep_seconds_max: 3
+  output_dir: "data/raw"
+  log_dir: "data/logs"
+  image_dir: "data/raw/images"
