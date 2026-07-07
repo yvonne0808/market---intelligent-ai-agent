@@ -19,6 +19,10 @@ data/raw/images/*
 
 reports/*
 !reports/.gitkeep
+!reports/monthly_report_20260601_20260630.md
+!reports/monthly_report_20260601_20260630.json
+!reports/monthly_report_20260601_20260630.pdf
+!reports/monthly_report_20260601_20260630.html
 
 tmp/
 tmp_pdf_check/

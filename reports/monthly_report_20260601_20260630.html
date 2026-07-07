@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monthly Pharma News Report</title>
+  <style>
+    :root {
+      --ink: #15202b;
+      --muted: #647184;
+      --line: #d9e1ec;
+      --panel: #f7f9fc;
+      --blue: #174a7c;
+      --teal: #087f8c;
+      --green: #1d7f4b;
+      --amber: #a56400;
+      --red: #a23b36;
+      --bg: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.58;
+    }
+    a { color: #145a9e; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .shell { max-width: 1180px; margin: 0 auto; padding: 28px 28px 56px; }
+    .hero {
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+    }
+    .hero h1 { margin: 0 0 10px; font-size: 34px; letter-spacing: 0; color: #11345b; }
+    .hero p { margin: 0; color: var(--muted); }
+    .nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .nav a {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 11px;
+      background: #fff;
+      font-size: 13px;
+      text-decoration: none;
+      color: #27445f;
+    }
+    .kpis { display: grid; grid-template-columns: repeat(4, minmax(130px, 1fr)); gap: 12px; margin: 22px 0; }
+    .kpi { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: var(--panel); }
+    .kpi .value { font-size: 28px; font-weight: 720; color: var(--blue); }
+    .kpi .label { color: var(--muted); font-size: 13px; }
+    section { margin: 28px 0; }
+    .section-title { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 14px; }
+    h2 { color: #123b66; font-size: 24px; margin: 0; }
+    h3 { color: #294961; margin: 0 0 8px; font-size: 17px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      border: 1px solid #cdd8e4;
+      background: #f9fbfd;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: #33475b;
+    }
+    .pill-muted { background: #fff; }
+    .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .article-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(17, 52, 91, 0.05);
+    }
+    .rank {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #123b66;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .article-card h3 { font-size: 16px; line-height: 1.42; margin: 2px 0 8px; color: #14283b; }
+    .article-meta, .compact-meta { color: var(--muted); font-size: 12.5px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+    .badge { display: inline-flex; border-radius: 999px; padding: 3px 8px; font-size: 12px; background: #eef3f8; color: #2b4055; }
+    .category { background: #e7f0f8; color: #164b77; }
+    .relevance { background: #eef2f7; }
+    .score-max, .pack-high { background: #dff3e7; color: #176a3c; }
+    .score-high, .pack-medium { background: #e4f2f4; color: #096f78; }
+    .score-mid, .pack-low { background: #fff3dc; color: #8a5600; }
+    .score-low { background: #f5eee8; color: #8a5600; }
+    .score-none, .pack-none { background: #f1f1f1; color: #606a76; }
+    .takeaway { margin: 8px 0; font-weight: 620; }
+    .reason { color: #435161; margin: 8px 0; font-size: 14px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .chip { font-size: 12px; padding: 3px 7px; border-radius: 5px; background: #edf5ff; color: #24557f; }
+    .chip-soft { background: #f1f8f3; color: #2b6c40; }
+    .read-link { display: inline-block; margin-top: 10px; font-size: 13px; }
+    .week-section { border-top: 1px solid var(--line); padding-top: 22px; }
+    .week-header { display: flex; justify-content: space-between; gap: 16px; align-items: start; margin-bottom: 12px; }
+    .eyebrow { color: var(--teal); text-transform: uppercase; letter-spacing: 0.02em; font-size: 12px; font-weight: 700; }
+    .week-count { background: #eef3f8; color: #405368; border-radius: 999px; padding: 5px 10px; font-size: 12px; white-space: nowrap; }
+    .subhead { margin: 12px 0; color: #123b66; }
+    .other-news { margin-top: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: #fbfcfe; }
+    .other-news summary { cursor: pointer; font-weight: 700; color: #234560; }
+    .other-news ul { padding-left: 18px; }
+    .compact-article { margin: 10px 0; }
+    .compact-article p { margin: 3px 0 0; color: #3f4c59; }
+    .empty-note { color: var(--muted); background: var(--panel); border: 1px dashed #cbd6e2; border-radius: 8px; padding: 14px; }
+    .risks { border: 1px solid var(--line); border-radius: 8px; padding: 18px; background: #fff; }
+    .appendix-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .appendix-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+    .appendix-table th, .appendix-table td { border-bottom: 1px solid #e3e9f0; padding: 8px 10px; text-align: left; vertical-align: top; }
+    .appendix-table th { background: #f2f5f9; color: #31465b; position: sticky; top: 0; }
+    footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); margin-top: 36px; padding-top: 14px; }
+    @media (max-width: 820px) {
+      .shell { padding: 18px 16px 40px; }
+      .hero { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .card-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+    }
+    @media print {
+      .nav { display: none; }
+      .article-card, .other-news, .risks { break-inside: avoid; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <h1>Monthly Pharma News Report</h1>
+        <p>2026-06-01 至 2026-06-30 · Generated 2026-07-07T09:21:38+08:00</p>
+        <div class="nav">
+          <a href="#top-opportunities">Top Opportunities</a>
+          <a href="#weeks">Week-by-Week</a>
+          <a href="#categories">Categories</a>
+          <a href="#risks">Risks</a>
+          <a href="#appendix">Appendix</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="kpis">
+      <div class="kpi"><div class="value">67</div><div class="label">Articles included</div></div>
+      <div class="kpi"><div class="value">5</div><div class="label">Weekly sections</div></div>
+      <div class="kpi"><div class="value">12</div><div class="label">Amcor score >= 4</div></div>
+      <div class="kpi"><div class="value">8</div><div class="label">High packaging relevance</div></div>
+    </section>
+
+    <section id="top-opportunities">
+      <div class="section-title">
+        <h2>Top Amcor Opportunities</h2>
+      </div>
+      <div class="card-grid">
+      <article class="article-card">
+        <div class="rank">1</div>
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-22</div>
+          <h3>跨国药企在中国 | 诺和诺德、安斯泰来、第一三共、诺华、因美纳、科利耳、百时美施贵宝、皮尔法伯、辉瑞、罗氏诊断、礼来等新动态</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 18</span>
+        <span class="badge score-max">Amcor 5</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">跨国药企在华持续加大产能投资，诺和诺德注射笔扩产和第一三共建新生产基地为包装及供应链带来明确机会。</p>
+          <p class="reason">文章明确提到诺和诺德追加投资提升注射笔组装产能，直接涉及药品包装（注射笔）；第一三共投资新建生产大楼也涉及产能扩张，与包装供应链相关。</p>
+          <div class="chips"><span class="chip">诺和诺德</span><span class="chip">安斯泰来</span><span class="chip">第一三共</span><span class="chip">诺华</span><span class="chip chip-soft">注射笔</span><span class="chip chip-soft">产能</span><span class="chip chip-soft">生产大楼</span><span class="chip chip-soft">组装生产</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/DiZVtuZ6WdCPTk5RwTpVxg" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">2</div>
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-30</div>
+          <h3>默克将以113亿美元收购生命科学仪器供应商Bio-Techne；新桥生物任命首席执行官；礼邦医药在港上市 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-max">Amcor 5</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">云南白药经皮给药项目及多个新药获批上市值得关注，尤其是云南白药项目直接涉及贴膏包装需求。</p>
+          <p class="reason">文章明确提到云南白药（Amcor重点客户）全资子公司无锡药业建设经皮给药技术产业平台项目，主产经典贴膏，直接涉及包装需求（如复合膜、背衬等）。</p>
+          <div class="chips"><span class="chip">默克集团</span><span class="chip">Bio-Techne</span><span class="chip">新桥生物</span><span class="chip">礼来</span><span class="chip chip-soft">经皮给药</span><span class="chip chip-soft">贴膏</span><span class="chip chip-soft">滴眼液</span><span class="chip chip-soft">注射剂</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/TeHWveiwpB8hbwpX3zZc_Q" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">3</div>
+        <div class="article-main">
+          <div class="article-meta">动脉网 · 2026-06-29</div>
+          <h3>成立5年营收数亿，这家上海企业推动中国给药装置首次进入FDA药械组合体系</h3>
+          
+      <div class="badges">
+        <span class="badge category">包装相关</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-max">Amcor 5</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">中国给药装置首次获FDA批准，标志着国产高端包装材料进入全球主流市场，为上游包装企业带来新的增长空间。</p>
+          <p class="reason">文章直接涉及药品包装中的给药装置（笔式注射器、预灌封注射器），并强调产能扩张、智能工厂建设、商业化量产，与包装企业业务高度相关。</p>
+          <div class="chips"><span class="chip">新耀湃科</span><span class="chip">通化东宝</span><span class="chip chip-soft">给药装置</span><span class="chip chip-soft">笔式注射器</span><span class="chip chip-soft">预灌封注射器</span><span class="chip chip-soft">药械组合</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/06l5e1YMBWCxB0Qj0DMgaQ" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">4</div>
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-05</div>
+          <h3>拜耳健康消费品中国创新合作中心落地山东；海思科与礼来签署授权与研发合作协议；云顶新耀达成独家授权许可协议 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-max">Amcor 5</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">药明生物新加坡年产1亿支预充针和西林瓶的制剂厂封顶，是本周对包装企业最直接的信号。</p>
+          <p class="reason">直接提及药明生物新加坡工厂年产1亿支预充针和西林瓶，以及药石科技多肽中试车间投运，明确涉及包装形式（预充针、西林瓶）和生产产能，对包装材料供应商有直接商业意义。</p>
+          <div class="chips"><span class="chip">拜耳</span><span class="chip">海思科</span><span class="chip">礼来</span><span class="chip">云顶新耀</span><span class="chip chip-soft">预充针</span><span class="chip chip-soft">西林瓶</span><span class="chip chip-soft">注射液</span><span class="chip chip-soft">片</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/uw16qTMkElFyaCPLrzyD1g" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">5</div>
+        <div class="article-main">
+          <div class="article-meta">米内网 · 2026-06-24</div>
+          <h3>【关注】扬子江拿下3亿注射剂</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 18</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">扬子江药业注射用卡非佐米获批上市，2025年销售额超3亿元，增长62.96%，注射剂型为包装企业提供潜在需求。</p>
+          <p class="reason">文章明确提到注射用卡非佐米获批上市，且销售额快速增长，注射剂型需要包装材料，对Amcor等包装企业具有直接的市场机会参考。</p>
+          <div class="chips"><span class="chip">扬子江药业</span><span class="chip">四川汇宇制药</span><span class="chip">正大天晴药业集团</span><span class="chip">吉斯美(武汉)制药</span><span class="chip chip-soft">注射剂</span><span class="chip chip-soft">仿制药</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/9UDd4bZkH6FaAiEbdGBCSg" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">6</div>
+        <div class="article-main">
+          <div class="article-meta">米内网 · 2026-06-30</div>
+          <h3>【火热】中药龙头出手了，3.6亿加码黄金赛道</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">云南白药3.6亿加码透皮制剂产能，核心产品销售额持续增长，为相关包装材料带来明确机会。</p>
+          <p class="reason">文章中明确出现重点客户云南白药，且涉及产能建设（经皮给药产业平台）和多个剂型（凝胶贴膏、透皮制剂），这些剂型通常需要条包、复合膜或冷成型铝等包装材料，与Amcor的包装业务直接相关。</p>
+          <div class="chips"><span class="chip">云南白药集团股份有限公司</span><span class="chip chip-soft">凝胶贴膏</span><span class="chip chip-soft">透皮制剂</span><span class="chip chip-soft">剂型</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/tMPaOMkIeEEmnrFWjsNJFA" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">7</div>
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-09</div>
+          <h3>阿斯利康可能被迫在英国和欧洲停售新药；罗氏授权引进Nurix血液肿瘤候选药物；正大天晴全球研发总部上海落成启用 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">荣昌生物预充式注射剂获批及多项BD交易显示中国医药市场活跃，预充式包装需求上升。</p>
+          <p class="reason">文章明确提到荣昌生物泰它西普注射液获批，剂型为预充式注射剂，属于直接包装相关；云顶新耀获得滴眼液及口服药权益，涉及滴眼液和口服固体制剂包装；诺和诺德口服Wegovy处方量增长，提示口服剂型包装需求。此外，重点客户阿斯利康和云南白药出现，但动态与包装关联度不高。</p>
+          <div class="chips"><span class="chip">阿斯利康</span><span class="chip">强生</span><span class="chip">Firefly Bio</span><span class="chip">正大天晴</span><span class="chip chip-soft">预充式注射剂</span><span class="chip chip-soft">滴眼液</span><span class="chip chip-soft">口服剂型</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/xDoyHXtGwM_kInUHgUwwYg" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">8</div>
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-18</div>
+          <h3>渤健将以最高10亿美元收购RayThera；诺和诺德未来会增加在中国的BD交易；派林生物控制权转让事项终止 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 16</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">青松制药双室袋产能项目与诺和诺德口服药中国进展为包装企业带来明确机会，值得关注。</p>
+          <p class="reason">文章明确提到青松制药智能化生产基地重点布局双室袋产品，直接涉及药品包装形式（双室袋），且属于产能扩张；诺和诺德为重点客户，其口服司美格鲁肽即将提交中国审批，可能带来包装机会。</p>
+          <div class="chips"><span class="chip">渤健</span><span class="chip">RayThera</span><span class="chip">诺和诺德</span><span class="chip">青松（天津）制药有限公司</span><span class="chip chip-soft">双室袋</span><span class="chip chip-soft">智能化生产基地</span><span class="chip chip-soft">包装</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/D80c0pZ3H_b4bmykr_JmXQ" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">9</div>
+        <div class="article-main">
+          <div class="article-meta">丁香园 Insight 数据库 · 2026-06-22</div>
+          <h3>2 款进口新药在中国获批上市</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 18</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">阿斯利康奥希替尼和武田阿帕达酶α在华获批上市，前者为重磅产品商业化放量机会。</p>
+          <p class="reason">文章中明确出现重点客户阿斯利康，其重磅产品奥希替尼新适应症获批，商业化放量可能带来口服固体制剂包装需求（如铝塑泡罩、瓶装）。</p>
+          <div class="chips"><span class="chip">阿斯利康</span><span class="chip">武田制药</span><span class="chip chip-soft">口服</span><span class="chip chip-soft">注射用</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/rY3u-Hdq6V1HqUyjXWNwQA" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        <div class="rank">10</div>
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-17</div>
+          <h3>安斯泰来及第一三共等日本大型药企在中国扩大投资；强生宣布10亿美元投资增强生产能力 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 18</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">日本药企在华投资建产、恒瑞再获批、礼来审评中，显示中国医药市场活力与产能扩张机会。</p>
+          <p class="reason">文章明确提到第一三共投资约11亿元人民币在上海建设医药品生产大楼以提高产能，直接涉及生产设施扩张，可能带来包装材料需求。</p>
+          <div class="chips"><span class="chip">安斯泰来</span><span class="chip">第一三共</span><span class="chip">武田</span><span class="chip">卫材</span><span class="chip chip-soft">包装能力</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/bqUk0Ef5P19FAy26Q3LhPw" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    </div>
+    </section>
+
+    <section id="weeks">
+      <div class="section-title">
+        <h2>Week-by-Week Digest</h2>
+      </div>
+      
+      <section class="week-section" id="week-1">
+        <div class="week-header">
+          <div>
+            <div class="eyebrow">Week 1</div>
+            <h2>2026-06-01 至 2026-06-07</h2>
+          </div>
+          <span class="week-count">7 articles</span>
+        </div>
+        <h3 class="subhead">Most Relevant to Amcor / Packaging</h3>
+        <div class="card-grid">
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-05</div>
+          <h3>拜耳健康消费品中国创新合作中心落地山东；海思科与礼来签署授权与研发合作协议；云顶新耀达成独家授权许可协议 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-max">Amcor 5</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">药明生物新加坡年产1亿支预充针和西林瓶的制剂厂封顶，是本周对包装企业最直接的信号。</p>
+          <p class="reason">直接提及药明生物新加坡工厂年产1亿支预充针和西林瓶，以及药石科技多肽中试车间投运，明确涉及包装形式（预充针、西林瓶）和生产产能，对包装材料供应商有直接商业意义。</p>
+          <div class="chips"><span class="chip">拜耳</span><span class="chip">海思科</span><span class="chip">礼来</span><span class="chip">云顶新耀</span><span class="chip chip-soft">预充针</span><span class="chip chip-soft">西林瓶</span><span class="chip chip-soft">注射液</span><span class="chip chip-soft">片</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/uw16qTMkElFyaCPLrzyD1g" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    </div>
+        <details class="other-news" open>
+          <summary>Other Important Pharma News</summary>
+          <ul>
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/pFfHgMYARHEmsLJb5qC5Og" target="_blank" rel="noopener">默克大湾区创新与合作中心在深圳落成；飞利浦影像引导治疗系统在华装机突破6000台；武田中国宣布人事任命 | 日报</a>
+          <div class="compact-meta">医药健闻 · 2026-06-02 · relevance 16 · amcor 3</div>
+          <p>多个新药获批上市，包括阿斯利康等重点客户，预示潜在包装需求，但需关注后续商业化进展。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/k6wcVTToAHvLvD8xFHL7LQ" target="_blank" rel="noopener">新型分子胶降解剂拟优先审评，来自 BMS</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-03 · relevance 16 · amcor 2</div>
+          <p>BMS 的 Mezigdomide 胶囊拟优先审评，III 期结果积极，但未提供包装直接机会。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/qKxb91j2u763dpbNnW4k9A" target="_blank" rel="noopener">国产新药出海，变了</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-07 · relevance 18 · amcor 2</div>
+          <p>中国创新药出海正转向打包平台输出模式，头部药企与MNC深度绑定，但包装企业应关注其商业化阶段产品带来的包材机会。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/jjqWkf6Lf2sdtHL--nYyoA" target="_blank" rel="noopener">跨国药企在中国 | 诺华、拜耳、强生、礼来、富士胶片、美纳里尼、辉瑞、卢平、安进、波士顿科学、丹纳赫、西门子医疗等新动态</a>
+          <div class="compact-meta">医药健闻 · 2026-06-01 · relevance 17 · amcor 1</div>
+          <p>本周跨国药企在华动态密集，信达与辉瑞105亿美元合作及多款新药获批凸显中国医药市场活跃度与创新实力。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/v8LYLUJ_snRPGHOAbY5zIQ" target="_blank" rel="noopener">百利天恒重磅 ADC 新药启动首个全球 III 期</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-05 · relevance 16 · amcor 1</div>
+          <p>百利天恒BL-M14D1启动全球III期，DLL3 ADC赛道持续升温，可作为行业趋势关注。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/hK8GKJ57dh5Gt6F6bHACTg" target="_blank" rel="noopener">传奇生物再创传奇</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-06 · relevance 17 · amcor 0</div>
+          <p>传奇生物Carvykti销售额飙升，公司盈利在即，同时推进下一代CAR-T产品。</p>
+        </div>
+      </li>
+    </ul>
+        </details>
+      </section>
+    
+      <section class="week-section" id="week-2">
+        <div class="week-header">
+          <div>
+            <div class="eyebrow">Week 2</div>
+            <h2>2026-06-08 至 2026-06-14</h2>
+          </div>
+          <span class="week-count">9 articles</span>
+        </div>
+        <h3 class="subhead">Most Relevant to Amcor / Packaging</h3>
+        <div class="card-grid">
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-09</div>
+          <h3>阿斯利康可能被迫在英国和欧洲停售新药；罗氏授权引进Nurix血液肿瘤候选药物；正大天晴全球研发总部上海落成启用 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">荣昌生物预充式注射剂获批及多项BD交易显示中国医药市场活跃，预充式包装需求上升。</p>
+          <p class="reason">文章明确提到荣昌生物泰它西普注射液获批，剂型为预充式注射剂，属于直接包装相关；云顶新耀获得滴眼液及口服药权益，涉及滴眼液和口服固体制剂包装；诺和诺德口服Wegovy处方量增长，提示口服剂型包装需求。此外，重点客户阿斯利康和云南白药出现，但动态与包装关联度不高。</p>
+          <div class="chips"><span class="chip">阿斯利康</span><span class="chip">强生</span><span class="chip">Firefly Bio</span><span class="chip">正大天晴</span><span class="chip chip-soft">预充式注射剂</span><span class="chip chip-soft">滴眼液</span><span class="chip chip-soft">口服剂型</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/xDoyHXtGwM_kInUHgUwwYg" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">丁香园 Insight 数据库 · 2026-06-14</div>
+          <h3>金赛药业变了</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-mid">Amcor 3</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">金赛药业加速多元化创新药转型，多款新药获批并国际化，需关注其商业化带来的包装需求。</p>
+          <p class="reason">文章涉及口服混悬液、软膏、水针、预充式等剂型，以及新药上市后的商业化放量，可能带来包装材料需求，但未直接提及包装或产能信息。</p>
+          <div class="chips"><span class="chip">金赛药业</span><span class="chip">长春高新</span><span class="chip">Yarrow Bioscience</span><span class="chip chip-soft">口服混悬液</span><span class="chip chip-soft">软膏</span><span class="chip chip-soft">水剂</span><span class="chip chip-soft">预充式</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/EAe7xQTWlc5LOglrS3A5Jg" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    </div>
+        <details class="other-news" open>
+          <summary>Other Important Pharma News</summary>
+          <ul>
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/fzrqhzMpAK1dTz_BSeUK2Q" target="_blank" rel="noopener">葛兰素史克斥资106亿美元收购肿瘤药企Nuvalent；三星成美国基因科技公司Element最大股东；H药汉斯状获批新适应症 | 日报</a>
+          <div class="compact-meta">医药健闻 · 2026-06-10 · relevance 17 · amcor 3</div>
+          <p>本周中国药企多项新药获批及商业化进展，值得关注其对药品包装的带动效应。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/ARihXVsdREOwKd3X1zbVmg" target="_blank" rel="noopener">荣昌生物重磅自免新药在华获批两大新适应症；复宏汉霖 H 药获批用于胃癌围术期治疗；恒瑞 ADC 第 4 次拟纳入优先审评｜Insight 新药周报</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-14 · relevance 16 · amcor 2</div>
+          <p>本周多款新药获批，包括首药控股颗粒剂，提示包装企业关注新药商业化带来的包装机会。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/8tMRZV0D70M2P62Wp-lkXA" target="_blank" rel="noopener">跨国药企在中国 | 拜耳、默克、蔡司、飞利浦、SK海力士、强生、卫材、礼来、依视路陆逊梯卡、贝朗医疗、默沙东、阿斯利康、罗氏等新动态</a>
+          <div class="compact-meta">医药健闻 · 2026-06-08 · relevance 16 · amcor 2</div>
+          <p>本周跨国药企在华多项新药获批和重大合作，凸显中国医药市场活力，值得持续跟踪商业化进展。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/xmeO9K8PWWi5M-dWhROwYA" target="_blank" rel="noopener">默沙东长效RSV单抗在华获批上市；君实生物就四价重组登革热疫苗达成独占许可合作；英伟达与Abridge合作研发医疗领域AI模型 | 日报</a>
+          <div class="compact-meta">医药健闻 · 2026-06-12 · relevance 17 · amcor 2</div>
+          <p>本期日报涵盖多个新药获批及商业化动态，对关注中国医药市场的包装企业有重要参考价值。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/ai3PHtvdyVCKpZTGM7y5lg" target="_blank" rel="noopener">四款创新药获批上市！来自康方、首药控股、默沙东、朗来</a>
+          <div class="compact-meta">医药经济报 · 2026-06-11 · relevance 19 · amcor 1</div>
+          <p>本周四款创新药获批，可关注潜在包装需求但需进一步跟踪商业化进展。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/DXYXJMZZ6FdwM8S27Qq35A" target="_blank" rel="noopener">全球首个！天广实特效药获批上市</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-09 · relevance 19 · amcor 1</div>
+          <p>天广实全球首个原发性膜性肾病特效药获批上市，同时与云顶新耀合作拓展亚太市场。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/LXuXtcsmQTo1CI0-6XLAYg" target="_blank" rel="noopener">盈利、管线、全球化三大拐点落地，诺诚健华下个十年怎么走？| 专访崔霁松</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-08 · relevance 16 · amcor 1</div>
+          <p>诺诚健华2025年扭亏为盈，商业化放量和全球化BD取得突破，未来五年管线丰富，值得关注其对药包材需求的潜在拉动。</p>
+        </div>
+      </li>
+    </ul>
+        </details>
+      </section>
+    
+      <section class="week-section" id="week-3">
+        <div class="week-header">
+          <div>
+            <div class="eyebrow">Week 3</div>
+            <h2>2026-06-15 至 2026-06-21</h2>
+          </div>
+          <span class="week-count">13 articles</span>
+        </div>
+        <h3 class="subhead">Most Relevant to Amcor / Packaging</h3>
+        <div class="card-grid">
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-18</div>
+          <h3>渤健将以最高10亿美元收购RayThera；诺和诺德未来会增加在中国的BD交易；派林生物控制权转让事项终止 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 16</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">青松制药双室袋产能项目与诺和诺德口服药中国进展为包装企业带来明确机会，值得关注。</p>
+          <p class="reason">文章明确提到青松制药智能化生产基地重点布局双室袋产品，直接涉及药品包装形式（双室袋），且属于产能扩张；诺和诺德为重点客户，其口服司美格鲁肽即将提交中国审批，可能带来包装机会。</p>
+          <div class="chips"><span class="chip">渤健</span><span class="chip">RayThera</span><span class="chip">诺和诺德</span><span class="chip">青松（天津）制药有限公司</span><span class="chip chip-soft">双室袋</span><span class="chip chip-soft">智能化生产基地</span><span class="chip chip-soft">包装</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/D80c0pZ3H_b4bmykr_JmXQ" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-17</div>
+          <h3>安斯泰来及第一三共等日本大型药企在中国扩大投资；强生宣布10亿美元投资增强生产能力 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 18</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">日本药企在华投资建产、恒瑞再获批、礼来审评中，显示中国医药市场活力与产能扩张机会。</p>
+          <p class="reason">文章明确提到第一三共投资约11亿元人民币在上海建设医药品生产大楼以提高产能，直接涉及生产设施扩张，可能带来包装材料需求。</p>
+          <div class="chips"><span class="chip">安斯泰来</span><span class="chip">第一三共</span><span class="chip">武田</span><span class="chip">卫材</span><span class="chip chip-soft">包装能力</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/bqUk0Ef5P19FAy26Q3LhPw" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-16</div>
+          <h3>诺和诺德全球高管团队来华宣布新投资；国药控股与辉瑞确定战略合作关系；诺万特宣布重大收购计划 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 16</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">诺和诺德天津注射笔产能扩张和诺思兰德注射液委托生产直接涉及包装需求，本周其他新药获批和商业化合作也值得关注。</p>
+          <p class="reason">文章明确提到诺和诺德在天津追加投资提升1.5ml注射笔组装生产能力，以及诺思兰德委托生产塞多明基注射液（注射剂），这两项均直接涉及药品生产与剂型，可能带来注射笔、注射剂相关包装材料的需求，如泡罩、标签、说明书等。</p>
+          <div class="chips"><span class="chip">诺和诺德</span><span class="chip">国药控股</span><span class="chip">辉瑞</span><span class="chip">诺万特</span><span class="chip chip-soft">注射笔</span><span class="chip chip-soft">注射剂</span><span class="chip chip-soft">注射液</span><span class="chip chip-soft">片剂</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/nrcJCgwnGBVFcDtgeMppbg" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">米内网 · 2026-06-18</div>
+          <h3>【瞩目】葵花药业拿下40亿畅销贴膏剂</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-mid">Amcor 3</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">葵花药业获批40亿级贴膏剂大品种，商业化放量对包装企业有积极信号。</p>
+          <p class="reason">文章明确提及贴膏剂剂型，属于药品包装相关领域，但未具体描述包装材料或形式；葵花药业不在Amcor重点客户名单内，但大品种商业化可能带来包装需求。</p>
+          <div class="chips"><span class="chip">葵花药业</span><span class="chip chip-soft">贴膏剂</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/FdVZomqBcJUA1YS6LS3ogQ" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    </div>
+        <details class="other-news" open>
+          <summary>Other Important Pharma News</summary>
+          <ul>
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/vXyGM70f78fCqmutcwW23g" target="_blank" rel="noopener">【重磅】仁合益康拿下25亿明星药，3大新品同日获批</a>
+          <div class="compact-meta">米内网 · 2026-06-17 · relevance 18 · amcor 3</div>
+          <p>仁合益康同日获批3个重磅仿制药，其中吸入用七氟烷年销超25亿元，相关注射剂和吸入剂将带来包装需求。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/Hw8R-ZgWaZS5QjY5tqOJbg" target="_blank" rel="noopener">24款胰岛素火热！独家品种首破10亿，甘李、通化东宝、联邦制药“突围”，中美华东、东阳光药发力</a>
+          <div class="compact-meta">米内网 · 2026-06-18 · relevance 16 · amcor 3</div>
+          <p>胰岛素市场重返200亿，国产品牌崛起，重点客户中美华东和赛诺菲有新动态，但无直接包装信号。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/7Og-hikKE-3VHejQ__bsSA" target="_blank" rel="noopener">自免巨头被偷家</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-16 · relevance 16 · amcor 3</div>
+          <p>康诺亚司普奇拜单抗商业化成功，2025年销售额3.15亿元，但未提及包装相关机会。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/tta2JHr9AorE0_689L-uCw" target="_blank" rel="noopener">跨国药企在中国 | 西门子医疗、罗氏诊断、费斯托、阿斯利康、丹纳赫、依视路陆逊梯卡、诺和诺德、诺华、默沙东、瑞孚迪等新动态</a>
+          <div class="compact-meta">医药健闻 · 2026-06-15 · relevance 16 · amcor 3</div>
+          <p>多个跨国药企重磅新药在中国获批或即将上市，提示包装材料潜在需求增长。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/BQnR182Y_9Tr70B1S9oULA" target="_blank" rel="noopener">308个中成药将大降价，健胃消食片等OTC首入集采</a>
+          <div class="compact-meta">医药经济报 · 2026-06-18 · relevance 14 · amcor 3</div>
+          <p>第四批中成药集采结果出炉，OTC首入集采，神威药业等客户中选，关注后续包装需求变化。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/_zA8wqHYwcprN8-Ii-gEvw" target="_blank" rel="noopener">12家药企涉空壳开票案！171个中药集采结果出炉，大批药品价格“跳水”，石药、扬子江亮了</a>
+          <div class="compact-meta">米内网 · 2026-06-20 · relevance 13 · amcor 3</div>
+          <p>本周医药行业集采、政策及新药进展密集，石药、扬子江等企业新药有看点，但包装关联度一般。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/Xrkm7ngUlgNyVlKu7s2_Eg" target="_blank" rel="noopener">本土眼科龙头引进的 1 类新药即将报上市</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-18 · relevance 16 · amcor 2</div>
+          <p>欧康维视即将提交NCX 470中国上市申请，眼科新药进展值得关注，但包装机会尚不明确。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/uxM5_oSyTl8O5Bf5KdQiuw" target="_blank" rel="noopener">【市场】5亿注射剂，华北制药冲刺国产第2家</a>
+          <div class="compact-meta">米内网 · 2026-06-18 · relevance 15 · amcor 2</div>
+          <p>华北制药报产5亿注射剂品种，市场增长近60%，仿制药竞争加剧。</p>
+        </div>
+      </li>
+    </ul>
+        </details>
+      </section>
+    
+      <section class="week-section" id="week-4">
+        <div class="week-header">
+          <div>
+            <div class="eyebrow">Week 4</div>
+            <h2>2026-06-22 至 2026-06-28</h2>
+          </div>
+          <span class="week-count">26 articles</span>
+        </div>
+        <h3 class="subhead">Most Relevant to Amcor / Packaging</h3>
+        <div class="card-grid">
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-22</div>
+          <h3>跨国药企在中国 | 诺和诺德、安斯泰来、第一三共、诺华、因美纳、科利耳、百时美施贵宝、皮尔法伯、辉瑞、罗氏诊断、礼来等新动态</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 18</span>
+        <span class="badge score-max">Amcor 5</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">跨国药企在华持续加大产能投资，诺和诺德注射笔扩产和第一三共建新生产基地为包装及供应链带来明确机会。</p>
+          <p class="reason">文章明确提到诺和诺德追加投资提升注射笔组装产能，直接涉及药品包装（注射笔）；第一三共投资新建生产大楼也涉及产能扩张，与包装供应链相关。</p>
+          <div class="chips"><span class="chip">诺和诺德</span><span class="chip">安斯泰来</span><span class="chip">第一三共</span><span class="chip">诺华</span><span class="chip chip-soft">注射笔</span><span class="chip chip-soft">产能</span><span class="chip chip-soft">生产大楼</span><span class="chip chip-soft">组装生产</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/DiZVtuZ6WdCPTk5RwTpVxg" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">米内网 · 2026-06-24</div>
+          <h3>【关注】扬子江拿下3亿注射剂</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 18</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">扬子江药业注射用卡非佐米获批上市，2025年销售额超3亿元，增长62.96%，注射剂型为包装企业提供潜在需求。</p>
+          <p class="reason">文章明确提到注射用卡非佐米获批上市，且销售额快速增长，注射剂型需要包装材料，对Amcor等包装企业具有直接的市场机会参考。</p>
+          <div class="chips"><span class="chip">扬子江药业</span><span class="chip">四川汇宇制药</span><span class="chip">正大天晴药业集团</span><span class="chip">吉斯美(武汉)制药</span><span class="chip chip-soft">注射剂</span><span class="chip chip-soft">仿制药</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/9UDd4bZkH6FaAiEbdGBCSg" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">丁香园 Insight 数据库 · 2026-06-22</div>
+          <h3>2 款进口新药在中国获批上市</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 18</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">阿斯利康奥希替尼和武田阿帕达酶α在华获批上市，前者为重磅产品商业化放量机会。</p>
+          <p class="reason">文章中明确出现重点客户阿斯利康，其重磅产品奥希替尼新适应症获批，商业化放量可能带来口服固体制剂包装需求（如铝塑泡罩、瓶装）。</p>
+          <div class="chips"><span class="chip">阿斯利康</span><span class="chip">武田制药</span><span class="chip chip-soft">口服</span><span class="chip chip-soft">注射用</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/rY3u-Hdq6V1HqUyjXWNwQA" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">新康界 · 2026-06-23</div>
+          <h3>一日拿下两项“全球首证”，中国创新药闯入全球“无人区”</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 19</span>
+        <span class="badge score-mid">Amcor 3</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">科济药业和百利天恒同日获批全球首创新药，中国创新药进入全球领跑阶段，商业化生产布局带来包装潜在机会。</p>
+          <p class="reason">文章提到科济药业在上海金山区建设了先进的CAR-T商业化生产基地，涉及生产产能和供应链布局，对包装企业有间接参考价值。</p>
+          <div class="chips"><span class="chip">科济药业</span><span class="chip">百利天恒</span><span class="chip chip-soft">商业化生产基地</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/UzUqY970vkzW9RXSfj2jjQ" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    </div>
+        <details class="other-news" open>
+          <summary>Other Important Pharma News</summary>
+          <ul>
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/OaR3XVRb5e7FHh-LfPjLfg" target="_blank" rel="noopener">国产 1 类新药申报上市，来自华海药业</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-25 · relevance 16 · amcor 3</div>
+          <p>华海药业IL-17A单抗HB0017申报上市，有望成为银屑病治疗新选择。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/WHNlGQa0gWFgbrTENHV54g" target="_blank" rel="noopener">【瞩目】正大天晴“一日双喜”，13亿爆款收入囊中</a>
+          <div class="compact-meta">米内网 · 2026-06-23 · relevance 16 · amcor 3</div>
+          <p>正大天晴同日获批两款前列腺癌治疗药物，合计年销售额超21亿元，且恩扎卢胺即将进入集采，商业化进展值得关注。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/gGCwGmIm-iS4gkhRFJfMnA" target="_blank" rel="noopener">艾伯维斥资109亿美元收购Apogee；赛诺菲任命全球制药研发负责人；西门子医疗计划投入数千万美元新建生产基地 | 日报</a>
+          <div class="compact-meta">医药健闻 · 2026-06-23 · relevance 16 · amcor 3</div>
+          <p>本周多家中国药企新药获批或进入关键临床，其中科济药业实体瘤CAR-T获批最具里程碑意义。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/Gcux3H_2dwXIjdaoZaCDtg" target="_blank" rel="noopener">【市场】16个国谈药遴选进院，独家品种霸屏</a>
+          <div class="compact-meta">米内网 · 2026-06-25 · relevance 14 · amcor 3</div>
+          <p>信立泰恩那度司他片等品种进院并快速放量，提示相关包装材料需求可能提升。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/YZOMRHd-OiNmpfFqv9p3dg" target="_blank" rel="noopener">武田制药新CEO正式上任；和誉医药与礼来深化新药研发合作；诺华与Antares合作开展抗癌药物研发 | 日报</a>
+          <div class="compact-meta">医药健闻 · 2026-06-25 · relevance 14 · amcor 3</div>
+          <p>汇总了武田、礼来、和誉、云顶新耀、阿斯利康、药明生物等多个药企最新动态，其中和誉与礼来19亿美元合作及云顶新耀商业化合作值得关注。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/nmDVmDKHIg44gqx_AR4eOQ" target="_blank" rel="noopener">华北制药出击！千亿市场高位领跑，13个过亿产品亮眼，7款新药、16个新品来势汹汹</a>
+          <div class="compact-meta">米内网 · 2026-06-23 · relevance 14 · amcor 3</div>
+          <p>华北制药多个产品持续放量，研发投入高，集采参与广泛，对包装企业意味着潜在订单机会但需关注集采降价风险。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/Sn86doLUVi-UN8GEUekBWg" target="_blank" rel="noopener">【火热】华润双鹤拿下暴涨290%潜力新品</a>
+          <div class="compact-meta">米内网 · 2026-06-22 · relevance 14 · amcor 3</div>
+          <p>华润双鹤获批利格列汀二甲双胍片(Ⅱ)等3款仿制药，其中利格列汀二甲双胍片(Ⅱ)销售额增长超290%，提示口服固体制剂市场放量。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/ZSvY7gZTsoBkDG3G0u8ZXg" target="_blank" rel="noopener">百利天恒的成人礼</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-22 · relevance 18 · amcor 2</div>
+          <p>百利天恒BL-B01D1获批上市，开启双抗ADC商业化时代，但短期业绩压力和市场推广仍需观察。</p>
+        </div>
+      </li>
+    </ul>
+        </details>
+      </section>
+    
+      <section class="week-section" id="week-5">
+        <div class="week-header">
+          <div>
+            <div class="eyebrow">Week 5</div>
+            <h2>2026-06-29 至 2026-06-30</h2>
+          </div>
+          <span class="week-count">12 articles</span>
+        </div>
+        <h3 class="subhead">Most Relevant to Amcor / Packaging</h3>
+        <div class="card-grid">
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-30</div>
+          <h3>默克将以113亿美元收购生命科学仪器供应商Bio-Techne；新桥生物任命首席执行官；礼邦医药在港上市 | 日报</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-max">Amcor 5</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">云南白药经皮给药项目及多个新药获批上市值得关注，尤其是云南白药项目直接涉及贴膏包装需求。</p>
+          <p class="reason">文章明确提到云南白药（Amcor重点客户）全资子公司无锡药业建设经皮给药技术产业平台项目，主产经典贴膏，直接涉及包装需求（如复合膜、背衬等）。</p>
+          <div class="chips"><span class="chip">默克集团</span><span class="chip">Bio-Techne</span><span class="chip">新桥生物</span><span class="chip">礼来</span><span class="chip chip-soft">经皮给药</span><span class="chip chip-soft">贴膏</span><span class="chip chip-soft">滴眼液</span><span class="chip chip-soft">注射剂</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/TeHWveiwpB8hbwpX3zZc_Q" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">动脉网 · 2026-06-29</div>
+          <h3>成立5年营收数亿，这家上海企业推动中国给药装置首次进入FDA药械组合体系</h3>
+          
+      <div class="badges">
+        <span class="badge category">包装相关</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-max">Amcor 5</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">中国给药装置首次获FDA批准，标志着国产高端包装材料进入全球主流市场，为上游包装企业带来新的增长空间。</p>
+          <p class="reason">文章直接涉及药品包装中的给药装置（笔式注射器、预灌封注射器），并强调产能扩张、智能工厂建设、商业化量产，与包装企业业务高度相关。</p>
+          <div class="chips"><span class="chip">新耀湃科</span><span class="chip">通化东宝</span><span class="chip chip-soft">给药装置</span><span class="chip chip-soft">笔式注射器</span><span class="chip chip-soft">预灌封注射器</span><span class="chip chip-soft">药械组合</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/06l5e1YMBWCxB0Qj0DMgaQ" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">米内网 · 2026-06-30</div>
+          <h3>【火热】中药龙头出手了，3.6亿加码黄金赛道</h3>
+          
+      <div class="badges">
+        <span class="badge category">商业化/供应链</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-high">Packaging high</span>
+      </div>
+    
+          <p class="takeaway">云南白药3.6亿加码透皮制剂产能，核心产品销售额持续增长，为相关包装材料带来明确机会。</p>
+          <p class="reason">文章中明确出现重点客户云南白药，且涉及产能建设（经皮给药产业平台）和多个剂型（凝胶贴膏、透皮制剂），这些剂型通常需要条包、复合膜或冷成型铝等包装材料，与Amcor的包装业务直接相关。</p>
+          <div class="chips"><span class="chip">云南白药集团股份有限公司</span><span class="chip chip-soft">凝胶贴膏</span><span class="chip chip-soft">透皮制剂</span><span class="chip chip-soft">剂型</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/tMPaOMkIeEEmnrFWjsNJFA" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    
+      <article class="article-card">
+        
+        <div class="article-main">
+          <div class="article-meta">医药健闻 · 2026-06-29</div>
+          <h3>跨国药企在中国 | 西门子医疗、赛诺菲、诺和诺德、瑞孚迪、拜耳、萌蒂制药、卫材、礼来、GSK、武田、阿斯利康、强生、默沙东等新动态</h3>
+          
+      <div class="badges">
+        <span class="badge category">新药申报/获批</span>
+        <span class="badge relevance">Relevance 17</span>
+        <span class="badge score-high">Amcor 4</span>
+        <span class="badge pack-medium">Packaging medium</span>
+      </div>
+    
+          <p class="takeaway">本周多项跨国药企新药在华获批及产能投资，持续推动中国医药市场创新和商业化，对包装企业带来潜在机会。</p>
+          <p class="reason">文章涉及多个Amcor重点客户（赛诺菲、拜耳、阿斯利康、强生、默沙东、礼来、GSK、武田等）的新药获批或产能建设，这些商业化活动可能带来包装材料需求，但未直接提及包装。</p>
+          <div class="chips"><span class="chip">西门子医疗</span><span class="chip">赛诺菲</span><span class="chip">诺和诺德</span><span class="chip">瑞孚迪</span><span class="chip chip-soft">胰岛素</span><span class="chip chip-soft">原料药</span><span class="chip chip-soft">生产基地</span><span class="chip chip-soft">产能</span></div>
+          <a class="read-link" href="https://mp.weixin.qq.com/s/oxbYcRdH1MVG-IOONugoeQ" target="_blank" rel="noopener">Open original</a>
+        </div>
+      </article>
+    </div>
+        <details class="other-news" open>
+          <summary>Other Important Pharma News</summary>
+          <ul>
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/6wRU-mgWplYMtJMrXP5DiA" target="_blank" rel="noopener">国内进度领先！宜联生物 1 类新药拟纳入优先审评</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-30 · relevance 19 · amcor 3</div>
+          <p>宜联生物B7-H3 ADC YL201拟纳入优先审评，并获罗氏5.7亿美元首付款合作，是近期重要的国内创新药进展。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/2zTl0ffZcm5TrZGxleDOhA" target="_blank" rel="noopener">2026 下半年，这 10 款重磅新药有望在中国获批上市</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-30 · relevance 16 · amcor 3</div>
+          <p>10款重磅新药有望于2026年下半年在中国获批，关注其商业化进程及对包装供应链的拉动作用。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/Q9QxSUgURy-nCp0ZtGJRNQ" target="_blank" rel="noopener">【获批】浙江药企拿下暴涨687%潜力新品</a>
+          <div class="compact-meta">米内网 · 2026-06-30 · relevance 16 · amcor 3</div>
+          <p>浙江京新药业瑞舒伐他汀依折麦布片获批且销售额暴涨687%，该品类快速放量可能带动口服固体包装需求。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/p1kX7MfnheBXrww9inwTjQ" target="_blank" rel="noopener">2026下半年8款重磅新药冲刺上市，多赛道迎变局</a>
+          <div class="compact-meta">新康界 · 2026-06-30 · relevance 14 · amcor 3</div>
+          <p>2026下半年多款新药有望获批，华海药业等客户的新药进展可间接提示包装机会。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/hLeMrJJFUenlLdhuP3hdTg" target="_blank" rel="noopener">恒瑞重磅 ADC 又一适应症申报上市</a>
+          <div class="compact-meta">丁香园 Insight 数据库 · 2026-06-30 · relevance 16 · amcor 2</div>
+          <p>恒瑞瑞康曲妥珠单抗申报HER2低表达乳腺癌适应症，进一步拓展其ADC产品线。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/S3BbQnj1sZxKUCL4iQkP0A" target="_blank" rel="noopener">大涨95%！腾讯、礼来亚洲重仓的创新药企IPO，独家对话早期投资人</a>
+          <div class="compact-meta">动脉网 · 2026-06-29 · relevance 15 · amcor 2</div>
+          <p>礼邦医药港股IPO大涨，自建生产基地的产能布局值得包装企业关注其后续商业化带来的包装需求。</p>
+        </div>
+      </li>
+    
+      <li class="compact-article">
+        <div>
+          <a href="https://mp.weixin.qq.com/s/PhRN_rHBStKMiaOJrx0Dcg" target="_blank" rel="noopener">叮！您有一份最新的医药经济报，等待阅读~</a>
+          <div class="compact-meta">医药经济报 · 2026-06-29 · relevance 14 · amcor 1</div>
+          <p>多笔大额BD交易和新药获批显示中国医药行业持续活跃，但缺少包装具体信息。</p>
+        </div>
+      </li>
+    </ul>
+        </details>
+      </section>
+    
+    </section>
+
+    <section id="categories">
+      <div class="section-title"><h2>Category Summary</h2></div>
+      <div class="pills"><span class="pill">新药申报/获批 <b>39</b></span><span class="pill">商业化/供应链 <b>12</b></span><span class="pill">BD出海 <b>5</b></span><span class="pill">市场数据 <b>4</b></span><span class="pill">临床进展 <b>2</b></span><span class="pill">其他 <b>2</b></span><span class="pill">政策监管 <b>2</b></span><span class="pill">包装相关 <b>1</b></span></div>
+      <div class="section-title" style="margin-top:18px"><h2>Sources</h2></div>
+      <div class="pills"><span class="pill pill-muted">丁香园 Insight 数据库 <b>20</b></span><span class="pill pill-muted">医药健闻 <b>17</b></span><span class="pill pill-muted">米内网 <b>16</b></span><span class="pill pill-muted">新康界 <b>6</b></span><span class="pill pill-muted">医药经济报 <b>5</b></span><span class="pill pill-muted">动脉网 <b>3</b></span></div>
+    </section>
+
+    <section id="risks" class="risks">
+      <h2>8. Risks and Uncertainties</h2>
+<p>1.  <strong>信息来源限制</strong>：本报告内容均来自微信公众号及其RSS/结构化文章。部分信息（尤其是OCR识别和BD交易金额）可能存在不准确之处，建议在用于商业决策前进行二次核验。</p>
+<p>2.  <strong>产能建设周期</strong>：生产线（如第一三共上海新大楼、东诚药业同位素基地、药明生物新加坡厂）的建设需要时间，实际产能释放和包装采购高峰可能与新闻报道时间存在较长滞后。</p>
+<p>3.  <strong>商业化不确定性</strong>：新药获批（如科济药业CAR-T）并不等于立即放量，其商业化规模受限于定价、医保准入、医生接受度和市场竞争。对包装需求的影响需要根据实际销售数据来判断。</p>
+<p>4.  <strong>BD交易风险</strong>：月报中提及的BD合作（如和誉-礼来、辉瑞-三生）多处于早期研发阶段，临床失败或管线调整的风险较高。其包装需求可能在5-10年内都不会实现。</p>
+<p>5.  <strong>推断的谨慎性</strong>：本报告中“Indirect Signals”部分是基于文章信息进行的合理推断，并非直接证据。例如，某新药获批不一定会立刻选择Amcor作为包装供应商，Amcor需要主动出击。</p>
+<p>6.  <strong>竞争与价格压力</strong>：集采政策和仿制药竞争（如正大天晴恩扎卢胺、扬子江卡非佐米等）将压低药价，可能传导至上游包装环节，造成采购方对成本更加敏感。Amcor需要提供成本效益更优的解决方案。</p>
+    </section>
+
+    <section id="appendix">
+      <div class="section-title"><h2>Appendix: Articles Reviewed</h2></div>
+      <div class="appendix-wrap">
+        <table class="appendix-table">
+          <thead>
+            <tr>
+              <th>Date</th><th>Title</th><th>Source</th><th>Category</th><th>Rel.</th><th>Amcor</th><th>Packaging</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2026-06-22</td><td><a href='https://mp.weixin.qq.com/s/DiZVtuZ6WdCPTk5RwTpVxg' target='_blank' rel='noopener'>跨国药企在中国 | 诺和诺德、安斯泰来、第一三共、诺华、因美纳、科利耳、百时美施贵宝、皮尔法伯、辉瑞、罗氏诊断、礼来等新动态</a></td><td>医药健闻</td><td>商业化/供应链</td><td>18</td><td>5</td><td>high</td></tr><tr><td>2026-06-30</td><td><a href='https://mp.weixin.qq.com/s/TeHWveiwpB8hbwpX3zZc_Q' target='_blank' rel='noopener'>默克将以113亿美元收购生命科学仪器供应商Bio-Techne；新桥生物任命首席执行官；礼邦医药在港上市 | 日报</a></td><td>医药健闻</td><td>商业化/供应链</td><td>17</td><td>5</td><td>high</td></tr><tr><td>2026-06-29</td><td><a href='https://mp.weixin.qq.com/s/06l5e1YMBWCxB0Qj0DMgaQ' target='_blank' rel='noopener'>成立5年营收数亿，这家上海企业推动中国给药装置首次进入FDA药械组合体系</a></td><td>动脉网</td><td>包装相关</td><td>17</td><td>5</td><td>high</td></tr><tr><td>2026-06-05</td><td><a href='https://mp.weixin.qq.com/s/uw16qTMkElFyaCPLrzyD1g' target='_blank' rel='noopener'>拜耳健康消费品中国创新合作中心落地山东；海思科与礼来签署授权与研发合作协议；云顶新耀达成独家授权许可协议 | 日报</a></td><td>医药健闻</td><td>商业化/供应链</td><td>17</td><td>5</td><td>high</td></tr><tr><td>2026-06-24</td><td><a href='https://mp.weixin.qq.com/s/9UDd4bZkH6FaAiEbdGBCSg' target='_blank' rel='noopener'>【关注】扬子江拿下3亿注射剂</a></td><td>米内网</td><td>新药申报/获批</td><td>18</td><td>4</td><td>high</td></tr><tr><td>2026-06-30</td><td><a href='https://mp.weixin.qq.com/s/tMPaOMkIeEEmnrFWjsNJFA' target='_blank' rel='noopener'>【火热】中药龙头出手了，3.6亿加码黄金赛道</a></td><td>米内网</td><td>商业化/供应链</td><td>17</td><td>4</td><td>high</td></tr><tr><td>2026-06-09</td><td><a href='https://mp.weixin.qq.com/s/xDoyHXtGwM_kInUHgUwwYg' target='_blank' rel='noopener'>阿斯利康可能被迫在英国和欧洲停售新药；罗氏授权引进Nurix血液肿瘤候选药物；正大天晴全球研发总部上海落成启用 | 日报</a></td><td>医药健闻</td><td>新药申报/获批</td><td>17</td><td>4</td><td>high</td></tr><tr><td>2026-06-18</td><td><a href='https://mp.weixin.qq.com/s/D80c0pZ3H_b4bmykr_JmXQ' target='_blank' rel='noopener'>渤健将以最高10亿美元收购RayThera；诺和诺德未来会增加在中国的BD交易；派林生物控制权转让事项终止 | 日报</a></td><td>医药健闻</td><td>商业化/供应链</td><td>16</td><td>4</td><td>high</td></tr><tr><td>2026-06-22</td><td><a href='https://mp.weixin.qq.com/s/rY3u-Hdq6V1HqUyjXWNwQA' target='_blank' rel='noopener'>2 款进口新药在中国获批上市</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>18</td><td>4</td><td>medium</td></tr><tr><td>2026-06-17</td><td><a href='https://mp.weixin.qq.com/s/bqUk0Ef5P19FAy26Q3LhPw' target='_blank' rel='noopener'>安斯泰来及第一三共等日本大型药企在中国扩大投资；强生宣布10亿美元投资增强生产能力 | 日报</a></td><td>医药健闻</td><td>商业化/供应链</td><td>18</td><td>4</td><td>medium</td></tr><tr><td>2026-06-29</td><td><a href='https://mp.weixin.qq.com/s/oxbYcRdH1MVG-IOONugoeQ' target='_blank' rel='noopener'>跨国药企在中国 | 西门子医疗、赛诺菲、诺和诺德、瑞孚迪、拜耳、萌蒂制药、卫材、礼来、GSK、武田、阿斯利康、强生、默沙东等新动态</a></td><td>医药健闻</td><td>新药申报/获批</td><td>17</td><td>4</td><td>medium</td></tr><tr><td>2026-06-16</td><td><a href='https://mp.weixin.qq.com/s/nrcJCgwnGBVFcDtgeMppbg' target='_blank' rel='noopener'>诺和诺德全球高管团队来华宣布新投资；国药控股与辉瑞确定战略合作关系；诺万特宣布重大收购计划 | 日报</a></td><td>医药健闻</td><td>商业化/供应链</td><td>16</td><td>4</td><td>medium</td></tr><tr><td>2026-06-23</td><td><a href='https://mp.weixin.qq.com/s/UzUqY970vkzW9RXSfj2jjQ' target='_blank' rel='noopener'>一日拿下两项“全球首证”，中国创新药闯入全球“无人区”</a></td><td>新康界</td><td>新药申报/获批</td><td>19</td><td>3</td><td>medium</td></tr><tr><td>2026-06-28</td><td><a href='https://mp.weixin.qq.com/s/MYugpVDmfcK5mE-AN-eBmQ' target='_blank' rel='noopener'>单品年卖9.5亿，这家接手UCB中国资产的药企赴港IPO</a></td><td>动脉网</td><td>商业化/供应链</td><td>18</td><td>3</td><td>medium</td></tr><tr><td>2026-06-18</td><td><a href='https://mp.weixin.qq.com/s/FdVZomqBcJUA1YS6LS3ogQ' target='_blank' rel='noopener'>【瞩目】葵花药业拿下40亿畅销贴膏剂</a></td><td>米内网</td><td>新药申报/获批</td><td>17</td><td>3</td><td>medium</td></tr><tr><td>2026-06-14</td><td><a href='https://mp.weixin.qq.com/s/EAe7xQTWlc5LOglrS3A5Jg' target='_blank' rel='noopener'>金赛药业变了</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>17</td><td>3</td><td>medium</td></tr><tr><td>2026-06-29</td><td><a href='https://mp.weixin.qq.com/s/pI5mRx61_rfVncUv3RANWw' target='_blank' rel='noopener'>【火热】步长制药新药出击，剑指31亿大品种</a></td><td>米内网</td><td>临床进展</td><td>16</td><td>3</td><td>medium</td></tr><tr><td>2026-06-24</td><td><a href='https://mp.weixin.qq.com/s/VqQDfOlT36hOomYYoqcc-g' target='_blank' rel='noopener'>【市场】人福入局大涨52%潜力品种，止痛药新剂型冲刺首仿</a></td><td>米内网</td><td>新药申报/获批</td><td>15</td><td>3</td><td>medium</td></tr><tr><td>2026-06-18</td><td><a href='https://mp.weixin.qq.com/s/xC4i74yeD4AscCKT-kbdEA' target='_blank' rel='noopener'>【关注】青峰医药再添重磅首仿</a></td><td>米内网</td><td>新药申报/获批</td><td>15</td><td>3</td><td>medium</td></tr><tr><td>2026-06-22</td><td><a href='https://mp.weixin.qq.com/s/d4Hol0uXngO9Ja4WjJ3taQ' target='_blank' rel='noopener'>33个外用中成药厉害了！独家品种大涨61%，云南白药喜提“双霸主”，14款1类新药蓄力</a></td><td>米内网</td><td>市场数据</td><td>13</td><td>3</td><td>medium</td></tr><tr><td>2026-06-30</td><td><a href='https://mp.weixin.qq.com/s/6wRU-mgWplYMtJMrXP5DiA' target='_blank' rel='noopener'>国内进度领先！宜联生物 1 类新药拟纳入优先审评</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>19</td><td>3</td><td>low</td></tr><tr><td>2026-06-17</td><td><a href='https://mp.weixin.qq.com/s/vXyGM70f78fCqmutcwW23g' target='_blank' rel='noopener'>【重磅】仁合益康拿下25亿明星药，3大新品同日获批</a></td><td>米内网</td><td>新药申报/获批</td><td>18</td><td>3</td><td>low</td></tr><tr><td>2026-06-10</td><td><a href='https://mp.weixin.qq.com/s/fzrqhzMpAK1dTz_BSeUK2Q' target='_blank' rel='noopener'>葛兰素史克斥资106亿美元收购肿瘤药企Nuvalent；三星成美国基因科技公司Element最大股东；H药汉斯状获批新适应症 | 日报</a></td><td>医药健闻</td><td>新药申报/获批</td><td>17</td><td>3</td><td>low</td></tr><tr><td>2026-06-30</td><td><a href='https://mp.weixin.qq.com/s/2zTl0ffZcm5TrZGxleDOhA' target='_blank' rel='noopener'>2026 下半年，这 10 款重磅新药有望在中国获批上市</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-30</td><td><a href='https://mp.weixin.qq.com/s/Q9QxSUgURy-nCp0ZtGJRNQ' target='_blank' rel='noopener'>【获批】浙江药企拿下暴涨687%潜力新品</a></td><td>米内网</td><td>新药申报/获批</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-25</td><td><a href='https://mp.weixin.qq.com/s/OaR3XVRb5e7FHh-LfPjLfg' target='_blank' rel='noopener'>国产 1 类新药申报上市，来自华海药业</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-23</td><td><a href='https://mp.weixin.qq.com/s/WHNlGQa0gWFgbrTENHV54g' target='_blank' rel='noopener'>【瞩目】正大天晴“一日双喜”，13亿爆款收入囊中</a></td><td>米内网</td><td>新药申报/获批</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-23</td><td><a href='https://mp.weixin.qq.com/s/gGCwGmIm-iS4gkhRFJfMnA' target='_blank' rel='noopener'>艾伯维斥资109亿美元收购Apogee；赛诺菲任命全球制药研发负责人；西门子医疗计划投入数千万美元新建生产基地 | 日报</a></td><td>医药健闻</td><td>新药申报/获批</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-18</td><td><a href='https://mp.weixin.qq.com/s/Hw8R-ZgWaZS5QjY5tqOJbg' target='_blank' rel='noopener'>24款胰岛素火热！独家品种首破10亿，甘李、通化东宝、联邦制药“突围”，中美华东、东阳光药发力</a></td><td>米内网</td><td>市场数据</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-16</td><td><a href='https://mp.weixin.qq.com/s/7Og-hikKE-3VHejQ__bsSA' target='_blank' rel='noopener'>自免巨头被偷家</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-15</td><td><a href='https://mp.weixin.qq.com/s/tta2JHr9AorE0_689L-uCw' target='_blank' rel='noopener'>跨国药企在中国 | 西门子医疗、罗氏诊断、费斯托、阿斯利康、丹纳赫、依视路陆逊梯卡、诺和诺德、诺华、默沙东、瑞孚迪等新动态</a></td><td>医药健闻</td><td>新药申报/获批</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-02</td><td><a href='https://mp.weixin.qq.com/s/pFfHgMYARHEmsLJb5qC5Og' target='_blank' rel='noopener'>默克大湾区创新与合作中心在深圳落成；飞利浦影像引导治疗系统在华装机突破6000台；武田中国宣布人事任命 | 日报</a></td><td>医药健闻</td><td>新药申报/获批</td><td>16</td><td>3</td><td>low</td></tr><tr><td>2026-06-30</td><td><a href='https://mp.weixin.qq.com/s/p1kX7MfnheBXrww9inwTjQ' target='_blank' rel='noopener'>2026下半年8款重磅新药冲刺上市，多赛道迎变局</a></td><td>新康界</td><td>新药申报/获批</td><td>14</td><td>3</td><td>low</td></tr><tr><td>2026-06-25</td><td><a href='https://mp.weixin.qq.com/s/Gcux3H_2dwXIjdaoZaCDtg' target='_blank' rel='noopener'>【市场】16个国谈药遴选进院，独家品种霸屏</a></td><td>米内网</td><td>市场数据</td><td>14</td><td>3</td><td>low</td></tr><tr><td>2026-06-25</td><td><a href='https://mp.weixin.qq.com/s/YZOMRHd-OiNmpfFqv9p3dg' target='_blank' rel='noopener'>武田制药新CEO正式上任；和誉医药与礼来深化新药研发合作；诺华与Antares合作开展抗癌药物研发 | 日报</a></td><td>医药健闻</td><td>其他</td><td>14</td><td>3</td><td>low</td></tr><tr><td>2026-06-23</td><td><a href='https://mp.weixin.qq.com/s/nmDVmDKHIg44gqx_AR4eOQ' target='_blank' rel='noopener'>华北制药出击！千亿市场高位领跑，13个过亿产品亮眼，7款新药、16个新品来势汹汹</a></td><td>米内网</td><td>商业化/供应链</td><td>14</td><td>3</td><td>low</td></tr><tr><td>2026-06-22</td><td><a href='https://mp.weixin.qq.com/s/Sn86doLUVi-UN8GEUekBWg' target='_blank' rel='noopener'>【火热】华润双鹤拿下暴涨290%潜力新品</a></td><td>米内网</td><td>新药申报/获批</td><td>14</td><td>3</td><td>low</td></tr><tr><td>2026-06-18</td><td><a href='https://mp.weixin.qq.com/s/BQnR182Y_9Tr70B1S9oULA' target='_blank' rel='noopener'>308个中成药将大降价，健胃消食片等OTC首入集采</a></td><td>医药经济报</td><td>政策监管</td><td>14</td><td>3</td><td>low</td></tr><tr><td>2026-06-20</td><td><a href='https://mp.weixin.qq.com/s/_zA8wqHYwcprN8-Ii-gEvw' target='_blank' rel='noopener'>12家药企涉空壳开票案！171个中药集采结果出炉，大批药品价格“跳水”，石药、扬子江亮了</a></td><td>米内网</td><td>其他</td><td>13</td><td>3</td><td>low</td></tr><tr><td>2026-06-26</td><td><a href='https://mp.weixin.qq.com/s/NMm5NEjq6mmDNiiXpFFDwQ' target='_blank' rel='noopener'>国产首款AD创新药、全球首款实体瘤CAR-T等获批上市</a></td><td>医药经济报</td><td>新药申报/获批</td><td>19</td><td>2</td><td>medium</td></tr><tr><td>2026-06-22</td><td><a href='https://mp.weixin.qq.com/s/ZSvY7gZTsoBkDG3G0u8ZXg' target='_blank' rel='noopener'>百利天恒的成人礼</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>18</td><td>2</td><td>low</td></tr><tr><td>2026-06-30</td><td><a href='https://mp.weixin.qq.com/s/hLeMrJJFUenlLdhuP3hdTg' target='_blank' rel='noopener'>恒瑞重磅 ADC 又一适应症申报上市</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>2</td><td>low</td></tr><tr><td>2026-06-26</td><td><a href='https://mp.weixin.qq.com/s/Aw2ZaD-RcGg7wN6v3QTyPA' target='_blank' rel='noopener'>恒瑞无水环孢素滴眼液获批，打破兴齐眼药独家格局</a></td><td>新康界</td><td>新药申报/获批</td><td>16</td><td>2</td><td>low</td></tr><tr><td>2026-06-26</td><td><a href='https://mp.weixin.qq.com/s/nLCqC_2hYbRlWtlIZGb0UQ' target='_blank' rel='noopener'>瞄准1.48亿慢病患者！从链博会看诺和诺德如何重塑中国医药“朋友圈” | 全球深一度</a></td><td>医药健闻</td><td>商业化/供应链</td><td>16</td><td>2</td><td>low</td></tr><tr><td>2026-06-18</td><td><a href='https://mp.weixin.qq.com/s/Xrkm7ngUlgNyVlKu7s2_Eg' target='_blank' rel='noopener'>本土眼科龙头引进的 1 类新药即将报上市</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>2</td><td>low</td></tr><tr><td>2026-06-14</td><td><a href='https://mp.weixin.qq.com/s/ARihXVsdREOwKd3X1zbVmg' target='_blank' rel='noopener'>荣昌生物重磅自免新药在华获批两大新适应症；复宏汉霖 H 药获批用于胃癌围术期治疗；恒瑞 ADC 第 4 次拟纳入优先审评｜Insight 新药周报</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>2</td><td>low</td></tr><tr><td>2026-06-08</td><td><a href='https://mp.weixin.qq.com/s/8tMRZV0D70M2P62Wp-lkXA' target='_blank' rel='noopener'>跨国药企在中国 | 拜耳、默克、蔡司、飞利浦、SK海力士、强生、卫材、礼来、依视路陆逊梯卡、贝朗医疗、默沙东、阿斯利康、罗氏等新动态</a></td><td>医药健闻</td><td>新药申报/获批</td><td>16</td><td>2</td><td>low</td></tr><tr><td>2026-06-03</td><td><a href='https://mp.weixin.qq.com/s/k6wcVTToAHvLvD8xFHL7LQ' target='_blank' rel='noopener'>新型分子胶降解剂拟优先审评，来自 BMS</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>2</td><td>low</td></tr><tr><td>2026-06-29</td><td><a href='https://mp.weixin.qq.com/s/S3BbQnj1sZxKUCL4iQkP0A' target='_blank' rel='noopener'>大涨95%！腾讯、礼来亚洲重仓的创新药企IPO，独家对话早期投资人</a></td><td>动脉网</td><td>商业化/供应链</td><td>15</td><td>2</td><td>low</td></tr><tr><td>2026-06-18</td><td><a href='https://mp.weixin.qq.com/s/uxM5_oSyTl8O5Bf5KdQiuw' target='_blank' rel='noopener'>【市场】5亿注射剂，华北制药冲刺国产第2家</a></td><td>米内网</td><td>新药申报/获批</td><td>15</td><td>2</td><td>low</td></tr><tr><td>2026-06-23</td><td><a href='https://mp.weixin.qq.com/s/fuv69UuBM3iQQwuW1a-oeA' target='_blank' rel='noopener'>第12批国采正式启动！涉及65个产品，部分规则有优化</a></td><td>医药经济报</td><td>政策监管</td><td>14</td><td>2</td><td>low</td></tr><tr><td>2026-06-07</td><td><a href='https://mp.weixin.qq.com/s/qKxb91j2u763dpbNnW4k9A' target='_blank' rel='noopener'>国产新药出海，变了</a></td><td>丁香园 Insight 数据库</td><td>BD出海</td><td>18</td><td>2</td><td>none</td></tr><tr><td>2026-06-12</td><td><a href='https://mp.weixin.qq.com/s/xmeO9K8PWWi5M-dWhROwYA' target='_blank' rel='noopener'>默沙东长效RSV单抗在华获批上市；君实生物就四价重组登革热疫苗达成独占许可合作；英伟达与Abridge合作研发医疗领域AI模型 | 日报</a></td><td>医药健闻</td><td>新药申报/获批</td><td>17</td><td>2</td><td>none</td></tr><tr><td>2026-06-25</td><td><a href='https://mp.weixin.qq.com/s/Ho6D6QBjgPSRq6OfI91PAQ' target='_blank' rel='noopener'>首日暴涨178%：国际巨头为何押注这家药企的港股IPO？</a></td><td>新康界</td><td>新药申报/获批</td><td>16</td><td>2</td><td>none</td></tr><tr><td>2026-06-29</td><td><a href='https://mp.weixin.qq.com/s/PhRN_rHBStKMiaOJrx0Dcg' target='_blank' rel='noopener'>叮！您有一份最新的医药经济报，等待阅读~</a></td><td>医药经济报</td><td>BD出海</td><td>14</td><td>1</td><td>low</td></tr><tr><td>2026-06-11</td><td><a href='https://mp.weixin.qq.com/s/ai3PHtvdyVCKpZTGM7y5lg' target='_blank' rel='noopener'>四款创新药获批上市！来自康方、首药控股、默沙东、朗来</a></td><td>医药经济报</td><td>新药申报/获批</td><td>19</td><td>1</td><td>none</td></tr><tr><td>2026-06-09</td><td><a href='https://mp.weixin.qq.com/s/DXYXJMZZ6FdwM8S27Qq35A' target='_blank' rel='noopener'>全球首个！天广实特效药获批上市</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>19</td><td>1</td><td>none</td></tr><tr><td>2026-06-27</td><td><a href='https://mp.weixin.qq.com/s/5LscCP74L37-iCkLABEIjw' target='_blank' rel='noopener'>辉瑞的ADC赌局</a></td><td>新康界</td><td>BD出海</td><td>17</td><td>1</td><td>none</td></tr><tr><td>2026-06-25</td><td><a href='https://mp.weixin.qq.com/s/gvjmrG27Y81g-zk8hUmMxQ' target='_blank' rel='noopener'>进口新药第 3 项适应症在中国申报上市</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>17</td><td>1</td><td>none</td></tr><tr><td>2026-06-24</td><td><a href='https://mp.weixin.qq.com/s/2OsaXVRFMaDbjTJ96piS1Q' target='_blank' rel='noopener'>高达 19 亿美元！和誉医药与礼来达成合作</a></td><td>丁香园 Insight 数据库</td><td>BD出海</td><td>17</td><td>1</td><td>none</td></tr><tr><td>2026-06-01</td><td><a href='https://mp.weixin.qq.com/s/jjqWkf6Lf2sdtHL--nYyoA' target='_blank' rel='noopener'>跨国药企在中国 | 诺华、拜耳、强生、礼来、富士胶片、美纳里尼、辉瑞、卢平、安进、波士顿科学、丹纳赫、西门子医疗等新动态</a></td><td>医药健闻</td><td>BD出海</td><td>17</td><td>1</td><td>none</td></tr><tr><td>2026-06-26</td><td><a href='https://mp.weixin.qq.com/s/L-413504qzOdLsfP4fyPXA' target='_blank' rel='noopener'>肺纤维化创新药历史性突破：勃林格全球首创PDE4B选择性抑制剂将中位生存期从3.7年提升到9.1年，让患者看见退休后的夕阳</a></td><td>新康界</td><td>新药申报/获批</td><td>16</td><td>1</td><td>none</td></tr><tr><td>2026-06-26</td><td><a href='https://mp.weixin.qq.com/s/PPRV1f5wgPUFFqsWzwrugQ' target='_blank' rel='noopener'>每月 1 针！云顶新耀 24 亿元引进的新药在国内申报上市</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>1</td><td>none</td></tr><tr><td>2026-06-08</td><td><a href='https://mp.weixin.qq.com/s/LXuXtcsmQTo1CI0-6XLAYg' target='_blank' rel='noopener'>盈利、管线、全球化三大拐点落地，诺诚健华下个十年怎么走？| 专访崔霁松</a></td><td>丁香园 Insight 数据库</td><td>商业化/供应链</td><td>16</td><td>1</td><td>none</td></tr><tr><td>2026-06-05</td><td><a href='https://mp.weixin.qq.com/s/v8LYLUJ_snRPGHOAbY5zIQ' target='_blank' rel='noopener'>百利天恒重磅 ADC 新药启动首个全球 III 期</a></td><td>丁香园 Insight 数据库</td><td>临床进展</td><td>16</td><td>1</td><td>none</td></tr><tr><td>2026-06-06</td><td><a href='https://mp.weixin.qq.com/s/hK8GKJ57dh5Gt6F6bHACTg' target='_blank' rel='noopener'>传奇生物再创传奇</a></td><td>丁香园 Insight 数据库</td><td>市场数据</td><td>17</td><td>0</td><td>none</td></tr><tr><td>2026-06-28</td><td><a href='https://mp.weixin.qq.com/s/OKIvPR83H6jVkgq-Zd7ohg' target='_blank' rel='noopener'>全球首款双抗 ADC、全球首款实体瘤 CAR-T 获批，来自中国药企；正大天晴申报首款 ADC；每月一次降脂药获批新适应症…｜Insight 新药周报</a></td><td>丁香园 Insight 数据库</td><td>新药申报/获批</td><td>16</td><td>0</td><td>none</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      Generated from structured monthly report JSON. Original links point to source WeChat articles.
+    </footer>
+  </main>
+</body>
+</html>
