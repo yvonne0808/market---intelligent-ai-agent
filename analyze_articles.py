@@ -84,6 +84,8 @@ def parse_args() -> argparse.Namespace:
     today = date.today()
     default_start = today - timedelta(days=7)
     parser = argparse.ArgumentParser(description="Analyze LLM-ready articles with DeepSeek.")
+    parser.add_argument("--input", default=str(INPUT_PATH), help="Input LLM-ready JSON file.")
+    parser.add_argument("--output", default=str(OUTPUT_PATH), help="Output analyzed JSON file.")
     parser.add_argument("--start", default=default_start.isoformat(), help="Start date YYYY-MM-DD")
     parser.add_argument("--end", default=today.isoformat(), help="End date YYYY-MM-DD")
     parser.add_argument("--include-ocr", action="store_true", help="Use llm_input_text_with_ocr")
@@ -271,9 +273,11 @@ def main() -> int:
 
     config = load_deepseek_config()
     system_prompt = load_prompt_with_context()
-    articles = load_json_list(INPUT_PATH)
+    input_path = Path(args.input)
+    output_path = Path(args.output)
+    articles = load_json_list(input_path)
     selected_articles = filter_articles(articles, start_date, end_date, args.limit)
-    analyzed = load_json_list(OUTPUT_PATH)
+    analyzed = load_json_list(output_path)
     analyzed_by_id = {
         str(item.get("article_id", "")): item
         for item in analyzed
@@ -283,6 +287,7 @@ def main() -> int:
     print("DeepSeek article analysis")
     print(f"- Date range: {start_date} to {end_date}")
     print(f"- Articles selected: {len(selected_articles)}")
+    print(f"- Input: {input_path}")
     print(f"- Include OCR: {args.include_ocr}")
     print(f"- Force re-analyze: {args.force}")
 
@@ -313,7 +318,7 @@ def main() -> int:
             analyzed_by_id[article_id] = analysis
             analyzed = list(analyzed_by_id.values())
             analyzed.sort(key=lambda item: item.get("published", ""), reverse=True)
-            save_json_list(OUTPUT_PATH, analyzed)
+            save_json_list(output_path, analyzed)
             processed += 1
             print(
                 f"  Saved. relevance={analysis['relevance_score']}, "
@@ -328,7 +333,7 @@ def main() -> int:
     print(f"- Processed: {processed}")
     print(f"- Skipped: {skipped}")
     print(f"- Failed: {failed}")
-    print(f"- Output: {OUTPUT_PATH}")
+    print(f"- Output: {output_path}")
     return 0 if failed == 0 else 1
 
 

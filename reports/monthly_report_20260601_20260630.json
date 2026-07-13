@@ -1,14 +1,56 @@
 {
   "start_date": "2026-06-01",
   "end_date": "2026-06-30",
-  "generated_at": "2026-07-07T09:21:38+08:00",
-  "article_count": 67,
+  "generated_at": "2026-07-13T16:19:51+08:00",
+  "article_count": 88,
   "weeks": [
     {
       "week": "Week 1",
       "start_date": "2026-06-01",
       "end_date": "2026-06-07",
       "articles": [
+        {
+          "article_id": "http://localhost:8001/feeds/87_klLzNd0zmtEiLv2PMsA",
+          "title": "CDE发布《关于开发适宜药品包装规格的指导原则》",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-01T09:52:02.000Z",
+          "link": "https://mp.weixin.qq.com/s/87_klLzNd0zmtEiLv2PMsA",
+          "include_in_weekly_report": true,
+          "relevance_score": 19,
+          "importance_level": "high",
+          "primary_category": "政策监管",
+          "secondary_categories": [
+            "包装相关"
+          ],
+          "summary_cn": "CDE发布指导原则，鼓励药品注册申请人开发适宜包装规格，以加强药品过度包装管理，自发布之日起施行。",
+          "key_points": [
+            "药审中心制定《关于开发适宜药品包装规格的指导原则》",
+            "旨在鼓励开发适宜包装规格，防止过度包装",
+            "经国家药监局审查同意，自发布之日起施行"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "该政策将引导药企在注册环节优化包装规格，减少过度包装，可能推动对标准化、高效包装材料的需求，利好包装企业提供合规解决方案。",
+          "amcor_relevance_score": 5,
+          "amcor_relevance_reason": "文章直接涉及药品包装规格的政策指导，属于包装相关法规，对包装企业的客户需求和产品设计有直接影响。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "药品包装规格",
+            "药包材",
+            "包装"
+          ],
+          "risks_or_uncertainties": [
+            "政策执行细节和具体标准尚未明确，可能影响行业短期内适应节奏"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "作为最新的药品包装指导原则，直接影响药企包装决策，对包装供应商的业务机会和合规要求具有指导意义。",
+          "one_sentence_takeaway": "CDE发布指导原则鼓励适宜包装规格，为包装企业带来政策导向下的业务机遇。",
+          "_analyzed_at": "2026-07-13T08:12:43.580911+00:00"
+        },
         {
           "article_id": "http://localhost:8001/feeds/uw16qTMkElFyaCPLrzyD1g",
           "title": "拜耳健康消费品中国创新合作中心落地山东；海思科与礼来签署授权与研发合作协议；云顶新耀达成独家授权许可协议 | 日报",
@@ -114,6 +156,49 @@
           "why_it_matters": "药明生物新加坡制剂厂封顶直接关联预充针和西林瓶产能，为包装企业带来明确商机；多个新药获批上市也持续创造包装需求，值得纳入周报。",
           "one_sentence_takeaway": "药明生物新加坡年产1亿支预充针和西林瓶的制剂厂封顶，是本周对包装企业最直接的信号。",
           "_analyzed_at": "2026-07-06T10:02:20.566890+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/tiYoZ3RjN9XKIUL51SdSeQ",
+          "title": "连载 | 协会团体标准《单剂量口服液体制剂用复合袋包装评价》编制背景及内容简介",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-05T09:08:33.000Z",
+          "link": "https://mp.weixin.qq.com/s/tiYoZ3RjN9XKIUL51SdSeQ",
+          "include_in_weekly_report": true,
+          "relevance_score": 15,
+          "importance_level": "medium",
+          "primary_category": "包装相关",
+          "secondary_categories": [],
+          "summary_cn": "本文介绍了中国医药包装协会团体标准《单剂量口服液体制剂用复合袋包装评价》的编制背景、思路及主要内容，该标准覆盖材料选择、设备选型、生产工艺及包装系统评价，旨在构建统一、科学的复合袋包装评价技术体系。",
+          "key_points": [
+            "标准由金石包装等12家单位起草，2024年启动，2025年通过审定。",
+            "核心评价维度包括保护性、安全性、相容性及功能性。",
+            "创新性引入“材-机-药”三方协作设计理念和基于风险的评价思路。",
+            "适用于口服液体制剂单剂量复合袋包装的全产业链技术覆盖。"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "该标准将提升口服液体制剂复合袋包装的质量控制水平，推动包装材料、设备及制药企业的协同发展，为相关包装企业提供明确的技术指引和市场规范。",
+          "amcor_relevance_score": 4,
+          "amcor_relevance_reason": "文章直接涉及单剂量口服液体制剂用复合袋包装的评价标准，与Amcor的液体条包、复合膜等包装业务高度相关，但未提及Amcor或其客户。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "单剂量口服液体制剂",
+            "复合袋",
+            "复合膜袋",
+            "包装评价",
+            "药包材",
+            "相容性",
+            "密封性"
+          ],
+          "risks_or_uncertainties": [],
+          "source_confidence": "high",
+          "why_it_matters": "该标准为口服液体制剂复合袋包装提供了统一的评价体系，对包装企业（如Amcor）在相关产品线的研发、生产和质量控制方面具有直接的指导意义。",
+          "one_sentence_takeaway": "中国医药包装协会发布的口服液体制剂复合袋包装评价标准，为行业提供了系统性的技术指引，值得关注。",
+          "_analyzed_at": "2026-07-13T08:08:54.189764+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/pFfHgMYARHEmsLJb5qC5Og",
@@ -548,15 +633,157 @@
           "why_it_matters": "展示中国Biotech在全球细胞疗法市场的成功与商业化能力，长期可能带来包装需求但本文未提及。",
           "one_sentence_takeaway": "传奇生物Carvykti销售额飙升，公司盈利在即，同时推进下一代CAR-T产品。",
           "_analyzed_at": "2026-07-06T10:01:11.144548+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/bL300gQi-SA_sVUCgO-bKg",
+          "title": "中国ADC\"惊艳\"ASCO，外资纷纷前来“扫货”？",
+          "source_name": "MedTrend医趋势",
+          "published": "2026-06-02T13:26:41.000Z",
+          "link": "https://mp.weixin.qq.com/s/bL300gQi-SA_sVUCgO-bKg",
+          "include_in_weekly_report": true,
+          "relevance_score": 16,
+          "importance_level": "high",
+          "primary_category": "临床进展",
+          "secondary_categories": [
+            "BD出海"
+          ],
+          "summary_cn": "中国ADC在ASCO大会表现亮眼，5款国产ADC首次公开临床数据，其中百利天恒、康宁杰瑞、思道医药的产品为全球首创。外资MNC通过BD交易在中国扫货ADC，平均首付款从5200万美元涨至1.72亿美元。",
+          "key_points": [
+            "ASCO大会ADC研究占比从6.5%升至11.2%，5款中国ADC首次公开临床数据。",
+            "百利天恒的iza-bren在食管鳞癌III期达到双阳性终点，死亡风险降36%。",
+            "康宁杰瑞JSKN016（TROP2×HER3双抗ADC）在HER2阴性乳腺癌I期ORR达64.5%。",
+            "思道医药DM002为全球首个MUC1×HER3双抗ADC，进入I期临床。",
+            "近五年顶级MNC与中国药企达成超20次ADC交易，平均首付款暴增230%。"
+          ],
+          "companies": [
+            "百利天恒",
+            "康宁杰瑞",
+            "思道医药",
+            "正大天晴",
+            "多玛医药",
+            "默沙东",
+            "武田",
+            "罗氏",
+            "辉瑞",
+            "科伦博泰",
+            "信达生物",
+            "宜联生物",
+            "多禧生物",
+            "映恩生物",
+            "复宏汉霖"
+          ],
+          "drugs": [
+            "iza-bren",
+            "JSKN016",
+            "DM002",
+            "TQB6411",
+            "DM005",
+            "芦康沙妥珠单抗",
+            "IBI343",
+            "IBI3001",
+            "维迪西妥单抗",
+            "HBM9033"
+          ],
+          "targets_or_mechanisms": [
+            "EGFR",
+            "HER3",
+            "TROP2",
+            "MUC1",
+            "c-Met",
+            "B7-H3",
+            "CLDN18.2"
+          ],
+          "indications": [
+            "食管鳞状细胞癌",
+            "复发或转移性食管鳞状细胞癌",
+            "EGFR突变型NSCLC",
+            "HER2阴性乳腺癌",
+            "晚期实体瘤"
+          ],
+          "clinical_or_regulatory_stage": "III期临床、I期临床",
+          "deal_amounts": [
+            "8亿美元首付款",
+            "12亿美元首付款",
+            "118亿美元交易总额",
+            "14亿美元首付款",
+            "7亿美元资金支持",
+            "5200万美元(2022年平均首付款)",
+            "1.72亿美元(2025年平均首付款)"
+          ],
+          "market_implication_cn": "国产ADC全球临床数据优异，推动中国创新药BD交易首付款大幅上涨，未来商业化放量将带动相关供应链需求，包括包装材料。",
+          "amcor_relevance_score": 0,
+          "amcor_relevance_reason": "文章未提及任何药品包装、剂型、产能、供应链或重点客户信息，与Amcor业务无直接关联。",
+          "packaging_relevance": "none",
+          "packaging_related_keywords": [],
+          "risks_or_uncertainties": [
+            "临床数据仍处于早期阶段，后续研发存在失败风险。",
+            "部分药物安全性数据中≥3级不良事件发生率较高，需关注毒性管理。",
+            "BD交易后续执行和商业化落地存在不确定性。"
+          ],
+          "source_confidence": "medium",
+          "why_it_matters": "中国ADC在ASCO的重磅数据展示出创新实力，外资BD扫货推高首付款，预示中国创新药进入兑现期，对包装企业而言，商业化后续可能带来需求，但当前阶段关联度较低。",
+          "one_sentence_takeaway": "中国ADC在ASCO惊艳亮相，外资BD扫货首付款暴涨，创新药兑现期到来。",
+          "_analyzed_at": "2026-07-13T08:11:34.146035+00:00"
         }
       ],
-      "article_count": 7
+      "article_count": 10
     },
     {
       "week": "Week 2",
       "start_date": "2026-06-08",
       "end_date": "2026-06-14",
       "articles": [
+        {
+          "article_id": "http://localhost:8001/feeds/rZeVw0yp2w3UmZoDP-4fTw",
+          "title": "ICH Q3E 来了！2027 落地倒计时，这场研讨会帮你提前卡位",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-12T06:21:29.000Z",
+          "link": "https://mp.weixin.qq.com/s/rZeVw0yp2w3UmZoDP-4fTw",
+          "include_in_weekly_report": true,
+          "relevance_score": 14,
+          "importance_level": "medium",
+          "primary_category": "政策监管",
+          "secondary_categories": [
+            "包装相关"
+          ],
+          "summary_cn": "中国医药包装协会将于2026年6月在镇江举办ICH Q3E研讨会，聚焦药包材可提取物与浸出物评估标准，该指南预计2027年落地，影响行业合规。",
+          "key_points": [
+            "ICH Q3E是全球首个统一药包材可提取物与浸出物评估的国际指南，预计2027年落地。",
+            "CDE已于2025年9月公开征求意见，留给行业的准备窗口不足一年。",
+            "研讨会邀请ICH Q3E中国专家组专家，解读政策与实践。"
+          ],
+          "companies": [
+            "Janssen",
+            "万益特",
+            "3M"
+          ],
+          "drugs": [
+            "EPREX"
+          ],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "监管政策",
+          "deal_amounts": [],
+          "market_implication_cn": "ICH Q3E落地将提高药包材可提取物与浸出物评估要求，可能增加药企与包装企业的合规成本和研发投入。",
+          "amcor_relevance_score": 5,
+          "amcor_relevance_reason": "文章直接涉及药包材可提取物与浸出物评估标准（ICH Q3E），与包装材料合规高度相关。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "可提取物",
+            "浸出物",
+            "药包材",
+            "相容性",
+            "包装材料"
+          ],
+          "risks_or_uncertainties": [
+            "ICH Q3E正式实施时间可能延迟",
+            "具体技术要求可能调整"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "ICH Q3E是影响药包材合规的关键法规，对包装企业的研发和质量控制有重要意义，提前了解可帮助卡位。",
+          "one_sentence_takeaway": "ICH Q3E即将落地，医药包装企业应关注研讨会以了解新标准要求。",
+          "_analyzed_at": "2026-07-13T08:02:48.147747+00:00"
+        },
         {
           "article_id": "http://localhost:8001/feeds/xDoyHXtGwM_kInUHgUwwYg",
           "title": "阿斯利康可能被迫在英国和欧洲停售新药；罗氏授权引进Nurix血液肿瘤候选药物；正大天晴全球研发总部上海落成启用 | 日报",
@@ -674,6 +901,90 @@
           "why_it_matters": "文章包含多项对中国医药市场有直接影响的新药获批、BD交易和商业化进展，尤其是荣昌生物预充式注射剂获批，直接关联药品包装需求，为包装企业提供明确商业机会。",
           "one_sentence_takeaway": "荣昌生物预充式注射剂获批及多项BD交易显示中国医药市场活跃，预充式包装需求上升。",
           "_analyzed_at": "2026-07-06T09:58:08.492310+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/rnLe0TQZwKGl8dxMHKcbdg",
+          "title": "ICH Q3E指导原则高端研讨会将于6月25日-26日在镇江召开",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-09T09:12:57.000Z",
+          "link": "https://mp.weixin.qq.com/s/rnLe0TQZwKGl8dxMHKcbdg",
+          "include_in_weekly_report": true,
+          "relevance_score": 14,
+          "importance_level": "medium",
+          "primary_category": "政策监管",
+          "secondary_categories": [
+            "包装相关"
+          ],
+          "summary_cn": "中国医药包装协会将于2026年6月25-26日在镇江举办ICH Q3E指导原则高端研讨会，聚焦药包材可提取物与浸出物（E&L）评估，推动国内药包材对标国际合规，助力产品出海。",
+          "key_points": [
+            "ICH Q3E是全球统一药包材E&L评估的关键指南，预计2027年正式实施。",
+            "研讨会将围绕相容性研究中的化学试验、未知物分析、E&L相关性等痛点进行分享。",
+            "会议旨在帮助会员企业打通国际注册技术关卡，支撑产品出海合规。"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "",
+          "amcor_relevance_score": 4,
+          "amcor_relevance_reason": "文章直接涉及药包材可提取物与浸出物（E&L）国际标准，对药品包装企业的合规与出口有直接指导意义，且来源为中国医药包装协会。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "药包材",
+            "可提取物",
+            "浸出物",
+            "相容性研究"
+          ],
+          "risks_or_uncertainties": [
+            "研讨会为行业交流，具体影响取决于后续指南落地实施情况。"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "ICH Q3E指导原则将影响国内药包材与药品相容性研究的全球化合规，对包装企业的出口业务有长远意义，值得关注其进展。",
+          "one_sentence_takeaway": "此次研讨会是药包材企业了解ICH Q3E国际标准、提升合规能力的重要机会。",
+          "_analyzed_at": "2026-07-13T08:05:58.761186+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/51l0AISu5grE7Yn2ncyP-A",
+          "title": "国家药典委2027年度国家药品标准制修订项目立项建议征集启动",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-08T09:34:22.000Z",
+          "link": "https://mp.weixin.qq.com/s/51l0AISu5grE7Yn2ncyP-A",
+          "include_in_weekly_report": true,
+          "relevance_score": 14,
+          "importance_level": "medium",
+          "primary_category": "政策监管",
+          "secondary_categories": [
+            "包装相关"
+          ],
+          "summary_cn": "国家药典委发布征集2027年度国家药品标准制修订项目立项建议的通知，涵盖药包材标准，中国医药包装协会转发并要求会员单位积极申报。",
+          "key_points": [
+            "国家药典委征集2027年度药品标准制修订立项建议，范围包括药包材标准。",
+            "征集对象涵盖药品上市许可持有人、生产企业、经营企业、使用单位、监管及检验机构、科研机构、社会团体和个人。",
+            "集中征集周期为通知发布之日起30日内。",
+            "协会要求会员单位严格遵照文件要求，组织申报工作。"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "政策通知",
+          "deal_amounts": [],
+          "market_implication_cn": "此次标准制修订立项征集可能影响未来药包材标准的修订方向，对包装企业的合规与技术要求具有潜在影响。",
+          "amcor_relevance_score": 4,
+          "amcor_relevance_reason": "文章直接涉及药包材标准的制修订立项征集，与药品包装材料行业密切相关，对安姆科的包装业务有直接政策影响。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "药包材",
+            "药品标准",
+            "标准制修订"
+          ],
+          "risks_or_uncertainties": [],
+          "source_confidence": "high",
+          "why_it_matters": "该文章提供了国家药典委在药包材标准方面的政策动向，药品包装企业应密切关注并积极参与标准制修订，以提前适应监管要求。",
+          "one_sentence_takeaway": "国家药典委征集药品标准立项建议，药包材纳入范围，包装企业需跟进并参与申报。",
+          "_analyzed_at": "2026-07-13T08:07:32.683970+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/EAe7xQTWlc5LOglrS3A5Jg",
@@ -853,6 +1164,106 @@
           "why_it_matters": "涉及多个中国创新药获批及商业化发货，为包装企业提供潜在订单需求信号。",
           "one_sentence_takeaway": "本周中国药企多项新药获批及商业化进展，值得关注其对药品包装的带动效应。",
           "_analyzed_at": "2026-07-06T09:56:04.043625+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/Zzx_9giP78euXcxrrIzttw",
+          "title": "专访阿斯利康中国林骁：超越减重，从单点治疗迈向共病管理",
+          "source_name": "MedTrend医趋势",
+          "published": "2026-06-09T07:01:54.000Z",
+          "link": "https://mp.weixin.qq.com/s/Zzx_9giP78euXcxrrIzttw",
+          "include_in_weekly_report": true,
+          "relevance_score": 14,
+          "importance_level": "medium",
+          "primary_category": "临床进展",
+          "secondary_categories": [
+            "药企动态"
+          ],
+          "summary_cn": "阿斯利康中国总经理林骁接受专访，讨论口服小分子GLP-1受体激动剂IIb期结果及全球III期计划，强调从单纯减重转向肥胖、糖尿病、心血管和肾脏疾病的共病管理，并依托阿斯利康在心血管肾脏及代谢领域的积累推动诊疗变革。",
+          "key_points": [
+            "阿斯利康在研口服小分子GLP-1受体激动剂公布两项IIb期研究结果，后续将启动全球III期临床。",
+            "林骁指出中国1.48亿糖尿病患者中超85%存在多病共存，强调共病管理需求。",
+            "阿斯利康计划未来10年在心血管、肾脏及代谢领域每年至少推出1款新产品或新适应症。",
+            "阿斯利康已支持1810余家医院建立国家标准化代谢性疾病管理中心（MMC），管理超350万患者。"
+          ],
+          "companies": [
+            "阿斯利康"
+          ],
+          "drugs": [
+            "口服小分子GLP-1受体激动剂"
+          ],
+          "targets_or_mechanisms": [
+            "GLP-1受体激动剂"
+          ],
+          "indications": [
+            "肥胖",
+            "2型糖尿病",
+            "心血管疾病",
+            "肾脏疾病"
+          ],
+          "clinical_or_regulatory_stage": "IIb期研究阶段，计划启动全球III期临床",
+          "deal_amounts": [],
+          "market_implication_cn": "文章未提供具体市场数据，但暗示口服GLP-1药物市场潜力大，未来可能带动口服制剂包装需求，且阿斯利康深耕中国慢病市场，商业化前景可期。",
+          "amcor_relevance_score": 3,
+          "amcor_relevance_reason": "文章明确提到重点客户阿斯利康中国的战略和产品进展，但未直接涉及包装、剂型、产能或供应链信息。",
+          "packaging_relevance": "low",
+          "packaging_related_keywords": [],
+          "risks_or_uncertainties": [
+            "药物仍处于临床研究阶段，尚未获批上市，存在研发失败或临床结果不达预期的风险。",
+            "未提及具体上市时间表，商业化进程不确定。"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "阿斯利康是重点客户，其GLP-1口服药进展可能带来未来包装需求，但当前阶段仅为临床中期，短期影响有限，可作为客户动态参考。",
+          "one_sentence_takeaway": "本文提供了阿斯利康在GLP-1口服药领域的临床进展和共病管理战略，对包装企业而言是客户动态参考，但缺少直接包装关联。",
+          "_analyzed_at": "2026-07-13T08:06:15.177178+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/bem3l7Vj2Ebq5XQJW0PLfQ",
+          "title": "协会标准｜《输液瓶及注射剂瓶用橡胶塞尺寸外观技术规范》解读",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-09T09:12:57.000Z",
+          "link": "https://mp.weixin.qq.com/s/bem3l7Vj2Ebq5XQJW0PLfQ",
+          "include_in_weekly_report": true,
+          "relevance_score": 12,
+          "importance_level": "medium",
+          "primary_category": "包装相关",
+          "secondary_categories": [
+            "政策监管",
+            "行业标准"
+          ],
+          "summary_cn": "中国医药包装协会发布《输液瓶及注射剂瓶用橡胶塞尺寸外观技术规范》团体标准解读，详细规定橡胶塞的结构尺寸、外观缺陷分类、检测方法和检验规则，旨在统一行业标准，保障药品包装密封性和安全性。",
+          "key_points": [
+            "标准适用于输液瓶、注射剂瓶及冷冻干燥用胶塞，规定了关键尺寸和公差",
+            "外观缺陷分为关键、主要、次要三类，关键缺陷涉及密封完整性和微生物污染风险",
+            "检测方法推荐自动化光学检测和游标卡尺测量，检验规则按GB/T 2828.1执行",
+            "该标准有助于提升胶塞产品质量一致性，减少供需质量纠纷"
+          ],
+          "companies": [
+            "江苏博生医用新材料股份有限公司"
+          ],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "该标准虽不直接涉及市场变化，但统一规范有利于提升行业整体胶塞质量，可能推动药包材企业升级检测设备，对橡胶塞供应商有直接影响。",
+          "amcor_relevance_score": 2,
+          "amcor_relevance_reason": "文章直接涉及药品包装组件（橡胶塞）的标准规范，属于药包材领域，但非Amcor核心产品（液体条包、泡罩等），仅具间接参考价值。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "输液瓶",
+            "注射剂瓶",
+            "橡胶塞",
+            "药包材",
+            "初级包装",
+            "密封性"
+          ],
+          "risks_or_uncertainties": [
+            "标准为团体标准，非强制，实施效果取决于企业自愿采用"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "文章为国内输液瓶及注射剂瓶用橡胶塞的首个团体标准解读，对药包材行业有规范指导作用，但缺乏商业动态和具体企业影响，故重要度中等。",
+          "one_sentence_takeaway": "中国医药包装协会发布橡胶塞尺寸外观技术规范，提升药包材质量一致性，对包装企业有标准参考意义。",
+          "_analyzed_at": "2026-07-13T08:05:49.472444+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/ARihXVsdREOwKd3X1zbVmg",
@@ -1343,7 +1754,7 @@
           "_analyzed_at": "2026-07-06T09:58:25.063641+00:00"
         }
       ],
-      "article_count": 9
+      "article_count": 14
     },
     {
       "week": "Week 3",
@@ -1432,6 +1843,57 @@
           "why_it_matters": "包含多个对中国医药包装企业有价值的信号：青松制药双室袋产能扩张直接利好包装供应商；诺和诺德扩大中国业务与口服药申请预示包装需求增长；复星安特金融资用于基地建设也间接关联包装采购。",
           "one_sentence_takeaway": "青松制药双室袋产能项目与诺和诺德口服药中国进展为包装企业带来明确机会，值得关注。",
           "_analyzed_at": "2026-07-06T09:45:36.334800+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/rMtD9gM8D1r21vyBUEakUg",
+          "title": "协会标准｜《滴眼剂包装系统设计和开发要求》团体标准解读",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-17T06:58:17.000Z",
+          "link": "https://mp.weixin.qq.com/s/rMtD9gM8D1r21vyBUEakUg",
+          "include_in_weekly_report": true,
+          "relevance_score": 15,
+          "importance_level": "medium",
+          "primary_category": "包装相关",
+          "secondary_categories": [
+            "政策监管"
+          ],
+          "summary_cn": "中国医药包装协会发布《滴眼剂包装系统设计和开发要求》团体标准解读，系统介绍了标准编制背景、分类方法、材料技术要求、生产过程控制、质量研究及实施建议，旨在填补滴眼剂包装系统技术规范空白。",
+          "key_points": [
+            "标准采用多要素分类法将滴眼剂包装系统分为四类，涵盖不同无菌方式、使用次数和特殊功能。",
+            "强调材料选择需与生产工艺和灭菌工艺相适应，如注吹、注拉吹、挤吹工艺及辐射/环氧乙烷灭菌。",
+            "要求对密封完整性、无菌保障、功能性等关键质量属性进行风险导向的控制与验证。",
+            "为药包材登记人和MAH提供系统化的研发与质量控制指南，促进关联审评审批落地。"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "该团体标准为滴眼剂包装行业提供了统一的技术规范，有望提升国内滴眼剂包装系统的整体质量水平，推动相关包装材料的标准化和规范化，可能影响滴眼剂包装供应商的研发方向和客户需求。",
+          "amcor_relevance_score": 4,
+          "amcor_relevance_reason": "文章直接围绕滴眼剂包装系统的设计和开发要求，涉及药包材、无菌保障、密封完整性、灭菌工艺等包装企业核心技术领域，对Amcor等包装企业的产品开发和质量控制具有直接参考价值。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "滴眼剂包装系统",
+            "药包材",
+            "密封完整性",
+            "无菌保障",
+            "BFS工艺",
+            "注吹工艺",
+            "注拉吹工艺",
+            "挤吹工艺",
+            "辐射灭菌",
+            "环氧乙烷灭菌"
+          ],
+          "risks_or_uncertainties": [
+            "团体标准为非强制性文件，实际执行力度和行业采纳程度有待观察；标准可能随时间更新，企业需持续跟进。",
+            "技术细节较多，包装企业需要投入资源进行适配和验证。"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "该标准是中国首个针对滴眼剂包装系统的系统性技术文件，对包装企业理解监管要求、优化产品设计、提升质量控制具有直接指导意义，是包装领域重要的行业动态。",
+          "one_sentence_takeaway": "滴眼剂包装系统团体标准的发布为包装企业提供了明确的技术规范和研发方向，值得密切关注。",
+          "_analyzed_at": "2026-07-13T07:59:20.074482+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/bqUk0Ef5P19FAy26Q3LhPw",
@@ -2234,13 +2696,58 @@
           "_analyzed_at": "2026-07-06T09:44:33.548929+00:00"
         }
       ],
-      "article_count": 13
+      "article_count": 14
     },
     {
       "week": "Week 4",
       "start_date": "2026-06-22",
       "end_date": "2026-06-28",
       "articles": [
+        {
+          "article_id": "http://localhost:8001/feeds/5i7t7VecsXOKm6qbaAVoEA",
+          "title": "2025年版《中国药典》药包材通用要求指导原则解析（上）",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-23T08:24:08.000Z",
+          "link": "https://mp.weixin.qq.com/s/5i7t7VecsXOKm6qbaAVoEA",
+          "include_in_weekly_report": true,
+          "relevance_score": 18,
+          "importance_level": "high",
+          "primary_category": "政策监管",
+          "secondary_categories": [
+            "包装相关"
+          ],
+          "summary_cn": "解析2025年版《中国药典》药包材通用要求指导原则，介绍标准体系改革、药品包装系统概念、适用性评价框架等，对药包材行业有重要指导意义。",
+          "key_points": [
+            "2025年版《中国药典》药包材标准体系从“一品一标准”转变为“1+4+58”结构",
+            "首次引入“药品包装系统”概念，与国际主流药典协调",
+            "适用性评价框架包括保护性、相容性、安全性和功能性四个方面",
+            "强调包装系统密封性等关键质量属性"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "政策发布",
+          "deal_amounts": [],
+          "market_implication_cn": "标准体系改革将推动药包材质量提升和监管规范化，为包装企业提供明确指导，可能影响药包材市场格局。",
+          "amcor_relevance_score": 5,
+          "amcor_relevance_reason": "文章直接涉及药包材、药品包装系统、密封性等包装相关关键词，且来自中国医药包装协会，对包装企业有直接指导意义。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "药包材",
+            "药品包装系统",
+            "密封性",
+            "相容性",
+            "保护性",
+            "安全性",
+            "功能性"
+          ],
+          "risks_or_uncertainties": [],
+          "source_confidence": "high",
+          "why_it_matters": "文章涉及药包材标准的最新变化，直接影响药品包装企业的质量管理和合规要求，值得关注。",
+          "one_sentence_takeaway": "2025年版药典药包材通用要求指导原则解析，对包装企业具有直接指导价值。",
+          "_analyzed_at": "2026-07-13T07:53:39.137045+00:00"
+        },
         {
           "article_id": "http://localhost:8001/feeds/DiZVtuZ6WdCPTk5RwTpVxg",
           "title": "跨国药企在中国 | 诺和诺德、安斯泰来、第一三共、诺华、因美纳、科利耳、百时美施贵宝、皮尔法伯、辉瑞、罗氏诊断、礼来等新动态",
@@ -2379,6 +2886,51 @@
           "_analyzed_at": "2026-07-06T09:34:52.545787+00:00"
         },
         {
+          "article_id": "http://localhost:8001/feeds/TJoSKazYyOMS8snXnK5kHQ",
+          "title": "药品注册管理共性问题|官方答疑精选（一）",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-22T08:37:49.000Z",
+          "link": "https://mp.weixin.qq.com/s/TJoSKazYyOMS8snXnK5kHQ",
+          "include_in_weekly_report": true,
+          "relevance_score": 15,
+          "importance_level": "medium",
+          "primary_category": "政策监管",
+          "secondary_categories": [
+            "包装相关"
+          ],
+          "summary_cn": "摘录山西省药监局药品注册管理共性问题官方答疑，涉及药品再注册时间、备案实施、原料药变更对制剂影响、包装装量变更分类、多项变更升级、有效期变更稳定性要求等，聚焦药品包材变更管理。",
+          "key_points": [
+            "药品再注册申请应在有效期届满前12至6个月提交。",
+            "中等变更备案后即可实施，无需等待公示。",
+            "原料药变更后，使用该原料药的制剂企业需验证对制剂质量的影响。",
+            "包装装量变更与药品规格变更是不同概念，化学药品的包装装量变更属于“变更包装材料和容器”项。",
+            "多项中等变更一般按技术要求较高的类别研究，考虑叠加影响。",
+            "变更有效期可接受非连续生产的三批样品，但需批间一致性。"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "",
+          "amcor_relevance_score": 4,
+          "amcor_relevance_reason": "文章直接涉及药品包材变更、包装装量变更、包装材料及容器等药包材相关管理问题，对包装企业理解政策有直接参考价值。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "药品包材变更",
+            "包装装量",
+            "包装材料",
+            "包装容器",
+            "包装规格"
+          ],
+          "risks_or_uncertainties": [],
+          "source_confidence": "high",
+          "why_it_matters": "该文为官方对药品注册中包装相关变更的权威解读，有助于包装企业掌握合规要点，降低变更风险。",
+          "one_sentence_takeaway": "本文提供了药品包装变更的官方答疑，对包装企业理解法规和合规操作有实用价值。",
+          "_analyzed_at": "2026-07-13T07:55:57.544174+00:00"
+        },
+        {
           "article_id": "http://localhost:8001/feeds/rY3u-Hdq6V1HqUyjXWNwQA",
           "title": "2 款进口新药在中国获批上市",
           "source_name": "丁香园 Insight 数据库",
@@ -2436,6 +2988,49 @@
           "why_it_matters": "两款进口新药获批，其中阿斯利康奥希替尼为重磅品种，新适应症扩展可能带来包装量增长，对包装企业有正面影响。",
           "one_sentence_takeaway": "阿斯利康奥希替尼和武田阿帕达酶α在华获批上市，前者为重磅产品商业化放量机会。",
           "_analyzed_at": "2026-07-06T09:39:17.699140+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/EXhI0PLoaeD3LqTqoigzbg",
+          "title": "药品注册管理共性问题|官方答疑精选（二）",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-25T08:14:48.000Z",
+          "link": "https://mp.weixin.qq.com/s/EXhI0PLoaeD3LqTqoigzbg",
+          "include_in_weekly_report": true,
+          "relevance_score": 14,
+          "importance_level": "medium",
+          "primary_category": "政策监管",
+          "secondary_categories": [
+            "包装相关"
+          ],
+          "summary_cn": "本文摘录了山西省药监局发布的药品注册管理“百问百答”中关于药包材变更、有效期延长、说明书标签微小变更等共性问题的官方答疑，为医药包装企业提供政策执行参考。",
+          "key_points": [
+            "同品种多包材产品需每种包材均进行稳定性研究以延长有效期。",
+            "已通过一致性评价品种延长有效期，若稳定性数据无显著差异，无需提供参比制剂数据。",
+            "药品说明书、标签微小变更（如行政信息、条形码等）可由企业自行修订并纳入年度报告，无需备案。",
+            "贮藏条件为30℃以下的产品需在30℃条件下进行长期稳定性试验。"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "",
+          "amcor_relevance_score": 3,
+          "amcor_relevance_reason": "文章直接涉及药品包材变更、稳定性研究要求及标签微小变更管理，与药品包装企业的注册合规工作相关。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "药包材变更",
+            "稳定性研究",
+            "包材种类",
+            "说明书标签",
+            "贮藏条件"
+          ],
+          "risks_or_uncertainties": [],
+          "source_confidence": "high",
+          "why_it_matters": "该文章提供官方对药包材变更和稳定性研究的具体要求，对包装企业理解法规、规避注册风险有直接参考价值。",
+          "one_sentence_takeaway": "为医药包装企业提供药包材变更、有效期延长及标签微变等注册管理共性的官方解答，有助于合规操作。",
+          "_analyzed_at": "2026-07-13T07:49:57.860814+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/UzUqY970vkzW9RXSfj2jjQ",
@@ -2566,6 +3161,52 @@
           "why_it_matters": "该文章报道了神基制药赴港IPO及其中枢神经系统药物商业化成功案例，涉及重磅品种、创新剂型和广泛终端网络，对医药包装企业具有市场机会参考价值。",
           "one_sentence_takeaway": "神基制药凭借UCB遗留资产和CGRP新药构建CNS商业化平台，其口服制剂和口溶膜剂型可能带来包装需求。",
           "_analyzed_at": "2026-07-06T09:24:17.976582+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/cjW30HGHVGKHVgQH567DSA",
+          "title": "浙江百代医药：左氧氟沙星雾化吸入溶液 新药申请获受理",
+          "source_name": "吸入制剂Co.Lab",
+          "published": "2026-06-24T09:20:12.000Z",
+          "link": "https://mp.weixin.qq.com/s/cjW30HGHVGKHVgQH567DSA",
+          "include_in_weekly_report": true,
+          "relevance_score": 15,
+          "importance_level": "medium",
+          "primary_category": "新药申报/获批",
+          "secondary_categories": [
+            "临床进展"
+          ],
+          "summary_cn": "浙江百代医药的左氧氟沙星雾化吸入溶液（CXHL2600752）获CDE受理，为2.4类改良型新药，企业专注于骨科、皮肤等领域的药品研发。",
+          "key_points": [
+            "左氧氟沙星雾化吸入溶液新药申请获受理",
+            "受理号CXHL2600752，2.4类化药",
+            "百代医药为国家高新技术企业，拥有B证和多个品种生产许可"
+          ],
+          "companies": [
+            "浙江百代医药科技有限公司"
+          ],
+          "drugs": [
+            "左氧氟沙星雾化吸入溶液"
+          ],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "IND申请获受理",
+          "deal_amounts": [],
+          "market_implication_cn": "",
+          "amcor_relevance_score": 3,
+          "amcor_relevance_reason": "雾化吸入溶液剂型属于特殊包装需求，可能涉及瓶装、吸入装置等，但文章未明确提及包装材料或供应商，仅剂型相关性中等。",
+          "packaging_relevance": "medium",
+          "packaging_related_keywords": [
+            "雾化吸入溶液",
+            "吸入制剂"
+          ],
+          "risks_or_uncertainties": [
+            "尚未获批，审评存在不确定性",
+            "左氧氟沙星已有多种剂型，雾化吸入剂市场接受度待观察"
+          ],
+          "source_confidence": "medium",
+          "why_it_matters": "该信息反映了国内药企在吸入制剂领域的布局，改良型新药受理可能带来新的包装需求，但信息量有限，需跟进后续进展。",
+          "one_sentence_takeaway": "百代医药左氧氟沙星雾化吸入溶液新药申请获受理，吸入剂型包装机会值得关注。",
+          "_analyzed_at": "2026-07-13T07:51:30.106094+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/VqQDfOlT36hOomYYoqcc-g",
@@ -2707,6 +3348,50 @@
           "why_it_matters": "该文章提供了外用中成药市场的销售数据和趋势，可帮助包装企业了解下游客户(如云南白药)的市场表现和剂型分布，间接判断包装需求方向。",
           "one_sentence_takeaway": "外用中成药市场稳定增长，云南白药等客户表现突出，贴膏剂剂型主导，为包装企业提供参考。",
           "_analyzed_at": "2026-07-06T09:40:10.804553+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/XOmbjGduulC4f32cePZ3Jg",
+          "title": "19亿美元！礼来再次与和誉医药达成研发合作",
+          "source_name": "MedTrend医趋势",
+          "published": "2026-06-25T11:32:14.000Z",
+          "link": "https://mp.weixin.qq.com/s/XOmbjGduulC4f32cePZ3Jg",
+          "include_in_weekly_report": true,
+          "relevance_score": 17,
+          "importance_level": "high",
+          "primary_category": "BD出海",
+          "secondary_categories": [
+            "融资并购"
+          ],
+          "summary_cn": "和誉医药与礼来签署19亿美元战略研究合作及授权协议，围绕多个疾病靶点开展创新药研发，和誉获得首付款及里程碑付款。",
+          "key_points": [
+            "和誉医药与礼来达成19亿美元战略研究合作",
+            "双方围绕多个疾病靶点开展新药发现与早期开发",
+            "和誉将获得首付款、里程碑付款及销售分成",
+            "礼来在中国创新药领域持续加码"
+          ],
+          "companies": [
+            "和誉医药",
+            "礼来"
+          ],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "早期发现",
+          "deal_amounts": [
+            "19亿美元"
+          ],
+          "market_implication_cn": "礼来持续扩大中国创新药合作，和誉获得资金支持，可能推动后续商业化，但早期项目不确定性高。",
+          "amcor_relevance_score": 3,
+          "amcor_relevance_reason": "涉及中国药企与跨国药企的大额BD合作，未来产品商业化可能带来包装需求，但文章未直接提及包装或剂型。",
+          "packaging_relevance": "low",
+          "packaging_related_keywords": [],
+          "risks_or_uncertainties": [
+            "合作处于早期发现阶段，尚无候选药物进入临床，存在研发失败风险"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "展现中国创新药企在全球BD中的竞争力，礼来重注中国创新，可能为后续产品商业化及包装供应链机会铺垫。",
+          "one_sentence_takeaway": "礼来与和誉医药19亿美元合作，凸显中国创新药BD出海趋势，值得跟踪后续商业化进展。",
+          "_analyzed_at": "2026-07-13T07:49:04.813627+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/OaR3XVRb5e7FHh-LfPjLfg",
@@ -3153,6 +3838,85 @@
           "_analyzed_at": "2026-07-06T09:37:35.594332+00:00"
         },
         {
+          "article_id": "http://localhost:8001/feeds/vkAn7ndE6BbTNusXDiOoBQ",
+          "title": "最赚钱药企来了！药明康德、恒瑞、云南白药、新和成…",
+          "source_name": "MedTrend医趋势",
+          "published": "2026-06-22T09:41:04.000Z",
+          "link": "https://mp.weixin.qq.com/s/vkAn7ndE6BbTNusXDiOoBQ",
+          "include_in_weekly_report": true,
+          "relevance_score": 14,
+          "importance_level": "medium",
+          "primary_category": "市场数据",
+          "secondary_categories": [
+            "商业化/供应链"
+          ],
+          "summary_cn": "文章汇总509家A股药企2026年Q1业绩，聚焦12家营收超百亿和5家利润超10亿的药企，分析创新药商业化及出海对业绩的驱动作用。",
+          "key_points": [
+            "药明康德、百济神州、复星医药新晋营收百亿俱乐部",
+            "百济神州净利润增长1801%，核心产品泽布替尼营收75.98亿元",
+            "恒瑞医药创新药收入占比61.69%，净利润22.82亿元",
+            "云南白药气血康口服液等产品超预期完成销售目标",
+            "华东医药创新产品收入同比增长61.8%"
+          ],
+          "companies": [
+            "药明康德",
+            "百济神州",
+            "复星医药",
+            "上海医药",
+            "白云山",
+            "云南白药",
+            "华东医药",
+            "迈瑞医疗",
+            "恒瑞医药",
+            "新和成",
+            "爱尔眼科",
+            "华润三九"
+          ],
+          "drugs": [
+            "百悦泽（泽布替尼）",
+            "百泽安（替雷利珠单抗）",
+            "地舒单抗注射液",
+            "贝伐珠单抗注射液",
+            "苹果酸司妥吉仑片（信妥安）",
+            "氨磺必利口崩片（奥思安）",
+            "气血康口服液",
+            "云南白药气雾剂",
+            "爱拉赫（FRα靶向ADC）",
+            "派舒宁（PARP抑制剂）",
+            "赛恺泽（CAR-T）"
+          ],
+          "targets_or_mechanisms": [
+            "FRα",
+            "PARP",
+            "CAR-T"
+          ],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [
+            "药明康德2026Q1营收124.36亿元",
+            "百济神州2026Q1营收105.44亿元",
+            "恒瑞医药2026Q1净利润22.82亿元",
+            "云南白药2026Q1经营性净现金流8.29亿元"
+          ],
+          "market_implication_cn": "头部药企创新药商业化加速和出海扩张，有望带动相关药品包装需求，尤其是口服液、气雾剂等剂型的包装材料需求增长。",
+          "amcor_relevance_score": 3,
+          "amcor_relevance_reason": "文中明确提及重点客户云南白药、华东医药（杭州中美华东制药）的财务表现和产品动态，并提到口服液、气雾剂等剂型，以及商业化放量、产能利用率等包装相关信号。",
+          "packaging_relevance": "low",
+          "packaging_related_keywords": [
+            "口服液",
+            "气雾剂",
+            "商业化放量",
+            "产能利用率"
+          ],
+          "risks_or_uncertainties": [
+            "药企业绩受市场竞争和原材料成本波动影响，华润三九、新和成出现增收不增利情况"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "文章提供了重点客户（云南白药、华东医药）的业绩和产品商业化进展，对了解客户需求和市场趋势有参考价值，但缺乏直接包装业务关联。",
+          "one_sentence_takeaway": "中国头部药企2026年Q1业绩显示创新药和出海驱动增长，口服液等剂型产品的商业化放量可能带来包装机会。",
+          "_analyzed_at": "2026-07-13T07:55:28.409095+00:00"
+        },
+        {
           "article_id": "http://localhost:8001/feeds/Sn86doLUVi-UN8GEUekBWg",
           "title": "【火热】华润双鹤拿下暴涨290%潜力新品",
           "source_name": "米内网",
@@ -3322,6 +4086,66 @@
           "_analyzed_at": "2026-07-06T09:39:07.992833+00:00"
         },
         {
+          "article_id": "http://localhost:8001/feeds/WHNlGQa0gWFgbrTENHV54g",
+          "title": "【瞩目】正大天晴“一日双喜”，13亿爆款收入囊中",
+          "source_name": "米内网",
+          "published": "2026-06-23T08:06:45.000Z",
+          "link": "https://mp.weixin.qq.com/s/WHNlGQa0gWFgbrTENHV54g",
+          "include_in_weekly_report": true,
+          "relevance_score": 17,
+          "importance_level": "high",
+          "primary_category": "新药申报/获批",
+          "secondary_categories": [
+            "市场数据",
+            "商业化/供应链"
+          ],
+          "summary_cn": "正大天晴同日获批恩扎卢胺软胶囊和阿帕他胺片，两药2025年销售额分别达13亿元和8.7亿元，均为前列腺癌治疗内分泌用药，公司已拥有6个该类产品。",
+          "key_points": [
+            "正大天晴获批恩扎卢胺软胶囊和阿帕他胺片，均为内分泌治疗用药",
+            "恩扎卢胺2025年销售额突破13亿元，阿帕他胺达8.7亿元",
+            "正大天晴在内分泌治疗用药市场已有6个产品获批",
+            "恩扎卢胺口服常释剂型被纳入第12批集采，公司获得竞标资格"
+          ],
+          "companies": [
+            "正大天晴药业集团股份有限公司",
+            "正大天晴南京顺欣制药"
+          ],
+          "drugs": [
+            "恩扎卢胺软胶囊",
+            "阿帕他胺片"
+          ],
+          "targets_or_mechanisms": [
+            "雄激素受体拮抗剂",
+            "雄激素受体抑制剂"
+          ],
+          "indications": [
+            "前列腺癌"
+          ],
+          "clinical_or_regulatory_stage": "获批上市",
+          "deal_amounts": [
+            "13亿元",
+            "8.7亿元",
+            "229亿元"
+          ],
+          "market_implication_cn": "国内内分泌治疗用药市场2025年规模达229亿元，正大天晴的获批将加剧市场竞争，同时恩扎卢胺进入集采可能影响价格和放量节奏。",
+          "amcor_relevance_score": 2,
+          "amcor_relevance_reason": "文章涉及重磅新药获批及销售数据，但未提及包装、剂型细节或任何重点客户，对包装企业的直接参考价值有限。",
+          "packaging_relevance": "low",
+          "packaging_related_keywords": [
+            "软胶囊",
+            "片剂",
+            "口服常释剂型"
+          ],
+          "risks_or_uncertainties": [
+            "恩扎卢胺口服常释剂型进入集采，若中标可能大幅降价，影响销售额",
+            "正大天晴为国产第9家和第7家获批企业，面临既有市场先发者的竞争"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "正大天晴作为重点药企，一日拿下两款销售额超8亿元的重磅产品，对内分泌治疗用药市场格局有显著影响，值得包装企业关注后续放量带来的包装需求。",
+          "one_sentence_takeaway": "正大天晴获批两款前列腺癌重磅药，合计年销售额超21亿元，市场潜力巨大，但集采风险并存。",
+          "_analyzed_at": "2026-07-13T07:54:07.487783+00:00"
+        },
+        {
           "article_id": "http://localhost:8001/feeds/Aw2ZaD-RcGg7wN6v3QTyPA",
           "title": "恒瑞无水环孢素滴眼液获批，打破兴齐眼药独家格局",
           "source_name": "新康界",
@@ -3434,6 +4258,45 @@
           "why_it_matters": "诺和诺德作为MNC代表，其在华供应链布局和产能投入对医药包装企业有间接参考价值，但缺乏直接包装需求信号。",
           "one_sentence_takeaway": "诺和诺德通过生态合作和产能投资深化中国市场，供应链伙伴面临机会，但包装相关度有限。",
           "_analyzed_at": "2026-07-06T09:28:06.089773+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/3QPuZc51zLd64mIF2WOLWg",
+          "title": "齐鲁制药：丙酸氟替卡松鼻喷雾剂获批上市",
+          "source_name": "吸入制剂Co.Lab",
+          "published": "2026-06-22T09:19:01.000Z",
+          "link": "https://mp.weixin.qq.com/s/3QPuZc51zLd64mIF2WOLWg",
+          "include_in_weekly_report": true,
+          "relevance_score": 16,
+          "importance_level": "high",
+          "primary_category": "新药申报/获批",
+          "secondary_categories": [],
+          "summary_cn": "齐鲁制药的丙酸氟替卡松鼻喷雾剂于2026年6月17日获批上市，该药为仿制药，用于治疗过敏性鼻炎等。",
+          "key_points": [
+            "齐鲁制药丙酸氟替卡松鼻喷雾剂获批上市",
+            "剂型为鼻喷雾剂"
+          ],
+          "companies": [
+            "齐鲁制药有限公司"
+          ],
+          "drugs": [
+            "丙酸氟替卡松鼻喷雾剂"
+          ],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "获批上市",
+          "deal_amounts": [],
+          "market_implication_cn": "",
+          "amcor_relevance_score": 2,
+          "amcor_relevance_reason": "文章报道的为新药获批上市，剂型为鼻喷雾剂，可能涉及包装需求但未明确提及包装材料或商业化信息，且齐鲁制药非重点客户。",
+          "packaging_relevance": "low",
+          "packaging_related_keywords": [
+            "鼻喷雾剂"
+          ],
+          "risks_or_uncertainties": [],
+          "source_confidence": "medium",
+          "why_it_matters": "该药获批上市表明国内药企在吸入/经鼻制剂领域的仿制药布局，可能增加市场竞争，但对包装企业直接启示有限。",
+          "one_sentence_takeaway": "齐鲁制药的丙酸氟替卡松鼻喷雾剂获批上市，属于新药获批，可进入周报但包装相关性弱。",
+          "_analyzed_at": "2026-07-13T07:55:39.780690+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/fuv69UuBM3iQQwuW1a-oeA",
@@ -3931,7 +4794,7 @@
           "_analyzed_at": "2026-07-06T09:23:42.979030+00:00"
         }
       ],
-      "article_count": 26
+      "article_count": 34
     },
     {
       "week": "Week 5",
@@ -4090,6 +4953,48 @@
           "_analyzed_at": "2026-07-06T09:22:27.920058+00:00"
         },
         {
+          "article_id": "http://localhost:8001/feeds/nyxp4fDS-W7FdY0V38jKeA",
+          "title": "云南省审评中心发布《已上市化学药品变更包装材料和容器药学研究资料撰写指南（试行）》",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-29T08:56:22.000Z",
+          "link": "https://mp.weixin.qq.com/s/nyxp4fDS-W7FdY0V38jKeA",
+          "include_in_weekly_report": true,
+          "relevance_score": 16,
+          "importance_level": "medium",
+          "primary_category": "政策监管",
+          "secondary_categories": [
+            "包装相关"
+          ],
+          "summary_cn": "云南省审评中心发布《已上市化学药品变更包装材料和容器药学研究资料撰写指南（试行）》，为药品包装材料变更提供规范指导。",
+          "key_points": [
+            "云南省审评中心发布该指南，规范已上市化学药品变更包装材料和容器的药学研究资料撰写。",
+            "指南旨在提高变更申报质量，促进药品包装合规。",
+            "对药品包装企业具有重要参考价值，影响包装变更流程。"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "该指南为药品包装变更提供明确规范，可能推动包装材料合规性提升，利于包装企业针对性改进产品与服务。",
+          "amcor_relevance_score": 5,
+          "amcor_relevance_reason": "文章直接涉及药品包装材料和容器变更的药学研究资料撰写指南，与包装业务高度相关。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "变更包装材料",
+            "药包材",
+            "药品包装"
+          ],
+          "risks_or_uncertainties": [
+            "指南为试行版本，后续可能调整；实际执行中企业需适应新要求。"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "该指南直接规范药品包装变更流程，对包装企业理解监管要求、合规开展业务具有重要指导意义。",
+          "one_sentence_takeaway": "云南省发布药品包装变更指南，包装企业需关注合规要求变化。",
+          "_analyzed_at": "2026-07-13T07:45:38.539034+00:00"
+        },
+        {
           "article_id": "http://localhost:8001/feeds/tMPaOMkIeEEmnrFWjsNJFA",
           "title": "【火热】中药龙头出手了，3.6亿加码黄金赛道",
           "source_name": "米内网",
@@ -4144,6 +5049,57 @@
           "why_it_matters": "文章涉及重点客户云南白药的大额产能投资和商业化数据，透皮制剂剂型与包装材料高度相关，对关注中国医药包装市场的企业具有重要参考价值。",
           "one_sentence_takeaway": "云南白药3.6亿加码透皮制剂产能，核心产品销售额持续增长，为相关包装材料带来明确机会。",
           "_analyzed_at": "2026-07-06T09:17:56.483192+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/CmeNj-AWPCQGneY9keDkHg",
+          "title": "2025年版《中国药典》药包材通用要求指导原则解析（下）",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-30T06:20:43.000Z",
+          "link": "https://mp.weixin.qq.com/s/CmeNj-AWPCQGneY9keDkHg",
+          "include_in_weekly_report": true,
+          "relevance_score": 16,
+          "importance_level": "high",
+          "primary_category": "包装相关",
+          "secondary_categories": [
+            "政策监管"
+          ],
+          "summary_cn": "文章解析了2025年版《中国药典》药包材通用要求指导原则（指导原则9621），系统介绍了自身稳定性评价、全生命周期管理与风险管理理念、药包材质量控制（物理特性、化学特性、外源污染物）以及检验规则的动态优化。此次修订与国际接轨，强化了企业主体责任，推动药包材行业标准升级。",
+          "key_points": [
+            "2025年版《中国药典》指导原则9621引入药包材全生命周期管理和风险管理理念",
+            "明确了药包材自身稳定性评价要求，涵盖塑料、橡胶等高分子材料",
+            "质量控制需关注物理特性、化学特性和外源污染物三类关键质量属性",
+            "检验规则由强制规定改为基于风险管理和统计学工具的动态优化",
+            "该原则与药品关联审评审批制度相适应，强化企业主体责任"
+          ],
+          "companies": [],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "新标准将推动药包材企业加强自身稳定性研究和全生命周期质量控制，可能促使行业技术升级和监管效率提升，但具体市场影响需视执行细则而定。",
+          "amcor_relevance_score": 4,
+          "amcor_relevance_reason": "文章直接讨论药包材通用要求指导原则，涉及包装材料质量控制、稳定性评价等，与Amcor的药品包装业务高度相关，但未出现Amcor具体客户或产品。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "药包材",
+            "全生命周期管理",
+            "风险管理",
+            "自身稳定性",
+            "质量控制",
+            "保护性",
+            "相容性",
+            "安全性",
+            "功能性",
+            "检验规则"
+          ],
+          "risks_or_uncertainties": [
+            "实施细节和执行力度尚不明确，可能影响企业适应速度"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "该指导原则是2025年版《中国药典》的重要组成部分，直接规范药包材的设计、生产、质控全流程，对医药包装企业的合规、研发和质量管理具有战略指导意义。",
+          "one_sentence_takeaway": "2025版药典药包材指导原则系统性升级，全生命周期管理和风险管理成为核心，直接影响药包材企业的质量管控体系。",
+          "_analyzed_at": "2026-07-13T07:43:52.538445+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/oxbYcRdH1MVG-IOONugoeQ",
@@ -4239,6 +5195,107 @@
           "why_it_matters": "文章汇总了多家跨国药企在中国的重要商业动态和多项新药获批，对中国医药行业竞争格局和商业化趋势有较强指示意义，且涉及多个Amcor客户，值得关注。",
           "one_sentence_takeaway": "本周多项跨国药企新药在华获批及产能投资，持续推动中国医药市场创新和商业化，对包装企业带来潜在机会。",
           "_analyzed_at": "2026-07-06T09:21:36.243211+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/j7JU29uMV1MyLMu7zBhHzg",
+          "title": "转发|160年德国技术握手40年中国速度 ，全球顶级工厂深融本土药包材产业——双峰格雷斯海姆医药包装（镇江）有限公司合资20周年纪实",
+          "source_name": "中国医药包装协会",
+          "published": "2026-06-30T06:20:43.000Z",
+          "link": "https://mp.weixin.qq.com/s/j7JU29uMV1MyLMu7zBhHzg",
+          "include_in_weekly_report": true,
+          "relevance_score": 14,
+          "importance_level": "medium",
+          "primary_category": "包装相关",
+          "secondary_categories": [
+            "商业化/供应链"
+          ],
+          "summary_cn": "双峰格雷斯海姆医药包装（镇江）有限公司合资20周年，其大港工厂（110亩）即将投产，定位全球顶级工厂，产能升级并拓展海外市场。",
+          "key_points": [
+            "双峰格雷斯海姆合资20周年",
+            "大港工厂占地110亩，即将投产",
+            "定位格雷斯海姆集团全球顶级工厂",
+            "采用绿色生产技术，计划获LEED金奖"
+          ],
+          "companies": [
+            "双峰格雷斯海姆医药包装（镇江）有限公司",
+            "格雷斯海姆集团"
+          ],
+          "drugs": [],
+          "targets_or_mechanisms": [],
+          "indications": [],
+          "clinical_or_regulatory_stage": "",
+          "deal_amounts": [],
+          "market_implication_cn": "药包材产能扩张可能提升国内供应能力，但具体市场影响不明。",
+          "amcor_relevance_score": 3,
+          "amcor_relevance_reason": "文章涉及药包材企业产能扩张，与包装行业相关，但未直接提及Amcor或重点客户/产品。",
+          "packaging_relevance": "high",
+          "packaging_related_keywords": [
+            "医药包装",
+            "药包材",
+            "工厂",
+            "产能"
+          ],
+          "risks_or_uncertainties": [],
+          "source_confidence": "high",
+          "why_it_matters": "药包材头部企业扩产反映行业趋势，对包装企业有参考价值，但非直接竞争或客户动态。",
+          "one_sentence_takeaway": "药包材企业产能扩张，作为行业动态可供参考。",
+          "_analyzed_at": "2026-07-13T07:44:11.192639+00:00"
+        },
+        {
+          "article_id": "http://localhost:8001/feeds/-11PxJNdrDwUA2r8Bw05UA",
+          "title": "专访周虹：后GLP-1时代，诺和诺德如何设计下一个十年？",
+          "source_name": "MedTrend医趋势",
+          "published": "2026-06-30T09:09:38.000Z",
+          "link": "https://mp.weixin.qq.com/s/-11PxJNdrDwUA2r8Bw05UA",
+          "include_in_weekly_report": true,
+          "relevance_score": 16,
+          "importance_level": "high",
+          "primary_category": "商业化/供应链",
+          "secondary_categories": [
+            "BD出海",
+            "市场数据"
+          ],
+          "summary_cn": "诺和诺德全球管理团队访华，宣布天津生产基地追加数亿投资、新产品上市及数字化服务平台开放。专访产品与产品组合战略全球执行副总裁周虹，探讨后GLP-1时代的产品组合战略、中国市场地位及与中国企业的合作平台构建。",
+          "key_points": [
+            "诺和诺德全球管理团队首次集体访华，天津生产基地追加数亿投资。",
+            "推出新产品及数字化患者服务平台。",
+            "周虹负责产品组合战略，强调未来竞争在于产品组合而非单一爆款。",
+            "司美格鲁肽2025年全球销售额约361亿美元，2026年Q1仍强劲增长。",
+            "诺和诺德将更积极与中国企业构建合作平台，推动创新全球化。"
+          ],
+          "companies": [
+            "诺和诺德"
+          ],
+          "drugs": [
+            "司美格鲁肽",
+            "Ozempic",
+            "Wegovy"
+          ],
+          "targets_or_mechanisms": [
+            "GLP-1"
+          ],
+          "indications": [
+            "肥胖症"
+          ],
+          "clinical_or_regulatory_stage": "已上市",
+          "deal_amounts": [
+            "361亿美元（司美格鲁肽2025年全球销售额）",
+            "490亿丹麦克朗（2026年Q1 Ozempic/Wegovy合计销售额）",
+            "170亿元（诺和诺德在华累计投资）",
+            "数亿（天津生产基地追加投资）"
+          ],
+          "market_implication_cn": "诺和诺德在华追加投资及新产品上市，可能增加药品包装需求；但未明确包装形式或剂型，需后续关注。",
+          "amcor_relevance_score": 3,
+          "amcor_relevance_reason": "文中明确提到重点客户诺和诺德（诺和诺德）在华追加投资、新产品上市及商业化进展，可能间接带来包装材料需求，但未直接涉及包装、剂型或供应链细节。",
+          "packaging_relevance": "medium",
+          "packaging_related_keywords": [],
+          "risks_or_uncertainties": [
+            "GLP-1市场竞争加剧可能影响诺和诺德产品组合战略；未明确新产品具体剂型及包装需求变化。"
+          ],
+          "source_confidence": "high",
+          "why_it_matters": "诺和诺德作为全球制药巨头，在华追加生产基地投资和新产品上市，对关注中国医药行业和包装供应链的企业具有重要参考价值。",
+          "one_sentence_takeaway": "诺和诺德全球管理层访华并追加天津投资，凸显中国在创新合作与商业化布局中的战略地位，可能带来包装相关机会。",
+          "_analyzed_at": "2026-07-13T07:43:13.620301+00:00"
         },
         {
           "article_id": "http://localhost:8001/feeds/pI5mRx61_rfVncUv3RANWw",
@@ -4747,10 +5804,97 @@
           "_analyzed_at": "2026-07-06T09:19:51.343752+00:00"
         }
       ],
-      "article_count": 12
+      "article_count": 16
     }
   ],
   "articles": [
+    {
+      "article_id": "http://localhost:8001/feeds/87_klLzNd0zmtEiLv2PMsA",
+      "title": "CDE发布《关于开发适宜药品包装规格的指导原则》",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-01T09:52:02.000Z",
+      "link": "https://mp.weixin.qq.com/s/87_klLzNd0zmtEiLv2PMsA",
+      "include_in_weekly_report": true,
+      "relevance_score": 19,
+      "importance_level": "high",
+      "primary_category": "政策监管",
+      "secondary_categories": [
+        "包装相关"
+      ],
+      "summary_cn": "CDE发布指导原则，鼓励药品注册申请人开发适宜包装规格，以加强药品过度包装管理，自发布之日起施行。",
+      "key_points": [
+        "药审中心制定《关于开发适宜药品包装规格的指导原则》",
+        "旨在鼓励开发适宜包装规格，防止过度包装",
+        "经国家药监局审查同意，自发布之日起施行"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "该政策将引导药企在注册环节优化包装规格，减少过度包装，可能推动对标准化、高效包装材料的需求，利好包装企业提供合规解决方案。",
+      "amcor_relevance_score": 5,
+      "amcor_relevance_reason": "文章直接涉及药品包装规格的政策指导，属于包装相关法规，对包装企业的客户需求和产品设计有直接影响。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "药品包装规格",
+        "药包材",
+        "包装"
+      ],
+      "risks_or_uncertainties": [
+        "政策执行细节和具体标准尚未明确，可能影响行业短期内适应节奏"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "作为最新的药品包装指导原则，直接影响药企包装决策，对包装供应商的业务机会和合规要求具有指导意义。",
+      "one_sentence_takeaway": "CDE发布指导原则鼓励适宜包装规格，为包装企业带来政策导向下的业务机遇。",
+      "_analyzed_at": "2026-07-13T08:12:43.580911+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/5i7t7VecsXOKm6qbaAVoEA",
+      "title": "2025年版《中国药典》药包材通用要求指导原则解析（上）",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-23T08:24:08.000Z",
+      "link": "https://mp.weixin.qq.com/s/5i7t7VecsXOKm6qbaAVoEA",
+      "include_in_weekly_report": true,
+      "relevance_score": 18,
+      "importance_level": "high",
+      "primary_category": "政策监管",
+      "secondary_categories": [
+        "包装相关"
+      ],
+      "summary_cn": "解析2025年版《中国药典》药包材通用要求指导原则，介绍标准体系改革、药品包装系统概念、适用性评价框架等，对药包材行业有重要指导意义。",
+      "key_points": [
+        "2025年版《中国药典》药包材标准体系从“一品一标准”转变为“1+4+58”结构",
+        "首次引入“药品包装系统”概念，与国际主流药典协调",
+        "适用性评价框架包括保护性、相容性、安全性和功能性四个方面",
+        "强调包装系统密封性等关键质量属性"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "政策发布",
+      "deal_amounts": [],
+      "market_implication_cn": "标准体系改革将推动药包材质量提升和监管规范化，为包装企业提供明确指导，可能影响药包材市场格局。",
+      "amcor_relevance_score": 5,
+      "amcor_relevance_reason": "文章直接涉及药包材、药品包装系统、密封性等包装相关关键词，且来自中国医药包装协会，对包装企业有直接指导意义。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "药包材",
+        "药品包装系统",
+        "密封性",
+        "相容性",
+        "保护性",
+        "安全性",
+        "功能性"
+      ],
+      "risks_or_uncertainties": [],
+      "source_confidence": "high",
+      "why_it_matters": "文章涉及药包材标准的最新变化，直接影响药品包装企业的质量管理和合规要求，值得关注。",
+      "one_sentence_takeaway": "2025年版药典药包材通用要求指导原则解析，对包装企业具有直接指导价值。",
+      "_analyzed_at": "2026-07-13T07:53:39.137045+00:00"
+    },
     {
       "article_id": "http://localhost:8001/feeds/DiZVtuZ6WdCPTk5RwTpVxg",
       "title": "跨国药企在中国 | 诺和诺德、安斯泰来、第一三共、诺华、因美纳、科利耳、百时美施贵宝、皮尔法伯、辉瑞、罗氏诊断、礼来等新动态",
@@ -5090,6 +6234,99 @@
       "_analyzed_at": "2026-07-06T10:02:20.566890+00:00"
     },
     {
+      "article_id": "http://localhost:8001/feeds/nyxp4fDS-W7FdY0V38jKeA",
+      "title": "云南省审评中心发布《已上市化学药品变更包装材料和容器药学研究资料撰写指南（试行）》",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-29T08:56:22.000Z",
+      "link": "https://mp.weixin.qq.com/s/nyxp4fDS-W7FdY0V38jKeA",
+      "include_in_weekly_report": true,
+      "relevance_score": 16,
+      "importance_level": "medium",
+      "primary_category": "政策监管",
+      "secondary_categories": [
+        "包装相关"
+      ],
+      "summary_cn": "云南省审评中心发布《已上市化学药品变更包装材料和容器药学研究资料撰写指南（试行）》，为药品包装材料变更提供规范指导。",
+      "key_points": [
+        "云南省审评中心发布该指南，规范已上市化学药品变更包装材料和容器的药学研究资料撰写。",
+        "指南旨在提高变更申报质量，促进药品包装合规。",
+        "对药品包装企业具有重要参考价值，影响包装变更流程。"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "该指南为药品包装变更提供明确规范，可能推动包装材料合规性提升，利于包装企业针对性改进产品与服务。",
+      "amcor_relevance_score": 5,
+      "amcor_relevance_reason": "文章直接涉及药品包装材料和容器变更的药学研究资料撰写指南，与包装业务高度相关。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "变更包装材料",
+        "药包材",
+        "药品包装"
+      ],
+      "risks_or_uncertainties": [
+        "指南为试行版本，后续可能调整；实际执行中企业需适应新要求。"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "该指南直接规范药品包装变更流程，对包装企业理解监管要求、合规开展业务具有重要指导意义。",
+      "one_sentence_takeaway": "云南省发布药品包装变更指南，包装企业需关注合规要求变化。",
+      "_analyzed_at": "2026-07-13T07:45:38.539034+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/rZeVw0yp2w3UmZoDP-4fTw",
+      "title": "ICH Q3E 来了！2027 落地倒计时，这场研讨会帮你提前卡位",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-12T06:21:29.000Z",
+      "link": "https://mp.weixin.qq.com/s/rZeVw0yp2w3UmZoDP-4fTw",
+      "include_in_weekly_report": true,
+      "relevance_score": 14,
+      "importance_level": "medium",
+      "primary_category": "政策监管",
+      "secondary_categories": [
+        "包装相关"
+      ],
+      "summary_cn": "中国医药包装协会将于2026年6月在镇江举办ICH Q3E研讨会，聚焦药包材可提取物与浸出物评估标准，该指南预计2027年落地，影响行业合规。",
+      "key_points": [
+        "ICH Q3E是全球首个统一药包材可提取物与浸出物评估的国际指南，预计2027年落地。",
+        "CDE已于2025年9月公开征求意见，留给行业的准备窗口不足一年。",
+        "研讨会邀请ICH Q3E中国专家组专家，解读政策与实践。"
+      ],
+      "companies": [
+        "Janssen",
+        "万益特",
+        "3M"
+      ],
+      "drugs": [
+        "EPREX"
+      ],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "监管政策",
+      "deal_amounts": [],
+      "market_implication_cn": "ICH Q3E落地将提高药包材可提取物与浸出物评估要求，可能增加药企与包装企业的合规成本和研发投入。",
+      "amcor_relevance_score": 5,
+      "amcor_relevance_reason": "文章直接涉及药包材可提取物与浸出物评估标准（ICH Q3E），与包装材料合规高度相关。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "可提取物",
+        "浸出物",
+        "药包材",
+        "相容性",
+        "包装材料"
+      ],
+      "risks_or_uncertainties": [
+        "ICH Q3E正式实施时间可能延迟",
+        "具体技术要求可能调整"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "ICH Q3E是影响药包材合规的关键法规，对包装企业的研发和质量控制有重要意义，提前了解可帮助卡位。",
+      "one_sentence_takeaway": "ICH Q3E即将落地，医药包装企业应关注研讨会以了解新标准要求。",
+      "_analyzed_at": "2026-07-13T08:02:48.147747+00:00"
+    },
+    {
       "article_id": "http://localhost:8001/feeds/9UDd4bZkH6FaAiEbdGBCSg",
       "title": "【关注】扬子江拿下3亿注射剂",
       "source_name": "米内网",
@@ -5320,6 +6557,57 @@
       "_analyzed_at": "2026-07-06T09:58:08.492310+00:00"
     },
     {
+      "article_id": "http://localhost:8001/feeds/CmeNj-AWPCQGneY9keDkHg",
+      "title": "2025年版《中国药典》药包材通用要求指导原则解析（下）",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-30T06:20:43.000Z",
+      "link": "https://mp.weixin.qq.com/s/CmeNj-AWPCQGneY9keDkHg",
+      "include_in_weekly_report": true,
+      "relevance_score": 16,
+      "importance_level": "high",
+      "primary_category": "包装相关",
+      "secondary_categories": [
+        "政策监管"
+      ],
+      "summary_cn": "文章解析了2025年版《中国药典》药包材通用要求指导原则（指导原则9621），系统介绍了自身稳定性评价、全生命周期管理与风险管理理念、药包材质量控制（物理特性、化学特性、外源污染物）以及检验规则的动态优化。此次修订与国际接轨，强化了企业主体责任，推动药包材行业标准升级。",
+      "key_points": [
+        "2025年版《中国药典》指导原则9621引入药包材全生命周期管理和风险管理理念",
+        "明确了药包材自身稳定性评价要求，涵盖塑料、橡胶等高分子材料",
+        "质量控制需关注物理特性、化学特性和外源污染物三类关键质量属性",
+        "检验规则由强制规定改为基于风险管理和统计学工具的动态优化",
+        "该原则与药品关联审评审批制度相适应，强化企业主体责任"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "新标准将推动药包材企业加强自身稳定性研究和全生命周期质量控制，可能促使行业技术升级和监管效率提升，但具体市场影响需视执行细则而定。",
+      "amcor_relevance_score": 4,
+      "amcor_relevance_reason": "文章直接讨论药包材通用要求指导原则，涉及包装材料质量控制、稳定性评价等，与Amcor的药品包装业务高度相关，但未出现Amcor具体客户或产品。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "药包材",
+        "全生命周期管理",
+        "风险管理",
+        "自身稳定性",
+        "质量控制",
+        "保护性",
+        "相容性",
+        "安全性",
+        "功能性",
+        "检验规则"
+      ],
+      "risks_or_uncertainties": [
+        "实施细节和执行力度尚不明确，可能影响企业适应速度"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "该指导原则是2025年版《中国药典》的重要组成部分，直接规范药包材的设计、生产、质控全流程，对医药包装企业的合规、研发和质量管理具有战略指导意义。",
+      "one_sentence_takeaway": "2025版药典药包材指导原则系统性升级，全生命周期管理和风险管理成为核心，直接影响药包材企业的质量管控体系。",
+      "_analyzed_at": "2026-07-13T07:43:52.538445+00:00"
+    },
+    {
       "article_id": "http://localhost:8001/feeds/D80c0pZ3H_b4bmykr_JmXQ",
       "title": "渤健将以最高10亿美元收购RayThera；诺和诺德未来会增加在中国的BD交易；派林生物控制权转让事项终止 | 日报",
       "source_name": "医药健闻",
@@ -5401,6 +6689,229 @@
       "why_it_matters": "包含多个对中国医药包装企业有价值的信号：青松制药双室袋产能扩张直接利好包装供应商；诺和诺德扩大中国业务与口服药申请预示包装需求增长；复星安特金融资用于基地建设也间接关联包装采购。",
       "one_sentence_takeaway": "青松制药双室袋产能项目与诺和诺德口服药中国进展为包装企业带来明确机会，值得关注。",
       "_analyzed_at": "2026-07-06T09:45:36.334800+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/TJoSKazYyOMS8snXnK5kHQ",
+      "title": "药品注册管理共性问题|官方答疑精选（一）",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-22T08:37:49.000Z",
+      "link": "https://mp.weixin.qq.com/s/TJoSKazYyOMS8snXnK5kHQ",
+      "include_in_weekly_report": true,
+      "relevance_score": 15,
+      "importance_level": "medium",
+      "primary_category": "政策监管",
+      "secondary_categories": [
+        "包装相关"
+      ],
+      "summary_cn": "摘录山西省药监局药品注册管理共性问题官方答疑，涉及药品再注册时间、备案实施、原料药变更对制剂影响、包装装量变更分类、多项变更升级、有效期变更稳定性要求等，聚焦药品包材变更管理。",
+      "key_points": [
+        "药品再注册申请应在有效期届满前12至6个月提交。",
+        "中等变更备案后即可实施，无需等待公示。",
+        "原料药变更后，使用该原料药的制剂企业需验证对制剂质量的影响。",
+        "包装装量变更与药品规格变更是不同概念，化学药品的包装装量变更属于“变更包装材料和容器”项。",
+        "多项中等变更一般按技术要求较高的类别研究，考虑叠加影响。",
+        "变更有效期可接受非连续生产的三批样品，但需批间一致性。"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "",
+      "amcor_relevance_score": 4,
+      "amcor_relevance_reason": "文章直接涉及药品包材变更、包装装量变更、包装材料及容器等药包材相关管理问题，对包装企业理解政策有直接参考价值。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "药品包材变更",
+        "包装装量",
+        "包装材料",
+        "包装容器",
+        "包装规格"
+      ],
+      "risks_or_uncertainties": [],
+      "source_confidence": "high",
+      "why_it_matters": "该文为官方对药品注册中包装相关变更的权威解读，有助于包装企业掌握合规要点，降低变更风险。",
+      "one_sentence_takeaway": "本文提供了药品包装变更的官方答疑，对包装企业理解法规和合规操作有实用价值。",
+      "_analyzed_at": "2026-07-13T07:55:57.544174+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/rMtD9gM8D1r21vyBUEakUg",
+      "title": "协会标准｜《滴眼剂包装系统设计和开发要求》团体标准解读",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-17T06:58:17.000Z",
+      "link": "https://mp.weixin.qq.com/s/rMtD9gM8D1r21vyBUEakUg",
+      "include_in_weekly_report": true,
+      "relevance_score": 15,
+      "importance_level": "medium",
+      "primary_category": "包装相关",
+      "secondary_categories": [
+        "政策监管"
+      ],
+      "summary_cn": "中国医药包装协会发布《滴眼剂包装系统设计和开发要求》团体标准解读，系统介绍了标准编制背景、分类方法、材料技术要求、生产过程控制、质量研究及实施建议，旨在填补滴眼剂包装系统技术规范空白。",
+      "key_points": [
+        "标准采用多要素分类法将滴眼剂包装系统分为四类，涵盖不同无菌方式、使用次数和特殊功能。",
+        "强调材料选择需与生产工艺和灭菌工艺相适应，如注吹、注拉吹、挤吹工艺及辐射/环氧乙烷灭菌。",
+        "要求对密封完整性、无菌保障、功能性等关键质量属性进行风险导向的控制与验证。",
+        "为药包材登记人和MAH提供系统化的研发与质量控制指南，促进关联审评审批落地。"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "该团体标准为滴眼剂包装行业提供了统一的技术规范，有望提升国内滴眼剂包装系统的整体质量水平，推动相关包装材料的标准化和规范化，可能影响滴眼剂包装供应商的研发方向和客户需求。",
+      "amcor_relevance_score": 4,
+      "amcor_relevance_reason": "文章直接围绕滴眼剂包装系统的设计和开发要求，涉及药包材、无菌保障、密封完整性、灭菌工艺等包装企业核心技术领域，对Amcor等包装企业的产品开发和质量控制具有直接参考价值。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "滴眼剂包装系统",
+        "药包材",
+        "密封完整性",
+        "无菌保障",
+        "BFS工艺",
+        "注吹工艺",
+        "注拉吹工艺",
+        "挤吹工艺",
+        "辐射灭菌",
+        "环氧乙烷灭菌"
+      ],
+      "risks_or_uncertainties": [
+        "团体标准为非强制性文件，实际执行力度和行业采纳程度有待观察；标准可能随时间更新，企业需持续跟进。",
+        "技术细节较多，包装企业需要投入资源进行适配和验证。"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "该标准是中国首个针对滴眼剂包装系统的系统性技术文件，对包装企业理解监管要求、优化产品设计、提升质量控制具有直接指导意义，是包装领域重要的行业动态。",
+      "one_sentence_takeaway": "滴眼剂包装系统团体标准的发布为包装企业提供了明确的技术规范和研发方向，值得密切关注。",
+      "_analyzed_at": "2026-07-13T07:59:20.074482+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/tiYoZ3RjN9XKIUL51SdSeQ",
+      "title": "连载 | 协会团体标准《单剂量口服液体制剂用复合袋包装评价》编制背景及内容简介",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-05T09:08:33.000Z",
+      "link": "https://mp.weixin.qq.com/s/tiYoZ3RjN9XKIUL51SdSeQ",
+      "include_in_weekly_report": true,
+      "relevance_score": 15,
+      "importance_level": "medium",
+      "primary_category": "包装相关",
+      "secondary_categories": [],
+      "summary_cn": "本文介绍了中国医药包装协会团体标准《单剂量口服液体制剂用复合袋包装评价》的编制背景、思路及主要内容，该标准覆盖材料选择、设备选型、生产工艺及包装系统评价，旨在构建统一、科学的复合袋包装评价技术体系。",
+      "key_points": [
+        "标准由金石包装等12家单位起草，2024年启动，2025年通过审定。",
+        "核心评价维度包括保护性、安全性、相容性及功能性。",
+        "创新性引入“材-机-药”三方协作设计理念和基于风险的评价思路。",
+        "适用于口服液体制剂单剂量复合袋包装的全产业链技术覆盖。"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "该标准将提升口服液体制剂复合袋包装的质量控制水平，推动包装材料、设备及制药企业的协同发展，为相关包装企业提供明确的技术指引和市场规范。",
+      "amcor_relevance_score": 4,
+      "amcor_relevance_reason": "文章直接涉及单剂量口服液体制剂用复合袋包装的评价标准，与Amcor的液体条包、复合膜等包装业务高度相关，但未提及Amcor或其客户。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "单剂量口服液体制剂",
+        "复合袋",
+        "复合膜袋",
+        "包装评价",
+        "药包材",
+        "相容性",
+        "密封性"
+      ],
+      "risks_or_uncertainties": [],
+      "source_confidence": "high",
+      "why_it_matters": "该标准为口服液体制剂复合袋包装提供了统一的评价体系，对包装企业（如Amcor）在相关产品线的研发、生产和质量控制方面具有直接的指导意义。",
+      "one_sentence_takeaway": "中国医药包装协会发布的口服液体制剂复合袋包装评价标准，为行业提供了系统性的技术指引，值得关注。",
+      "_analyzed_at": "2026-07-13T08:08:54.189764+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/rnLe0TQZwKGl8dxMHKcbdg",
+      "title": "ICH Q3E指导原则高端研讨会将于6月25日-26日在镇江召开",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-09T09:12:57.000Z",
+      "link": "https://mp.weixin.qq.com/s/rnLe0TQZwKGl8dxMHKcbdg",
+      "include_in_weekly_report": true,
+      "relevance_score": 14,
+      "importance_level": "medium",
+      "primary_category": "政策监管",
+      "secondary_categories": [
+        "包装相关"
+      ],
+      "summary_cn": "中国医药包装协会将于2026年6月25-26日在镇江举办ICH Q3E指导原则高端研讨会，聚焦药包材可提取物与浸出物（E&L）评估，推动国内药包材对标国际合规，助力产品出海。",
+      "key_points": [
+        "ICH Q3E是全球统一药包材E&L评估的关键指南，预计2027年正式实施。",
+        "研讨会将围绕相容性研究中的化学试验、未知物分析、E&L相关性等痛点进行分享。",
+        "会议旨在帮助会员企业打通国际注册技术关卡，支撑产品出海合规。"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "",
+      "amcor_relevance_score": 4,
+      "amcor_relevance_reason": "文章直接涉及药包材可提取物与浸出物（E&L）国际标准，对药品包装企业的合规与出口有直接指导意义，且来源为中国医药包装协会。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "药包材",
+        "可提取物",
+        "浸出物",
+        "相容性研究"
+      ],
+      "risks_or_uncertainties": [
+        "研讨会为行业交流，具体影响取决于后续指南落地实施情况。"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "ICH Q3E指导原则将影响国内药包材与药品相容性研究的全球化合规，对包装企业的出口业务有长远意义，值得关注其进展。",
+      "one_sentence_takeaway": "此次研讨会是药包材企业了解ICH Q3E国际标准、提升合规能力的重要机会。",
+      "_analyzed_at": "2026-07-13T08:05:58.761186+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/51l0AISu5grE7Yn2ncyP-A",
+      "title": "国家药典委2027年度国家药品标准制修订项目立项建议征集启动",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-08T09:34:22.000Z",
+      "link": "https://mp.weixin.qq.com/s/51l0AISu5grE7Yn2ncyP-A",
+      "include_in_weekly_report": true,
+      "relevance_score": 14,
+      "importance_level": "medium",
+      "primary_category": "政策监管",
+      "secondary_categories": [
+        "包装相关"
+      ],
+      "summary_cn": "国家药典委发布征集2027年度国家药品标准制修订项目立项建议的通知，涵盖药包材标准，中国医药包装协会转发并要求会员单位积极申报。",
+      "key_points": [
+        "国家药典委征集2027年度药品标准制修订立项建议，范围包括药包材标准。",
+        "征集对象涵盖药品上市许可持有人、生产企业、经营企业、使用单位、监管及检验机构、科研机构、社会团体和个人。",
+        "集中征集周期为通知发布之日起30日内。",
+        "协会要求会员单位严格遵照文件要求，组织申报工作。"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "政策通知",
+      "deal_amounts": [],
+      "market_implication_cn": "此次标准制修订立项征集可能影响未来药包材标准的修订方向，对包装企业的合规与技术要求具有潜在影响。",
+      "amcor_relevance_score": 4,
+      "amcor_relevance_reason": "文章直接涉及药包材标准的制修订立项征集，与药品包装材料行业密切相关，对安姆科的包装业务有直接政策影响。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "药包材",
+        "药品标准",
+        "标准制修订"
+      ],
+      "risks_or_uncertainties": [],
+      "source_confidence": "high",
+      "why_it_matters": "该文章提供了国家药典委在药包材标准方面的政策动向，药品包装企业应密切关注并积极参与标准制修订，以提前适应监管要求。",
+      "one_sentence_takeaway": "国家药典委征集药品标准立项建议，药包材纳入范围，包装企业需跟进并参与申报。",
+      "_analyzed_at": "2026-07-13T08:07:32.683970+00:00"
     },
     {
       "article_id": "http://localhost:8001/feeds/rY3u-Hdq6V1HqUyjXWNwQA",
@@ -5743,6 +7254,94 @@
       "_analyzed_at": "2026-07-06T09:49:59.364150+00:00"
     },
     {
+      "article_id": "http://localhost:8001/feeds/j7JU29uMV1MyLMu7zBhHzg",
+      "title": "转发|160年德国技术握手40年中国速度 ，全球顶级工厂深融本土药包材产业——双峰格雷斯海姆医药包装（镇江）有限公司合资20周年纪实",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-30T06:20:43.000Z",
+      "link": "https://mp.weixin.qq.com/s/j7JU29uMV1MyLMu7zBhHzg",
+      "include_in_weekly_report": true,
+      "relevance_score": 14,
+      "importance_level": "medium",
+      "primary_category": "包装相关",
+      "secondary_categories": [
+        "商业化/供应链"
+      ],
+      "summary_cn": "双峰格雷斯海姆医药包装（镇江）有限公司合资20周年，其大港工厂（110亩）即将投产，定位全球顶级工厂，产能升级并拓展海外市场。",
+      "key_points": [
+        "双峰格雷斯海姆合资20周年",
+        "大港工厂占地110亩，即将投产",
+        "定位格雷斯海姆集团全球顶级工厂",
+        "采用绿色生产技术，计划获LEED金奖"
+      ],
+      "companies": [
+        "双峰格雷斯海姆医药包装（镇江）有限公司",
+        "格雷斯海姆集团"
+      ],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "药包材产能扩张可能提升国内供应能力，但具体市场影响不明。",
+      "amcor_relevance_score": 3,
+      "amcor_relevance_reason": "文章涉及药包材企业产能扩张，与包装行业相关，但未直接提及Amcor或重点客户/产品。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "医药包装",
+        "药包材",
+        "工厂",
+        "产能"
+      ],
+      "risks_or_uncertainties": [],
+      "source_confidence": "high",
+      "why_it_matters": "药包材头部企业扩产反映行业趋势，对包装企业有参考价值，但非直接竞争或客户动态。",
+      "one_sentence_takeaway": "药包材企业产能扩张，作为行业动态可供参考。",
+      "_analyzed_at": "2026-07-13T07:44:11.192639+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/EXhI0PLoaeD3LqTqoigzbg",
+      "title": "药品注册管理共性问题|官方答疑精选（二）",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-25T08:14:48.000Z",
+      "link": "https://mp.weixin.qq.com/s/EXhI0PLoaeD3LqTqoigzbg",
+      "include_in_weekly_report": true,
+      "relevance_score": 14,
+      "importance_level": "medium",
+      "primary_category": "政策监管",
+      "secondary_categories": [
+        "包装相关"
+      ],
+      "summary_cn": "本文摘录了山西省药监局发布的药品注册管理“百问百答”中关于药包材变更、有效期延长、说明书标签微小变更等共性问题的官方答疑，为医药包装企业提供政策执行参考。",
+      "key_points": [
+        "同品种多包材产品需每种包材均进行稳定性研究以延长有效期。",
+        "已通过一致性评价品种延长有效期，若稳定性数据无显著差异，无需提供参比制剂数据。",
+        "药品说明书、标签微小变更（如行政信息、条形码等）可由企业自行修订并纳入年度报告，无需备案。",
+        "贮藏条件为30℃以下的产品需在30℃条件下进行长期稳定性试验。"
+      ],
+      "companies": [],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "",
+      "amcor_relevance_score": 3,
+      "amcor_relevance_reason": "文章直接涉及药品包材变更、稳定性研究要求及标签微小变更管理，与药品包装企业的注册合规工作相关。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "药包材变更",
+        "稳定性研究",
+        "包材种类",
+        "说明书标签",
+        "贮藏条件"
+      ],
+      "risks_or_uncertainties": [],
+      "source_confidence": "high",
+      "why_it_matters": "该文章提供官方对药包材变更和稳定性研究的具体要求，对包装企业理解法规、规避注册风险有直接参考价值。",
+      "one_sentence_takeaway": "为医药包装企业提供药包材变更、有效期延长及标签微变等注册管理共性的官方解答，有助于合规操作。",
+      "_analyzed_at": "2026-07-13T07:49:57.860814+00:00"
+    },
+    {
       "article_id": "http://localhost:8001/feeds/UzUqY970vkzW9RXSfj2jjQ",
       "title": "一日拿下两项“全球首证”，中国创新药闯入全球“无人区”",
       "source_name": "新康界",
@@ -6032,6 +7631,62 @@
       "_analyzed_at": "2026-07-06T09:51:04.840536+00:00"
     },
     {
+      "article_id": "http://localhost:8001/feeds/-11PxJNdrDwUA2r8Bw05UA",
+      "title": "专访周虹：后GLP-1时代，诺和诺德如何设计下一个十年？",
+      "source_name": "MedTrend医趋势",
+      "published": "2026-06-30T09:09:38.000Z",
+      "link": "https://mp.weixin.qq.com/s/-11PxJNdrDwUA2r8Bw05UA",
+      "include_in_weekly_report": true,
+      "relevance_score": 16,
+      "importance_level": "high",
+      "primary_category": "商业化/供应链",
+      "secondary_categories": [
+        "BD出海",
+        "市场数据"
+      ],
+      "summary_cn": "诺和诺德全球管理团队访华，宣布天津生产基地追加数亿投资、新产品上市及数字化服务平台开放。专访产品与产品组合战略全球执行副总裁周虹，探讨后GLP-1时代的产品组合战略、中国市场地位及与中国企业的合作平台构建。",
+      "key_points": [
+        "诺和诺德全球管理团队首次集体访华，天津生产基地追加数亿投资。",
+        "推出新产品及数字化患者服务平台。",
+        "周虹负责产品组合战略，强调未来竞争在于产品组合而非单一爆款。",
+        "司美格鲁肽2025年全球销售额约361亿美元，2026年Q1仍强劲增长。",
+        "诺和诺德将更积极与中国企业构建合作平台，推动创新全球化。"
+      ],
+      "companies": [
+        "诺和诺德"
+      ],
+      "drugs": [
+        "司美格鲁肽",
+        "Ozempic",
+        "Wegovy"
+      ],
+      "targets_or_mechanisms": [
+        "GLP-1"
+      ],
+      "indications": [
+        "肥胖症"
+      ],
+      "clinical_or_regulatory_stage": "已上市",
+      "deal_amounts": [
+        "361亿美元（司美格鲁肽2025年全球销售额）",
+        "490亿丹麦克朗（2026年Q1 Ozempic/Wegovy合计销售额）",
+        "170亿元（诺和诺德在华累计投资）",
+        "数亿（天津生产基地追加投资）"
+      ],
+      "market_implication_cn": "诺和诺德在华追加投资及新产品上市，可能增加药品包装需求；但未明确包装形式或剂型，需后续关注。",
+      "amcor_relevance_score": 3,
+      "amcor_relevance_reason": "文中明确提到重点客户诺和诺德（诺和诺德）在华追加投资、新产品上市及商业化进展，可能间接带来包装材料需求，但未直接涉及包装、剂型或供应链细节。",
+      "packaging_relevance": "medium",
+      "packaging_related_keywords": [],
+      "risks_or_uncertainties": [
+        "GLP-1市场竞争加剧可能影响诺和诺德产品组合战略；未明确新产品具体剂型及包装需求变化。"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "诺和诺德作为全球制药巨头，在华追加生产基地投资和新产品上市，对关注中国医药行业和包装供应链的企业具有重要参考价值。",
+      "one_sentence_takeaway": "诺和诺德全球管理层访华并追加天津投资，凸显中国在创新合作与商业化布局中的战略地位，可能带来包装相关机会。",
+      "_analyzed_at": "2026-07-13T07:43:13.620301+00:00"
+    },
+    {
       "article_id": "http://localhost:8001/feeds/pI5mRx61_rfVncUv3RANWw",
       "title": "【火热】步长制药新药出击，剑指31亿大品种",
       "source_name": "米内网",
@@ -6079,6 +7734,52 @@
       "why_it_matters": "步长制药作为国内中药龙头向生物药转型的代表，此新药临床进展标志着其生物药布局加速，且目标品种市场巨大，对医药产业链有参考价值。",
       "one_sentence_takeaway": "步长制药注射用重组人脑利钠肽临床成功，有望抢占31亿大品种市场，值得关注其商业化进展及包装需求。",
       "_analyzed_at": "2026-07-06T09:20:54.766049+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/cjW30HGHVGKHVgQH567DSA",
+      "title": "浙江百代医药：左氧氟沙星雾化吸入溶液 新药申请获受理",
+      "source_name": "吸入制剂Co.Lab",
+      "published": "2026-06-24T09:20:12.000Z",
+      "link": "https://mp.weixin.qq.com/s/cjW30HGHVGKHVgQH567DSA",
+      "include_in_weekly_report": true,
+      "relevance_score": 15,
+      "importance_level": "medium",
+      "primary_category": "新药申报/获批",
+      "secondary_categories": [
+        "临床进展"
+      ],
+      "summary_cn": "浙江百代医药的左氧氟沙星雾化吸入溶液（CXHL2600752）获CDE受理，为2.4类改良型新药，企业专注于骨科、皮肤等领域的药品研发。",
+      "key_points": [
+        "左氧氟沙星雾化吸入溶液新药申请获受理",
+        "受理号CXHL2600752，2.4类化药",
+        "百代医药为国家高新技术企业，拥有B证和多个品种生产许可"
+      ],
+      "companies": [
+        "浙江百代医药科技有限公司"
+      ],
+      "drugs": [
+        "左氧氟沙星雾化吸入溶液"
+      ],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "IND申请获受理",
+      "deal_amounts": [],
+      "market_implication_cn": "",
+      "amcor_relevance_score": 3,
+      "amcor_relevance_reason": "雾化吸入溶液剂型属于特殊包装需求，可能涉及瓶装、吸入装置等，但文章未明确提及包装材料或供应商，仅剂型相关性中等。",
+      "packaging_relevance": "medium",
+      "packaging_related_keywords": [
+        "雾化吸入溶液",
+        "吸入制剂"
+      ],
+      "risks_or_uncertainties": [
+        "尚未获批，审评存在不确定性",
+        "左氧氟沙星已有多种剂型，雾化吸入剂市场接受度待观察"
+      ],
+      "source_confidence": "medium",
+      "why_it_matters": "该信息反映了国内药企在吸入制剂领域的布局，改良型新药受理可能带来新的包装需求，但信息量有限，需跟进后续进展。",
+      "one_sentence_takeaway": "百代医药左氧氟沙星雾化吸入溶液新药申请获受理，吸入剂型包装机会值得关注。",
+      "_analyzed_at": "2026-07-13T07:51:30.106094+00:00"
     },
     {
       "article_id": "http://localhost:8001/feeds/VqQDfOlT36hOomYYoqcc-g",
@@ -6383,6 +8084,50 @@
       "why_it_matters": "仁合益康获批的三个产品均为大品种，销售额大，尤其吸入用七氟烷超25亿元，显示国内仿制药企业在麻醉、造影等领域加速布局，对包装企业意味着潜在订单机会。",
       "one_sentence_takeaway": "仁合益康同日获批3个重磅仿制药，其中吸入用七氟烷年销超25亿元，相关注射剂和吸入剂将带来包装需求。",
       "_analyzed_at": "2026-07-06T09:47:05.390670+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/XOmbjGduulC4f32cePZ3Jg",
+      "title": "19亿美元！礼来再次与和誉医药达成研发合作",
+      "source_name": "MedTrend医趋势",
+      "published": "2026-06-25T11:32:14.000Z",
+      "link": "https://mp.weixin.qq.com/s/XOmbjGduulC4f32cePZ3Jg",
+      "include_in_weekly_report": true,
+      "relevance_score": 17,
+      "importance_level": "high",
+      "primary_category": "BD出海",
+      "secondary_categories": [
+        "融资并购"
+      ],
+      "summary_cn": "和誉医药与礼来签署19亿美元战略研究合作及授权协议，围绕多个疾病靶点开展创新药研发，和誉获得首付款及里程碑付款。",
+      "key_points": [
+        "和誉医药与礼来达成19亿美元战略研究合作",
+        "双方围绕多个疾病靶点开展新药发现与早期开发",
+        "和誉将获得首付款、里程碑付款及销售分成",
+        "礼来在中国创新药领域持续加码"
+      ],
+      "companies": [
+        "和誉医药",
+        "礼来"
+      ],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "早期发现",
+      "deal_amounts": [
+        "19亿美元"
+      ],
+      "market_implication_cn": "礼来持续扩大中国创新药合作，和誉获得资金支持，可能推动后续商业化，但早期项目不确定性高。",
+      "amcor_relevance_score": 3,
+      "amcor_relevance_reason": "涉及中国药企与跨国药企的大额BD合作，未来产品商业化可能带来包装需求，但文章未直接提及包装或剂型。",
+      "packaging_relevance": "low",
+      "packaging_related_keywords": [],
+      "risks_or_uncertainties": [
+        "合作处于早期发现阶段，尚无候选药物进入临床，存在研发失败风险"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "展现中国创新药企在全球BD中的竞争力，礼来重注中国创新，可能为后续产品商业化及包装供应链机会铺垫。",
+      "one_sentence_takeaway": "礼来与和誉医药19亿美元合作，凸显中国创新药BD出海趋势，值得跟踪后续商业化进展。",
+      "_analyzed_at": "2026-07-13T07:49:04.813627+00:00"
     },
     {
       "article_id": "http://localhost:8001/feeds/fzrqhzMpAK1dTz_BSeUK2Q",
@@ -7460,6 +9205,85 @@
       "_analyzed_at": "2026-07-06T09:37:35.594332+00:00"
     },
     {
+      "article_id": "http://localhost:8001/feeds/vkAn7ndE6BbTNusXDiOoBQ",
+      "title": "最赚钱药企来了！药明康德、恒瑞、云南白药、新和成…",
+      "source_name": "MedTrend医趋势",
+      "published": "2026-06-22T09:41:04.000Z",
+      "link": "https://mp.weixin.qq.com/s/vkAn7ndE6BbTNusXDiOoBQ",
+      "include_in_weekly_report": true,
+      "relevance_score": 14,
+      "importance_level": "medium",
+      "primary_category": "市场数据",
+      "secondary_categories": [
+        "商业化/供应链"
+      ],
+      "summary_cn": "文章汇总509家A股药企2026年Q1业绩，聚焦12家营收超百亿和5家利润超10亿的药企，分析创新药商业化及出海对业绩的驱动作用。",
+      "key_points": [
+        "药明康德、百济神州、复星医药新晋营收百亿俱乐部",
+        "百济神州净利润增长1801%，核心产品泽布替尼营收75.98亿元",
+        "恒瑞医药创新药收入占比61.69%，净利润22.82亿元",
+        "云南白药气血康口服液等产品超预期完成销售目标",
+        "华东医药创新产品收入同比增长61.8%"
+      ],
+      "companies": [
+        "药明康德",
+        "百济神州",
+        "复星医药",
+        "上海医药",
+        "白云山",
+        "云南白药",
+        "华东医药",
+        "迈瑞医疗",
+        "恒瑞医药",
+        "新和成",
+        "爱尔眼科",
+        "华润三九"
+      ],
+      "drugs": [
+        "百悦泽（泽布替尼）",
+        "百泽安（替雷利珠单抗）",
+        "地舒单抗注射液",
+        "贝伐珠单抗注射液",
+        "苹果酸司妥吉仑片（信妥安）",
+        "氨磺必利口崩片（奥思安）",
+        "气血康口服液",
+        "云南白药气雾剂",
+        "爱拉赫（FRα靶向ADC）",
+        "派舒宁（PARP抑制剂）",
+        "赛恺泽（CAR-T）"
+      ],
+      "targets_or_mechanisms": [
+        "FRα",
+        "PARP",
+        "CAR-T"
+      ],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [
+        "药明康德2026Q1营收124.36亿元",
+        "百济神州2026Q1营收105.44亿元",
+        "恒瑞医药2026Q1净利润22.82亿元",
+        "云南白药2026Q1经营性净现金流8.29亿元"
+      ],
+      "market_implication_cn": "头部药企创新药商业化加速和出海扩张，有望带动相关药品包装需求，尤其是口服液、气雾剂等剂型的包装材料需求增长。",
+      "amcor_relevance_score": 3,
+      "amcor_relevance_reason": "文中明确提及重点客户云南白药、华东医药（杭州中美华东制药）的财务表现和产品动态，并提到口服液、气雾剂等剂型，以及商业化放量、产能利用率等包装相关信号。",
+      "packaging_relevance": "low",
+      "packaging_related_keywords": [
+        "口服液",
+        "气雾剂",
+        "商业化放量",
+        "产能利用率"
+      ],
+      "risks_or_uncertainties": [
+        "药企业绩受市场竞争和原材料成本波动影响，华润三九、新和成出现增收不增利情况"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "文章提供了重点客户（云南白药、华东医药）的业绩和产品商业化进展，对了解客户需求和市场趋势有参考价值，但缺乏直接包装业务关联。",
+      "one_sentence_takeaway": "中国头部药企2026年Q1业绩显示创新药和出海驱动增长，口服液等剂型产品的商业化放量可能带来包装机会。",
+      "_analyzed_at": "2026-07-13T07:55:28.409095+00:00"
+    },
+    {
       "article_id": "http://localhost:8001/feeds/Sn86doLUVi-UN8GEUekBWg",
       "title": "【火热】华润双鹤拿下暴涨290%潜力新品",
       "source_name": "米内网",
@@ -7567,6 +9391,57 @@
       "_analyzed_at": "2026-07-06T09:43:34.189006+00:00"
     },
     {
+      "article_id": "http://localhost:8001/feeds/Zzx_9giP78euXcxrrIzttw",
+      "title": "专访阿斯利康中国林骁：超越减重，从单点治疗迈向共病管理",
+      "source_name": "MedTrend医趋势",
+      "published": "2026-06-09T07:01:54.000Z",
+      "link": "https://mp.weixin.qq.com/s/Zzx_9giP78euXcxrrIzttw",
+      "include_in_weekly_report": true,
+      "relevance_score": 14,
+      "importance_level": "medium",
+      "primary_category": "临床进展",
+      "secondary_categories": [
+        "药企动态"
+      ],
+      "summary_cn": "阿斯利康中国总经理林骁接受专访，讨论口服小分子GLP-1受体激动剂IIb期结果及全球III期计划，强调从单纯减重转向肥胖、糖尿病、心血管和肾脏疾病的共病管理，并依托阿斯利康在心血管肾脏及代谢领域的积累推动诊疗变革。",
+      "key_points": [
+        "阿斯利康在研口服小分子GLP-1受体激动剂公布两项IIb期研究结果，后续将启动全球III期临床。",
+        "林骁指出中国1.48亿糖尿病患者中超85%存在多病共存，强调共病管理需求。",
+        "阿斯利康计划未来10年在心血管、肾脏及代谢领域每年至少推出1款新产品或新适应症。",
+        "阿斯利康已支持1810余家医院建立国家标准化代谢性疾病管理中心（MMC），管理超350万患者。"
+      ],
+      "companies": [
+        "阿斯利康"
+      ],
+      "drugs": [
+        "口服小分子GLP-1受体激动剂"
+      ],
+      "targets_or_mechanisms": [
+        "GLP-1受体激动剂"
+      ],
+      "indications": [
+        "肥胖",
+        "2型糖尿病",
+        "心血管疾病",
+        "肾脏疾病"
+      ],
+      "clinical_or_regulatory_stage": "IIb期研究阶段，计划启动全球III期临床",
+      "deal_amounts": [],
+      "market_implication_cn": "文章未提供具体市场数据，但暗示口服GLP-1药物市场潜力大，未来可能带动口服制剂包装需求，且阿斯利康深耕中国慢病市场，商业化前景可期。",
+      "amcor_relevance_score": 3,
+      "amcor_relevance_reason": "文章明确提到重点客户阿斯利康中国的战略和产品进展，但未直接涉及包装、剂型、产能或供应链信息。",
+      "packaging_relevance": "low",
+      "packaging_related_keywords": [],
+      "risks_or_uncertainties": [
+        "药物仍处于临床研究阶段，尚未获批上市，存在研发失败或临床结果不达预期的风险。",
+        "未提及具体上市时间表，商业化进程不确定。"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "阿斯利康是重点客户，其GLP-1口服药进展可能带来未来包装需求，但当前阶段仅为临床中期，短期影响有限，可作为客户动态参考。",
+      "one_sentence_takeaway": "本文提供了阿斯利康在GLP-1口服药领域的临床进展和共病管理战略，对包装企业而言是客户动态参考，但缺少直接包装关联。",
+      "_analyzed_at": "2026-07-13T08:06:15.177178+00:00"
+    },
+    {
       "article_id": "http://localhost:8001/feeds/_zA8wqHYwcprN8-Ii-gEvw",
       "title": "12家药企涉空壳开票案！171个中药集采结果出炉，大批药品价格“跳水”，石药、扬子江亮了",
       "source_name": "米内网",
@@ -7629,6 +9504,55 @@
       "why_it_matters": "文章汇总了本周医药行业关键动态，包括政策、集采、药企新药进展等，有助于了解行业趋势，但对包装企业直接启示有限。",
       "one_sentence_takeaway": "本周医药行业集采、政策及新药进展密集，石药、扬子江等企业新药有看点，但包装关联度一般。",
       "_analyzed_at": "2026-07-06T09:42:43.928915+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/bem3l7Vj2Ebq5XQJW0PLfQ",
+      "title": "协会标准｜《输液瓶及注射剂瓶用橡胶塞尺寸外观技术规范》解读",
+      "source_name": "中国医药包装协会",
+      "published": "2026-06-09T09:12:57.000Z",
+      "link": "https://mp.weixin.qq.com/s/bem3l7Vj2Ebq5XQJW0PLfQ",
+      "include_in_weekly_report": true,
+      "relevance_score": 12,
+      "importance_level": "medium",
+      "primary_category": "包装相关",
+      "secondary_categories": [
+        "政策监管",
+        "行业标准"
+      ],
+      "summary_cn": "中国医药包装协会发布《输液瓶及注射剂瓶用橡胶塞尺寸外观技术规范》团体标准解读，详细规定橡胶塞的结构尺寸、外观缺陷分类、检测方法和检验规则，旨在统一行业标准，保障药品包装密封性和安全性。",
+      "key_points": [
+        "标准适用于输液瓶、注射剂瓶及冷冻干燥用胶塞，规定了关键尺寸和公差",
+        "外观缺陷分为关键、主要、次要三类，关键缺陷涉及密封完整性和微生物污染风险",
+        "检测方法推荐自动化光学检测和游标卡尺测量，检验规则按GB/T 2828.1执行",
+        "该标准有助于提升胶塞产品质量一致性，减少供需质量纠纷"
+      ],
+      "companies": [
+        "江苏博生医用新材料股份有限公司"
+      ],
+      "drugs": [],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "",
+      "deal_amounts": [],
+      "market_implication_cn": "该标准虽不直接涉及市场变化，但统一规范有利于提升行业整体胶塞质量，可能推动药包材企业升级检测设备，对橡胶塞供应商有直接影响。",
+      "amcor_relevance_score": 2,
+      "amcor_relevance_reason": "文章直接涉及药品包装组件（橡胶塞）的标准规范，属于药包材领域，但非Amcor核心产品（液体条包、泡罩等），仅具间接参考价值。",
+      "packaging_relevance": "high",
+      "packaging_related_keywords": [
+        "输液瓶",
+        "注射剂瓶",
+        "橡胶塞",
+        "药包材",
+        "初级包装",
+        "密封性"
+      ],
+      "risks_or_uncertainties": [
+        "标准为团体标准，非强制，实施效果取决于企业自愿采用"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "文章为国内输液瓶及注射剂瓶用橡胶塞的首个团体标准解读，对药包材行业有规范指导作用，但缺乏商业动态和具体企业影响，故重要度中等。",
+      "one_sentence_takeaway": "中国医药包装协会发布橡胶塞尺寸外观技术规范，提升药包材质量一致性，对包装企业有标准参考意义。",
+      "_analyzed_at": "2026-07-13T08:05:49.472444+00:00"
     },
     {
       "article_id": "http://localhost:8001/feeds/NMm5NEjq6mmDNiiXpFFDwQ",
@@ -7752,6 +9676,66 @@
       "_analyzed_at": "2026-07-06T09:39:07.992833+00:00"
     },
     {
+      "article_id": "http://localhost:8001/feeds/WHNlGQa0gWFgbrTENHV54g",
+      "title": "【瞩目】正大天晴“一日双喜”，13亿爆款收入囊中",
+      "source_name": "米内网",
+      "published": "2026-06-23T08:06:45.000Z",
+      "link": "https://mp.weixin.qq.com/s/WHNlGQa0gWFgbrTENHV54g",
+      "include_in_weekly_report": true,
+      "relevance_score": 17,
+      "importance_level": "high",
+      "primary_category": "新药申报/获批",
+      "secondary_categories": [
+        "市场数据",
+        "商业化/供应链"
+      ],
+      "summary_cn": "正大天晴同日获批恩扎卢胺软胶囊和阿帕他胺片，两药2025年销售额分别达13亿元和8.7亿元，均为前列腺癌治疗内分泌用药，公司已拥有6个该类产品。",
+      "key_points": [
+        "正大天晴获批恩扎卢胺软胶囊和阿帕他胺片，均为内分泌治疗用药",
+        "恩扎卢胺2025年销售额突破13亿元，阿帕他胺达8.7亿元",
+        "正大天晴在内分泌治疗用药市场已有6个产品获批",
+        "恩扎卢胺口服常释剂型被纳入第12批集采，公司获得竞标资格"
+      ],
+      "companies": [
+        "正大天晴药业集团股份有限公司",
+        "正大天晴南京顺欣制药"
+      ],
+      "drugs": [
+        "恩扎卢胺软胶囊",
+        "阿帕他胺片"
+      ],
+      "targets_or_mechanisms": [
+        "雄激素受体拮抗剂",
+        "雄激素受体抑制剂"
+      ],
+      "indications": [
+        "前列腺癌"
+      ],
+      "clinical_or_regulatory_stage": "获批上市",
+      "deal_amounts": [
+        "13亿元",
+        "8.7亿元",
+        "229亿元"
+      ],
+      "market_implication_cn": "国内内分泌治疗用药市场2025年规模达229亿元，正大天晴的获批将加剧市场竞争，同时恩扎卢胺进入集采可能影响价格和放量节奏。",
+      "amcor_relevance_score": 2,
+      "amcor_relevance_reason": "文章涉及重磅新药获批及销售数据，但未提及包装、剂型细节或任何重点客户，对包装企业的直接参考价值有限。",
+      "packaging_relevance": "low",
+      "packaging_related_keywords": [
+        "软胶囊",
+        "片剂",
+        "口服常释剂型"
+      ],
+      "risks_or_uncertainties": [
+        "恩扎卢胺口服常释剂型进入集采，若中标可能大幅降价，影响销售额",
+        "正大天晴为国产第9家和第7家获批企业，面临既有市场先发者的竞争"
+      ],
+      "source_confidence": "high",
+      "why_it_matters": "正大天晴作为重点药企，一日拿下两款销售额超8亿元的重磅产品，对内分泌治疗用药市场格局有显著影响，值得包装企业关注后续放量带来的包装需求。",
+      "one_sentence_takeaway": "正大天晴获批两款前列腺癌重磅药，合计年销售额超21亿元，市场潜力巨大，但集采风险并存。",
+      "_analyzed_at": "2026-07-13T07:54:07.487783+00:00"
+    },
+    {
       "article_id": "http://localhost:8001/feeds/Aw2ZaD-RcGg7wN6v3QTyPA",
       "title": "恒瑞无水环孢素滴眼液获批，打破兴齐眼药独家格局",
       "source_name": "新康界",
@@ -7864,6 +9848,45 @@
       "why_it_matters": "诺和诺德作为MNC代表，其在华供应链布局和产能投入对医药包装企业有间接参考价值，但缺乏直接包装需求信号。",
       "one_sentence_takeaway": "诺和诺德通过生态合作和产能投资深化中国市场，供应链伙伴面临机会，但包装相关度有限。",
       "_analyzed_at": "2026-07-06T09:28:06.089773+00:00"
+    },
+    {
+      "article_id": "http://localhost:8001/feeds/3QPuZc51zLd64mIF2WOLWg",
+      "title": "齐鲁制药：丙酸氟替卡松鼻喷雾剂获批上市",
+      "source_name": "吸入制剂Co.Lab",
+      "published": "2026-06-22T09:19:01.000Z",
+      "link": "https://mp.weixin.qq.com/s/3QPuZc51zLd64mIF2WOLWg",
+      "include_in_weekly_report": true,
+      "relevance_score": 16,
+      "importance_level": "high",
+      "primary_category": "新药申报/获批",
+      "secondary_categories": [],
+      "summary_cn": "齐鲁制药的丙酸氟替卡松鼻喷雾剂于2026年6月17日获批上市，该药为仿制药，用于治疗过敏性鼻炎等。",
+      "key_points": [
+        "齐鲁制药丙酸氟替卡松鼻喷雾剂获批上市",
+        "剂型为鼻喷雾剂"
+      ],
+      "companies": [
+        "齐鲁制药有限公司"
+      ],
+      "drugs": [
+        "丙酸氟替卡松鼻喷雾剂"
+      ],
+      "targets_or_mechanisms": [],
+      "indications": [],
+      "clinical_or_regulatory_stage": "获批上市",
+      "deal_amounts": [],
+      "market_implication_cn": "",
+      "amcor_relevance_score": 2,
+      "amcor_relevance_reason": "文章报道的为新药获批上市，剂型为鼻喷雾剂，可能涉及包装需求但未明确提及包装材料或商业化信息，且齐鲁制药非重点客户。",
+      "packaging_relevance": "low",
+      "packaging_related_keywords": [
+        "鼻喷雾剂"
+      ],
+      "risks_or_uncertainties": [],
+      "source_confidence": "medium",
+      "why_it_matters": "该药获批上市表明国内药企在吸入/经鼻制剂领域的仿制药布局，可能增加市场竞争，但对包装企业直接启示有限。",
+      "one_sentence_takeaway": "齐鲁制药的丙酸氟替卡松鼻喷雾剂获批上市，属于新药获批，可进入周报但包装相关性弱。",
+      "_analyzed_at": "2026-07-13T07:55:39.780690+00:00"
     },
     {
       "article_id": "http://localhost:8001/feeds/Xrkm7ngUlgNyVlKu7s2_Eg",
@@ -9358,6 +11381,97 @@
       "_analyzed_at": "2026-07-06T10:01:11.144548+00:00"
     },
     {
+      "article_id": "http://localhost:8001/feeds/bL300gQi-SA_sVUCgO-bKg",
+      "title": "中国ADC\"惊艳\"ASCO，外资纷纷前来“扫货”？",
+      "source_name": "MedTrend医趋势",
+      "published": "2026-06-02T13:26:41.000Z",
+      "link": "https://mp.weixin.qq.com/s/bL300gQi-SA_sVUCgO-bKg",
+      "include_in_weekly_report": true,
+      "relevance_score": 16,
+      "importance_level": "high",
+      "primary_category": "临床进展",
+      "secondary_categories": [
+        "BD出海"
+      ],
+      "summary_cn": "中国ADC在ASCO大会表现亮眼，5款国产ADC首次公开临床数据，其中百利天恒、康宁杰瑞、思道医药的产品为全球首创。外资MNC通过BD交易在中国扫货ADC，平均首付款从5200万美元涨至1.72亿美元。",
+      "key_points": [
+        "ASCO大会ADC研究占比从6.5%升至11.2%，5款中国ADC首次公开临床数据。",
+        "百利天恒的iza-bren在食管鳞癌III期达到双阳性终点，死亡风险降36%。",
+        "康宁杰瑞JSKN016（TROP2×HER3双抗ADC）在HER2阴性乳腺癌I期ORR达64.5%。",
+        "思道医药DM002为全球首个MUC1×HER3双抗ADC，进入I期临床。",
+        "近五年顶级MNC与中国药企达成超20次ADC交易，平均首付款暴增230%。"
+      ],
+      "companies": [
+        "百利天恒",
+        "康宁杰瑞",
+        "思道医药",
+        "正大天晴",
+        "多玛医药",
+        "默沙东",
+        "武田",
+        "罗氏",
+        "辉瑞",
+        "科伦博泰",
+        "信达生物",
+        "宜联生物",
+        "多禧生物",
+        "映恩生物",
+        "复宏汉霖"
+      ],
+      "drugs": [
+        "iza-bren",
+        "JSKN016",
+        "DM002",
+        "TQB6411",
+        "DM005",
+        "芦康沙妥珠单抗",
+        "IBI343",
+        "IBI3001",
+        "维迪西妥单抗",
+        "HBM9033"
+      ],
+      "targets_or_mechanisms": [
+        "EGFR",
+        "HER3",
+        "TROP2",
+        "MUC1",
+        "c-Met",
+        "B7-H3",
+        "CLDN18.2"
+      ],
+      "indications": [
+        "食管鳞状细胞癌",
+        "复发或转移性食管鳞状细胞癌",
+        "EGFR突变型NSCLC",
+        "HER2阴性乳腺癌",
+        "晚期实体瘤"
+      ],
+      "clinical_or_regulatory_stage": "III期临床、I期临床",
+      "deal_amounts": [
+        "8亿美元首付款",
+        "12亿美元首付款",
+        "118亿美元交易总额",
+        "14亿美元首付款",
+        "7亿美元资金支持",
+        "5200万美元(2022年平均首付款)",
+        "1.72亿美元(2025年平均首付款)"
+      ],
+      "market_implication_cn": "国产ADC全球临床数据优异，推动中国创新药BD交易首付款大幅上涨，未来商业化放量将带动相关供应链需求，包括包装材料。",
+      "amcor_relevance_score": 0,
+      "amcor_relevance_reason": "文章未提及任何药品包装、剂型、产能、供应链或重点客户信息，与Amcor业务无直接关联。",
+      "packaging_relevance": "none",
+      "packaging_related_keywords": [],
+      "risks_or_uncertainties": [
+        "临床数据仍处于早期阶段，后续研发存在失败风险。",
+        "部分药物安全性数据中≥3级不良事件发生率较高，需关注毒性管理。",
+        "BD交易后续执行和商业化落地存在不确定性。"
+      ],
+      "source_confidence": "medium",
+      "why_it_matters": "中国ADC在ASCO的重磅数据展示出创新实力，外资BD扫货推高首付款，预示中国创新药进入兑现期，对包装企业而言，商业化后续可能带来需求，但当前阶段关联度较低。",
+      "one_sentence_takeaway": "中国ADC在ASCO惊艳亮相，外资BD扫货首付款暴涨，创新药兑现期到来。",
+      "_analyzed_at": "2026-07-13T08:11:34.146035+00:00"
+    },
+    {
       "article_id": "http://localhost:8001/feeds/OKIvPR83H6jVkgq-Zd7ohg",
       "title": "全球首款双抗 ADC、全球首款实体瘤 CAR-T 获批，来自中国药企；正大天晴申报首款 ADC；每月一次降脂药获批新适应症…｜Insight 新药周报",
       "source_name": "丁香园 Insight 数据库",
@@ -9457,5 +11571,5 @@
       "_analyzed_at": "2026-07-06T09:23:42.979030+00:00"
     }
   ],
-  "markdown_report": "好的，已收到您的指令。作为医药行业月报写作助手，我将基于您提供的结构化文章数据，并结合 Amcor China / APAC 业务上下文，为您生成一份正式、清晰、适合 Manager 快速阅读的 Markdown 月报。\n\n---\n\n# Monthly Pharma News Report\n\n**周期：** 2026-06-01 至 2026-06-30\n**数据来源：** 微信公众号 RSS / 已结构化文章分析\n**生成时间：** 2026-07-07T09:21:38+08:00\n\n---\n\n## 1. Executive Summary 月度核心总结\n\n本月中国医药行业持续活跃，多个信号对 Amcor 的药品包装业务具有直接或间接的启发意义。主要动态总结如下：\n\n1.  **产能扩张，包装需求直接利好**：本月多个药企宣布产能建设或扩张，直接关联包装需求。\n    - **药明生物**新加坡工厂封顶，年产**1亿支预充针和西林瓶**，为包装供应商带来明确商机。\n    - **云南白药**投资**3.6亿元**建设经皮给药技术产业平台，生产贴膏类产品，直接涉及复合膜、背衬等包装材料。\n    - **诺和诺德**在天津追加**2亿元**投资提升注射笔组装产能，**第一三共**投资**11亿元**在上海建新生产大楼。\n    - **青松制药**启用**11亿元**智能化生产基地，重点布局双室袋产品。\n\n2.  **给药装置取得历史性突破**：**新耀湃科**的注射笔首次进入FDA药械组合体系，标志着国产高端给药装置走向全球，预示了相关包装新材料（如预灌封注射器、卡式瓶）的市场机遇。\n\n3.  **重点客户动态密集**：**阿斯利康**（奥希替尼新适应症）、**华海药业**（IL-17A单抗申报上市）、**信立泰**（恩那度司他片放量）、**神威药业**（中成药集采中选）等重点客户均有重要商业化或申报进展。\n\n4.  **多项新药获批，商业化潜力巨大**：**百利天恒**（全球首款双抗ADC）、**科济药业**（全球首款实体瘤CAR-T）、**荣昌生物**（预充式泰它西普）、**默沙东**（索特西普）等重磅新药获批，标志着中国创新药进入新阶段，长期看将拉动生物制剂包装需求。\n\n5.  **中国创新药出海模式升级**：**和誉医药**与**礼来**达成**19亿美元**合作，**辉瑞**以**60亿美元**引进**三生制药**双抗，中国创新药的全球价值凸显。但此类早期BD对包装的短期直接影响有限。\n\n6.  **行业政策与市场变化**：第四批中成药集采落地，**神威药业**等客户中选；第12批国采启动，涉及65个产品，可能影响相关药企的竞争格局和包装采购量。\n\n---\n\n## 2. Monthly Amcor Relevance Ranking\n\n按 Amcor 包装业务相关性排序，本月最值得关注的新闻如下：\n\n| 排名 | 标题 | 周次 | 来源 & 时间 | Relevance / Amcor Score | 与 Amcor 包装业务的关系 |\n| :---: | :--- | :---: | :--- | :--- | :--- |\n| 1 | 拜耳健康消费品中国创新合作中心落地山东... (药明生物新加坡厂封顶) | W1 | 医药健闻 06-05 | 17 / 5 | **直接信号**：预充针、西林瓶产能扩张，明确涉及 Amcor 的核心包装产品。 [链接](https://mp.weixin.qq.com/s/uw16qTMkElFyaCPLrzyD1g) |\n| 2 | 默克将以113亿美元收购... (云南白药经皮给药项目) | W5 | 医药健闻 06-30 | 17 / 5 | **直接信号**：重点客户**云南白药**投资建设贴膏产能，对复合膜、条包等包装材料需求明确。 [链接](https://mp.weixin.qq.com/s/TeHWveiwpB8hbwpX3zZc_Q) |\n| 3 | 成立5年营收数亿，这家上海企业推动中国给药装置首次进入FDA药械组合体系 | W5 | 动脉网 06-29 | 17 / 5 | **直接信号**：中国给药装置获FDA批准，与Amcor的预灌封注射器、卡式瓶等给药装置包装业务高度相关。 [链接](https://mp.weixin.qq.com/s/06l5e1YMBWCxB0Qj0DMgaQ) |\n| 4 | 跨国药企在中国 | 诺和诺德、安斯泰来、第一三共... (诺和诺德注射笔扩产) | W4 | 医药健闻 06-22 | 18 / 5 | **直接信号**：重点客户**诺和诺德**追加投资提升注射笔产能，直接涉及药品包装与给药装置。 [链接](https://mp.weixin.qq.com/s/DiZVtuZ6WdCPTk5RwTpVxg) |\n| 5 | 【火热】中药龙头出手了，3.6亿加码黄金赛道 (云南白药) | W5 | 米内网 06-30 | 17 / 4 | **直接信号**：重点客户**云南白药**透皮制剂产能建设，包装需求直接相关。 [链接](https://mp.weixin.qq.com/s/tMPaOMkIeEEmnrFWjsNJFA) |\n| 6 | 渤健将以最高10亿美元收购... (青松制药双室袋基地) | W3 | 医药健闻 06-18 | 16 / 4 | **直接信号**：包装形式明确为双室袋，且涉及产能扩张，是直接的客户机会。 [链接](https://mp.weixin.qq.com/s/D80c0pZ3H_b4bmykr_JmXQ) |\n| 7 | 阿斯利康可能被迫在英国和欧洲停售新药... (荣昌生物预充式获批) | W2 | 医药健闻 06-09 | 17 / 4 | **直接信号**：荣昌生物预充式注射剂获批，明确涉及包装形式（预充针）。 [链接](https://mp.weixin.qq.com/s/xDoyHXtGwM_kInUHgUwwYg) |\n| 8 | 【关注】扬子江拿下3亿注射剂 | W4 | 米内网 06-24 | 18 / 4 | **直接信号**：注射剂型大品种获批，商业化放量将带动注射剂包装需求。 [链接](https://mp.weixin.qq.com/s/9UDd4bZkH6FaAiEbdGBCSg) |\n| 9 | 安斯泰来及第一三共等日本大型药企在中国扩大投资 (第一三共建厂) | W3 | 医药健闻 06-17 | 18 / 4 | **间接信号**：第一三共投资建产能，扩产可能带动包装采购。 [链接](https://mp.weixin.qq.com/s/bqUk0Ef5P19FAy26Q3LhPw) |\n| 10 | 诺和诺德全球高管团队来华宣布新投资；国药控股与辉瑞确定战略合作关系... | W3 | 医药健闻 06-16 | 16 / 4 | **间接信号**：诺和诺德注射笔产能扩张，诺思兰德委托生产注射液。 [链接](https://mp.weixin.qq.com/s/nrcJCgwnGBVFcDtgeMppbg) |\n\n---\n\n## 3. Week-by-Week News Digest\n\n### Week 1: 2026-06-01 至 2026-06-07\n\n#### 3.1.1 本周概览\n本周药明生物新加坡工厂封顶，标志着亚太地区生物制剂产能的重大提升。同时，多项新药获批和BD交易，显示行业活跃度。\n\n#### 3.1.2 Most Relevant to Amcor / Packaging\n\n**1. 标题: 拜耳健康消费品中国创新合作中心落地山东...(Key: 药明生物新加坡厂封顶)**\n- **来源：** 医药健闻 (2026-06-05)\n- **分类：** 商业化/供应链\n- **relevance_score: 17 / amcor_relevance_score: 5**\n- **一句话 takeaway：** 药明生物新加坡工厂年产1亿支预充针和西林瓶，是本月对包装企业最直接的信号。\n- **关键信息：** 药明生物新加坡CRDMO中心模块化生物制剂生产厂封顶，预计年产1亿支预充针和西林瓶。药石科技多肽中试车间投运。\n- **与 Amcor / 包装业务的关系：** **Direct Signal**。明确涉及包装形式（预充针、西林瓶）和生产产能，与Amcor的Luminate Films、注射剂包装等业务直接相关。\n- **原文链接：** [https://mp.weixin.qq.com/s/uw16qTMkElFyaCPLrzyD1g](https://mp.weixin.qq.com/s/uw16qTMkElFyaCPLrzyD1g)\n\n#### 3.1.3 Other Important Pharma News\n- **新药申报/获批：** 麓鹏制药洛布替尼片、诺思兰德塞多明基注射液获批；BMS Mezigdomide胶囊拟优先审评。\n- **BD出海：** 海思科与礼来达成30亿美元合作；云顶新耀达成两项license交易。行业趋势分析显示中国创新药出海模式转向“打包出海”。\n- **市场数据：** 传奇生物西达基奥仑赛销售额持续高增长。\n\n### Week 2: 2026-06-08 至 2026-06-14\n\n#### 3.2.1 本周概览\n本周重点在于荣昌生物预充式注射剂获批，以及多项BD合作。金赛药业的转型故事揭示了国内药企多元化发展的路径，其多剂型管线值得关注。\n\n#### 3.2.2 Most Relevant to Amcor / Packaging\n\n**1. 标题: 阿斯利康可能被迫在英国和欧洲停售新药...(Key: 荣昌生物预充式获批)**\n- **来源：** 医药健闻 (2026-06-09)\n- **分类：** 新药申报/获批\n- **relevance_score: 17 / amcor_relevance_score: 4**\n- **一句话 takeaway：** 荣昌生物泰它西普预充式注射液获批，直接关联预充式注射器包装需求。\n- **关键信息：** 荣昌生物泰它西普注射液（预充式）获批治疗IgA肾病。云顶新耀获得滴眼液LNZ100及口服药权益。诺和诺德口服Wegovy处方量激增。\n- **与 Amcor / 包装业务的关系：** **Direct Signal**。明确提及“预充式注射剂”剂型；云顶新耀的滴眼液和口服药、诺和诺德的口服剂型均涉及不同包装类型。\n- **原文链接：** [https://mp.weixin.qq.com/s/xDoyHXtGwM_kInUHgUwwYg](https://mp.weixin.qq.com/s/xDoyHXtGwM_kInUHgUwwYg)\n\n#### 3.2.3 Other Important Pharma News\n- **新药申报/获批：** 天广实MIL62获全球首个PMN适应症；复宏汉霖H药获批胃癌围术期；默沙东索特西普中国上市；再鼎医药两款新药获批或商业化。\n- **BD出海：** 罗氏与Nurix达成23亿美元合作；云顶新耀与Travere达成EVER001授权。\n- **公司动态：** 金赛药业加速多元化转型，多款新药获批并达成13.65亿美元国际化授权。\n\n### Week 3: 2026-06-15 至 2026-06-21\n\n#### 3.3.1 本周概览\n本周产能投资新闻密集，诺和诺德注射笔产能扩张、青松制药双室袋基地启用、第一三共建新生产大楼等，均为包装供应链的直接利好。葵花药业40亿贴膏剂获批，也提示了贴剂包装市场的潜力。\n\n#### 3.3.2 Most Relevant to Amcor / Packaging\n\n**1. 标题: 渤健将以最高10亿美元收购RayThera...(Key: 青松制药双室袋基地)**\n- **来源：** 医药健闻 (2026-06-18)\n- **分类：** 商业化/供应链\n- **relevance_score: 16 / amcor_relevance_score: 4**\n- **一句话 takeaway：** 青松制药智能生产基地重点布局双室袋，为包装企业带来新的品类机会。\n- **关键信息：** 青松（天津）制药11亿元智能化生产基地启用，重点布局双室袋产品。诺和诺德将增加中国BD，口服司美格鲁肽近期提交中国审批。复星安特金完成9.68亿融资。\n- **与 Amcor / 包装业务的关系：** **Direct Signal**。文章明确提到“双室袋”，这是一种特殊的输液包装形式，与Amcor的软包装业务高度相关。\n- **原文链接：** [https://mp.weixin.qq.com/s/D80c0pZ3H_b4bmykr_JmXQ](https://mp.weixin.qq.com/s/D80c0pZ3H_b4bmykr_JmXQ)\n\n**2. 标题: 安斯泰来及第一三共等日本大型药企在中国扩大投资...(Key: 第一三共建厂)**\n- **来源：** 医药健闻 (2026-06-17)\n- **分类：** 商业化/供应链\n- **relevance_score: 18 / amcor_relevance_score: 4**\n- **一句话 takeaway：** 第一三共投资11亿元在上海建厂扩产，长期利好上游包装供应链。\n- **关键信息：** 第一三共投资约11亿元在上海建设医药品生产大楼。强生投资10亿美元增强美国生产能力（非中国）。\n- **与 Amcor / 包装业务的关系：** **Indirect Signal**。产能扩张通常意味着未来更大的包装材料采购量，对Amcor是潜在利好。\n- **原文链接：** [https://mp.weixin.qq.com/s/bqUk0Ef5P19FAy26Q3LhPw](https://mp.weixin.qq.com/s/bqUk0Ef5P19FAy26Q3LhPw)\n\n**3. 标题: 【瞩目】葵花药业拿下40亿畅销贴膏剂**\n- **来源：** 米内网 (2026-06-18)\n- **分类：** 新药申报/获批\n- **relevance_score: 17 / amcor_relevance_score: 3**\n- **一句话 takeaway：** 年销售额40亿的贴膏剂大品种获批，对贴剂包装材料供应商是积极信号。\n- **关键信息：** 葵花药业氟比洛芬凝胶贴膏获批，该药2025年销售额超40亿元，系贴膏剂TOP1产品。\n- **与 Amcor / 包装业务的关系：** **Indirect Signal**。贴膏剂剂型与Amcor的复合膜、条包等包装材料相关，但文章未明确具体包装。\n- **原文链接：** [https://mp.weixin.qq.com/s/FdVZomqBcJUA1YS6LS3ogQ](https://mp.weixin.qq.com/s/FdVZomqBcJUA1YS6LS3ogQ)\n\n#### 3.3.3 Other Important Pharma News\n- **新药申报/获批：** 仁合益康3个重磅仿制药同日获批；神基制药推进布瑞哌唑口溶膜等新型剂型。\n- **政策监管：** 308个中成药集采结果公布，OTC首入集采，**神威药业**等客户中选。\n- **BD出海：** 百利天恒BL-B01D1获批上市，为其与BMS的84亿美元合作奠定商业化基础。\n\n### Week 4: 2026-06-22 至 2026-06-28\n\n#### 4.4.1 本周概览\n本周迎来多个里程碑事件：全球首款双抗ADC和实体瘤CAR-T同日获批。同时，产能投资新闻持续发酵，华北制药、人福医药等企业也披露了新产品和新剂型布局。\n\n#### 4.4.2 Most Relevant to Amcor / Packaging\n\n**1. 标题: 跨国药企在中国 | 诺和诺德、安斯泰来、第一三共...(Key: 诺和诺德注射笔扩产)**\n- **来源：** 医药健闻 (2026-06-22)\n- **分类：** 商业化/供应链\n- **relevance_score: 18 / amcor_relevance_score: 5**\n- **一句话 takeaway：** 诺和诺德追加2亿元提升注射笔产能，直接带来注射笔相关包装及组件需求。\n- **关键信息：** 诺和诺德在天津追加2亿元投资，提升1.5ml畅充注射笔组装产能。第一三共投资约11亿元在上海新建生产大楼。\n- **与 Amcor / 包装业务的关系：** **Direct Signal**。“注射笔组装产能”提升，意味着对注射笔本身及其二级包装需求的增加，与Amcor的包装业务强相关。\n- **原文链接：** [https://mp.weixin.qq.com/s/DiZVtuZ6WdCPTk5RwTpVxg](https://mp.weixin.qq.com/s/DiZVtuZ6WdCPTk5RwTpVxg)\n\n**2. 标题: 【关注】扬子江拿下3亿注射剂**\n- **来源：** 米内网 (2026-06-24)\n- **分类：** 新药申报/获批\n- **relevance_score: 18 / amcor_relevance_score: 4**\n- **一句话 takeaway：** 一款3亿级注射剂大品种获批，直接拉动注射剂包装需求。\n- **关键信息：** 扬子江药业注射用卡非佐米获批，2025年销售额超3亿元，增长62.96%。\n- **与 Amcor / 包装业务的关系：** **Direct Signal**。明确为注射剂，销售增长意味着西林瓶、胶塞等注射剂包装材料需求增加。\n- **原文链接：** [https://mp.weixin.qq.com/s/9UDd4bZkH6FaAiEbdGBCSg](https://mp.weixin.qq.com/s/9UDd4bZkH6FaAiEbdGBCSg)\n\n#### 4.4.3 Other Important Pharma News\n- **新药申报/获批：** 百利天恒BL-B01D1、科济药业实体瘤CAR-T同日获批；阿斯利康奥希替尼新适应症获批；华海药业HB0017申报上市。\n- **BD出海：** 和誉医药与礼来达成19亿美元合作；辉瑞60亿美元引进三生制药双抗。\n- **商业化/供应链：** 神基制药赴港IPO，拥有覆盖1.8万医院和10万药店的商业化网络。\n\n### Week 5: 2026-06-29 至 2026-06-30\n\n#### 5.5.1 本周概览\n本周的最后两天，月报范围结束。重点新闻围绕**云南白药**经皮给药项目和**新耀湃科**给药装置获FDA批准，两者均为Amcor包装业务提供了明确的直接机会。赛诺菲在北京投资10亿欧元的胰岛素原料药基地开工也值得关注。\n\n#### 5.5.2 Most Relevant to Amcor / Packaging\n\n**1. 标题: 默克将以113亿美元收购生命科学仪器供应商Bio-Techne...(Key: 云南白药经皮给药项目)**\n- **来源：** 医药健闻 (2026-06-30)\n- **分类：** 商业化/供应链\n- **relevance_score: 17 / amcor_relevance_score: 5**\n- **一句话 takeaway：** 重点客户云南白药投资3.6亿元建设经皮给药平台，明确带来贴膏类包装需求。\n- **关键信息：** 云南白药全资子公司无锡药业建设经皮给药技术产业平台项目，预算3.6亿元，主产经典贴膏。\n- **与 Amcor / 包装业务的关系：** **Direct Signal**。围绕重点客户（云南白药）的明确产能建设项目，贴膏产品直接依赖复合膜、条包、背衬等包装材料。\n- **原文链接：** [https://mp.weixin.qq.com/s/TeHWveiwpB8hbwpX3zZc_Q](https://mp.weixin.qq.com/s/TeHWveiwpB8hbwpX3zZc_Q)\n\n**2. 标题: 成立5年营收数亿，这家上海企业推动中国给药装置首次进入FDA药械组合体系**\n- **来源：** 动脉网 (2026-06-29)\n- **分类：** 包装相关\n- **relevance_score: 17 / amcor_relevance_score: 5**\n- **一句话 takeaway：** 中国给药装置首次进入FDA体系，是国产高端包装材料的里程碑。\n- **关键信息：** 新耀湃科Inpacpen DCP注射笔获FDA批准，上海工厂已建设数亿级产能。布局预灌封注射器、自我注射笔。\n- **与 Amcor / 包装业务的关系：** **Direct Signal**。文章核心是**给药装置**（注射笔、预灌封注射器），属于Amcor业务中的高附加值领域。该公司的成功表明市场对高质量给药装置的需求增长。\n- **原文链接：** [https://mp.weixin.qq.com/s/06l5e1YMBWCxB0Qj0DMgaQ](https://mp.weixin.qq.com/s/06l5e1YMBWCxB0Qj0DMgaQ)\n\n**3. 标题: 【火热】中药龙头出手了，3.6亿加码黄金赛道 (云南白药)**\n- **来源：** 米内网 (2026-06-30)\n- **分类：** 商业化/供应链\n- **relevance_score: 17 / amcor_relevance_score: 4**\n- **一句话 takeaway：** (与上面新闻类似，但更详细) 云南白药加码透皮制剂，其核心产品年销售额超58亿元，潜力巨大。\n- **关键信息：** 云南白药董事会批准3.6亿元投资经皮给药产业平台。其核心产品系列2025年销售额超58亿元。\n- **与 Amcor / 包装业务的关系：** **Direct Signal**。进一步验证了云南白药在透皮制剂领域的投入和市场规模，对透皮制剂包装材料是长期利好。\n- **原文链接：** [https://mp.weixin.qq.com/s/tMPaOMkIeEEmnrFWjsNJFA](https://mp.weixin.qq.com/s/tMPaOMkIeEEmnrFWjsNJFA)\n\n#### 5.5.3 Other Important Pharma News\n- **新药申报/获批：** 宜联生物B7-H3 ADC YL201拟纳入优先审评；恒瑞瑞康曲妥珠单抗申报HER2低表达乳腺癌新适应症。\n- **商业化/供应链：** 赛诺菲北京胰岛素原料药基地投资约10亿欧元开工；礼邦医药港股IPO大涨，自建生产基地。2026年下半年10款重磅新药有望在华获批。\n- **政策监管：** 第12批国采正式启动，涉及65个产品。\n\n---\n\n## 4. Category Summary\n\n- **新药申报/获批 (77篇)**: 本月有大量新药获批、NDA受理和优先审评。最突出的包括：**百利天恒双抗ADC**、**科济药业实体瘤CAR-T**、**默沙东索特西普**、**荣昌生物泰它西普**预充式、**天广实MIL62** PMN新药、**首药控股康特替尼颗粒**、**恒瑞达尔西利**早期乳腺癌适应症、**阿斯利康奥希替尼**新适应症等。\n- **商业化/供应链 (23篇)**: 产能扩张是本月核心主题。**药明生物**（新加坡厂）、**诺和诺德**（天津注射笔）、**云南白药**（经皮给药平台）、**第一三共**（上海新厂）、**青松制药**（双室袋基地）、**赛诺菲**（北京胰岛素基地）、**东诚药业**（同位素基地）等均有重大产能投资。产品商业化方面，**诺诚健华**扭亏为盈，**传奇生物**业绩高增。\n- **BD出海 (9篇)**: 中国创新药出海金额巨大。**和誉医药**与礼来的19亿美元合作、**辉瑞**60亿美元引进**三生制药**双抗、**海思科**与礼来合作等是典型案例。行业趋势分析指出“打包出海”模式成为主流。\n- **融资并购 (4篇)**: **艾伯维**109亿美元收购Apogee，**渤健**10亿美元收购RayThera，**GSK** 106亿美元收购Nuvalent，**礼邦医药**港股IPO大涨等。\n- **政策监管 (3篇)**: 第四批中成药集采结果公布，OTC品种首次纳入。第12批国家药品集采正式启动。创新药首发定价机制征求意见稿流出。\n- **市场数据 (4篇)**: 胰岛素市场重返200亿规模；**葵花药业**40亿贴膏剂获批；**仁合益康**吸入用七氟烷年销超25亿元；外用中成药市场近340亿，**云南白药**居首。\n- **包装相关 (1篇)**: **新耀湃科**注射笔首次进入FDA药械组合体系，是包装领域的里程碑事件。\n\n---\n\n## 5. Company Watchlist\n\n- **云南白药 (Top Client):** 本月出现多次，核心是**3.6亿经皮给药平台投资**，直接关联贴膏类包装需求。其强大的商业化和品牌地位使其成为Amcor的重点关注客户。\n- **诺和诺德 (MNC):** 多次提及**天津工厂注射笔产能扩张**，以及新药上市（诺和杰、诺泽优）。GLP-1市场的持续增长和其本地化生产是包装需求的稳定来源。\n- **阿斯利康 (Top Client):** 本月有两款重磅产品新适应症获批（本瑞利珠单抗、奥希替尼），商业化潜力巨大，长期来看是重要的包装需求客户。\n- **华海药业 (Top Client):** 其IL-17A单抗HB0017申报上市；另一款GPP新药瑞西奇拜单抗预计下半年获批。作为重点客户，其新药管线进展值得持续跟踪。\n- **信立泰 (Top Client):** 其产品恩那度司他片在医院终端快速放量（+449%），提示口服固体制剂包装需求增加。\n- **神威药业 (Top Client):** 在第四批中成药集采中中选，集采落地可能导致销量变化，需关注后续包装采购。\n- **药明生物 / 新耀湃科 / 青松制药:** 这三家虽然不是Amcor重点客户，但其**产能扩张（药明、青松）** 和**包装技术创新（新耀湃科）** 直接或间接为包装供应商提供了新机遇，可作为潜在客户或标杆案例进行关注。\n\n---\n\n## 6. Drug / Target / Technology Watchlist\n\n- **重点药品/靶点/技术**:\n    - **GLP-1/GIP**：翰森制药奥莱泊肽注射液，礼来lebrikizumab，诺和诺德Wegovy/诺和杰。\n    - **ADC**：百利天恒BL-B01D1 (双抗ADC)，恒瑞瑞康曲妥珠单抗，科伦博泰Trop2 ADC。\n    - **CAR-T**：科济药业实体瘤CAR-T，传奇生物BCMA CAR-T，驯鹿生物BCMA CAR-T。\n    - **PD-1/PD-L1**：复宏汉霖H药，默沙东K药。\n    - **IL-17A / IL-4Rα / IL-36R**：康方、华海、麦济、先声等自免抗体药物。\n    - **PCSK9**：云顶新耀莱达西贝普，信立泰泰卡西单抗。\n    - **载体/给药技术**：预灌封注射器，笔式注射器，口服溶液，贴膏剂，口溶膜，双室袋，滴眼液。\n\n---\n\n## 7. Packaging & Commercialization Implications for Amcor\n\n### Direct Signals (文章直接提到包装、剂型、产能、供应链、商业化放量)\n\n- **产能扩张直接利好**：**药明生物**新加坡厂（预充针/西林瓶）、**云南白药**经皮给药平台（贴膏）、**诺和诺德**天津厂（注射笔）、**青松制药**（双室袋）的产能建设，均直接意味着对相关包装材料（如Luminate Films, Barricade, 注射笔组件等）的采购需求增加。Amcor应与这些项目的采购方建立联系。\n- **包装创新与认证**：**新耀湃科**的注射笔获FDA批准，证明中国给药装置的质量已达国际水平。Amcor可研究其成功路径，探索在预灌封注射器、卡式瓶等领域的合作机会。\n- **重点客户产品商业化**：**华海药业**的HB0017**申报上市**，**信立泰**的恩那度司他片**快速放量**，**阿斯利康**奥希替尼**新适应症获批**，这些重点客户的新药商业化将为Amcor带来**明确的口服固体制剂（PTP/SP）** 或**注射剂包装**需求。\n- **新产品剂型**：**荣昌生物**泰它西普**预充式**获批，**仁合益康**吸入剂/注射剂获批，**青峰医药**口服溶液获批，提示市场对预充式、吸入制剂、液体制剂的包装需求持续增长。\n\n### Indirect Signals (文章没有直接提包装，但有上市/申报/商业化/市场规模信息，可能间接影响包装需求)\n\n- **里程碑式新药获批**：**百利天恒**双抗ADC和**科济药业**实体瘤CAR-T获批，虽然目前规模有限，但作为全球首创药物，其商业化成功将开辟新的生物制剂包装市场。\n- **大型BD交易**：**和誉医药**与礼来、**辉瑞**与三生制药的交易金额巨大，虽然早期项目居多，但反映了中国创新药的国际化潜力。一旦进入商业化阶段，将对高端包装材料提出需求。Amcor可关注相关管线的III期进展。\n- **市场放量信号**：**葵花药业**40亿贴膏剂、**仁合益康**25亿吸入剂、**诺诚健华**14亿奥布替尼、**传奇生物**18.87亿美元Carvykti等，这些大品种的放量，必然带来其对应剂型（贴膏、吸入剂、片剂、注射剂）包装材料的需求增长。\n- **行业政策**：第12批国采涉及65个产品。**中标品种**将面临速放量，包装需求可能短期激增。但同时，集采降价压力可能促使药企压缩包装成本，Amcor需关注客户的成本敏感性。\n\n---\n\n## 8. Risks and Uncertainties\n\n1.  **信息来源限制**：本报告内容均来自微信公众号及其RSS/结构化文章。部分信息（尤其是OCR识别和BD交易金额）可能存在不准确之处，建议在用于商业决策前进行二次核验。\n2.  **产能建设周期**：生产线（如第一三共上海新大楼、东诚药业同位素基地、药明生物新加坡厂）的建设需要时间，实际产能释放和包装采购高峰可能与新闻报道时间存在较长滞后。\n3.  **商业化不确定性**：新药获批（如科济药业CAR-T）并不等于立即放量，其商业化规模受限于定价、医保准入、医生接受度和市场竞争。对包装需求的影响需要根据实际销售数据来判断。\n4.  **BD交易风险**：月报中提及的BD合作（如和誉-礼来、辉瑞-三生）多处于早期研发阶段，临床失败或管线调整的风险较高。其包装需求可能在5-10年内都不会实现。\n5.  **推断的谨慎性**：本报告中“Indirect Signals”部分是基于文章信息进行的合理推断，并非直接证据。例如，某新药获批不一定会立刻选择Amcor作为包装供应商，Amcor需要主动出击。\n6.  **竞争与价格压力**：集采政策和仿制药竞争（如正大天晴恩扎卢胺、扬子江卡非佐米等）将压低药价，可能传导至上游包装环节，造成采购方对成本更加敏感。Amcor需要提供成本效益更优的解决方案。\n\n---\n\n## 9. Appendix: Articles Reviewed by Week\n\n*下表仅列出纳入月报分析的67篇文章中的部分关键文章，因篇幅限制未全部列出。*\n\n| Week | Date | Title | Source | Category | Relevance Score | Amcor Relevance | Packaging Relevance |\n| :---: | :---: | :--- | :--- | :--- | :---: | :---: | :---: |\n| W1 | 06-01 | 跨国药企在中国 | 诺华、拜耳... | BD出海 | 17 | 1 | none |\n| W1 | 06-02 | 默克大湾区创新中心在深圳落成... | 医药健闻 | 新药申报/获批 | 16 | 3 | low |\n| W1 | 06-05 | 拜耳健康消费品中国创新合作中心落地山东... | 医药健闻 | 商业化/供应链 | 17 | 5 | **high** |\n| W1 | 06-05 | 百利天恒重磅 ADC 新药启动首个全球 III 期 | 丁香园 | 临床进展 | 16 | 1 | low |\n| W1 | 06-07 | 国产新药出海，变了 | 丁香园 | BD出海 | 18 | 2 | none |\n| W2 | 06-09 | 阿斯利康可能被迫在英国和欧洲停售新药...(Key: 荣昌生物预充式获批) | 医药健闻 | 新药申报/获批 | 17 | 4 | **high** |\n| W2 | 06-10 | GSK斥资106亿美元收购...H药汉斯状获批... | 医药健闻 | 新药申报/获批 | 17 | 3 | low |\n| W2 | 06-14 | 金赛药业变了 | 丁香园 | 新药申报/获批 | 17 | 3 | medium |\n| W3 | 06-16 | 诺和诺德全球高管团队来华宣布新投资... | 医药健闻 | 商业化/供应链 | 16 | 4 | medium |\n| W3 | 06-17 | 安斯泰来及第一三共等日本大型药企在中国扩大投资... | 医药健闻 | 商业化/供应链 | 18 | 4 | medium |\n| W3 | 06-18 | 渤健将以最高10亿美元收购RayThera...(Key: 青松制药双室袋基地) | 医药健闻 | 商业化/供应链 | 16 | 4 | **high** |\n| W3 | 06-18 | 【瞩目】葵花药业拿下40亿畅销贴膏剂 | 米内网 | 新药申报/获批 | 17 | 3 | medium |\n| W4 | 06-22 | 跨国药企在中国 | 诺和诺德... (Key: 注射笔扩产) | 医药健闻 | 商业化/供应链 | 18 | 5 | **high** |\n| W4 | 06-23 | 一日拿下两项“全球首证”... | 新康界 | 新药申报/获批 | 19 | 3 | medium |\n| W4 | 06-24 | 【关注】扬子江拿下3亿注射剂 | 米内网 | 新药申报/获批 | 18 | 4 | **high** |\n| W4 | 06-25 | 国产 1 类新药申报上市，来自华海药业 | 丁香园 | 新药申报/获批 | 16 | 3 | low |\n| W5 | 06-29 | 成立5年营收数亿...中国给药装置首次进入FDA... | 动脉网 | 包装相关 | 17 | 5 | **high** |\n| W5 | 06-30 | 默克将以113亿美元收购... (Key: 云南白药经皮给药) | 医药健闻 | 商业化/供应链 | 17 | 5 | **high** |\n| W5 | 06-30 | 【火热】中药龙头出手了，3.6亿加码黄金赛道 (云南白药) | 米内网 | 商业化/供应链 | 17 | 4 | **high** |\n| W5 | 06-30 | 国内进度领先！宜联生物 1 类新药拟纳入优先审评 | 丁香园 | 新药申报/获批 | 19 | 3 | low |"
+  "markdown_report": "好的，收到您的指令。作为您的医药行业月报写作助手，我将基于您提供的结构化文章数据，结合 Amcor China/APAC 的业务上下文，生成一份正式、清晰的月度报告。\n\n以下是为您准备的月报：\n\n# Monthly Pharma News Report\n\n**周期：** 2026-06-01 至 2026-06-30\n**数据来源：** 微信公众号 RSS / 已结构化文章分析\n**生成时间：** 2026-07-13T16:19:51+08:00\n**目标读者：** Amcor China / APAC 管理层\n\n## 1. Executive Summary 月度核心总结\n\n本月医药行业动态活跃，各项政策与商业化新闻频出。以下是6月份对 Amcor 药品包装业务最重要的信号总结：\n\n1.  **包装政策法规密集发布**：CDE 发布《关于开发适宜药品包装规格的指导原则》，中国医药包装协会发布了《单剂量口服液体制剂用复合袋包装评价》和《滴眼剂包装系统设计和开发要求》等团体标准，以及2025年版药典药包材通用要求指导原则的解析，为包装企业指明了合规、技术及品质升级方向。\n\n2.  **产能扩张与供应链建设为包装业务带来直接机遇**：药明生物新加坡年产1亿支预充针和西林瓶的制剂厂封顶、诺和诺德天津生产基地追加投资提升注射笔产能、以及第一三共和赛诺菲在华生产基地建设，均为上游包装材料供应商（如Amcor）提供了明确的商业机会。\n\n3.  **重点客户商业化动态强劲**：**云南白药**（Amcor重点客户）3.6亿加码透皮制剂（贴膏）产能，其核心产品销售额持续增长。**阿斯利康**（重点客户）的奥希替尼新适应症获批，将稳固其重磅产品市场地位，带动口服固体制剂包装需求。\n\n4.  **中国给药装置取得里程碑突破**：新耀湃科的注射笔首次进入FDA药械组合体系，标志着国产高端包装材料进入全球主流市场，为国内包装企业（如Amcor）的出海业务提供了参考和信心。\n\n5.  **本土药企创新药获批带来新包装需求**：多个国产创新药获批上市，如首款实体瘤CAR-T、双抗ADC等，涉及注射剂、口服液等不同剂型，将为包装市场注入新的品种和订单。\n\n6.  **BD出海常态化，关注长期商业化兑现**：礼来、辉瑞等MNC持续重注中国创新药资产（如与和誉医药、三生制药的合作）。虽然早期项目对包装需求影响有限，但预示着未来商业化产品管线将更加丰富，利好长期包装需求。\n\n7.  **ESG与风险**：多个新药获批及集采对供给量的提振可能利好包装需求，但需关注I期临床的商业化风险、集采降价对包装成本的压力以及地缘政治对供应链的影响。\n\n## 2. Monthly Amcor Relevance Ranking\n\n以下是本月对 Amcor 药品包装业务相关性最高的TOP 10新闻：\n\n| 排名 | 标题 | 周次 | 来源 (发布时间) | Relevance Score / Amcor Score | 与Amcor包装业务的关系 | 原文链接 |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| **1** | CDE发布《关于开发适宜药品包装规格的指导原则》 | Week 1 | 中国医药包装协会 (2026-06-01) | **19 / 5 (高)** | 直接指导包装规格开发，影响药企包装决策，为Amcor提供合规解决方案的业务机会。 | [链接](https://mp.weixin.qq.com/s/87_klLzNd0zmtEiLv2PMsA) |\n| **2** | 药明生物新加坡预充针和西林瓶生产基地封顶 | Week 1 | 医药健闻 (2026-06-05) | **17 / 5 (高)** | 明确涉及预充针和西林瓶产能扩张，对上游包装材料供应商（如Amcor的复合膜、泡罩等）有直接商业意义。 | [链接](https://mp.weixin.qq.com/s/uw16qTMkElFyaCPLrzyD1g) |\n| **3** | ICH Q3E 来了！2027 落地倒计时 | Week 2 | 中国医药包装协会 (2026-06-12) | **14 / 5 (高)** | 直接涉及药包材可提取物与浸出物评估标准，是影响包装合规的关键法规，对Amcor的研发和质量控制有重要意义。 | [链接](https://mp.weixin.qq.com/s/rZeVw0yp2w3UmZoDP-4fTw) |\n| **4** | 2025年版《中国药典》药包材通用要求指导原则解析（上） | Week 4 | 中国医药包装协会 (2026-06-23) | **18 / 5 (高)** | 直接解析药包材新标准，引入“包装系统”概念，影响Amcor的质量管理体系和产品设计。 | [链接](https://mp.weixin.qq.com/s/5i7t7VecsXOKm6qbaAVoEA) |\n| **5** | 云南省审评中心发布《已上市化学药品变更包装材料和容器药学研究资料撰写指南（试行）》 | Week 5 | 中国医药包装协会 (2026-06-29) | **16 / 5 (高)** | 直接规范药品包装变更流程，对Amcor的合规业务具有直接指导意义。 | [链接](https://mp.weixin.qq.com/s/nyxp4fDS-W7FdY0V38jKeA) |\n| **6** | 成立5年营收数亿，这家上海企业推动中国给药装置首次进入FDA药械组合体系 | Week 5 | 动脉网 (2026-06-29) | **17 / 5 (高)** | 直接涉及给药装置（注射笔），并强调产能扩张和商业化量产，与Amcor的包装业务高度相关。 | [链接](https://mp.weixin.qq.com/s/06l5e1YMBWCxB0Qj0DMgaQ) |\n| **7** | 跨国药企在中国 | 诺和诺德、安斯泰来、第一三共等新动态 | Week 4 | 医药健闻 (2026-06-22) | **18 / 5 (高)** | 直接提到诺和诺德追加投资提升注射笔产能，以及第一三共建生产大楼，是明确的产能投资和供应链信号。 | [链接](https://mp.weixin.qq.com/s/DiZVtuZ6WdCPTk5RwTpVxg) |\n| **8** | 【火热】中药龙头出手了，3.6亿加码黄金赛道 | Week 5 | 米内网 (2026-06-30) | **17 / 4 (高)** | 明确提到重点客户**云南白药**加码透皮制剂（贴膏）产能，与Amcor的包装材料（如条包、复合膜）业务直接相关。 | [链接](https://mp.weixin.qq.com/s/tMPaOMkIeEEmnrFWjsNJFA) |\n| **9** | 渤健将以最高10亿美元收购RayThera；诺和诺德未来会增加在中国的BD交易 | Week 3 | 医药健闻 (2026-06-18) | **16 / 4 (高)** | 明确提到青松制药投资11亿元建设智能化生产基地，主攻**双室袋**产品，直接关联包装形式和产能扩张。诺和诺德口服药进展也带来包装机会。 | [链接](https://mp.weixin.qq.com/s/D80c0pZ3H_b4bmykr_JmXQ) |\n| **10** | 诺和诺德全球高管团队来华宣布新投资 | Week 3 | 医药健闻 (2026-06-16) | **16 / 4 (高)** | 明确提到诺和诺德追加投资提升**注射笔**组装产能，以及诺思兰德委托生产**注射液**，均直接涉及包装和剂型。 | [链接](https://mp.weixin.qq.com/s/nrcJCgwnGBVFcDtgeMppbg) |\n\n## 3. Week-by-Week News Digest\n\n### Week 1: 2026-06-01 至 2026-06-07\n\n#### 3.1.1 本周概览\n本周包装政策迎来重大更新，CDE发布了新版包装规格指导原则。产能建设方面，药明生物新加坡工厂的封顶为亚太地区生物制剂包装需求注入强心剂。同时，多个新药获批及BD出海交易活跃。\n\n#### 3.1.2 Most Relevant to Amcor / Packaging\n\n**1. CDE发布《关于开发适宜药品包装规格的指导原则》**\n- **来源：** 中国医药包装协会 (2026-06-01)\n- **分类：** 政策监管 / 包装相关\n- **relevance_score / amcor_relevance_score:** 19 / 5\n- **一句话takeaway:** 药监部门鼓励开发适宜包装规格，引导行业减少过度包装，对包装供应商的方案设计能力提出更高要求。\n- **关键信息：** 药审中心（CDE）发布新指导原则，旨在规范药品注册中的包装规格，防止过度包装，自发布之日起施行。\n- **与Amcor/包装业务的关系:** **直接信号**。指导原则将直接影响药企在注册阶段对包装材料的规格选择，为提供标准化、高效解决方案的包装企业（如Amcor）创造了合规咨询和产品设计的业务机会。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/87_klLzNd0zmtEiLv2PMsA)\n\n**2. 药明生物新加坡预充针和西林瓶生产基地封顶**\n- **来源：** 医药健闻 (2026-06-05)\n- **分类：** 商业化/供应链 / 包装相关\n- **relevance_score / amcor_relevance_score:** 17 / 5\n- **一句话takeaway:** 药明生物新加坡工厂每年可生产约1亿支预充针和西林瓶，是亚太地区生物制剂产能扩张的里程碑事件。\n- **关键信息：** 药明生物新加坡CRDMO中心模块化生物制剂生产厂封顶，预计年产1亿支预充针和西林瓶。\n- **与Amcor/包装业务的关系：** **直接信号**。明确提及预充针和西林瓶的产能，是生物制剂包装（如标签、泡罩、冷成型铝等）需求增长的直接引擎。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/uw16qTMkElFyaCPLrzyD1g)\n\n**3. 协会团体标准《单剂量口服液体制剂用复合袋包装评价》编制背景及内容简介**\n- **来源：** 中国医药包装协会 (2026-06-05)\n- **分类：** 包装相关\n- **relevance_score / amcor_relevance_score:** 15 / 4\n- **一句话takeaway:** 行业标准即将落地，为口服液复合袋包装提供了系统的评价体系和技术指引。\n- **关键信息：** 该标准覆盖材料、设备及工艺评价，引入“材-机-药”三方协作理念。\n- **与Amcor/包装业务的关系：** **直接信号**。该标准与Amcor的液体条包业务高度相关，对产品质量控制、研发及客户沟通具有直接指导意义。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/tiYoZ3RjN9XKIUL51SdSeQ)\n\n#### 3.1.3 Other Important Pharma News\n- **阿斯利康本瑞利珠单抗获NMPA新适应症批准**：治疗嗜酸性粒细胞增多综合征，属于重点客户的重磅产品线扩展。\n- **信达生物与辉瑞达成105亿美元全球战略合作**：体现中国创新药出海模式升级。\n- **国产新药出海模式转变**：从单药授权转向“打包出海”，头部企业获益，但早期项目居多。\n- **2025年中国创新药出海交易总额突破1300亿美元**：行业景气度高，包装企业可关注后续商业化落地。\n\n### Week 2: 2026-06-08 至 2026-06-14\n\n#### 3.2.1 本周概览\n本周包装法规主题持续，ICH Q3E研讨会预告及国家药典委标准征集启动。商业化方面，荣昌生物预充式注射剂获批，诺和诺德口服Wegovy处方量增长，多个新药获批及BD合作密集发布。\n\n#### 3.2.2 Most Relevant to Amcor / Packaging\n\n**1. ICH Q3E 来了！2027 落地倒计时，这场研讨会帮你提前卡位**\n- **来源：** 中国医药包装协会 (2026-06-12)\n- **分类：** 政策监管 / 包装相关\n- **relevance_score / amcor_relevance_score:** 14 / 5\n- **一句话takeaway:** ICH Q3E指南即将落地，将统一全球药包材可提取物与浸出物评估标准，企业需提前准备。\n- **关键信息：** 中国医药包装协会将举办研讨会，解读预计2027年落地的ICH Q3E指南，该指南是全球首个统一的药包材E&L评估标准。\n- **与Amcor/包装业务的关系：** **直接信号**。这是影响药包材全球合规的关键法规，对Amcor产品的国际注册、研发和质量控制具有战略性影响。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/rZeVw0yp2w3UmZoDP-4fTw)\n\n**2. 荣昌生物泰它西普注射液（预充式）获NMPA附条件批准上市**\n- **来源：** 医药健闻 (2026-06-09)\n- **分类：** 新药申报/获批\n- **relevance_score / amcor_relevance_score:** 17 / 4\n- **一句话takeaway:** 预充式注射剂的获批，直接增加了对预充式注射器及其相关包装（如泡罩、标签）的需求。\n- **关键信息：** 荣昌生物泰它西普注射液（预充式注射剂）获批准治疗IgA肾病。\n- **与Amcor/包装业务的关系：** **直接信号**。明确提及“预充式”剂型，是典型的包装需求信号。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/xDoyHXtGwM_kInUHgUwwYg)\n\n**3. 国家药典委2027年度国家药品标准制修订项目立项建议征集启动**\n- **来源：** 中国医药包装协会 (2026-06-08)\n- **分类：** 政策监管 / 包装相关\n- **relevance_score / amcor_relevance_score:** 14 / 4\n- **一句话takeaway:** 药包材标准制修订项目征集启动，包装企业可参与，提前影响未来标准走向。\n- **关键信息：** 国家药典委征集2027年标准制修订项目，范围包括药包材标准。\n- **与Amcor/包装业务的关系：** **直接信号**。Amcor可以主动参与相关标准制定的申报工作，保持在行业中的话语权。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/51l0AISu5grE7Yn2ncyP-A)\n\n#### 3.2.3 Other Important Pharma News\n- **金赛药业多元化转型：** 多款新药获批，口服混悬液、软膏等新剂型，商业化放量可能带来包装需求。\n- **再鼎医药两款新药商业化发货：** 宫颈癌药和精神分裂症新药，进入商业化放量阶段。\n- **复宏汉霖H药获批胃癌围术期适应症：** 为PD-1单抗的新适应症，将进一步扩大市场规模。\n- **康诺亚司普奇拜单抗销售额增长775%：** 显示自免领域商业化潜力巨大，对产业链有拉动作用。\n- **首药控股ALK抑制剂颗粒剂获批：** 作为国内首款ALK抑制剂颗粒剂，是一个值得关注的剂型创新。\n\n### Week 3: 2026-06-15 至 2026-06-21\n\n#### 3.3.1 本周概览\n本周产能投资动态密集，诺和诺德天津追加投资、青松制药双室袋基地启用、日本药企在华建厂，多项新药获批也继续创造包装需求。\n\n#### 3.3.2 Most Relevant to Amcor / Packaging\n\n**1. 渤健将以最高10亿美元收购RayThera；诺和诺德未来会增加在中国的BD交易；派林生物控制权转让事项终止 | 日报**\n- **来源：** 医药健闻 (2026-06-18)\n- **分类：** 商业化/供应链\n- **relevance_score / amcor_relevance_score:** 16 / 4\n- **一句话takeaway:** 青松制药11亿元智能化生产基地主攻**双室袋**，是本周对包装业务最直接的提示之一。\n- **关键信息：** 青松制药智能化生产基地启用，重点布局**双室袋**产品。诺和诺德口服司美格鲁肽即将提交中国审批。\n- **与Amcor/包装业务的关系：** **直接信号**。双室袋产能扩张，直接利好Amcor提供的相关包装解决方案。诺和诺德口服药上市则预示口服固体制剂包装需求增长。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/D80c0pZ3H_b4bmykr_JmXQ)\n\n**2. 诺和诺德全球高管团队来华宣布新投资；国药控股与辉瑞确定战略合作关系；诺万特宣布重大收购计划 | 日报**\n- **来源：** 医药健闻 (2026-06-16)\n- **分类：** 商业化/供应链\n- **relevance_score / amcor_relevance_score:** 16 / 4\n- **一句话takeaway:** 诺和诺德天津追加投资提升注射笔产能，是注射剂包装需求增长的明确信号。\n- **关键信息：** 诺和诺德在天津追加2亿元投资提升1.5ml注射笔组装产能。诺思兰德委托生产塞多明基注射液，合同金额不低于9000万元。\n- **与Amcor/包装业务的关系：** **直接信号**。注射笔产能扩张和注射液商业化生产，直接关联注射笔相关包装（如标签、泡罩）和注射剂包装（如西林瓶、胶塞）的需求。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/nrcJCgwnGBVFcDtgeMppbg)\n\n**3. 安斯泰来及第一三共等日本大型药企在中国扩大投资**\n- **来源：** 医药健闻 (2026-06-17)\n- **分类：** 商业化/供应链\n- **relevance_score / amcor_relevance_score:** 18 / 4\n- **一句话takeaway:** 第一三共投资11亿元在上海建生产大楼，日本药企在华产能布局提速。\n- **关键信息：** 第一三共投资约11亿元在上海建设医药品生产大楼（2030年启用），安斯泰来在北京设立研发基地。恒瑞达尔西利获批早期乳腺癌辅助治疗。\n- **与Amcor/包装业务的关系：** **直接信号**。产能扩张通常意味着未来包装采购量的增长。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/bqUk0Ef5P19FAy26Q3LhPw)\n\n#### 3.3.3 Other Important Pharma News\n- **协会《滴眼剂包装系统设计和开发要求》团体标准解读发布：** 为滴眼剂包装提供技术规范，与Amcor的医药包装业务有直接参考价值。\n- **葵花药业获批40亿级贴膏剂：** 大品种仿制药，贴膏剂型对包装材料（如复合膜）有需求。\n- **仁合益康同日获批3个重磅仿制药：** 涉及吸入剂和注射剂，带来包装需求。\n- **正大天晴全球研发总部上海落成：** 投资18亿元，体现对研发的重视，长期利好。\n- **第四批中成药集采结果出炉：** 涉及重点客户神威药业，关注集采对其包装需求的影响。\n\n### Week 4: 2026-06-22 至 2026-06-28\n\n#### 3.4.1 本周概览\n本周迎来“全球首证”爆发期，多款中国原创新药里程碑式获批。包装法规方面，2025版药典药包材指导原则解析发布。产能方面，多家跨国药企新动态中继续释放投资信号。\n\n#### 3.4.2 Most Relevant to Amcor / Packaging\n\n**1. 2025年版《中国药典》药包材通用要求指导原则解析（上）**\n- **来源：** 中国医药包装协会 (2026-06-23)\n- **分类：** 政策监管 / 包装相关\n- **relevance_score / amcor_relevance_score:** 18 / 5\n- **一句话takeaway:** 2025版药典首次引入“药品包装系统”概念，是药包材领域的重大变革。\n- **关键信息：** 解析新标准体系从“一品一标准”改为“1+4+58”结构，强调包装系统密封性、保护性等关键质量属性。\n- **与Amcor/包装业务的关系：** **直接信号**。新的药典标准将全面影响包装企业的产品设计、质量控制及合规要求，是必须跟进的战略性法规。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/5i7t7VecsXOKm6qbaAVoEA)\n\n**2. 跨国药企在中国 | 诺和诺德、安斯泰来、第一三共、诺华等新动态**\n- **来源：** 医药健闻 (2026-06-22)\n- **分类：** 商业化/供应链\n- **relevance_score / amcor_relevance_score:** 18 / 5\n- **一句话takeaway:** 诺和诺德追加2亿元投资注射笔产能，产能信号持续确认。\n- **关键信息：** 诺和诺德追加2亿元投资提升注射笔产能。第一三共投资11亿元建生产大楼。\n- **与Amcor/包装业务的关系：** **直接信号**。这是对第3周诺和诺德投资信息的进一步确认和补充，注射笔产能扩张是明确的订单机会。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/DiZVtuZ6WdCPTk5RwTpVxg)\n\n**3. 2 款进口新药在中国获批上市**\n- **来源：** 丁香园 Insight 数据库 (2026-06-22)\n- **分类：** 新药申报/获批\n- **relevance_score / amcor_relevance_score:** 18 / 4\n- **一句话takeaway:** 重点客户阿斯利康的奥希替尼新适应症获批，将进一步巩固其市场地位，带来长期的包装需求。\n- **关键信息：** 阿斯利康奥希替尼新适应症获批（联合赛沃替尼治疗NSCLC）。奥希替尼全球销售额72.54亿美元，是公司TOP2管线。\n- **与Amcor/包装业务的关系：** **间接信号**。明确出现重点客户重磅产品，其商业化放量将直接提升对口服固体制剂包装（如铝塑泡罩、瓶装）的采购量。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/rY3u-Hdq6V1HqUyjXWNwQA)\n\n#### 3.4.3 Other Important Pharma News\n- **科济药业全球首款实体瘤CAR-T获批：** 生物制剂里程碑，商业化生产布局带来包装潜在机会。\n- **百利天恒全球首个双抗ADC获批：** 同样具有里程碑意义，开启新商业化时代。\n- **扬子江药业3亿级注射用卡非佐米获批：** 注射剂大品种，销售额快速增长。 **(是本周对包装业务相关性最高的新药新闻)**\n- **礼来与和誉医药达19亿美元合作：** 大额BD交易，但处于早期，包装机会需等待。\n- **第12批国采启动：** 涉及65个产品，中标品种放量将带动包装需求。\n- **神基制药赴港IPO：** 核心产品年销9.5亿，管线包含口溶膜等创新剂型。 **(是本周值得关注的商业化案例)**\n\n### Week 5: 2026-06-29 至 2026-06-30\n\n#### 3.5.1 本周概览\n月末最后两天资讯依然密集。包装领域，中国给药装置首次进入FDA体系、云南省发布包装变更指南。商业化方面，云南白药透皮制剂产能项目获批、多个新药获批/申报上市。\n\n#### 3.5.2 Most Relevant to Amcor / Packaging\n\n**1. 云南省审评中心发布《已上市化学药品变更包装材料和容器药学研究资料撰写指南（试行）》**\n- **来源：** 中国医药包装协会 (2026-06-29)\n- **分类：** 政策监管 / 包装相关\n- **relevance_score / amcor_relevance_score:** 16 / 5\n- **一句话takeaway:** 地方监管推出指南，为药品变更包装材料提供了规范的操作指引。\n- **关键信息：** 云南省审评中心发布该指南，旨在提高变更申报质量，促进合规。\n- **与Amcor/包装业务的关系:** **直接信号**。地方性的指导文件规范了包装变更流程，对包装企业协助客户进行合规的包装变更操作有具体指导意义。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/nyxp4fDS-W7FdY0V38jKeA)\n\n**2. 默克将以113亿美元收购Bio-Techne；云南白药经皮给药项目等**\n- **来源：** 医药健闻 (2026-06-30)\n- **分类：** 商业化/供应链\n- **relevance_score / amcor_relevance_score:** 17 / 5\n- **一句话takeaway:** 重点客户云南白药3.6亿建设贴膏产能，直接关联包装业务。\n- **关键信息：** 云南白药全资子公司无锡药业建设经皮给药技术产业平台项目，预算3.6亿元，主产经典贴膏。\n- **与Amcor/包装业务的关系:** **直接信号**。此举直接意味着对贴膏包装（如铝箔复合膜、背衬材料等）的采购量将显著增加，是Amcor应积极跟进的商业机会。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/TeHWveiwpB8hbwpX3zZc_Q)\n\n**3. 成立5年营收数亿，这家上海企业推动中国给药装置首次进入FDA药械组合体系**\n- **来源：** 动脉网 (2026-06-29)\n- **分类：** 包装相关\n- **relevance_score / amcor_relevance_score:** 17 / 5\n- **一句话takeaway:** 国产给药装置首次进入FDA体系，标志着国产高端包装和给药装置的崛起。\n- **关键信息：** 新耀湃科的Inpacpen DCP注射笔搭载利拉鲁肽注射剂获FDA批准。\n- **与Amcor/包装业务的关系:** **直接信号**。给药装置是药品包装的重要组成部分，国产企业在高端领域取得突破，为Amcor等提供参考，预示未来市场机会。\n- **原文链接：** [链接](https://mp.weixin.qq.com/s/06l5e1YMBWCxB0Qj0DMgaQ)\n\n#### 3.5.3 Other Important Pharma News\n- **2025年版《中国药典》药包材通用要求指导原则解析（下）**：引入全生命周期管理和风险管理理念，是上篇的延续和深化。\n- **《滴眼剂包装系统设计和开发要求》**：标准解读发布，为滴眼液包装市场带来规范。\n- **10款重磅新药有望下半年在华获批**：为包装企业提供下半年业务机会的预判。\n- **恒瑞瑞康曲妥珠单抗新适应症申报上市**：HER2低表达乳腺癌，继续扩大ADC产品线。\n- **宜联生物B7-H3 ADC拟纳入优先审评**：国产ADC再传捷报，首付款5.7亿美元。\n\n## 4. Category Summary 类别总结\n\n- **新药申报/获批：** 本月共追踪到30+条相关新闻。最重要的包括：**阿斯利康奥希替尼新适应症**、**首药控股颗粒剂**、**荣昌生物泰它西普预充针**、**科济药业实体瘤CAR-T**、**百利天恒双抗ADC**、以及多款PD-1等免疫检查点抑制剂新适应症获批。这反映了中国创新药市场的持续繁荣，为各剂型包装带来持续需求。\n\n- **临床进展：** 重点关注**百利天恒DLL3 ADC启动全球III期**、**华海药业HB0017申报上市**（重点客户）等。这些后期临床项目预示着未来有望获批，是包装企业前瞻性布局的依据。\n\n- **BD出海：** 本月BD出海交易金额巨大，**信达生物与辉瑞105亿美元**、**和誉为礼来19亿美元**、**海思科与礼来30亿美元**等合作频发。虽然早期项目居多，但体现出中国创新药资产价值提升，长期将带动全球商业化供应链。\n\n- **融资并购：** **GSK 106亿美元收购Nuvalent**、**艾伯维109亿美元收购Apogee**是本月最大并购案，显示MNC对创新管线的高溢价。国内**睿健医药C1轮融资2.1亿元**，显示资本对早期研发的支持。\n\n- **市场数据：** 重点客户**云南白药**相关产品销售额超58亿元，**华东医药（中美华东）** 创新产品收入同比增长61.8%。胰岛素市场重返200亿元。这些数据直接体现了重点客户的商业规模和增长潜力，为包装需求提供基量支撑。\n\n- **政策监管：** 本月政策密集，核心是**CDE《关于开发适宜药品包装规格的指导原则》**、**ICH Q3E指导原则**、**2025年版《中国药典》药包材通用要求指导原则** 以及**第12批国家药品集采启动**。这些政策直接影响包装企业的合规、技术和市场方向。\n\n- **商业化/供应链：** 这是本月对包装业务最直接的信号来源。**药明生物新加坡制剂厂**、**诺和诺德天津注射笔扩产**、**青松制药双室袋**、**云南白药贴膏产能**等项目直接关联包装采购。此外，**赛诺菲北京胰岛素基地**、**第一三共上海生产大楼**等长期投资也预示未来需求增长。\n\n- **包装相关：** 本月包装新闻多来自中国医药包装协会，主要为法规、标准及研讨会。最重要的标准是**《单剂量口服液体制剂用复合袋包装评价》**（与液体条包高度相关）和**《滴眼剂包装系统设计和开发要求》**。此外，**新耀湃科注射笔获FDA批准** 是包装行业里程碑事件。\n\n## 5. Company Watchlist 月度重点关注公司\n\n| 公司名称 | 关注原因 |\n| :--- | :--- |\n| **云南白药** (重点客户) | 3.6亿加码透皮制剂产能，核心产品销售额持续增长，是本月最值得关注的直接包装机会来源。 |\n| **诺和诺德** | 在华多次追加注射笔产能投资，口服司美格鲁肽即将中国申报，是GLP-1赛道对包装需求拉动的核心代表。 |\n| **阿斯利康** (重点客户) | 奥希替尼新适应症获批，本瑞利珠单抗新适应症获批，多项BD合作（石药、信达），产品线持续丰富，包装需求稳健。|\n| **药明生物** | 新加坡年产1亿支预充针和西林瓶的工厂封顶，是亚太地区生物制剂产能扩张的风向标，为包装企业带来确定性商机。|\n| **华海药业** (重点客户) | HB0017 (IL-17A) 申请上市，瑞西奇拜单抗 (GPP) 处于NDA优先审评，新药管线进展迅速，未来商业化值得关注。 |\n| **百利天恒** | 全球首个双抗ADC获批，多项适应症推进，商业化放量在即，其注射剂包装需求值得跟进。 |\n| **科济药业** | 全球首个实体瘤CAR-T获批，CAR-T产品对冷链包装和特殊包装有高要求，是高端包装领域的机会。 |\n| **神威药业** (重点客户) | 中成药集采中选，可能带来需求量提升，关注其后续包装采购变化。|\n| **信达生物** | 与辉瑞达成105亿美元合作，显示强大BD能力，长期商业化管线丰富。 |\n| **新耀湃科** | 中国给药装置首次进入FDA体系，代表国产高端包装企业崛起，其商业模式和发展路径值得学习借鉴。 |\n\n## 6. Drug / Target / Technology Watchlist 月度重点药品、靶点与技术\n\n- **Drugs（药品）:**\n    - **奥希替尼 (泰瑞沙):** 阿斯利康核心产品，新适应症获批，是稳定的口服制剂包装需求源。\n    - **瑞康曲妥珠单抗 (恒瑞ADC):** 持续扩展适应症，商业化潜力大，带动注射剂包装。\n    - **BL-B01D1 (百利天恒双抗ADC):** 全球首创产品，商业化进展值得跟踪。\n    - **氟比洛芬凝胶贴膏:** 年销超40亿的贴膏剂大品种，对包装材料需求巨大。\n    - **塞多明基注射液 (基因治疗):** 诺思兰德获批，作为基因治疗药物，其包装要求特殊。\n\n- **Target / Mechanism (靶点/机制):**\n    - **GLP-1/GIP:** 诺和诺德、礼来、翰森等激烈竞争，口服和注射剂型并行，是未来几年包装需求的最大增量市场之一。\n    - **ADC (抗体偶联药物):** 中国ADC创新药在全球领先，多个新药获批，是注射剂包装需求的重要增长点。\n    - **CAR-T (嵌合抗原受体T细胞):** 实体瘤CAR-T获批是里程碑，对冷链和特殊包装有刚需。\n    - **IL-17A / IL-4Rα / IL-1β:** 自免领域新靶点药物密集获批和申报，生物制剂注射剂包装需求增长。\n\n- **Technology (技术平台):**\n    - **双抗ADC:** 全球首个产品获批，代表前沿技术方向。\n    - **口溶膜 (ODF):** 神基制药管线布局，是一个值得关注的创新剂型。\n    - **双室袋:** 青松制药重点布局，是高效、安全输液包装解决方案。\n    - **经皮给药 (透皮贴膏):** 云南白药大举投资，市场规模大且持续增长。\n    - **给药装置 (注射笔/预灌封):** 国产进入FDA体系，展现独立商业化能力，是包装生态的重要部分。\n\n## 7. Packaging & Commercialization Implications for Amcor 包装与商业化启示\n\n### Direct signals (文章直接提到包装、剂型、产能等)\n1.  **产能扩张带来确定性订单：**\n    - **云南白药 (重点客户):** 3.6亿元经皮给药项目，需配套贴膏类包装材料（如复合膜、背衬等）。\n    - **药明生物 (亚太地区核心CDMO):** 新加坡工厂1亿支预充针/西林瓶产能，将需要大量标签、说明书、泡罩等包装。\n    - **诺和诺德:** 天津工厂注射笔扩产，提升组装产能，需要更多组件及与之配套的初级包装。\n    - **青松制药:** 11亿元双室袋产能基地，是输液包装的直接需求。\n    - **第一三共:** 11亿元上海生产大楼，是长期包装需求增长的信号。\n    - **新耀湃科:** 上海数亿级产能的注射笔工厂，是给药装置领域的新增长点。\n\n2.  **新药获批带来新包装需求：**\n    - **荣昌生物泰它西普注射液 (预充式):** 直接拉动预充式注射器包装需求。\n    - **科济药业/百利天恒:** 全球首创新药，其注射剂、西林瓶等包装需求将随商业化放量而增长。\n\n3.  **政策与标准引导行业发展：**\n    - **CDE适宜包装规格指导原则:** 推动标准化、高效包装，利好合规型包装供应商。\n    - **《单剂量口服液体制剂用复合袋包装评价》: ** 为Amcor的液体条包业务提供了技术后盾和合规依据。\n    - **ICH Q3E & 2025版药典:** 提升对药包材质量、安全性和相容性的要求，增加合规成本，但也为技术领先的包装企业构筑了护城河。\n\n### Indirect signals (文章没有直接提包装，但有上市/商业/市场规模信息)\n1.  **重点客户商业化放量：**\n    - **阿斯利康 (重点客户):** 奥希替尼新适应症获批，销售额有望进一步增长，对口服固体制剂包装（PTP、瓶装）的需求将相应增加。\n    - **华海药业 (重点客户):** HB0017申报上市，一旦获批，其注射剂包装需求将启动。\n    - **赛诺菲 (重点客户):** 北京胰岛素原料药基地开工，胰岛素产量的本地化将最终带动成品制剂包装需求。\n\n2.  **大品种市场的风向标：**\n    - **贴膏剂市场:** 葵花药业拿下40亿级贴膏剂，透皮制剂市场规模预计突破千亿。这验证了经皮给药是一个巨大的包装材料应用市场。\n    - **胰岛素市场:** 重返200亿规模，国产品牌崛起。注射剂型（卡式瓶、预填充笔）对包装有稳定需求。\n    - **口服GLP-1市场:** 诺和诺德口服Wegovy处方量激增，预示着口服剂型在慢病管理领域潜力巨大，将带动口服固体制剂包装需求结构性增长。\n\n3.  **行业生态模式演变：**\n    - **BD出海常态化:** 大量早期BD交易意味着未来3-5年后，将有更多国产创新药在海外获批，形成全球供应链，包装企业出海机会增加。\n    - **CDMO产能扩张:** 药明生物等CDMO的产能扩张，是生物药商业化的重要一环，包装企业应积极对接此类平台，争取成为其标准供应商。\n\n## 8. Risks and Uncertainties 风险与不确定性\n\n1.  **信息源可靠性：** 本报告所引用的新闻主要来自“医药健闻”、“米内网”、“丁香园Insight数据库”、“动脉网”等公众号。尽管这些来源在行业内有较高声誉，但内容可能存在标题党、数据口径不一或解读偏差。建议对关键数据进行二次核实。\n2.  **OCR与数据抓取误差：** 部分文章可能通过OCR识别，尤其是涉及BD交易金额（如“65亿元”可能包含里程碑付款）或销售额数据时，需谨慎对待。\n3.  **BD交易的不确定性：** 许多大额BD交易（如礼来与和誉医药19亿美元）均为早期研发合作，里程碑付款的实现取决于研发成功率，存在归零风险。这些合作对包装业务的影响是长期且高度不确定的。\n4.  **商业化放量的不确定性：** 新药获批（如科济药业、百利天恒）不等于商业化成功。产品的定价、医保准入、市场接受度、竞品压力等都会影响放量速度，进而影响包装需求的实际释放时间。\n5.  **集采政策风险：** 国家集采（第12批）和中成药集采会对中标药品价格形成巨大压力，可能压缩药企利润，从而影响其在包装成本上的投入。虽然销量会增加，但单价压力可能导致整体包装市场价值增长速度放缓。\n6.  **地缘政治风险：** 报告涉及的国际业务（如药明生物新加坡工厂、新耀湃科FDA批准）可能受到中美关系等宏观地缘政治因素的影响。\n7.  **相关性推断说明：** 报告中“包装与商业化启示”部分，对于“直接信号”的判断，其依据是文章内容确实提及了包装形式、剂型、产能或重点客户。对于“间接信号”，则是基于文章内容（新药获批、商业进展、市场规模）与包装需求之间合理的商业逻辑进行推断，而非文章直接表述。\n\n## 9. Appendix: Articles Reviewed by Week\n\n| Week | Date | Title | Source | Category | Relevance Score | Amcor Relevance | Packaging Relevance | Link |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| Week 1 | 2026-06-01 | CDE发布《关于开发适宜药品包装规格的指导原则》 | 中国医药包装协会 | 政策监管 | 19 | 高 | 高 | [链接](#) |\n| Week 1 | 2026-06-05 | 拜耳健康消费品中国创新合作中心落地山东 | 医药健闻 | 商业化/供应链 | 17 | 高 | 高 | [链接](#) |\n| Week 1 | 2026-06-05 | 协会团体标准《单剂量口服液体制剂用复合袋包装评价》编制背景及内容简介 | 中国医药包装协会 | 包装相关 | 15 | 高 | 高 | [链接](#) |\n| Week 1 | 2026-06-02 | 默克大湾区创新与合作中心在深圳落成 | 医药健闻 | 新药申报/获批 | 16 | 中 | 低 | [链接](#) |\n| Week 1 | 2026-06-03 | 新型分子胶降解剂拟优先审评，来自 BMS | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 低 | 低 | [链接](#) |\n| Week 1 | 2026-06-07 | 国产新药出海，变了 | 丁香园 Insight 数据库 | BD出海 | 18 | 低 | 无 | [链接](#) |\n| Week 1 | 2026-06-01 | 跨国药企在中国 | 诺华、拜耳、强生...新动态 | 医药健闻 | BD出海 | 17 | 低 | 无 | [链接](#) |\n| Week 1 | 2026-06-05 | 百利天恒重磅 ADC 新药启动首个全球 III 期 | 丁香园 Insight 数据库 | 临床进展 | 16 | 低 | 无 | [链接](#) |\n| Week 1 | 2026-06-06 | 传奇生物再创传奇 | 丁香园 Insight 数据库 | 市场数据 | 17 | 低 | 无 | [链接](#) |\n| Week 1 | 2026-06-02 | 中国ADC\"惊艳\"ASCO，外资纷纷前来“扫货”？ | MedTrend医趋势 | 临床进展 | 16 | 低 | 无 | [链接](#) |\n| Week 2 | 2026-06-12 | ICH Q3E 来了！2027 落地倒计时... | 中国医药包装协会 | 政策监管 | 14 | 高 | 高 | [链接](#) |\n| Week 2 | 2026-06-09 | 阿斯利康可能被迫在英国和欧洲停售新药... | 医药健闻 | 新药申报/获批 | 17 | 高 | 高 | [链接](#) |\n| Week 2 | 2026-06-09 | ICH Q3E指导原则高端研讨会将于6月25日-26日在镇江召开 | 中国医药包装协会 | 政策监管 | 14 | 高 | 高 | [链接](#) |\n| Week 2 | 2026-06-08 | 国家药典委2027年度国家药品标准制修订项目立项建议征集启动 | 中国医药包装协会 | 政策监管 | 14 | 高 | 高 | [链接](#) |\n| Week 2 | 2026-06-14 | 金赛药业变了 | 丁香园 Insight 数据库 | 新药申报/获批 | 17 | 中 | 中 | [链接](#) |\n| Week 2 | 2026-06-10 | 葛兰素史克斥资106亿美元收购肿瘤药企Nuvalent | 医药健闻 | 新药申报/获批 | 17 | 中 | 低 | [链接](#) |\n| Week 2 | 2026-06-09 | 专访阿斯利康中国林骁：超越减重，从单点治疗迈向共病管理 | MedTrend医趋势 | 临床进展 | 14 | 中 | 低 | [链接](#) |\n| Week 2 | 2026-06-09 | 协会标准｜《输液瓶及注射剂瓶用橡胶塞尺寸外观技术规范》解读 | 中国医药包装协会 | 包装相关 | 12 | 低 | 高 | [链接](#) |\n| Week 2 | 2026-06-14 | 荣昌生物重磅自免新药在华获批两大新适应症... | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 低 | 低 | [链接](#) |\n| Week 2 | 2026-06-08 | 跨国药企在中国 | 拜耳、默克...新动态 | 医药健闻 | 新药申报/获批 | 16 | 低 | 低 | [链接](#) |\n| Week 2 | 2026-06-12 | 默沙东长效RSV单抗在华获批上市... | 医药健闻 | 新药申报/获批 | 17 | 低 | 无 | [链接](#) |\n| Week 2 | 2026-06-11 | 四款创新药获批上市！来自康方、首药控股、默沙东、朗来 | 医药经济报 | 新药申报/获批 | 19 | 低 | 无 | [链接](#) |\n| Week 2 | 2026-06-09 | 全球首个！天广实特效药获批上市 | 丁香园 Insight 数据库 | 新药申报/获批 | 19 | 低 | 无 | [链接](#) |\n| Week 2 | 2026-06-08 | 盈利、管线、全球化三大拐点落地，诺诚健华下个十年怎么走？| 丁香园 Insight 数据库 | 商业化/供应链 | 16 | 低 | 无 | [链接](#) |\n| Week 3 | 2026-06-18 | 渤健将以最高10亿美元收购RayThera... | 医药健闻 | 商业化/供应链 | 16 | 高 | 高 | [链接](#) |\n| Week 3 | 2026-06-17 | 协会标准｜《滴眼剂包装系统设计和开发要求》团体标准解读 | 中国医药包装协会 | 包装相关 | 15 | 高 | 高 | [链接](#) |\n| Week 3 | 2026-06-17 | 安斯泰来及第一三共等日本大型药企在中国扩大投资... | 医药健闻 | 商业化/供应链 | 18 | 高 | 中 | [链接](#) |\n| Week 3 | 2026-06-16 | 诺和诺德全球高管团队来华宣布新投资... | 医药健闻 | 商业化/供应链 | 16 | 高 | 中 | [链接](#) |\n| Week 3 | 2026-06-18 | 【瞩目】葵花药业拿下40亿畅销贴膏剂 | 米内网 | 新药申报/获批 | 17 | 中 | 中 | [链接](#) |\n| Week 3 | 2026-06-18 | 【关注】青峰医药再添重磅首仿 | 米内网 | 新药申报/获批 | 15 | 中 | 中 | [链接](#) |\n| Week 3 | 2026-06-17 | 【重磅】仁合益康拿下25亿明星药，3大新品同日获批 | 米内网 | 新药申报/获批 | 18 | 中 | 低 | [链接](#) |\n| Week 3 | 2026-06-16 | 自免巨头被偷家 | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 中 | 低 | [链接](#) |\n| Week 3 | 2026-06-15 | 跨国药企在中国 | 西门子医疗、罗氏诊断...新动态 | 医药健闻 | 新药申报/获批 | 16 | 中 | 低 | [链接](#) |\n| Week 3 | 2026-06-18 | 24款胰岛素火热！...中美华东、东阳光药发力 | 米内网 | 市场数据 | 16 | 中 | 低 | [链接](#) |\n| Week 3 | 2026-06-18 | 308个中成药将大降价，健胃消食片等OTC首入集采 | 医药经济报 | 政策监管 | 14 | 中 | 低 | [链接](#) |\n| Week 3 | 2026-06-20 | 12家药企涉空壳开票案！171个中药集采结果出炉... | 米内网 | 其他 | 13 | 中 | 低 | [链接](#) |\n| Week 3 | 2026-06-18 | 本土眼科龙头引进的 1 类新药即将报上市 | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 低 | 低 | [链接](#) |\n| Week 3 | 2026-06-18 | 【市场】5亿注射剂，华北制药冲刺国产第2家 | 米内网 | 新药申报/获批 | 15 | 低 | 低 | [链接](#) |\n| Week 4 | 2026-06-23 | 2025年版《中国药典》药包材通用要求指导原则解析（上） | 中国医药包装协会 | 政策监管 | 18 | 高 | 高 | [链接](#) |\n| Week 4 | 2026-06-22 | 跨国药企在中国 | 诺和诺德、安斯泰来...新动态 | 医药健闻 | 商业化/供应链 | 18 | 高 | 高 | [链接](#) |\n| Week 4 | 2026-06-24 | 【关注】扬子江拿下3亿注射剂 | 米内网 | 新药申报/获批 | 18 | 高 | 高 | [链接](#) |\n| Week 4 | 2026-06-22 | 药品注册管理共性问题|官方答疑精选（一） | 中国医药包装协会 | 政策监管 | 15 | 高 | 高 | [链接](#) |\n| Week 4 | 2026-06-22 | 2 款进口新药在中国获批上市 | 丁香园 Insight 数据库 | 新药申报/获批 | 18 | 高 | 中 | [链接](#) |\n| Week 4 | 2026-06-25 | 药品注册管理共性问题|官方答疑精选（二） | 中国医药包装协会 | 政策监管 | 14 | 中 | 高 | [链接](#) |\n| Week 4 | 2026-06-23 | 一日拿下两项“全球首证”...科济药业/百利天恒 | 新康界 | 新药申报/获批 | 19 | 中 | 中 | [链接](#) |\n| Week 4 | 2026-06-22 | 33个外用中成药厉害了！独家品种大涨61%，云南白药喜提“双霸主” | 米内网 | 市场数据 | 13 | 中 | 中 | [链接](#) |\n| Week 4 | 2026-06-25 | 19亿美元！礼来再次与和誉医药达成研发合作 | MedTrend医趋势 | BD出海 | 17 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-25 | 国产 1 类新药申报上市，来自华海药业 | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-23 | 艾伯维斥资109亿美元收购Apogee... | 医药健闻 | 新药申报/获批 | 16 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-23 | 【瞩目】正大天晴“一日双喜”，13亿爆款收入囊中 | 米内网 | 新药申报/获批 | 16 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-25 | 【市场】16个国谈药遴选进院，独家品种霸屏 | 米内网 | 市场数据 | 14 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-25 | 武田制药新CEO正式上任... | 医药健闻 | 其他 | 14 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-23 | 华北制药出击！...13个过亿产品亮眼 | 米内网 | 商业化/供应链 | 14 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-22 | 最赚钱药企来了！药明康德、恒瑞、云南白药、新和成… | MedTrend医趋势 | 市场数据 | 14 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-22 | 【火热】华润双鹤拿下暴涨290%潜力新品 | 米内网 | 新药申报/获批 | 14 | 中 | 低 | [链接](#) |\n| Week 4 | 2026-06-26 | 国产首款AD创新药、全球首款实体瘤CAR-T等获批上市 | 医药经济报 | 新药申报/获批 | 19 | 低 | 中 | [链接](#) |\n| Week 4 | 2026-06-22 | 百利天恒的成人礼 | 丁香园 Insight 数据库 | 新药申报/获批 | 18 | 低 | 低 | [链接](#) |\n| Week 4 | 2026-06-23 | 【瞩目】正大天晴“一日双喜”，13亿爆款收入囊中 [Dup] | 米内网 | 新药申报/获批 | 17 | 低 | 低 | [链接](#) |\n| Week 4 | 2026-06-26 | 恒瑞无水环孢素滴眼液获批，打破兴齐眼药独家格局 | 新康界 | 新药申报/获批 | 16 | 低 | 低 | [链接](#) |\n| Week 4 | 2026-06-26 | 瞄准1.48亿慢病患者！从链博会看诺和诺德如何重塑中国医药“朋友圈” | 医药健闻 | 商业化/供应链 | 16 | 低 | 低 | [链接](#) |\n| Week 4 | 2026-06-22 | 齐鲁制药：丙酸氟替卡松鼻喷雾剂获批上市 | 吸入制剂Co.Lab | 新药申报/获批 | 16 | 低 | 低 | [链接](#) |\n| Week 4 | 2026-06-23 | 第12批国采正式启动！涉及65个产品，部分规则有优化 | 医药经济报 | 政策监管 | 14 | 低 | 低 | [链接](#) |\n| Week 4 | 2026-06-25 | 首日暴涨178%：国际巨头为何押注这家药企的港股IPO？ | 新康界 | 新药申报/获批 | 16 | 低 | 无 | [链接](#) |\n| Week 4 | 2026-06-27 | 辉瑞的ADC赌局 | 新康界 | BD出海 | 17 | 低 | 无 | [链接](#) |\n| Week 4 | 2026-06-25 | 进口新药第 3 项适应症在中国申报上市 | 丁香园 Insight 数据库 | 新药申报/获批 | 17 | 低 | 无 | [链接](#) |\n| Week 4 | 2026-06-24 | 高达 19 亿美元！和誉医药与礼来达成合作 | 丁香园 Insight 数据库 | BD出海 | 17 | 低 | 无 | [链接](#) |\n| Week 4 | 2026-06-26 | 肺纤维化创新药历史性突破... | 新康界 | 新药申报/获批 | 16 | 低 | 无 | [链接](#) |\n| Week 4 | 2026-06-26 | 每月 1 针！云顶新耀 24 亿元引进的新药在国内申报上市 | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 低 | 无 | [链接](#) |\n| Week 4 | 2026-06-28 | 全球首款双抗 ADC、全球首款实体瘤 CAR-T 获批... | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 低 | 无 | [链接](#) |\n| Week 5 | 2026-06-29 | 云南省审评中心发布《已上市化学药品变更包装材料和容器药学研究资料撰写指南（试行）》 | 中国医药包装协会 | 政策监管 | 16 | 高 | 高 | [链接](#) |\n| Week 5 | 2026-06-30 | 默克将以113亿美元收购生命科学仪器供应商Bio-Techne... | 医药健闻 | 商业化/供应链 | 17 | 高 | 高 | [链接](#) |\n| Week 5 | 2026-06-29 | 成立5年营收数亿...中国给药装置首次进入FDA药械组合体系 | 动脉网 | 包装相关 | 17 | 高 | 高 | [链接](#) |\n| Week 5 | 2026-06-30 | 【火热】中药龙头出手了，3.6亿加码黄金赛道 | 米内网 | 商业化/供应链 | 17 | 高 | 高 | [链接](#) |\n| Week 5 | 2026-06-30 | 2025年版《中国药典》药包材通用要求指导原则解析（下） | 中国医药包装协会 | 包装相关 | 16 | 高 | 高 | [链接](#) |\n| Week 5 | 2026-06-29 | 跨国药企在中国 | 西门子医疗、赛诺菲...新动态 | 医药健闻 | 新药申报/获批 | 17 | 高 | 中 | [链接](#) |\n| Week 5 | 2026-06-30 | 转发|160年德国技术握手40年中国速度...双峰格雷斯海姆 | 中国医药包装协会 | 包装相关 | 14 | 中 | 高 | [链接](#) |\n| Week 5 | 2026-06-29 | 【火热】步长制药新药出击，剑指31亿大品种 | 米内网 | 临床进展 | 16 | 中 | 中 | [链接](#) |\n| Week 5 | 2026-06-30 | 国内进度领先！宜联生物 1 类新药拟纳入优先审评 | 丁香园 Insight 数据库 | 新药申报/获批 | 19 | 中 | 低 | [链接](#) |\n| Week 5 | 2026-06-30 | 2026 下半年，这 10 款重磅新药有望在中国获批上市 | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 中 | 低 | [链接](#) |\n| Week 5 | 2026-06-30 | 【获批】浙江药企拿下暴涨687%潜力新品 | 米内网 | 新药申报/获批 | 16 | 中 | 低 | [链接](#) |\n| Week 5 | 2026-06-30 | 2026下半年8款重磅新药冲刺上市，多赛道迎变局 | 新康界 | 新药申报/获批 | 14 | 中 | 低 | [链接](#) |\n| Week 5 | 2026-06-30 | 恒瑞重磅 ADC 又一适应症申报上市 | 丁香园 Insight 数据库 | 新药申报/获批 | 16 | 低 | 低 | [链接](#) |\n| Week 5 | 2026-06-29 | 大涨95%！腾讯、礼来亚洲重仓的创新药企IPO... | 动脉网 | 商业化/供应链 | 15 | 低 | 低 | [链接](#) |\n| Week 5 | 2026-06-29 | 叮！您有一份最新的医药经济报，等待阅读~ | 医药经济报 | BD出海 | 14 | 低 | 低 | [链接](#) |\n\n---"
 }

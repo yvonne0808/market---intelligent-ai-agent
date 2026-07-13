@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import argparse
 import json
 import re
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +17,68 @@ OUTPUT_MD_PATH = OUTPUT_DIR / "articles_llm_ready.md"
 IMAGE_OCR_QUALITY_NOTE = (
     "图片 OCR 仅供参考，可能存在识别错误。核心分析应优先基于 main_text。"
 )
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Prepare WeChat RSS articles for LLM analysis.")
+    parser.add_argument("--start", default="", help="Optional start date, YYYY-MM-DD.")
+    parser.add_argument("--end", default="", help="Optional end date, YYYY-MM-DD.")
+    return parser.parse_args()
+
+
+def parse_date(value: str) -> date | None:
+    value = (value or "").strip()
+    if not value:
+        return None
+    return datetime.strptime(value, "%Y-%m-%d").date()
+
+
+def article_publish_date(article: dict[str, Any]) -> date | None:
+    published = (article.get("published", "") or "").strip()
+    if not published:
+        return None
+    match = re.match(r"(\d{4}-\d{2}-\d{2})", published)
+    if not match:
+        return None
+    return parse_date(match.group(1))
+
+
+def filter_articles_by_date(
+    articles: list[dict[str, Any]],
+    start_date: date | None,
+    end_date: date | None,
+) -> list[dict[str, Any]]:
+    if start_date is None and end_date is None:
+        return articles
+
+    filtered = []
+    for article in articles:
+        published_date = article_publish_date(article)
+        if published_date is None:
+            continue
+        if start_date is not None and published_date < start_date:
+            continue
+        if end_date is not None and published_date > end_date:
+            continue
+        filtered.append(article)
+    return filtered
+
+
+def output_paths(start_date: date | None, end_date: date | None) -> tuple[Path, Path]:
+    if start_date is None and end_date is None:
+        return OUTPUT_JSON_PATH, OUTPUT_MD_PATH
+
+    if start_date and end_date and start_date.year == end_date.year and start_date.month == end_date.month:
+        suffix = f"{start_date.year}_{start_date.month:02d}"
+    else:
+        start_label = start_date.isoformat() if start_date else "begin"
+        end_label = end_date.isoformat() if end_date else "end"
+        suffix = f"{start_label}_{end_label}".replace("-", "_")
+
+    return (
+        OUTPUT_DIR / f"articles_llm_ready_{suffix}.json",
+        OUTPUT_DIR / f"articles_llm_ready_{suffix}.md",
+    )
 
 
 def normalize_text(text: str) -> str:
@@ -119,9 +183,9 @@ def load_raw_articles() -> list[dict[str, Any]]:
     return [item for item in data if isinstance(item, dict)]
 
 
-def save_json(articles: list[dict[str, Any]]) -> None:
+def save_json(articles: list[dict[str, Any]], output_path: Path) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with OUTPUT_JSON_PATH.open("w", encoding="utf-8") as file:
+    with output_path.open("w", encoding="utf-8") as file:
         json.dump(articles, file, ensure_ascii=False, indent=2)
 
 
@@ -129,7 +193,7 @@ def markdown_escape_title(title: str) -> str:
     return title.replace("\n", " ").strip() or "Untitled"
 
 
-def save_markdown(articles: list[dict[str, Any]]) -> None:
+def save_markdown(articles: list[dict[str, Any]], output_path: Path) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     parts = [
         "# Articles LLM Ready",
@@ -167,31 +231,42 @@ def save_markdown(articles: list[dict[str, Any]]) -> None:
             ]
         )
 
-    OUTPUT_MD_PATH.write_text("\n".join(parts), encoding="utf-8")
+    output_path.write_text("\n".join(parts), encoding="utf-8")
 
 
 def main() -> int:
+    args = parse_args()
+    start_date = parse_date(args.start)
+    end_date = parse_date(args.end)
+    if start_date and end_date and start_date > end_date:
+        raise ValueError("--start must be earlier than or equal to --end")
+
     raw_articles = load_raw_articles()
-    prepared_articles = [prepare_article(article) for article in raw_articles]
+    filtered_raw_articles = filter_articles_by_date(raw_articles, start_date, end_date)
+    prepared_articles = [prepare_article(article) for article in filtered_raw_articles]
     empty_main_text_articles = [
         article.get("title", "") or article.get("article_id", "")
         for article in prepared_articles
         if not article.get("main_text")
     ]
+    json_path, md_path = output_paths(start_date, end_date)
 
-    save_json(prepared_articles)
-    save_markdown(prepared_articles)
+    save_json(prepared_articles, json_path)
+    save_markdown(prepared_articles, md_path)
 
     print("LLM-ready 数据清洗完成")
-    print(f"- 总共处理多少篇文章: {len(raw_articles)}")
+    if start_date or end_date:
+        print(f"- 日期范围: {start_date or 'begin'} 至 {end_date or 'end'}")
+    print(f"- 原始文章总数: {len(raw_articles)}")
+    print(f"- 日期过滤后文章数: {len(filtered_raw_articles)}")
     print(f"- 成功生成多少篇 LLM-ready 文章: {len(prepared_articles)}")
     print(f"- 正文为空的文章数量: {len(empty_main_text_articles)}")
     if empty_main_text_articles:
         print("- 正文为空的文章:")
         for title in empty_main_text_articles:
             print(f"  - {title}")
-    print(f"- JSON 输出文件: {OUTPUT_JSON_PATH}")
-    print(f"- Markdown 输出文件: {OUTPUT_MD_PATH}")
+    print(f"- JSON 输出文件: {json_path}")
+    print(f"- Markdown 输出文件: {md_path}")
 
     return 0
 

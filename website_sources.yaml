@@ -1,0 +1,177 @@
+sources:
+  - source_name: "CAMDI 中国医疗器械行业协会"
+    list_url: "http://www.camdi.cn/news/list/50,63,0"
+    category: "医疗器械"
+    priority: "high"
+    enabled: true
+    parsing_strategy: "static_html"
+    report_frequency: "monthly"
+    notes: "抓取医疗器械行业新闻、协会通知、政策动态"
+    selectors:
+      title: ""
+      date: ""
+      article_link: ""
+      body: ""
+      article_card: ""
+
+  - source_name: "动脉网 7x24H情报"
+    list_url: "https://www.vbdata.cn/intelList"
+    category: "医疗健康产业资讯"
+    priority: "medium"
+    enabled: true
+    parsing_strategy: "dynamic_js"
+    report_frequency: "weekly"
+    notes: "抓取医疗健康产业、医疗器械、创新药、投融资、政策动态、产品动态、行业动态等 7x24H 情报信息"
+    max_articles: 10
+    selectors:
+      article_card: ""
+      title: ""
+      date: ""
+      article_link: ""
+      body: ""
+
+  - source_name: "米内网新闻"
+    list_url: "https://www.menet.com.cn/news"
+    category: "医药产业资讯"
+    priority: "medium"
+    enabled: true
+    parsing_strategy: "static_html"
+    report_frequency: "monthly"
+    notes: "抓取医药健康产业资讯、政策、企业、零售、市场动态等月度深度内容"
+    selectors:
+      article_card: ".itemOut"
+      title: ".item_title"
+      date: ".item_time"
+      article_link: ".item_title a"
+      body: ".detail"
+
+  - source_name: "医药经济报官网"
+    list_url: "https://www.yyjjb.com.cn"
+    category: "医药产业资讯"
+    priority: "medium"
+    enabled: false
+    parsing_strategy: "static_html"
+    report_frequency: "monthly"
+    notes: "网站当前返回 BTWAF 防护页面，未发现可直接抓取的公开 robots/sitemap/RSS/新闻 HTML；暂不启用，待确认公开可抓取入口后再开启"
+    selectors:
+      article_card: ""
+      title: ""
+      date: ""
+      article_link: ""
+      body: ""
+
+  - source_name: "药智新闻"
+    list_url: "https://news.yaozh.com/archivelist/24?has_cateid=61"
+    category: "医药行业资讯"
+    priority: "medium"
+    enabled: true
+    parsing_strategy: "dynamic_js"
+    report_frequency: "monthly"
+    notes: "抓取药智新闻时讯行业栏目；页面按钮为加载更多，adapter 通过公开列表接口按页加载"
+    selectors:
+      article_card: ""
+      title: ""
+      date: ""
+      article_link: ""
+      body: ".detail"
+
+  - source_name: "器械之家"
+    list_url: "http://www.qixieke.com/Font/index/index.html"
+    category: "医疗器械"
+    priority: "medium"
+    enabled: true
+    parsing_strategy: "static_html"
+    report_frequency: "monthly"
+    notes: "抓取器械之家医疗器械、医疗设备、前沿技术、市场及融资等月度资讯"
+    selectors:
+      article_card: "ul.main-list li"
+      title: "h1"
+      date: ""
+      article_link: "a[href*='detailPage']"
+      body: ".detail"
+
+
+
+  - source_name: "国家医保局"
+    list_url: "https://www.nhsa.gov.cn/col/col14/index.html"
+    category: "医保与市场准入"
+    priority: "medium"
+    enabled: true
+    parsing_strategy: "static_html"
+    report_frequency: "monthly"
+    notes: "抓取医保目录、创新药目录、药品及耗材集采、价格政策和市场准入动态"
+    max_articles: 20
+    include_keywords:
+      - "医保目录"
+      - "创新药"
+      - "药品目录"
+      - "集采"
+      - "集中采购"
+      - "医用耗材"
+      - "价格"
+      - "支付"
+      - "谈判"
+    selectors:
+      article_card: ""
+      title: ""
+      date: ""
+      article_link: ""
+      body: "#zoom"
+
+
+  - source_name: "中国医药创新促进会"
+    list_url: "https://www.phirda.com/news_9.html"
+    category: "创新药与医药产业"
+    priority: "medium"
+    enabled: true
+    parsing_strategy: "static_html"
+    report_frequency: "weekly"
+    notes: "抓取创新药产业、政策、BD交易、药企动态和研发进展；该网站存在转载内容，需要跨来源去重"
+    max_articles: 20
+    include_keywords:
+      - "创新药"
+      - "上市"
+      - "获批"
+      - "申报"
+      - "临床"
+      - "BD"
+      - "license-out"
+      - "并购"
+      - "融资"
+      - "产能"
+      - "生产基地"
+    exclude_keywords:
+      - "会议日程"
+      - "培训报名"
+      - "招聘"
+    selectors:
+      article_card: ""
+      title: ""
+      date: ""
+      article_link: ""
+      body: ""
+
+  - source_name: "医疗器械技术审评检查长三角分中心"
+    list_url: "https://www.ydcmdei.org.cn/article/category/statute"
+    category: "医疗器械法规"
+    priority: "medium"
+    enabled: true
+    parsing_strategy: "static_html"
+    report_frequency: "monthly"
+    notes: "抓取医疗器械法规、分类调整、行业标准、优先审批目录和注册审查政策"
+    max_articles: 20
+    include_keywords:
+      - "分类目录"
+      - "优先审批"
+      - "注册"
+      - "指导原则"
+      - "标准"
+      - "包装"
+      - "无菌"
+      - "植入"
+    selectors:
+      article_card: ""
+      title: ""
+      date: ""
+      article_link: ""
+      body: ".article_box .detail"

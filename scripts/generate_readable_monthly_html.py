@@ -135,7 +135,7 @@ def render_compact_article(article: dict[str, Any]) -> str:
     """
 
 
-def render_week(week: dict[str, Any]) -> str:
+def render_week(week: dict[str, Any], overview_html: str = "") -> str:
     articles = sorted(week.get("articles", []), key=article_sort_key, reverse=True)
     direct = [
         article
@@ -150,6 +150,11 @@ def render_week(week: dict[str, Any]) -> str:
         else '<p class="empty-note">本周暂无直接包装相关强信号。</p>'
     )
     other_html = "".join(render_compact_article(article) for article in other[:8])
+    overview_block = (
+        f'<div class="week-overview"><h3>本周概览</h3>{overview_html}</div>'
+        if overview_html
+        else ""
+    )
     return f"""
       <section class="week-section" id="{esc(week.get('week', '').replace(' ', '-').lower())}">
         <div class="week-header">
@@ -159,6 +164,7 @@ def render_week(week: dict[str, Any]) -> str:
           </div>
           <span class="week-count">{len(articles)} articles</span>
         </div>
+        {overview_block}
         <h3 class="subhead">Most Relevant to Amcor / Packaging</h3>
         <div class="card-grid">{direct_html}</div>
         <details class="other-news" open>
@@ -203,6 +209,100 @@ def render_markdown_summary(markdown: str) -> str:
     return "\n".join(html_lines)
 
 
+def extract_markdown_section(markdown: str, heading_pattern: str, next_heading_pattern: str) -> str:
+    """Extract one Markdown section between two headings."""
+    match = re.search(heading_pattern, markdown, flags=re.M)
+    if not match:
+        return ""
+    section = markdown[match.end() :]
+    next_match = re.search(next_heading_pattern, section, flags=re.M)
+    if next_match:
+        section = section[: next_match.start()]
+    return section.strip()
+
+
+def simple_markdown_to_html(markdown: str) -> str:
+    """Render the small Markdown subset used in report narrative sections."""
+    html_lines = []
+    list_type = ""
+
+    def close_list() -> None:
+        nonlocal list_type
+        if list_type:
+            html_lines.append(f"</{list_type}>")
+            list_type = ""
+
+    for raw in markdown.splitlines():
+        line = raw.strip()
+        if not line or line == "---":
+            close_list()
+            continue
+        if line.startswith("#"):
+            close_list()
+            text = line.lstrip("#").strip()
+            level = min(line.count("#"), 3)
+            html_lines.append(f"<h{level}>{linkify_markdown(text)}</h{level}>")
+            continue
+
+        numbered = re.match(r"^\d+\.\s+(.*)$", line)
+        if numbered:
+            if list_type != "ol":
+                close_list()
+                html_lines.append("<ol>")
+                list_type = "ol"
+            html_lines.append(f"<li>{linkify_markdown(numbered.group(1))}</li>")
+            continue
+
+        if line.startswith("- "):
+            if list_type != "ul":
+                close_list()
+                html_lines.append("<ul>")
+                list_type = "ul"
+            html_lines.append(f"<li>{linkify_markdown(line[2:])}</li>")
+            continue
+
+        close_list()
+        html_lines.append(f"<p>{linkify_markdown(line)}</p>")
+
+    close_list()
+    return "\n".join(html_lines)
+
+
+def render_executive_summary(markdown: str) -> str:
+    section = extract_markdown_section(
+        markdown,
+        r"^##\s+1\.\s+Executive Summary.*$",
+        r"^##\s+2\.",
+    )
+    if not section:
+        return ""
+    return f"""
+    <section id="executive-summary" class="narrative">
+      <div class="section-title"><h2>Executive Summary 月度核心总结</h2></div>
+      {simple_markdown_to_html(section)}
+    </section>
+    """
+
+
+def extract_week_overview(markdown: str, week_label: str) -> str:
+    week_match = re.search(rf"^###\s+{re.escape(week_label)}:.*$", markdown, flags=re.M)
+    if not week_match:
+        return ""
+    week_text = markdown[week_match.end() :]
+    next_week = re.search(r"^###\s+Week\s+\d+:", week_text, flags=re.M)
+    if next_week:
+        week_text = week_text[: next_week.start()]
+
+    overview_match = re.search(r"^####\s+3\.\d+\.1\s+本周概览\s*$", week_text, flags=re.M)
+    if not overview_match:
+        return ""
+    overview = week_text[overview_match.end() :]
+    next_subsection = re.search(r"^####\s+3\.\d+\.\d+", overview, flags=re.M)
+    if next_subsection:
+        overview = overview[: next_subsection.start()]
+    return overview.strip()
+
+
 def build_html(report: dict[str, Any]) -> str:
     articles = sorted(report.get("articles", []), key=article_sort_key, reverse=True)
     weeks = report.get("weeks", [])
@@ -214,9 +314,15 @@ def build_html(report: dict[str, Any]) -> str:
     packaging_high = sum(1 for article in articles if str(article.get("packaging_relevance", "")).lower() == "high")
     category_counts = Counter(article.get("primary_category", "其他") for article in articles)
     source_counts = Counter(article.get("source_name", "") for article in articles)
+    markdown_report = report.get("markdown_report", "")
+    executive_summary_html = render_executive_summary(markdown_report)
+    week_overviews = {
+        week.get("week", ""): simple_markdown_to_html(extract_week_overview(markdown_report, week.get("week", "")))
+        for week in weeks
+    }
 
     top_html = "".join(render_article_card(article, i + 1) for i, article in enumerate(top_articles))
-    week_html = "".join(render_week(week) for week in weeks)
+    week_html = "".join(render_week(week, week_overviews.get(week.get("week", ""), "")) for week in weeks)
     category_html = "".join(
         f'<span class="pill">{esc(name)} <b>{count}</b></span>'
         for name, count in category_counts.most_common()
@@ -225,7 +331,7 @@ def build_html(report: dict[str, Any]) -> str:
         f'<span class="pill pill-muted">{esc(name)} <b>{count}</b></span>'
         for name, count in source_counts.most_common()
     )
-    risks_html = render_markdown_summary(report.get("markdown_report", ""))
+    risks_html = render_markdown_summary(markdown_report)
 
     return f"""<!doctype html>
 <html lang="zh-CN">
@@ -284,6 +390,25 @@ def build_html(report: dict[str, Any]) -> str:
     .section-title {{ display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 14px; }}
     h2 {{ color: #123b66; font-size: 24px; margin: 0; }}
     h3 {{ color: #294961; margin: 0 0 8px; font-size: 17px; }}
+    .narrative {{
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      padding: 18px 20px;
+    }}
+    .narrative p {{ margin: 8px 0 12px; color: #34465a; }}
+    .narrative ol, .narrative ul {{ margin: 8px 0 0; padding-left: 22px; }}
+    .narrative li {{ margin: 9px 0; }}
+    .week-overview {{
+      border-left: 4px solid var(--teal);
+      background: #f5fbfc;
+      padding: 12px 14px;
+      margin: 12px 0 16px;
+      border-radius: 0 8px 8px 0;
+      color: #31485a;
+    }}
+    .week-overview h3 {{ font-size: 15px; color: var(--teal); margin-bottom: 4px; }}
+    .week-overview p {{ margin: 4px 0; }}
     .pills {{ display: flex; flex-wrap: wrap; gap: 8px; }}
     .pill {{
       display: inline-flex;
@@ -375,6 +500,7 @@ def build_html(report: dict[str, Any]) -> str:
         <p>{esc(start)} 至 {esc(end)} · Generated {esc(generated)}</p>
         <div class="nav">
           <a href="#top-opportunities">Top Opportunities</a>
+          <a href="#executive-summary">Executive Summary</a>
           <a href="#weeks">Week-by-Week</a>
           <a href="#categories">Categories</a>
           <a href="#risks">Risks</a>
@@ -389,6 +515,8 @@ def build_html(report: dict[str, Any]) -> str:
       <div class="kpi"><div class="value">{amcor_high}</div><div class="label">Amcor score >= 4</div></div>
       <div class="kpi"><div class="value">{packaging_high}</div><div class="label">High packaging relevance</div></div>
     </section>
+
+    {executive_summary_html}
 
     <section id="top-opportunities">
       <div class="section-title">

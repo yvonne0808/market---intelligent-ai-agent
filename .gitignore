@@ -5,6 +5,7 @@ __pycache__/
 
 .env
 .venv/
+.playwright-browsers/
 seen_articles.json
 
 data/raw/*
@@ -12,10 +13,14 @@ data/llm_ready/*
 data/analyzed/*
 data/logs/*
 data/raw/images/*
+data/website/raw/*
+data/website/cleaned/*
 !data/raw/.gitkeep
 !data/llm_ready/.gitkeep
 !data/analyzed/.gitkeep
 !data/logs/.gitkeep
+!data/website/raw/.gitkeep
+!data/website/cleaned/.gitkeep
 
 reports/*
 !reports/.gitkeep
@@ -27,3 +32,4 @@ reports/*
 tmp/
 tmp_pdf_check/
 public_share/
+logs/

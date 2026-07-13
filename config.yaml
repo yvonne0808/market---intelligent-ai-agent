@@ -47,6 +47,54 @@ feeds:
     tags: ["医药市场", "商业化", "真实世界研究", "市场准入", "产业研究"]
     priority: "medium"
 
+  - name: "海顺新材"
+    url: "http://localhost:8001/feeds/MP_WXS_3269794211.atom?limit=100"
+    category: "医药包装材料"
+    tags: ["医药包装", "药包材", "高阻隔包装", "包装材料", "可回收材料", "企业动态"]
+    priority: "high"
+
+  - name: "金石Goldstone"
+    url: "http://localhost:8001/feeds/MP_WXS_3909645421.atom?limit=100"
+    category: "包装企业动态"
+    tags: ["包装方案", "医药包装", "包装材料", "企业动态", "质量安全", "科技创新"]
+    priority: "medium"
+
+  - name: "Medtec医疗器械设计与制造"
+    url: "http://localhost:8001/feeds/MP_WXS_3088058711.atom?limit=100"
+    category: "医疗器械制造"
+    tags: ["医疗器械", "医疗制造", "医用材料", "精密加工", "供应链", "展会动态"]
+    priority: "medium"
+
+  - name: "赛柏蓝器械"
+    url: "http://localhost:8001/feeds/MP_WXS_3071208771.atom?limit=100"
+    category: "医疗器械产业"
+    tags: ["医疗器械", "医械政策", "耗材集采", "器械企业", "产业动态", "合规"]
+    priority: "high"
+
+  - name: "MedTrend医趋势"
+    url: "http://localhost:8001/feeds/MP_WXS_3079622941.atom?limit=100"
+    category: "医疗健康趋势"
+    tags: ["医疗健康", "生命科学", "医疗趋势", "医药市场", "行业热点", "产业研究"]
+    priority: "medium"
+
+  - name: "吸入制剂Co.Lab"
+    url: "http://localhost:8001/feeds/MP_WXS_3621309195.atom?limit=100"
+    category: "吸入与经鼻给药"
+    tags: ["吸入制剂", "经鼻给药", "创新药", "药物递送", "制剂技术", "临床转化"]
+    priority: "high"
+
+  - name: "中国医药包装协会"
+    url: "http://localhost:8001/feeds/MP_WXS_2394375855.atom?limit=100"
+    category: "医药包装行业协会"
+    tags: ["医药包装", "药包材", "行业协会", "政策通知", "标准法规", "行业动态"]
+    priority: "high"
+
+  - name: "科印AI"
+    url: "http://localhost:8001/feeds/MP_WXS_2393400160.atom?limit=100"
+    category: "印刷包装产业"
+    tags: ["印刷包装", "包装产业", "AI", "供应链", "包装材料", "行业动态"]
+    priority: "medium"
+
 collector:
   fetch_full_content: true
   extract_images: true

@@ -642,3 +642,35 @@ YAML 对缩进敏感。请保持空格缩进，不要用 Tab。列表项前面�
 ### seen_articles.json 导致重复文章不再保存
 
 这是正常去重行为。如果测试时想重新保存所有文章，可以重置 `seen_articles.json`，或者删除它后重新运行。
+
+## Website Scraping MVP
+
+公开网页抓取统一从同一个入口运行：
+
+```bash
+python run_website_scraper.py --max_articles 10
+```
+
+当前配置在 `website_sources.yaml`，支持 `static_html`、`dynamic_js`、`rss_if_available` 三类策略。CAMDI 使用静态 HTML 抓取；动脉网 7x24H 情报优先使用公开 JSON 接口抓取，Playwright 作为动态页面兜底。
+
+网站源按报告节奏备注：
+
+- `report_frequency: monthly`：适合月度报告，偏深度内容、协会通知、政策和趋势文章，例如 CAMDI。
+- `report_frequency: weekly`：适合周度报告，偏高频快讯、投融资、产品获批、政策短讯和行业动态，例如动脉网 7x24H 情报。
+
+输出文件：
+
+```text
+data/website/raw/raw_website_articles.json
+data/website/cleaned/cleaned_website_articles.json
+logs/website_scraper.log
+```
+
+判断动脉网抓取是否成功：
+
+- 能打开 `https://www.vbdata.cn/intelList`。
+- `cleaned_website_articles.json` 中出现 `source_name = 动脉网 7x24H情报` 的记录。
+- 每条记录至少包含 `title`，以及 `url` 或 `body`。
+- `body_length` 大于 0。
+- 如果抓不到内容，会生成 `data/website/raw/debug_vbdata_intelList.html`，方便后续调整 selector。
+- CAMDI 仍然通过同一个 `run_website_scraper.py` 运行。
