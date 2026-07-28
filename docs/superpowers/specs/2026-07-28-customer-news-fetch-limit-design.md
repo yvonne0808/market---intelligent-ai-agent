@@ -1,10 +1,13 @@
-# Customer News Full-Text Fetch Limit
+# Customer News Fetch Limit and Medical-Context Filter
 
 ## Goal
 
-Increase the default number of customer-discovery candidates selected for
-full-text retrieval from 30 to 60, without removing the operator's ability to
-override the limit for a specific run.
+Improve customer-news discovery in two ways:
+
+1. Increase the default number of candidates selected for full-text retrieval
+   from 30 to 60, without removing the operator's ability to override it.
+2. Prevent ambiguous company names, such as the medical-device company
+   Hollister, from matching unrelated fashion or consumer-brand news.
 
 ## Design
 
@@ -15,6 +18,13 @@ override the limit for a specific run.
   effective limit is visible after each run.
 - Do not modify historical candidate or article JSON files. A future discovery
   run will use the new default.
+- Add a medical-context block to each Google News query. It will combine general
+  terms (`medical`, `healthcare`, and `medtech`) with the entity's configured
+  `product_segments`, converting underscores to spaces.
+- Require each returned title to contain either a general medical term or one
+  of that entity's product-segment terms.
+- Reject titles containing clear non-medical same-name signals such as
+  `fashion`, `clothing`, `festival`, `retail collection`, or `apparel`.
 
 ## Behavior
 
@@ -27,9 +37,16 @@ are today.
 An explicit command such as `--fetch-top 25` or `--fetch-top 80` will override
 the default.
 
+The medical filter is entity-aware. For Hollister, for example, the query will
+include terms such as `ostomy care`, `continence care`, and `wound care`.
+Therefore a medical headline does not need to contain the literal word
+`medical` to qualify.
+
 ## Testing
 
 - Verify the CLI parser defaults `fetch_top` to 60.
 - Verify an explicit `--fetch-top` value overrides the default.
+- Verify medical query terms are generated from configured product segments.
+- Verify a Hollister ostomy headline passes.
+- Verify Hollister fashion and festival headlines are rejected.
 - Run the complete Southeast Asia MedTech unit-test suite.
-
