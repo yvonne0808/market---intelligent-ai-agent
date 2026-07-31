@@ -21,9 +21,10 @@ Improve customer-news discovery in two ways:
 - Add a medical-context block to each Google News query. It will combine general
   terms (`medical`, `healthcare`, and `medtech`) with the entity's configured
   `product_segments`, converting underscores to spaces.
-- Require each returned title to contain either a general medical term or one
-  of that entity's product-segment terms.
-- Reject titles containing clear non-medical same-name signals such as
+- Use the positive medical terms in the Google News query, where matching can
+  use the full indexed page context instead of requiring the exact phrase in
+  the displayed headline.
+- Reject returned titles containing clear non-medical same-name signals such as
   `fashion`, `clothing`, `festival`, `retail collection`, or `apparel`.
 
 ## Behavior

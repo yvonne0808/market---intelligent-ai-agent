@@ -111,7 +111,7 @@ http://localhost:8001
 
 ```bash
 cd /Users/yvonne/Desktop/forecasting/wechat-rss-data-collector
-.venv/bin/python main.py
+.venv/bin/python scripts/main.py
 ```
 
 运行结束后，终端会输出本次读取了多少篇文章、新增了多少篇、正文抓取成功和失败数量，以及输出文件位置。
@@ -227,7 +227,7 @@ data/raw/articles.json
 
 ```bash
 cd /Users/yvonne/Desktop/forecasting/wechat-rss-data-collector
-.venv/bin/python prepare_llm_data.py
+.venv/bin/python scripts/prepare_llm_data.py
 ```
 
 清洗后会生成：
@@ -240,13 +240,13 @@ data/llm_ready/articles_llm_ready.md
 如果只想处理某个月，例如 2026 年 6 月：
 
 ```bash
-.venv/bin/python prepare_llm_data.py --start 2026-06-01 --end 2026-06-30
+.venv/bin/python scripts/prepare_llm_data.py --start 2026-06-01 --end 2026-06-30
 ```
 
 ## 如何分析文章
 
 ```bash
-.venv/bin/python analyze_articles.py --start 2026-06-01 --end 2026-06-30 --force
+.venv/bin/python scripts/analyze_articles.py --start 2026-06-01 --end 2026-06-30 --force
 ```
 
 分析结果会保存到：
@@ -258,14 +258,14 @@ data/analyzed/articles_analyzed.json
 ## 如何生成月报
 
 ```bash
-.venv/bin/python generate_monthly_report.py --start 2026-06-01 --end 2026-06-30
+.venv/bin/python scripts/generate_monthly_report.py --start 2026-06-01 --end 2026-06-30
 ```
 
 输出会保存到：
 
 ```text
-reports/monthly_report_20260601_20260630.md
-reports/monthly_report_20260601_20260630.json
+reports/Pharma/monthly_report_20260601_20260630.md
+reports/Pharma/monthly_report_20260601_20260630.json
 ```
 
 ## 如何生成更适合阅读的版本
@@ -273,13 +273,13 @@ reports/monthly_report_20260601_20260630.json
 把月报 Markdown 转成 PDF：
 
 ```bash
-.venv/bin/python scripts/convert_monthly_markdown_to_pdf.py reports/monthly_report_20260601_20260630.md reports/monthly_report_20260601_20260630.pdf
+.venv/bin/python scripts/convert_monthly_markdown_to_pdf.py reports/Pharma/monthly_report_20260601_20260630.md reports/Pharma/monthly_report_20260601_20260630.pdf
 ```
 
 把月报 JSON 转成浏览器可读的 HTML dashboard：
 
 ```bash
-.venv/bin/python scripts/generate_readable_monthly_html.py reports/monthly_report_20260601_20260630.json reports/monthly_report_20260601_20260630.html
+.venv/bin/python scripts/generate_readable_monthly_html.py reports/Pharma/monthly_report_20260601_20260630.json reports/Pharma/monthly_report_20260601_20260630.html
 ```
 
 ## Amcor 上下文
@@ -342,7 +342,7 @@ data/llm_ready/articles_llm_ready.json
 
 ```bash
 cd /Users/yvonne/Desktop/forecasting/wechat-rss-data-collector
-.venv/bin/python update_llm_ready.py
+.venv/bin/python scripts/update_llm_ready.py
 ```
 
 这个脚本的输入文件是：
@@ -435,7 +435,7 @@ DEEPSEEK_MODEL=deepseek-chat
 
 ```bash
 cd /Users/yvonne/Desktop/forecasting/wechat-rss-data-collector
-.venv/bin/python analyze_articles.py --start 2026-06-27 --end 2026-07-03
+.venv/bin/python scripts/analyze_articles.py --start 2026-06-27 --end 2026-07-03
 ```
 
 默认会跳过已经分析过的文章，避免重复调用 API。
@@ -443,13 +443,13 @@ cd /Users/yvonne/Desktop/forecasting/wechat-rss-data-collector
 如果要重新分析同一批文章，使用：
 
 ```bash
-.venv/bin/python analyze_articles.py --start 2026-06-27 --end 2026-07-03 --force
+.venv/bin/python scripts/analyze_articles.py --start 2026-06-27 --end 2026-07-03 --force
 ```
 
 如果某些文章图表很多，需要把 OCR 文本也传给 DeepSeek，使用：
 
 ```bash
-.venv/bin/python analyze_articles.py --start 2026-06-27 --end 2026-07-03 --include-ocr
+.venv/bin/python scripts/analyze_articles.py --start 2026-06-27 --end 2026-07-03 --include-ocr
 ```
 
 输出文件：
@@ -466,7 +466,7 @@ data/analyzed/articles_analyzed.json
 
 ```bash
 cd /Users/yvonne/Desktop/forecasting/wechat-rss-data-collector
-.venv/bin/python generate_weekly_report.py --start 2026-06-27 --end 2026-07-03
+.venv/bin/python scripts/generate_weekly_report.py --start 2026-06-27 --end 2026-07-03
 ```
 
 默认只纳入：
@@ -479,8 +479,8 @@ relevance_score >= 12
 输出文件：
 
 ```text
-reports/weekly_report_YYYYMMDD.md
-reports/weekly_report_YYYYMMDD.json
+reports/Pharma/weekly_report_YYYYMMDD.md
+reports/Pharma/weekly_report_YYYYMMDD.json
 ```
 
 Markdown 文件适合人工阅读和提交 internship weekly report。JSON 文件保留本次周报的结构化输入和最终报告文本，方便后续追溯。
@@ -523,7 +523,7 @@ data/raw/articles.xlsx
 然后重新运行：
 
 ```bash
-python3 main.py
+python3 scripts/main.py
 ```
 
 ## 如何让 WeWe RSS 返回更多文章
@@ -577,7 +577,7 @@ ocr_images: true
 再次运行：
 
 ```bash
-python3 main.py
+python3 scripts/main.py
 ```
 
 注意：OCR 对截图、表格、药品名和中英文混排内容不一定完全准确，但通常比完全忽略图片信息更有用。完整文章分析仍然推荐优先读取 `data/raw/articles.json`。
@@ -648,7 +648,7 @@ YAML 对缩进敏感。请保持空格缩进，不要用 Tab。列表项前面�
 公开网页抓取统一从同一个入口运行：
 
 ```bash
-python run_website_scraper.py --max_articles 10
+python scripts/scripts/run_website_scraper.py --max_articles 10
 ```
 
 当前配置在 `website_sources.yaml`，支持 `static_html`、`dynamic_js`、`rss_if_available` 三类策略。CAMDI 使用静态 HTML 抓取；动脉网 7x24H 情报优先使用公开 JSON 接口抓取，Playwright 作为动态页面兜底。
@@ -673,4 +673,4 @@ logs/website_scraper.log
 - 每条记录至少包含 `title`，以及 `url` 或 `body`。
 - `body_length` 大于 0。
 - 如果抓不到内容，会生成 `data/website/raw/debug_vbdata_intelList.html`，方便后续调整 selector。
-- CAMDI 仍然通过同一个 `run_website_scraper.py` 运行。
+- CAMDI 仍然通过同一个 `scripts/run_website_scraper.py` 运行。

@@ -9,6 +9,7 @@ __pycache__/
 seen_articles.json
 
 data/raw/*
+data/filtered/*
 data/llm_ready/*
 data/analyzed/*
 data/logs/*
@@ -16,6 +17,7 @@ data/raw/images/*
 data/website/raw/*
 data/website/cleaned/*
 !data/raw/.gitkeep
+!data/filtered/.gitkeep
 !data/llm_ready/.gitkeep
 !data/analyzed/.gitkeep
 !data/logs/.gitkeep
@@ -33,3 +35,10 @@ tmp/
 tmp_pdf_check/
 public_share/
 logs/
+
+# Southeast Asia pipeline outputs and independently versioned report site
+southeast_asia_medtech/data/
+southeast_asia_medtech/logs/
+southeast_asia_medtech/reports/20*/
+southeast_asia_medtech/tmp/
+southeast_asia_medtech/report_site/

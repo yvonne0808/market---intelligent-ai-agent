@@ -1,0 +1,437 @@
+schema_version: "1.0"
+description: >-
+  Weighted English keyword taxonomy for Southeast Asia medical-device business,
+  regulatory, manufacturing, transaction, and sterile-packaging monitoring.
+
+matching:
+  case_sensitive: false
+  normalize_unicode: true
+  phrase_match: true
+  word_boundary_for_single_terms: true
+  default_language: en
+  scoring_rule: sum_unique_keyword_weights
+
+categories:
+  - category: medical_device_business
+    description: Core devices, consumables, regulation, market, manufacturing, and transactions
+    keywords:
+      - keyword: medical device
+        synonyms: [medical devices, medtech, medical technology]
+        weight: 5
+        language: en
+      - keyword: medical equipment
+        synonyms: [healthcare equipment, hospital equipment]
+        weight: 4
+        language: en
+      - keyword: medical consumables
+        synonyms: [medical supplies, healthcare consumables]
+        weight: 5
+        language: en
+      - keyword: disposable medical products
+        synonyms: [single-use medical products, disposable medical supplies]
+        weight: 5
+        language: en
+      - keyword: high-value medical consumables
+        synonyms: [high value medical consumables, high-value consumables]
+        weight: 5
+        language: en
+      - keyword: low-value medical consumables
+        synonyms: [low value medical consumables, low-value consumables]
+        weight: 4
+        language: en
+      - keyword: registration
+        synonyms: [device registration, product registration, re-registration]
+        weight: 5
+        language: en
+      - keyword: approval
+        synonyms: [approved, regulatory approval, product approval]
+        weight: 5
+        language: en
+      - keyword: market authorization
+        synonyms: [marketing authorization, market authorisation, marketing authorisation]
+        weight: 5
+        language: en
+      - keyword: clinical trial
+        synonyms: [clinical trials, clinical investigation, clinical study]
+        weight: 4
+        language: en
+      - keyword: commercialization
+        synonyms: [commercialisation, commercial launch, market launch]
+        weight: 4
+        language: en
+      - keyword: procurement
+        synonyms: [public procurement, government procurement, purchasing]
+        weight: 5
+        language: en
+      - keyword: tender
+        synonyms: [tenders, invitation to tender, bid notice]
+        weight: 5
+        language: en
+      - keyword: contract award
+        synonyms: [awarded contract, tender award, successful bidder]
+        weight: 5
+        language: en
+      - keyword: export
+        synonyms: [exports, exporting, export market]
+        weight: 3
+        language: en
+      - keyword: overseas registration
+        synonyms: [foreign registration, international registration, overseas approval]
+        weight: 4
+        language: en
+      - keyword: FDA
+        synonyms: [US FDA, Food and Drug Administration]
+        weight: 3
+        language: en
+      - keyword: CE
+        synonyms: [CE mark, CE marking, CE certification]
+        weight: 3
+        language: en
+      - keyword: MDR
+        synonyms: [EU MDR, Medical Device Regulation]
+        weight: 3
+        language: en
+      - keyword: localization
+        synonyms: [localisation, localized production, local content]
+        weight: 4
+        language: en
+      - keyword: local manufacturing
+        synonyms: [domestic manufacturing, local production, made locally]
+        weight: 5
+        language: en
+      - keyword: production line
+        synonyms: [manufacturing line, production lines]
+        weight: 4
+        language: en
+      - keyword: capacity expansion
+        synonyms: [expand capacity, capacity increase, production expansion]
+        weight: 5
+        language: en
+      - keyword: manufacturing facility
+        synonyms: [manufacturing plant, production facility, factory]
+        weight: 5
+        language: en
+      - keyword: supply chain
+        synonyms: [supply-chain, distribution network, sourcing]
+        weight: 4
+        language: en
+      - keyword: market size
+        synonyms: [market value, market forecast, market growth]
+        weight: 3
+        language: en
+      - keyword: financing
+        synonyms: [funding, investment round, capital raising]
+        weight: 3
+        language: en
+      - keyword: acquisition
+        synonyms: [acquire, acquired, merger, M&A]
+        weight: 4
+        language: en
+      - keyword: BD cooperation
+        synonyms: [business development cooperation, business development partnership, strategic cooperation]
+        weight: 4
+        language: en
+      - keyword: distributor
+        synonyms: [distribution partner, authorized distributor, authorised distributor]
+        weight: 4
+        language: en
+      - keyword: channel partnership
+        synonyms: [channel partner, distribution partnership, commercial partnership]
+        weight: 4
+        language: en
+
+  - category: medical_device_packaging
+    description: Sterile barrier, packaging materials, formats, validation, and sterilization compatibility
+    keywords:
+      - keyword: header bag
+        synonyms: [header bags, header pouch]
+        weight: 5
+        language: en
+      - keyword: forming film
+        synonyms: [thermoforming film, formable film]
+        weight: 4
+        language: en
+      - keyword: coated paper
+        synonyms: [coated packaging paper, heat-seal coated paper]
+        weight: 3
+        language: en
+      - keyword: medical-grade coated paper
+        synonyms: [medical grade coated paper, coated medical paper]
+        weight: 5
+        language: en
+      - keyword: Tyvek
+        synonyms: [Tyvek packaging, spunbonded HDPE]
+        weight: 5
+        language: en
+      - keyword: medical-grade paper
+        synonyms: [medical grade paper, medical packaging paper]
+        weight: 5
+        language: en
+      - keyword: dialysis paper
+        synonyms: [dialysis packaging paper, sterilization paper]
+        weight: 5
+        language: en
+      - keyword: paper-plastic pouch
+        synonyms: [paper plastic pouch, paper-film pouch]
+        weight: 5
+        language: en
+      - keyword: sterilization pouch
+        synonyms: [sterilisation pouch, sterile pouch, sterilization bag]
+        weight: 5
+        language: en
+      - keyword: tubing bag
+        synonyms: [tubing pouch, tube bag]
+        weight: 4
+        language: en
+      - keyword: clean bag
+        synonyms: [cleanroom bag, clean packaging bag]
+        weight: 4
+        language: en
+      - keyword: blister tray
+        synonyms: [blister packaging tray, rigid blister]
+        weight: 4
+        language: en
+      - keyword: thermoformed tray
+        synonyms: [thermoform tray, thermoformed medical tray]
+        weight: 5
+        language: en
+      - keyword: medical device tray
+        synonyms: [medical tray, device packaging tray]
+        weight: 5
+        language: en
+      - keyword: plastic film
+        synonyms: [packaging film, polymer film]
+        weight: 3
+        language: en
+      - keyword: lidding material
+        synonyms: [lidstock, lidding film, lidding paper]
+        weight: 4
+        language: en
+      - keyword: sealing material
+        synonyms: [sealant material, heat-sealing material]
+        weight: 4
+        language: en
+      - keyword: sterile barrier system
+        synonyms: [SBS, sterile barrier]
+        weight: 6
+        language: en
+      - keyword: sterile packaging
+        synonyms: [sterility packaging, sterile medical packaging]
+        weight: 6
+        language: en
+      - keyword: medical device packaging
+        synonyms: [medical-device packaging, healthcare device packaging]
+        weight: 6
+        language: en
+      - keyword: protective packaging
+        synonyms: [device protection packaging, transit protection packaging]
+        weight: 3
+        language: en
+      - keyword: EO sterilization
+        synonyms: [EtO sterilization, EO sterilisation, ethylene oxide processing]
+        weight: 5
+        language: en
+      - keyword: ethylene oxide sterilization
+        synonyms: [ethylene oxide sterilisation, EtO sterilisation]
+        weight: 5
+        language: en
+      - keyword: radiation sterilization
+        synonyms: [radiation sterilisation, gamma sterilization, e-beam sterilization]
+        weight: 5
+        language: en
+      - keyword: steam sterilization
+        synonyms: [steam sterilisation, autoclave sterilization, moist heat sterilization]
+        weight: 5
+        language: en
+      - keyword: packaging seal integrity
+        synonyms: [seal integrity, package seal integrity]
+        weight: 6
+        language: en
+      - keyword: sterile barrier integrity
+        synonyms: [barrier integrity, SBS integrity]
+        weight: 6
+        language: en
+      - keyword: packaging validation
+        synonyms: [package validation, packaging process validation]
+        weight: 6
+        language: en
+      - keyword: ISO 11607
+        synonyms: [ISO11607, ISO 11607-1, ISO 11607-2]
+        weight: 6
+        language: en
+      - keyword: sterilization compatibility
+        synonyms: [sterilisation compatibility, sterilization-compatible packaging]
+        weight: 5
+        language: en
+      - keyword: cleanroom packaging
+        synonyms: [clean room packaging, controlled-environment packaging]
+        weight: 5
+        language: en
+
+  - category: device_and_consumable_types
+    description: Device types with elevated sterile-packaging or procurement relevance
+    keywords:
+      - keyword: catheter
+        synonyms: [catheters, vascular catheter, urinary catheter, diagnostic catheter]
+        weight: 5
+        language: en
+      - keyword: syringe
+        synonyms: [syringes, prefilled syringe, safety syringe]
+        weight: 5
+        language: en
+      - keyword: infusion set
+        synonyms: [IV set, intravenous set, infusion tubing]
+        weight: 5
+        language: en
+      - keyword: surgical consumables
+        synonyms: [surgical supplies, surgical disposables, operating room consumables]
+        weight: 5
+        language: en
+      - keyword: implant
+        synonyms: [implants, implantable device, orthopaedic implant, orthopedic implant]
+        weight: 5
+        language: en
+      - keyword: wound care
+        synonyms: [wound dressing, wound management, advanced wound care]
+        weight: 4
+        language: en
+      - keyword: diagnostic consumables
+        synonyms: [diagnostic supplies, test kit, rapid diagnostic test, IVD consumables]
+        weight: 5
+        language: en
+      - keyword: medical gloves
+        synonyms: [surgical gloves, examination gloves, disposable gloves]
+        weight: 4
+        language: en
+      - keyword: dialysis consumables
+        synonyms: [dialysis supplies, blood tubing set, dialyzer, dialyser]
+        weight: 5
+        language: en
+      - keyword: single-use device
+        synonyms: [single use device, disposable device, single-use medical device]
+        weight: 6
+        language: en
+      - keyword: sterile delivery
+        synonyms: [supplied sterile, delivered sterile, sterile presentation]
+        weight: 6
+        language: en
+      - keyword: cleanroom
+        synonyms: [clean room, controlled environment, ISO Class 7, ISO Class 8]
+        weight: 4
+        language: en
+
+  - category: regulatory_and_safety_events
+    description: Registration states, post-market safety, recalls and official guidance
+    keywords:
+      - keyword: safety alert
+        synonyms: [medical device alert, product safety alert, safety communication]
+        weight: 6
+        language: en
+      - keyword: recall
+        synonyms: [product recall, medical device recall, recalled]
+        weight: 6
+        language: en
+      - keyword: field safety corrective action
+        synonyms: [FSCA, field safety notice, FSN]
+        weight: 6
+        language: en
+      - keyword: adverse event
+        synonyms: [incident report, vigilance report, mandatory problem reporting]
+        weight: 5
+        language: en
+      - keyword: regulatory guidance
+        synonyms: [guidance document, regulatory guideline, guidance for industry]
+        weight: 5
+        language: en
+      - keyword: public consultation
+        synonyms: [consultation paper, request for comments, draft guidance]
+        weight: 4
+        language: en
+      - keyword: product listing
+        synonyms: [device listing, listed medical device, registration listing]
+        weight: 5
+        language: en
+      - keyword: license holder
+        synonyms: [licence holder, authorization holder, authorised representative]
+        weight: 4
+        language: en
+
+  - category: procurement_details
+    description: Tender, award and contract fields for public procurement
+    keywords:
+      - keyword: invitation to bid
+        synonyms: [invitation to tender, request for quotation, RFQ, ITB]
+        weight: 5
+        language: en
+      - keyword: approved budget for the contract
+        synonyms: [ABC, procurement budget, estimated tender value]
+        weight: 4
+        language: en
+      - keyword: successful bidder
+        synonyms: [winning bidder, selected supplier, awarded supplier]
+        weight: 6
+        language: en
+      - keyword: letter of award
+        synonyms: [letter of acceptance, notice of award, contract result]
+        weight: 6
+        language: en
+      - keyword: quantity
+        synonyms: [QTY, procurement volume, units required]
+        weight: 2
+        language: en
+      - keyword: framework agreement
+        synonyms: [framework contract, panel contract, term contract]
+        weight: 4
+        language: en
+
+  - category: multilingual_southeast_asia
+    description: Local-language discovery terms mapped to medtech business concepts
+    keywords:
+      - keyword: alat kesehatan
+        synonyms: [peralatan kesehatan, peranti perubatan, alat perubatan]
+        weight: 6
+        language: id-ms
+      - keyword: izin edar
+        synonyms: [nomor izin edar, registrasi alat kesehatan]
+        weight: 6
+        language: id
+      - keyword: pengadaan alat kesehatan
+        synonyms: [tender alat kesehatan, pemenang tender alat kesehatan]
+        weight: 6
+        language: id
+      - keyword: thiết bị y tế
+        synonyms: [trang thiết bị y tế, vật tư y tế]
+        weight: 6
+        language: vi
+      - keyword: đăng ký thiết bị y tế
+        synonyms: [số lưu hành, giấy phép lưu hành]
+        weight: 6
+        language: vi
+      - keyword: đấu thầu thiết bị y tế
+        synonyms: [mời thầu thiết bị y tế, kết quả lựa chọn nhà thầu]
+        weight: 6
+        language: vi
+      - keyword: เครื่องมือแพทย์
+        synonyms: [อุปกรณ์การแพทย์, การขึ้นทะเบียนเครื่องมือแพทย์]
+        weight: 6
+        language: th
+
+  - category: exclusion_signals
+    description: Strong signals for administrative, promotional or non-device content
+    keywords:
+      - keyword: recruitment
+        synonyms: [job vacancy, career opportunity, jawatan kosong]
+        weight: 5
+        language: en
+      - keyword: event registration
+        synonyms: [register here, webinar invitation, conference invitation, training calendar]
+        weight: 4
+        language: en
+      - keyword: administrative procurement
+        synonyms: [office supplies, audio visual equipment, renovation services, catering services, IT equipment]
+        weight: 5
+        language: en
+      - keyword: pharmaceutical only
+        synonyms: [drug approval, medicine recall, pharmaceutical product]
+        weight: 4
+        language: en

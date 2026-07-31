@@ -1,4 +1,5 @@
 feedparser
+googlenewsdecoder
 pyyaml
 pandas
 openpyxl
@@ -6,3 +7,4 @@ requests
 beautifulsoup4
 lxml
 playwright
+pypdf
