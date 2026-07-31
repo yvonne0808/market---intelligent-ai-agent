@@ -135,19 +135,18 @@ def render_compact_article(article: dict[str, Any]) -> str:
     """
 
 
+def split_week_articles(articles: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    ordered = sorted(articles, key=article_sort_key, reverse=True)
+    return ordered[:4], ordered[4:]
+
+
 def render_week(
     week: dict[str, Any],
     overview_html: str = "",
     report_type: str = "Pharma",
 ) -> str:
-    articles = sorted(week.get("articles", []), key=article_sort_key, reverse=True)
-    direct = [
-        article
-        for article in articles
-        if int(article.get("amcor_relevance_score", 0) or 0) >= 4
-        or str(article.get("packaging_relevance", "")).lower() in {"high", "medium"}
-    ]
-    other = [article for article in articles if article not in direct]
+    direct, other = split_week_articles(week.get("articles", []))
+    article_count = len(direct) + len(other)
     direct_html = (
         "".join(render_article_card(article) for article in direct[:4])
         if direct
@@ -166,7 +165,7 @@ def render_week(
             <div class="eyebrow">{esc(week.get("week", ""))}</div>
             <h2>{esc(week.get("start_date", ""))} 至 {esc(week.get("end_date", ""))}</h2>
           </div>
-          <span class="week-count">{len(articles)} articles</span>
+          <span class="week-count">{article_count} articles</span>
         </div>
         {overview_block}
         <h3 class="subhead">Most Relevant to Amcor / Packaging</h3>
