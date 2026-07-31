@@ -12,7 +12,9 @@ import yaml
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
-DEFAULT_DB_PATH = PROJECT_DIR.parent / "wewe-rss-local" / "data" / "wewe-rss.db"
+DEFAULT_DB_PATH = (
+    PROJECT_DIR.parent.parent / "wewe-rss-local" / "data" / "wewe-rss.db"
+)
 
 
 def parse_args() -> argparse.Namespace:

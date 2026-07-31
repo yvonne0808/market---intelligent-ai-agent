@@ -523,7 +523,7 @@ data/raw/articles.xlsx
 然后重新运行：
 
 ```bash
-python3 scripts/main.py
+../.venv/bin/python scripts/main.py
 ```
 
 ## 如何让 WeWe RSS 返回更多文章
@@ -577,7 +577,7 @@ ocr_images: true
 再次运行：
 
 ```bash
-python3 scripts/main.py
+../.venv/bin/python scripts/main.py
 ```
 
 注意：OCR 对截图、表格、药品名和中英文混排内容不一定完全准确，但通常比完全忽略图片信息更有用。完整文章分析仍然推荐优先读取 `data/raw/articles.json`。
@@ -648,7 +648,7 @@ YAML 对缩进敏感。请保持空格缩进，不要用 Tab。列表项前面�
 公开网页抓取统一从同一个入口运行：
 
 ```bash
-python scripts/scripts/run_website_scraper.py --max_articles 10
+../.venv/bin/python scripts/run_website_scraper.py --max_articles 10
 ```
 
 当前配置在 `website_sources.yaml`，支持 `static_html`、`dynamic_js`、`rss_if_available` 三类策略。CAMDI 使用静态 HTML 抓取；动脉网 7x24H 情报优先使用公开 JSON 接口抓取，Playwright 作为动态页面兜底。
