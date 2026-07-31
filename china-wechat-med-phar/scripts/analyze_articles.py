@@ -20,6 +20,7 @@ except ImportError:  # pragma: no cover - script can still run without priority 
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = PROJECT_DIR.parent
 INPUT_PATH = PROJECT_DIR / "data/llm_ready/articles_llm_ready.json"
 OUTPUT_PATH = PROJECT_DIR / "data/analyzed/articles_analyzed.json"
 PROMPT_PATH = PROJECT_DIR / "prompts/Pharma/article_analysis_prompt.txt"
@@ -74,7 +75,7 @@ def load_env_file(path: Path) -> None:
 
 
 def load_deepseek_config() -> dict[str, str]:
-    load_env_file(PROJECT_DIR / ".env")
+    load_env_file(REPOSITORY_ROOT / ".env")
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key or api_key == "your_deepseek_api_key_here":
         raise RuntimeError(

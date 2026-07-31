@@ -6,35 +6,35 @@ __pycache__/
 .env
 .venv/
 .playwright-browsers/
-seen_articles.json
+china-wechat-med-phar/seen_articles.json
 
-data/raw/*
-data/filtered/*
-data/llm_ready/*
-data/analyzed/*
-data/logs/*
-data/raw/images/*
-data/website/raw/*
-data/website/cleaned/*
-!data/raw/.gitkeep
-!data/filtered/.gitkeep
-!data/llm_ready/.gitkeep
-!data/analyzed/.gitkeep
-!data/logs/.gitkeep
-!data/website/raw/.gitkeep
-!data/website/cleaned/.gitkeep
+china-wechat-med-phar/data/raw/*
+china-wechat-med-phar/data/filtered/*
+china-wechat-med-phar/data/llm_ready/*
+china-wechat-med-phar/data/analyzed/*
+china-wechat-med-phar/data/logs/*
+china-wechat-med-phar/data/raw/images/*
+china-wechat-med-phar/data/website/raw/*
+china-wechat-med-phar/data/website/cleaned/*
+!china-wechat-med-phar/data/raw/.gitkeep
+!china-wechat-med-phar/data/filtered/.gitkeep
+!china-wechat-med-phar/data/llm_ready/.gitkeep
+!china-wechat-med-phar/data/analyzed/.gitkeep
+!china-wechat-med-phar/data/logs/.gitkeep
+!china-wechat-med-phar/data/website/raw/.gitkeep
+!china-wechat-med-phar/data/website/cleaned/.gitkeep
 
-reports/*
-!reports/.gitkeep
-!reports/monthly_report_20260601_20260630.md
-!reports/monthly_report_20260601_20260630.json
-!reports/monthly_report_20260601_20260630.pdf
-!reports/monthly_report_20260601_20260630.html
+china-wechat-med-phar/reports/*
+!china-wechat-med-phar/reports/.gitkeep
+!china-wechat-med-phar/reports/monthly_report_20260601_20260630.md
+!china-wechat-med-phar/reports/monthly_report_20260601_20260630.json
+!china-wechat-med-phar/reports/monthly_report_20260601_20260630.pdf
+!china-wechat-med-phar/reports/monthly_report_20260601_20260630.html
 
-tmp/
-tmp_pdf_check/
-public_share/
-logs/
+china-wechat-med-phar/tmp/
+china-wechat-med-phar/tmp_pdf_check/
+china-wechat-med-phar/public_share/
+china-wechat-med-phar/logs/
 
 # Southeast Asia pipeline outputs and independently versioned report site
 southeast_asia_medtech/data/

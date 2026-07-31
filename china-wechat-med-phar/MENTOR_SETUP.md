@@ -11,7 +11,7 @@ This project collects WeChat public-account articles from a local WeWe RSS serve
 ## 2. Install
 
 ```bash
-cd wechat-rss-data-collector
+cd /Users/yvonne/Desktop/forecasting/monthly-report-library
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 ```
@@ -34,6 +34,12 @@ DEEPSEEK_MODEL=deepseek-chat
 
 Do not commit `.env` to GitHub.
 
+Enter the China workflow directory before running the remaining commands:
+
+```bash
+cd china-wechat-med-phar
+```
+
 ## 4. Check feeds
 
 The feed list is stored in:
@@ -53,7 +59,7 @@ Make sure the same feeds are available in the mentor's local WeWe RSS instance.
 ## 5. Collect articles
 
 ```bash
-.venv/bin/python scripts/main.py
+../.venv/bin/python scripts/main.py
 ```
 
 Outputs are written to:
@@ -67,7 +73,7 @@ data/raw/articles.xlsx
 ## 6. Prepare June-only LLM input
 
 ```bash
-.venv/bin/python scripts/prepare_llm_data.py --start 2026-06-01 --end 2026-06-30
+../.venv/bin/python scripts/prepare_llm_data.py --start 2026-06-01 --end 2026-06-30
 ```
 
 This creates cleaned LLM-ready files under:
@@ -79,7 +85,7 @@ data/llm_ready/
 ## 7. Analyze June articles with DeepSeek
 
 ```bash
-.venv/bin/python scripts/analyze_articles.py --start 2026-06-01 --end 2026-06-30 --force
+../.venv/bin/python scripts/analyze_articles.py --start 2026-06-01 --end 2026-06-30 --force
 ```
 
 The analysis output is stored in:
@@ -91,7 +97,7 @@ data/analyzed/articles_analyzed.json
 ## 8. Generate monthly report
 
 ```bash
-.venv/bin/python scripts/generate_monthly_report.py --start 2026-06-01 --end 2026-06-30
+../.venv/bin/python scripts/generate_monthly_report.py --start 2026-06-01 --end 2026-06-30
 ```
 
 This creates:
@@ -106,13 +112,13 @@ reports/Pharma/monthly_report_20260601_20260630.json
 Create a PDF from the Markdown report:
 
 ```bash
-.venv/bin/python scripts/convert_monthly_markdown_to_pdf.py reports/Pharma/monthly_report_20260601_20260630.md reports/Pharma/monthly_report_20260601_20260630.pdf
+../.venv/bin/python scripts/convert_monthly_markdown_to_pdf.py reports/Pharma/monthly_report_20260601_20260630.md reports/Pharma/monthly_report_20260601_20260630.pdf
 ```
 
 Create a browser-friendly HTML dashboard from the monthly JSON:
 
 ```bash
-.venv/bin/python scripts/generate_readable_monthly_html.py reports/Pharma/monthly_report_20260601_20260630.json reports/Pharma/monthly_report_20260601_20260630.html
+../.venv/bin/python scripts/generate_readable_monthly_html.py reports/Pharma/monthly_report_20260601_20260630.json reports/Pharma/monthly_report_20260601_20260630.html
 ```
 
 ## Notes

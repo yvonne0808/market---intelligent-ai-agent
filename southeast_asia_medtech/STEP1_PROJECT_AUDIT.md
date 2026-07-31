@@ -3,7 +3,7 @@
 ## Step 1 — Project Audit and Proposed Structure
 
 Audit date: 2026-07-24  
-Audited project: `/Users/yvonne/Desktop/forecasting/wechat-rss-data-collector`
+Audited project: `/Users/yvonne/Desktop/forecasting/monthly-report-library`
 
 > Path note: the requested path used `Desktop/forcasting/...`; the project found in the
 > workspace is under `Desktop/forecasting/...`. This document uses the actual path.
@@ -23,7 +23,7 @@ audit. They were treated as user-owned work and were not altered.
 The relevant top-level layout is:
 
 ```text
-wechat-rss-data-collector/
+monthly-report-library/
 ├── config.yaml                     # WeChat/RSS feed and collector configuration
 ├── website_sources.yaml            # Public website source configuration
 ├── requirements.txt
