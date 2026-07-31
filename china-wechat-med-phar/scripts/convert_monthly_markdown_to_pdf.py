@@ -51,6 +51,13 @@ def clean_markdown(text: str) -> str:
     return text.strip()
 
 
+def report_title_from_markdown(markdown: str) -> str:
+    for line in markdown.splitlines():
+        if line.startswith("# "):
+            return line[2:].strip()
+    return "Monthly Report"
+
+
 def inline_markup(text: str) -> str:
     text = html.escape(text.strip())
     text = re.sub(r"`([^`]+)`", r"<font name='Courier'>\1</font>", text)
@@ -177,7 +184,7 @@ def header_footer(canvas, doc) -> None:
     canvas.line(18 * mm, 284 * mm, 192 * mm, 284 * mm)
     canvas.setFillColor(colors.HexColor("#667080"))
     canvas.setFont("Helvetica", 7.5)
-    canvas.drawString(18 * mm, 288 * mm, "Monthly Pharma News Report")
+    canvas.drawString(18 * mm, 288 * mm, doc.title)
     canvas.drawRightString(192 * mm, 10 * mm, f"Page {doc.page}")
     canvas.restoreState()
 
@@ -277,6 +284,7 @@ def convert(markdown_path: Path, pdf_path: Path) -> None:
     font_name, bold_font_name = register_fonts()
     styles = build_styles(font_name, bold_font_name)
     markdown = clean_markdown(markdown_path.read_text(encoding="utf-8"))
+    report_title = report_title_from_markdown(markdown)
     story = markdown_to_story(markdown, styles)
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -287,7 +295,7 @@ def convert(markdown_path: Path, pdf_path: Path) -> None:
         leftMargin=18 * mm,
         topMargin=18 * mm,
         bottomMargin=18 * mm,
-        title=markdown_path.stem,
+        title=report_title,
         author="Codex",
     )
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="normal")
