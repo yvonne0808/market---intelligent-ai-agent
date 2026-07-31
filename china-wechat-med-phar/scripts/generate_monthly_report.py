@@ -20,6 +20,28 @@ REPORTS_DIR = PROJECT_DIR / "reports" / "Pharma"
 
 DEFAULT_BASE_URL = "https://api.deepseek.com"
 DEFAULT_MODEL = "deepseek-chat"
+COMPACT_REPORT_FIELDS = (
+    "article_id",
+    "title",
+    "source_name",
+    "published",
+    "link",
+    "primary_category",
+    "secondary_categories",
+    "relevance_score",
+    "importance_level",
+    "companies",
+    "drugs",
+    "targets_or_mechanisms",
+    "indications",
+    "clinical_or_regulatory_stage",
+    "deal_amounts",
+    "amcor_relevance_score",
+    "amcor_relevance_reason",
+    "packaging_relevance",
+    "packaging_related_keywords",
+    "source_confidence",
+)
 
 
 def load_env_file(path: Path) -> None:
@@ -179,6 +201,27 @@ def strip_code_fence(text: str) -> str:
     return text.strip()
 
 
+def compact_article_for_report(article: dict[str, Any]) -> dict[str, Any]:
+    compact = {field: article[field] for field in COMPACT_REPORT_FIELDS if field in article}
+    takeaway = article.get("one_sentence_takeaway") or article.get("summary_cn")
+    if takeaway:
+        compact["takeaway"] = takeaway
+    return compact
+
+
+def compact_weeks_for_report(weeks: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "week": week["week"],
+            "start_date": week["start_date"],
+            "end_date": week["end_date"],
+            "article_count": week["article_count"],
+            "articles": [compact_article_for_report(article) for article in week["articles"]],
+        }
+        for week in weeks
+    ]
+
+
 def call_deepseek_report(
     config: dict[str, str],
     prompt_template: str,
@@ -194,6 +237,8 @@ def call_deepseek_report(
         generated_at=generated_at,
         amcor_context=load_amcor_context(),
     )
+    compact_articles = [compact_article_for_report(article) for article in articles]
+    compact_weeks = compact_weeks_for_report(weeks)
     payload = {
         "model": config["model"],
         "messages": [
@@ -208,8 +253,8 @@ def call_deepseek_report(
                             "generated_at": generated_at,
                         },
                         "selection_rule": "Articles are pre-filtered and sorted by Amcor relevance, packaging relevance, relevance score, importance, and date.",
-                        "weeks": weeks,
-                        "articles": articles,
+                        "weeks": compact_weeks,
+                        "articles": compact_articles,
                     },
                     ensure_ascii=False,
                 ),
