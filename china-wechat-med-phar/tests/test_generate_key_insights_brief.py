@@ -39,6 +39,27 @@ class BriefHtmlTests(unittest.TestCase):
         self.assertIn("Watchlist &amp; References", html)
         self.assertIn('href="https://example.test/article"', html)
 
+    def test_build_brief_limits_opportunity_cards_to_four(self):
+        articles = [
+            {
+                "article_id": f"a-{index}",
+                "title": f"Article {index}",
+                "link": f"https://example.test/{index}",
+            }
+            for index in range(6)
+        ]
+
+        html = module.build_brief_html({"articles": articles}, [article["article_id"] for article in articles], "Pharma")
+
+        self.assertEqual(html.count('class="card"'), 4)
+
+    def test_build_brief_has_print_layout_without_outer_padding(self):
+        html = module.build_brief_html({"articles": []}, [], "Pharma")
+
+        self.assertIn("@media print", html)
+        self.assertIn("main { width:auto; margin:0; padding:0; }", html)
+        self.assertIn(".card { padding:12px 14px; margin:8px 0; }", html)
+
 
 if __name__ == "__main__":
     unittest.main()

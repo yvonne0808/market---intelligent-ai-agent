@@ -68,7 +68,7 @@ def build_brief_html(report: dict[str, Any], article_ids: list[str], report_type
     indexed = article_index(report)
     selected = [indexed[article_id] for article_id in article_ids if article_id in indexed]
     takeaways = selected[:5]
-    opportunities = selected[:6]
+    opportunities = selected[:4]
     references = selected[:12]
     period = f'{report.get("start_date", "")} to {report.get("end_date", "")}'
     takeaway_html = "".join(render_takeaway(article, index) for index, article in enumerate(takeaways, 1))
@@ -95,6 +95,7 @@ main {{ width: 816px; margin: 0 auto; background: white; padding: 44px 54px; }} 
 .takeaway,.card {{ border:1px solid #d4e0ed; border-radius:11px; background:#fff; box-shadow:0 2px 7px rgba(32,72,112,.08); }} .takeaway {{ display:flex; gap:13px; padding:13px 15px; margin:9px 0; }} .takeaway p,.card p {{ margin:5px 0 8px; font-size:13px; }} .number {{ display:inline-flex; flex:0 0 29px; width:29px; height:29px; align-items:center; justify-content:center; border-radius:50%; background:#174a7c; color:white; font-weight:700; }}
 .card {{ padding:15px 17px; margin:12px 0; break-inside:avoid; }} .card-top {{ display:flex; align-items:center; gap:9px; color:#687d91; font-size:12px; }} .badges,.chips {{ display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }} .badge,.chip,.watch {{ background:#eaf4fb; color:#27618c; padding:4px 8px; border-radius:999px; font-size:11px; }} .chip,.watch {{ background:#edf8f1; color:#347259; }} a {{ color:#1469ac; font-weight:600; text-decoration:underline; font-size:12px; }}
 .watchlist {{ display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 24px; }} ul {{ padding-left:20px; }} li {{ margin:11px 0; }} li span {{ display:block; color:#637589; font-size:12px; margin-top:2px; }} .note {{ color:#687b8f; font-size:12px; margin-top:30px; }}
+@media print {{ body {{ background: white; }} main {{ width:auto; margin:0; padding:0; }} .page {{ min-height:255mm; }} .card {{ padding:12px 14px; margin:8px 0; }} .badges,.chips {{ margin:6px 0; }} .takeaway p,.card p {{ margin:4px 0 6px; font-size:12px; }} }}
 </style></head><body><main>
 <section class="page"><div class="eyebrow">July 2026 · Executive Brief</div><h1>{esc(report_type)} Key Insights</h1><p class="period">{esc(period)} · Based on the existing structured July report</p><h2>Five Key Takeaways</h2>{takeaway_html}</section>
 <section class="page"><div class="eyebrow">Evidence-led opportunities</div><h2>Top Opportunities</h2>{opportunity_html}</section>
