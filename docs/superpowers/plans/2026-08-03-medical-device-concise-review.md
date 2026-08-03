@@ -4,7 +4,7 @@
 
 **Goal:** Produce a local-only concise July Medical Device review PDF that preserves the original Executive Summary, ten ranked opportunities, weekly overviews, and combined sections 7.1–7.4.
 
-**Architecture:** Add a dedicated renderer rather than changing the existing general key-insights renderer. The renderer consumes the existing `report.json` and `report.md`, extracts only the approved source sections, writes review-only HTML and PDF files below `output/`, and never writes to `public_share/`.
+**Architecture:** Add a dedicated renderer rather than changing the general monthly-report renderer. The renderer consumes the existing `report.json` and `report.md`, extracts only the approved source sections, writes review-only HTML and PDF files below `output/`, and never writes to `public_share/`.
 
 **Tech Stack:** Python standard library (`json`, `html`, `pathlib`, `re`), project `.venv`, local Chromium headless-shell for HTML-to-PDF export, Poppler `pdfinfo`/`pdftoppm`, `unittest`.
 
