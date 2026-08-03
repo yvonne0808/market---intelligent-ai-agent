@@ -42,6 +42,14 @@
 - 医疗器械无菌包装、无菌屏障系统、包装验证及灭菌适配性
 - 可能带来新增医疗器械包装需求的商业化或供应链信号
 
+### Evidence / Supporting articles
+
+每一条 Executive Summary bullet 后必须追加 2–5 篇支持文章，格式为：
+- [article_id] Title — source_name，published — link
+
+只能引用本次输入中已分析文章的字段；不得编造 article_id、Title、source_name、published 或 link。
+如果结论属于基于多篇文章的推断，而非原文直接披露，必须明确标注为 indirect（间接支持）。
+
 ## 2. Monthly Amcor Relevance Ranking
 
 按 Amcor 医疗器械包装业务相关性列出本月最值得关注的新闻，最多 10 条。

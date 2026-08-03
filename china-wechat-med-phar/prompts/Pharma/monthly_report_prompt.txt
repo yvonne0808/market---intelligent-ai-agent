@@ -28,6 +28,14 @@
 ## 1. Executive Summary 月度核心总结
 用 5-8 条 bullet 总结本月最重要的医药行业动态，并优先指出对 Amcor / 药品包装业务最有启发的信号。
 
+### Evidence / Supporting articles
+
+每一条 Executive Summary bullet 后必须追加 2–5 篇支持文章，格式为：
+- [article_id] Title — source_name，published — link
+
+只能引用本次输入中已分析文章的字段；不得编造 article_id、Title、source_name、published 或 link。
+如果结论属于基于多篇文章的推断，而非原文直接披露，必须明确标注为 indirect（间接支持）。
+
 ## 2. Monthly Amcor Relevance Ranking
 按 Amcor 包装业务相关性列出本月最值得关注的新闻，最多 10 条。
 
