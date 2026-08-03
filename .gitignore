@@ -6,6 +6,7 @@ __pycache__/
 .env
 .venv/
 .playwright-browsers/
+.worktrees/
 china-wechat-med-phar/seen_articles.json
 
 china-wechat-med-phar/data/raw/*
