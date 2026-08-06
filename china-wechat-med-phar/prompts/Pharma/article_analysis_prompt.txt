@@ -12,7 +12,7 @@
 1. 先判断文章是否属于低价值内容：纯广告、会议推广、招商推广、课程/培训报名、招聘、泛科普、节日祝福、低信息量转载、缺少具体公司/产品/监管/临床/商业化事件。
 2. 再判断是否与中国医药行业、药品包装、剂型、产能、商业化、供应链、监管或市场准入相关。
 3. 如果文章明显低价值，立即使用“低价值文章快速退出规则”，不要继续做深度实体抽取。
-4. 只有当文章 relevance_score >= 10 且 importance_level 不是 "low" 且 amcor_relevance_score > 0 时，才展开 key_points、companies、drugs、targets_or_mechanisms、indications、deal_amounts、market_implication_cn 等深度字段。
+4. 只有当文章 relevance_score >= 10 且 amcor_relevance_score > 0 时，才展开 key_points、companies、drugs、targets_or_mechanisms、indications、deal_amounts、market_implication_cn 等深度字段。
 
 重点关注：
 - 中国医药行业
@@ -32,10 +32,9 @@
 - 商业化进展
 - 生产、产能、供应链
 - 集采
+- 集采中标 / 中选结果 / 带量采购执行
 - 药品包装
 - 口服液
-- 注射剂
-- 瓶装
 - 条包
 - 软包
 - 铝塑泡罩
@@ -62,18 +61,18 @@
 
 relevance_score 评分范围为 0-20：
 
-- 18-20：高度重要，必须进入 weekly report。通常包括重磅新药获批、NMPA/CDE 重要进展、关键临床成功、重大 BD 出海、重大融资并购、重大产线投资。明确销售额/市场规模、重大商业化放量、明确包装/剂型/供应链机会。新药/新剂型上市。国外药品引进。国内化学制药公司，中成药，集采。
-- 16-17：重要，建议进入 weekly report。通常包括国内药企重要产品进展、临床 III 期/上市申请/获批、重要商业化动态、明确市场机会。药企动态、普通融资、普通合作、行业趋势文章。
-- 12-15：中等重要，可选进入 weekly report。通常包括早中期临床进展。
-- 8-11：相关但价值有限，一般不进入 weekly report。通常是泛行业分析、缺少具体公司或产品信息、缺少明确市场影响。我们也不关注生物制药，包装政策法规。
+- 18-20：高度重要，必须进入 weekly report。通常包括明确集采中标/中选结果及执行、明确采购量或覆盖范围的带量采购、重磅新药/新剂型中国上市、国外药品引进、重大融资并购、重大产线投资、明确销售额/市场规模、重大商业化放量、明确包装/剂型/供应链机会。
+- 16-17：重要，建议进入 weekly report。通常包括国内药企重要产品海外进展、药企动态、普通融资、行业趋势文章、重磅新药海外获批、关键临床成功、BD 出海
+- 12-15：中等重要，可选进入 weekly report，优先选择高度重要和重要，法律法规。
+- 8-11：相关但价值有限，一般不进入 weekly report。通常是泛行业分析、缺少具体公司或产品信息、缺少明确市场影响。我们也不关注生物制药，包装政策法规。通常包括早中期临床进展、NMPA/CDE、临床 III 期、普通合作。
 - 0-7：低相关或无关，不进入 weekly report。通常是广告、会议、招聘、泛科普、海外无关信息、信息量很低的文章。
 
 
 amcor_relevance_score 评分范围为 0-5：
 
-- 5：强相关。文章主要内容直接涉及以下一项或多项：药品包装、药包材、医药包装材料、包装形式或包装材料变化；口服液、注射剂、瓶装、条包、液体条包、软包、铝塑泡罩、复合膜、预灌封、西林瓶、安瓿瓶等明确剂型或包装形式；以及商业化放量、产能扩张、生产线建设、供应链变化等可能直接带来包装材料需求的事件。
+- 5：强相关。文章主要内容直接涉及以下一项或多项：药品包装、药包材、医药包装材料、包装形式或包装材料变化；固体制剂，口服制剂、条包、液体条包、软包、铝塑泡罩、复合膜、等明确剂型或包装形式；以及商业化放量、产能扩张、生产线建设、供应链变化等可能直接带来包装材料需求的事件。
 - 4：较强相关。文章涉及新药上市、商业化推进、销售放量、产能建设、生产基地、供应链需求，可能带来包装材料需求。
-- 3：中等相关。文章涉及国内药企重要产品进展、上市申请、获批、临床后期、商业化准备，但没有直接提到包装或产能。
+- 3：中等相关。文章涉及国内药企重要产品进展、上市申请、获批、临床后期、商业化准备，但没有直接提到包装或产能。预灌封、安瓿瓶、注射剂、瓶装。
 - 1-2：弱相关。文章主要提供医药行业背景，对包装企业只有间接参考价值。
 - 0：无关。文章与药品包装、商业化、生产供应链、剂型或中国医药市场无明显关系。
 
@@ -81,16 +80,15 @@ amcor_relevance_score 评分范围为 0-5：
 include_in_weekly_report 判断规则：
 - 如果 relevance_score >= 16，通常设为 true。
 - 如果 relevance_score 在 12-15 之间，且 amcor_relevance_score >= 3，可以设为 true。
-- 如果文章直接涉及包装、剂型、药包材、产能、商业化放量，即使 relevance_score 只有 12-15，也可以设为 true。
+- 如果文章直接涉及包装、剂型、药包材、产能、集采，融资并购，即使 relevance_score 只有 12-15，也可以设为 true。
 - 如果是纯广告、会议推广、招聘、泛科普、低信息量文章，即使包含医药关键词，也应设为 false。
 - 如果 relevance_score <= 11，通常设为 false，除非文章对包装企业有非常直接的启发。
 
 低价值文章快速退出规则：
-- 如果你判断文章满足以下任一条件：relevance_score < 10，或 importance_level = "low"，或 amcor_relevance_score = 0，请不要继续展开深度信息提取，以节省输出 token。
+- 如果你判断文章满足以下任一条件：relevance_score < 10，或 amcor_relevance_score = 0，请不要继续展开深度信息提取，以节省输出 token。
 - 对这类文章，include_in_weekly_report 必须为 false。
 - 对这类文章，summary_cn、why_it_matters、one_sentence_takeaway、amcor_relevance_reason 必须简短说明原因，不要写长段分析。
 - 对这类文章，summary_cn 不超过 40 字；why_it_matters 不超过 50 字；one_sentence_takeaway 不超过 40 字；amcor_relevance_reason 不超过 60 字。
-- 对这类文章，primary_category 通常设为 "其他"；如果是明确政策但低价值，可设为 "政策监管"；如果是明确包装论坛但缺少实质信息，可设为 "包装相关"。
 - 对这类文章，secondary_categories 必须为 []，除非文章确实同时涉及一个明确类别。
 - 对这类文章，请直接返回最小化字段：
   - key_points: []
@@ -101,7 +99,6 @@ include_in_weekly_report 判断规则：
   - clinical_or_regulatory_stage: ""
   - deal_amounts: []
   - market_implication_cn: ""
-  - packaging_relevance: "none"
   - packaging_related_keywords: []
   - risks_or_uncertainties: []
   - source_confidence: "high"
@@ -112,27 +109,55 @@ include_in_weekly_report 判断规则：
 - one_sentence_takeaway 必须一句话说明不纳入原因。例如："本文信息量较低，不应纳入周报。"
 - 不要为了填满字段而提取会议主办方、参展商、讲者、培训机构、广告品牌，除非文章包含明确且实质的产业事件。
 
-importance_level 必须从以下三个值中选择一个：
-- high
-- medium
-- low
+primary_category 必须从以下类别中选择且只能选择一个：
 
-primary_category 必须从以下类别中选择一个：
-- 新药申报/获批
-- 临床进展
-- BD出海
-- 融资并购
-- 市场数据
-- 政策监管
-- 包装相关
-- 商业化/供应链
-- 其他
+* 市场与商业化
+* 产能与资本投入
+* 重点产品与剂型
+* 包装与供应链机会
+* 其他
 
-packaging_relevance 必须从以下四个值中选择一个：
-- high
-- medium
-- low
-- none
+每条新闻只能归入一个最主要的类别，不得重复分类。若一条新闻同时涉及多个类别，应优先根据新闻的核心事件进行判断，并结合其主要商业影响及对 Amcor 药品包装业务的主要意义，选择关联度最高的类别。
+
+### 1. 市场与商业化
+
+当新闻的核心内容与药品进入市场、销售增长、市场拓展或商业合作有关时，归入本类别，包括：
+
+* 药品集采、中标，以及由此带来的销量增长、价格压力和包装降本需求
+* 新产品获批、上市、商业化及销售放量
+* 重点客户产品线扩张、市场份额提升和营收增长
+* BD 合作、授权许可、引进合作及海外授权
+
+### 2. 产能与资本投入
+
+当新闻的核心内容与生产能力提升、资本投入或供应能力扩张有关时，归入本类别，包括：
+
+* 生产基地和生产线建设、投产、扩产及产能提升
+* IPO、融资、并购及募资用途，尤其是资金用于扩产和商业化
+* 供应链投资、包装设施建设及包装产能扩张
+
+### 3. 重点产品与剂型
+
+当新闻的核心内容与具体药品剂型、给药方式或剂型创新有关时，归入本类别，包括：
+
+* 口服固体制剂：片剂、胶囊、颗粒剂、散剂
+* 口服液体制剂：口服液、糖浆、混悬液、液体条包
+* 注射剂及预灌封产品
+* 中药饮片、吸入制剂及其他具有商业化潜力的重点剂型
+* 剂型创新、给药方式变化及注射剂转口服等趋势
+
+### 4. 包装与供应链机会
+
+当新闻的核心内容与药品包装形式、包装材料或供应链替代机会有关时，归入本类别，包括：
+
+* 铝塑泡罩、铝铝泡罩、药用铝箔、冷铝及复合膜
+* 瓶装、条包、液体条包及软包
+* 国产化、国产替代及进口替代
+
+### 5. 其他
+
+当新闻无法明确归入以上四个类别时，归入“其他”。
+
 
 source_confidence 必须从以下三个值中选择一个：
 - high
@@ -142,8 +167,7 @@ source_confidence 必须从以下三个值中选择一个：
 信息提取规则：
 - 只有高价值或中价值文章才进行完整信息提取：
   - relevance_score >= 10
-  - importance_level 为 "medium" 或 "high"
-  - amcor_relevance_score > 0
+  - amcor_relevance_score > 1
 - 如果不同时满足以上三项，必须执行低价值文章快速退出规则。
 - companies 只提取文章中明确出现的公司名称。
 - drugs 只提取文章中明确出现的药品名称、产品名称或候选药物名称。
@@ -177,7 +201,6 @@ source_confidence 必须从以下三个值中选择一个：
   "link": "",
   "include_in_weekly_report": true,
   "relevance_score": 0,
-  "importance_level": "",
   "primary_category": "",
   "secondary_categories": [],
   "summary_cn": "",
@@ -191,7 +214,6 @@ source_confidence 必须从以下三个值中选择一个：
   "market_implication_cn": "",
   "amcor_relevance_score": 0,
   "amcor_relevance_reason": "",
-  "packaging_relevance": "",
   "packaging_related_keywords": [],
   "risks_or_uncertainties": [],
   "source_confidence": "",

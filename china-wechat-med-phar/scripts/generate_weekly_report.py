@@ -74,11 +74,6 @@ def parse_published_date(value: str) -> date | None:
             return None
 
 
-def importance_rank(value: str) -> int:
-    ranks = {"high": 3, "medium": 2, "low": 1}
-    return ranks.get(str(value).lower(), 0)
-
-
 def load_analyzed_articles() -> list[dict[str, Any]]:
     if not ANALYZED_PATH.exists():
         raise FileNotFoundError(f"Analyzed file not found: {ANALYZED_PATH}")
@@ -114,9 +109,9 @@ def filter_articles(
 
     selected.sort(
         key=lambda item: (
-            int(item.get("relevance_score", 0) or 0),
-            importance_rank(item.get("importance_level", "")),
             int(item.get("amcor_relevance_score", 0) or 0),
+            int(item.get("relevance_score", 0) or 0),
+            str(item.get("published", "")),
         ),
         reverse=True,
     )

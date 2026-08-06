@@ -29,7 +29,6 @@ COMPACT_REPORT_FIELDS = (
     "primary_category",
     "secondary_categories",
     "relevance_score",
-    "importance_level",
     "companies",
     "drugs",
     "targets_or_mechanisms",
@@ -38,7 +37,6 @@ COMPACT_REPORT_FIELDS = (
     "deal_amounts",
     "amcor_relevance_score",
     "amcor_relevance_reason",
-    "packaging_relevance",
     "packaging_related_keywords",
     "source_confidence",
 )
@@ -96,20 +94,27 @@ def parse_published_date(value: str) -> date | None:
             return None
 
 
-def importance_rank(value: str) -> int:
-    return {"high": 3, "medium": 2, "low": 1}.get(str(value).lower(), 0)
+EXPLICIT_OPPORTUNITY_TERMS = (
+    "药包材", "医药包装", "包装材料", "包装形式", "包装供应链", "铝塑", "铝铝", "药用铝箔", "冷铝",
+    "生产基地", "生产线", "产线", "投产", "扩产", "产能",
+    "集采中标", "集采中选", "中标", "中选", "带量采购", "采购量", "销量增长", "销售放量",
+    "国产化", "国产替代", "进口替代",
+)
 
 
-def packaging_rank(value: str) -> int:
-    return {"high": 3, "medium": 2, "low": 1, "none": 0}.get(str(value).lower(), 0)
+def explicit_opportunity_bonus(article: dict[str, Any]) -> int:
+    evidence = " ".join(
+        str(article.get(field, "") or "")
+        for field in ("title", "summary_cn", "amcor_relevance_reason")
+    )
+    return int(any(term in evidence for term in EXPLICIT_OPPORTUNITY_TERMS))
 
 
-def article_rank(article: dict[str, Any]) -> tuple[int, int, int, int, str]:
+def article_rank(article: dict[str, Any]) -> tuple[int, int, int, str]:
     return (
-        int(article.get("amcor_relevance_score", 0) or 0),
-        packaging_rank(article.get("packaging_relevance", "")),
         int(article.get("relevance_score", 0) or 0),
-        importance_rank(article.get("importance_level", "")),
+        int(article.get("amcor_relevance_score", 0) or 0),
+        explicit_opportunity_bonus(article),
         str(article.get("published", "")),
     )
 
@@ -252,7 +257,7 @@ def call_deepseek_report(
                             "end_date": end_date.isoformat(),
                             "generated_at": generated_at,
                         },
-                        "selection_rule": "Articles are pre-filtered and sorted by Amcor relevance, packaging relevance, relevance score, importance, and date.",
+                        "selection_rule": "Articles are pre-filtered and sorted by Amcor relevance, relevance score, and date.",
                         "weeks": compact_weeks,
                         "articles": compact_articles,
                     },

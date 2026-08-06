@@ -38,7 +38,6 @@ ANALYSIS_FIELDS = [
     "link",
     "include_in_weekly_report",
     "relevance_score",
-    "importance_level",
     "primary_category",
     "secondary_categories",
     "summary_cn",
@@ -52,7 +51,6 @@ ANALYSIS_FIELDS = [
     "market_implication_cn",
     "amcor_relevance_score",
     "amcor_relevance_reason",
-    "packaging_relevance",
     "packaging_related_keywords",
     "risks_or_uncertainties",
     "source_confidence",
@@ -324,7 +322,6 @@ def coerce_analysis(raw: dict[str, Any], article: dict[str, Any]) -> dict[str, A
 def should_minimize_low_value_analysis(analysis: dict[str, Any]) -> bool:
     return (
         int(analysis.get("relevance_score", 0) or 0) < 10
-        or str(analysis.get("importance_level", "")).lower() == "low"
         or int(analysis.get("amcor_relevance_score", 0) or 0) == 0
     )
 
@@ -339,7 +336,6 @@ def minimize_low_value_analysis(analysis: dict[str, Any]) -> None:
     analysis["clinical_or_regulatory_stage"] = ""
     analysis["deal_amounts"] = []
     analysis["market_implication_cn"] = ""
-    analysis["packaging_relevance"] = "none"
     analysis["packaging_related_keywords"] = []
     analysis["risks_or_uncertainties"] = []
     analysis["source_confidence"] = analysis.get("source_confidence") or "high"

@@ -11,6 +11,45 @@ SPEC.loader.exec_module(module)
 
 
 class CompactArticleForReportTests(unittest.TestCase):
+    def test_article_rank_prioritizes_relevance_then_amcor_score(self):
+        earlier = {
+            "amcor_relevance_score": 4,
+            "relevance_score": 19,
+            "packaging_relevance": "low",
+            "importance_level": "high",
+            "published": "2026-07-20",
+        }
+        later = {
+            "amcor_relevance_score": 4,
+            "relevance_score": 19,
+            "packaging_relevance": "high",
+            "importance_level": "low",
+            "published": "2026-07-21",
+        }
+
+        self.assertEqual(module.article_rank(earlier), (19, 4, 0, "2026-07-20"))
+        self.assertEqual(module.article_rank(later), (19, 4, 0, "2026-07-21"))
+
+    def test_article_rank_gives_bonus_to_explicit_opportunity_when_scores_tie(self):
+        general = {"relevance_score": 18, "amcor_relevance_score": 3, "title": "新药获批"}
+        explicit = {"relevance_score": 18, "amcor_relevance_score": 3, "title": "集采中选带来销量增长"}
+
+        self.assertGreater(module.article_rank(explicit), module.article_rank(general))
+
+    def test_compact_article_omits_obsolete_ranking_attributes(self):
+        compact = module.compact_article_for_report(
+            {
+                "title": "Title",
+                "relevance_score": 18,
+                "amcor_relevance_score": 4,
+                "importance_level": "high",
+                "packaging_relevance": "high",
+            }
+        )
+
+        self.assertNotIn("importance_level", compact)
+        self.assertNotIn("packaging_relevance", compact)
+
     def test_keeps_report_fields_and_omits_raw_text(self):
         article = {
             "article_id": "a-1",

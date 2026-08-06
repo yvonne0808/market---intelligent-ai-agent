@@ -11,6 +11,40 @@ SPEC.loader.exec_module(module)
 
 
 class SplitWeekArticlesTests(unittest.TestCase):
+    def test_render_badges_omits_packaging_when_attribute_is_absent(self):
+        html = module.render_badges(
+            {
+                "primary_category": "BD出海",
+                "relevance_score": 18,
+                "amcor_relevance_score": 4,
+            }
+        )
+
+        self.assertNotIn("Packaging", html)
+        self.assertNotIn("        \n", html)
+
+    def test_build_html_uses_top_opportunity_override(self):
+        base_article = {
+            "title": "Existing article",
+            "source_name": "Source",
+            "published": "2026-07-01",
+            "relevance_score": 18,
+            "amcor_relevance_score": 4,
+        }
+        override_article = {**base_article, "title": "Rescored opportunity"}
+
+        html = module.build_html(
+            {
+                "articles": [base_article],
+                "top_opportunity_articles": [override_article],
+                "weeks": [],
+            }
+        )
+
+        top_section = html.split('id="top-opportunities"', 1)[1].split('id="weeks"', 1)[0]
+        self.assertIn("Rescored opportunity", top_section)
+        self.assertNotIn("Existing article", top_section)
+
     def test_limits_featured_articles_and_keeps_remaining_articles_below_week(self):
         articles = [
             {

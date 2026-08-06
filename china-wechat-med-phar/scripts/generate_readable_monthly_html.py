@@ -72,16 +72,18 @@ def first_present(*values: Any) -> str:
 def render_badges(article: dict[str, Any]) -> str:
     relevance = int(article.get("relevance_score", 0) or 0)
     amcor = int(article.get("amcor_relevance_score", 0) or 0)
-    packaging = str(article.get("packaging_relevance", "none") or "none")
     category = article.get("primary_category", "")
-    return f"""
-      <div class="badges">
-        <span class="badge category">{esc(category)}</span>
-        <span class="badge relevance">Relevance {relevance}</span>
-        <span class="badge {score_class(amcor)}">Amcor {amcor}</span>
-        <span class="badge {packaging_class(packaging)}">Packaging {esc(packaging)}</span>
-      </div>
-    """
+    badges = [
+        f'<span class="badge category">{esc(category)}</span>',
+        f'<span class="badge relevance">Relevance {relevance}</span>',
+        f'<span class="badge {score_class(amcor)}">Amcor {amcor}</span>',
+    ]
+    if "packaging_relevance" in article:
+        packaging = str(article.get("packaging_relevance", "none") or "none")
+        badges.append(
+            f'<span class="badge {packaging_class(packaging)}">Packaging {esc(packaging)}</span>'
+        )
+    return '<div class="badges">' + "".join(badges) + "</div>"
 
 
 def render_article_card(article: dict[str, Any], rank: int | None = None) -> str:
@@ -379,7 +381,7 @@ def build_html(report: dict[str, Any]) -> str:
     start = report.get("start_date", "")
     end = report.get("end_date", "")
     generated = report.get("generated_at", "")
-    top_articles = articles[:10]
+    top_articles = report.get("top_opportunity_articles") or articles[:10]
     amcor_high = sum(1 for article in articles if int(article.get("amcor_relevance_score", 0) or 0) >= 4)
     packaging_high = sum(1 for article in articles if str(article.get("packaging_relevance", "")).lower() == "high")
     category_counts = Counter(article.get("primary_category", "其他") for article in articles)

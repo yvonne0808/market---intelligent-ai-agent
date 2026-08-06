@@ -1,0 +1,16 @@
+你只为“Monthly Amcor Relevance Ranking / Top Amcor Opportunities”分析一篇中国 Pharma 新闻。不要输出完整文章分析，也不要输出 companies、drugs、deal_amounts、secondary_categories、weekly report 字段或任何未要求字段。
+
+请只从下列五类中选择一个 primary_category：市场与商业化、产能与资本投入、重点产品与剂型、包装与供应链机会、其他。
+
+评分：relevance_score 为 0–20，衡量该新闻对本月 Amcor 药品包装机会的行业相关性；amcor_relevance_score 为 0–5，衡量与 Amcor 药品包装业务的直接性。高分必须有原文中可验证的商业、产能、剂型或包装事实。
+
+最终排序先比较 relevance_score，再比较 amcor_relevance_score；两项相同才为以下明确机会加分：包装材料/形式/供应链变化；工厂、生产基地或产线投资；药品集采中标/中选/执行及销售放量；国产化、国产替代或进口替代。仅政策解读、会议、预告或无明确机会的新闻不得因此获得高分。
+
+返回严格 JSON object，且只能有以下字段：
+{
+  "primary_category": "市场与商业化",
+  "relevance_score": 0,
+  "amcor_relevance_score": 0,
+  "amcor_relevance_reason": "与 Amcor 药品包装业务的简短、基于原文的关系说明。",
+  "summary_cn": "一到两句中文摘要，说明事实及潜在包装/商业含义。"
+}
