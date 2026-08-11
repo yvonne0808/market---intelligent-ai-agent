@@ -1,544 +1,617 @@
-schema_version: '3.0'
+schema_version: "3.0"
 module: southeast_asia_medtech
-description: Customer-first Southeast Asia MedTech source registry focused on named
-  customer, competitor, local-investment, commercialization, channel and supply-chain
-  events.
+description: Customer-first Southeast Asia MedTech source registry focused on named customer, competitor, local-investment, commercialization, channel and supply-chain events.
+
 country_tags:
-  ASEAN:
-    report_group: ASEAN Regional
-    country_name: ASEAN Regional
-  SG:
-    report_group: Singapore
-    country_name: Singapore
-  MY:
-    report_group: Malaysia
-    country_name: Malaysia
-  TH:
-    report_group: Thailand
-    country_name: Thailand
-  ID:
-    report_group: Indonesia
-    country_name: Indonesia
-  VN:
-    report_group: Vietnam
-    country_name: Vietnam
-  PH:
-    report_group: Philippines
-    country_name: Philippines
-  APAC:
-    report_group: Regional / APAC
-    country_name: Asia Pacific
-  GLOBAL:
-    report_group: Global Customer Intelligence
-    country_name: Global
-allowed_parsing_strategies:
-- static_html
-- sitemap
-- rss
-- api_json
-- playwright
-- custom_parser
+  ASEAN: {report_group: ASEAN Regional, country_name: ASEAN Regional}
+  SG: {report_group: Singapore, country_name: Singapore}
+  MY: {report_group: Malaysia, country_name: Malaysia}
+  TH: {report_group: Thailand, country_name: Thailand}
+  ID: {report_group: Indonesia, country_name: Indonesia}
+  VN: {report_group: Vietnam, country_name: Vietnam}
+  PH: {report_group: Philippines, country_name: Philippines}
+  APAC: {report_group: Regional / APAC, country_name: Asia Pacific}
+  GLOBAL: {report_group: Global Customer Intelligence, country_name: Global}
+
+allowed_parsing_strategies: [static_html, sitemap, rss, api_json, playwright, custom_parser]
 allowed_workflows:
-- news_listing
-- registry_targeted
-- packaging_news
-- customer_news
-- disclosure_monitor
-- investment_news
-- competitor_news
-- channel_news
-- press_release_search
+  - news_listing
+  - registry_targeted
+  - packaging_news
+  - customer_news
+  - disclosure_monitor
+  - investment_news
+  - competitor_news
+  - channel_news
+  - press_release_search
+
 defaults:
   report_frequency: monthly
   request_timeout_seconds: 25
   retries: 2
-  polite_delay_seconds:
-    min: 1.0
-    max: 2.0
+  polite_delay_seconds: {min: 1.0, max: 2.0}
   respect_robots_txt: true
   max_items_per_source: 5
   store_raw_snapshot: true
+
 sources:
-- source_id: sg_hsa_announcements
-  source_name: Singapore HSA Customer Safety Monitor
-  country: SG
-  organization: Health Sciences Authority
-  list_url: https://www.hsa.gov.sg/announcements/
-  base_url: https://www.hsa.gov.sg
-  source_type: regulator_targeted
-  workflow: registry_targeted
-  category: customer_registration_recall_and_fsca
-  priority: high
-  language: en
-  enabled: true
-  parsing_strategy: custom_parser
-  report_frequency: weekly
-  requires_javascript: false
-  selectors:
-    article_card: a[href^='/announcements/']
-    title: h3
-    date: p
-    article_link: a[href]
-    body: main
-  endpoints:
-  - https://www.hsa.gov.sg/announcements/
-  search_terms:
-  - B. Braun
-  - Ansell
-  - BD
-  - Becton Dickinson
-  - Molnlycke
-  - Teleflex
-  - Terumo
-  - Ambu
-  - Smith & Nephew
-  - Baxter
-  - Hollister
-  - Nipro
-  - Johnson & Johnson
-  - ResMed
-  - medical device recall
-  - field safety
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - product_name
-  - registration_event
-  - safety_event_type
-  notes: Retain only named-customer/competitor registration, recall, FSCA or supply-impacting
-    safety events. Exclude general guidance and consumer education.
-- source_id: my_mda_mmdr
-  source_name: Malaysia MDA Customer Safety Monitor
-  country: MY
-  organization: Medical Device Authority Malaysia
-  list_url: https://portal.mda.gov.my/index.php/profesional/safety-alert
-  base_url: https://portal.mda.gov.my
-  source_type: regulator_targeted
-  workflow: registry_targeted
-  category: customer_registration_recall_and_fsca
-  priority: high
-  language:
-  - en
-  - ms
-  enabled: true
-  parsing_strategy: custom_parser
-  fallback_strategy: official_index_snapshot
-  report_frequency: weekly
-  requires_javascript: false
-  selectors:
-    article_card: article, .blog-item, .item, tr
-    title: h2, h3, .item-title, th.list-title
-    date: time, .date, td.list-date
-    article_link: a[href]
-    body: .article-details, .item-page, main
-  endpoints:
-  - https://portal.mda.gov.my/index.php/profesional/safety-alert
-  - https://portal.mda.gov.my/index.php/announcement
-  search_terms:
-  - B. Braun
-  - Ansell
-  - BD
-  - Becton Dickinson
-  - Molnlycke
-  - Teleflex
-  - Terumo
-  - Ambu
-  - Smith & Nephew
-  - Baxter
-  - Top Glove
-  - Hollister
-  - Nipro
-  - Johnson & Johnson
-  - ResMed
-  - Hartalega
-  - Careplus
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - product_name
-  - registration_numbers
-  - safety_event_type
-  - affected_devices
-  notes: Query and filter by watchlist company/product. Do not collect generic MDA
-    policy unless a named company or product is directly affected.
-- source_id: th_fda_medical_devices
-  source_name: Thailand FDA Customer Market-Access Monitor
-  country: TH
-  organization: Thai Food and Drug Administration
-  list_url: https://en.fda.moph.go.th/news
-  base_url: https://en.fda.moph.go.th
-  source_type: regulator_targeted
-  workflow: registry_targeted
-  category: customer_registration_recall_and_market_access
-  priority: medium
-  language:
-  - en
-  - th
-  enabled: true
-  parsing_strategy: custom_parser
-  report_frequency: weekly
-  requires_javascript: false
-  selectors:
-    article_card: article, .news-item, .card, a[href*='/news/']
-    title: h2, h3, h4, p
-    date: time, .date
-    article_link: a[href]
-    body: .single__content.ql-editor
-  endpoints:
-  - https://en.fda.moph.go.th/news
-  - https://en.fda.moph.go.th/news?page=2
-  search_terms:
-  - B. Braun
-  - Ansell
-  - BD
-  - Becton Dickinson
-  - Molnlycke
-  - Teleflex
-  - Terumo
-  - Ambu
-  - Smith & Nephew
-  - Baxter
-  - Nipro
-  - Johnson & Johnson
-  - ResMed
-  - medical device recall
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - product_name
-  - regulatory_topic
-  notes: Customer-name and product-name monitoring only; exclude general reporting
-    and policy education.
-- source_id: id_farmalkes_eregalkes
-  source_name: Indonesia Farmalkes Customer and Local-Manufacturing Monitor
-  country: ID
-  organization: Directorate General of Pharmaceuticals and Medical Devices
-  list_url: https://farmalkes.kemkes.go.id/
-  base_url: https://farmalkes.kemkes.go.id
-  source_type: regulator_and_industry
-  workflow: investment_news
-  category: local_investment_manufacturing_and_commercialization
-  priority: high
-  language:
-  - id
-  - en
-  enabled: true
-  parsing_strategy: custom_parser
-  report_frequency: weekly
-  requires_javascript: false
-  selectors:
-    article_card: article, .post, .card
-    title: h2, h3
-    date: time, .date
-    article_link: a[href]
-    body: main, article, .entry-content
-  endpoints:
-  - https://farmalkes.kemkes.go.id/
-  - https://farmalkes.kemkes.go.id/artikel/berita-utama/
-  - https://farmalkes.kemkes.go.id/artikel/berita-utama/page/2/
-  search_terms:
-  - B. Braun
-  - BD
-  - Becton Dickinson
-  - Terumo
-  - Baxter
-  - Nipro
-  - Johnson & Johnson
-  - ResMed
-  - produksi alat kesehatan
-  - investasi
-  - pabrik
-  - ekspor
-  - lokalisasi
-  - kerja sama
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - product_name
-  - investment_value
-  - facility_event
-  - export_event
-  - partnership_event
-  notes: Keep named-company investment, local manufacturing, export, business matching
-    and commercialization. Exclude generic policy and events without a company outcome.
-- source_id: vn_vimda
-  source_name: Vietnam VIMDA Customer Registration Monitor
-  country: VN
-  organization: Vietnam Infrastructure and Medical Device Administration
-  list_url: https://vimda.moh.gov.vn/van-ban-cong-bo
-  base_url: https://vimda.moh.gov.vn
-  source_type: regulator_targeted
-  workflow: registry_targeted
-  category: customer_registration_and_market_access
-  priority: medium
-  language: vi
-  enabled: true
-  parsing_strategy: custom_parser
-  report_frequency: weekly
-  requires_javascript: false
-  selectors:
-    article_card: article, li, tr
-    title: h2, h3, a
-    date: time, .date, td
-    article_link: a[href]
-    body: main, article, .content
-  endpoints:
-  - https://vimda.moh.gov.vn/van-ban-cong-bo
-  search_terms:
-  - B. Braun
-  - Ansell
-  - BD
-  - Becton Dickinson
-  - Molnlycke
-  - Teleflex
-  - Terumo
-  - Ambu
-  - Smith & Nephew
-  - Baxter
-  - Hollister
-  - Nipro
-  - Johnson & Johnson
-  - ResMed
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - product_name
-  - document_number
-  - registration_event
-  notes: Target company/product disclosures only. General legal documents and policy
-    drafts are out of scope.
-- source_id: ph_fda_customer_monitor
-  source_name: Philippines FDA Customer Registration and Safety Monitor
-  country: PH
-  organization: Food and Drug Administration Philippines
-  list_url: https://verification.fda.gov.ph/Medical_Device_CMDNsrch.php
-  base_url: https://verification.fda.gov.ph
-  source_type: regulator_targeted
-  workflow: registry_targeted
-  category: customer_registration_recall_and_market_access
-  priority: medium
-  language: en
-  enabled: true
-  parsing_strategy: static_html
-  report_frequency: weekly
-  requires_javascript: false
-  selectors:
-    article_card: tr, article, .post
-    title: a, h2, h3
-    date: td, time, .date
-    article_link: a[href]
-    body: body, main, article
-  endpoints:
-  - https://verification.fda.gov.ph/Medical_Device_CMDNsrch.php
-  - https://www.fda.gov.ph/category/fda-advisories/
-  search_terms:
-  - B. Braun
-  - Ansell
-  - BD
-  - Becton Dickinson
-  - Molnlycke
-  - Teleflex
-  - Terumo
-  - Ambu
-  - Smith & Nephew
-  - Baxter
-  - Hollister
-  - Nipro
-  - Johnson & Johnson
-  - Aurolab
-  - ResMed
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - product_name
-  - registration_number
-  - issuance_date
-  - expiry_date
-  - safety_event_type
-  notes: Incremental company-name search in the public verification portal plus named-company
-    advisories. Never automate authenticated eServices.
-- source_id: healthcare_channel_partners
-  source_name: Southeast Asia Healthcare Channel Partners
-  country: APAC
-  organization: DKSH, Zuellig Pharma, Getz Healthcare and Device Technologies
-  list_url: https://www.dksh.com/global-en/home/media/news
-  base_url: https://www.dksh.com
-  source_type: distributor_official
-  workflow: channel_news
-  category: distribution_channel_and_commercialization
-  priority: high
-  language: en
-  enabled: true
-  parsing_strategy: static_html
-  report_frequency: weekly
-  requires_javascript: false
-  selectors:
-    article_card: article, .card, .news-item, .teaser
-    title: h2, h3, h4
-    date: time, .date
-    article_link: a[href]
-    body: main, article, .content, .article-content
-  endpoints:
-  - https://www.dksh.com/global-en/home/media/news
-  - https://www.zuelligpharma.com/news-insights
-  - https://www.getzhealthcare.com/news/
-  - https://www.device.com.au/news/
-  search_terms:
-  - medical device
-  - diagnostics
-  - distribution agreement
-  - exclusive distributor
-  - channel partnership
-  - commercialization
-  - market access
-  - B. Braun
-  - BD
-  - Teleflex
-  - Terumo
-  - Ambu
-  - Smith & Nephew
-  - Baxter
-  - Hollister
-  - Nipro
-  - Johnson & Johnson
-  - ResMed
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - partner_company
-  - products
-  - countries
-  - agreement_type
-  - distribution_scope
-  - commercialization_event
-  notes: Retain device/diagnostic distribution, commercialization and market-access
-    agreements. Exclude pharmaceutical-only and consumer-goods stories.
-- source_id: my_mida_ammi
-  source_name: Malaysia MIDA and AMMI Company Investment Monitor
-  country: MY
-  organization: Malaysian Investment Development Authority and Association of Malaysian
-    Medical Industries
-  list_url: https://www.mida.gov.my/media-release/
-  base_url: https://www.mida.gov.my
-  source_type: investment_and_industry
-  workflow: investment_news
-  category: local_investment_manufacturing_and_exports
-  priority: high
-  language: en
-  enabled: true
-  parsing_strategy: custom_parser
-  report_frequency: weekly
-  requires_javascript: false
-  selectors:
-    article_card: article, .post, .card
-    title: h2, h3
-    date: time, .date
-    article_link: a[href]
-    body: main, article, .entry-content
-  endpoints:
-  - https://www.mida.gov.my/media-release/
-  - https://www.mida.gov.my/?s=medical+device
-  - https://ammi.com.my/news/
-  search_terms:
-  - medical device
-  - MedTech
-  - healthcare manufacturing
-  - investment
-  - factory
-  - facility
-  - expansion
-  - export
-  - Top Glove
-  - Hartalega
-  - Careplus
-  - Ansell
-  - B. Braun
-  - BD
-  - Teleflex
-  - ResMed
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - investment_value
-  - facility_location
-  - capacity_event
-  - export_event
-  notes: Named-company projects and quantitative sector results only; exclude generic
-    investment-policy promotion.
-- source_id: mddi_packaging
-  source_name: MDDI Customer Packaging and Manufacturing News
-  country: GLOBAL
-  organization: Medical Device and Diagnostic Industry
-  list_url: https://www.mddionline.com/
-  base_url: https://www.mddionline.com
-  source_type: trade_media
-  workflow: packaging_news
-  category: customer_packaging_manufacturing_and_commercialization
-  priority: low
-  language: en
-  enabled: true
-  parsing_strategy: static_html
-  report_frequency: monthly
-  requires_javascript: false
-  selectors:
-    article_card: article, .card
-    title: h2, h3
-    date: time, .date
-    article_link: a[href]
-    body: main, article
-  endpoints:
-  - https://www.mddionline.com/
-  - https://www.mddionline.com/manufacturing
-  - https://www.mddionline.com/packaging
-  search_terms:
-  - B. Braun
-  - BD
-  - Teleflex
-  - Terumo
-  - Ambu
-  - Smith & Nephew
-  - Baxter
-  - Hollister
-  - Nipro
-  - Johnson & Johnson
-  - ResMed
-  - medical device packaging
-  - sterile packaging
-  - manufacturing expansion
-  extract_fields:
-  - title
-  - published_date
-  - body
-  - url
-  - company_name
-  - product_name
-  - packaging_material
-  - packaging_format
-  - sterilization_method
-  - facility_event
-  notes: Secondary discovery source. Require a named watchlist company or a concrete
-    sterile-device manufacturing/packaging event.
+  # Retained regulatory sources are company-targeted safety/registration monitors,
+  # not general policy feeds.
+  - source_id: sg_hsa_announcements
+    source_name: Singapore HSA Customer Safety Monitor
+    country: SG
+    organization: Health Sciences Authority
+    list_url: https://www.hsa.gov.sg/announcements/
+    base_url: https://www.hsa.gov.sg
+    source_type: regulator_targeted
+    workflow: registry_targeted
+    category: customer_registration_recall_and_fsca
+    priority: high
+    language: en
+    enabled: true
+    parsing_strategy: custom_parser
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "a[href^='/announcements/']", title: "h3", date: "p", article_link: "a[href]", body: "main"}
+    endpoints: [https://www.hsa.gov.sg/announcements/]
+    search_terms: [B. Braun, Ansell, BD, Becton Dickinson, Molnlycke, Teleflex, Terumo, Ambu, Smith & Nephew, Baxter, Hollister, Nipro, Johnson & Johnson, ResMed, medical device recall, field safety]
+    extract_fields: [title, published_date, body, url, company_name, product_name, registration_event, safety_event_type]
+    notes: Retain only named-customer/competitor registration, recall, FSCA or supply-impacting safety events. Exclude general guidance and consumer education.
+
+  - source_id: my_mda_mmdr
+    source_name: Malaysia MDA Customer Safety Monitor
+    country: MY
+    organization: Medical Device Authority Malaysia
+    list_url: https://portal.mda.gov.my/index.php/profesional/safety-alert
+    base_url: https://portal.mda.gov.my
+    source_type: regulator_targeted
+    workflow: registry_targeted
+    category: customer_registration_recall_and_fsca
+    priority: high
+    language: [en, ms]
+    enabled: true
+    parsing_strategy: custom_parser
+    fallback_strategy: official_index_snapshot
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .blog-item, .item, tr", title: "h2, h3, .item-title, th.list-title", date: "time, .date, td.list-date", article_link: "a[href]", body: ".article-details, .item-page, main"}
+    endpoints:
+      - https://portal.mda.gov.my/index.php/profesional/safety-alert
+      - https://portal.mda.gov.my/index.php/announcement
+    search_terms: [B. Braun, Ansell, BD, Becton Dickinson, Molnlycke, Teleflex, Terumo, Ambu, Smith & Nephew, Baxter, Top Glove, Hollister, Nipro, Johnson & Johnson, ResMed, Hartalega, Careplus]
+    extract_fields: [title, published_date, body, url, company_name, product_name, registration_numbers, safety_event_type, affected_devices]
+    notes: Query and filter by watchlist company/product. Do not collect generic MDA policy unless a named company or product is directly affected.
+
+  - source_id: th_fda_medical_devices
+    source_name: Thailand FDA Customer Market-Access Monitor
+    country: TH
+    organization: Thai Food and Drug Administration
+    list_url: https://en.fda.moph.go.th/news
+    base_url: https://en.fda.moph.go.th
+    source_type: regulator_targeted
+    workflow: registry_targeted
+    category: customer_registration_recall_and_market_access
+    priority: medium
+    language: [en, th]
+    enabled: true
+    parsing_strategy: custom_parser
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .news-item, .card, a[href*='/news/']", title: "h2, h3, h4, p", date: "time, .date", article_link: "a[href]", body: ".single__content.ql-editor"}
+    endpoints:
+      - https://en.fda.moph.go.th/news
+      - "https://en.fda.moph.go.th/news?page=2"
+    search_terms: [B. Braun, Ansell, BD, Becton Dickinson, Molnlycke, Teleflex, Terumo, Ambu, Smith & Nephew, Baxter, Nipro, Johnson & Johnson, ResMed, medical device recall]
+    extract_fields: [title, published_date, body, url, company_name, product_name, regulatory_topic]
+    notes: Customer-name and product-name monitoring only; exclude general reporting and policy education.
+
+  - source_id: id_farmalkes_eregalkes
+    source_name: Indonesia Farmalkes Customer and Local-Manufacturing Monitor
+    country: ID
+    organization: Directorate General of Pharmaceuticals and Medical Devices
+    list_url: https://farmalkes.kemkes.go.id/
+    base_url: https://farmalkes.kemkes.go.id
+    source_type: regulator_and_industry
+    workflow: investment_news
+    category: local_investment_manufacturing_and_commercialization
+    priority: high
+    language: [id, en]
+    enabled: true
+    parsing_strategy: custom_parser
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .post, .card", title: "h2, h3", date: "time, .date", article_link: "a[href]", body: "main, article, .entry-content"}
+    endpoints:
+      - https://farmalkes.kemkes.go.id/
+      - https://farmalkes.kemkes.go.id/artikel/berita-utama/
+      - https://farmalkes.kemkes.go.id/artikel/berita-utama/page/2/
+    search_terms: [B. Braun, BD, Becton Dickinson, Terumo, Baxter, Nipro, Johnson & Johnson, ResMed, produksi alat kesehatan, investasi, pabrik, ekspor, lokalisasi, kerja sama]
+    extract_fields: [title, published_date, body, url, company_name, product_name, investment_value, facility_event, export_event, partnership_event]
+    notes: Keep named-company investment, local manufacturing, export, business matching and commercialization. Exclude generic policy and events without a company outcome.
+
+  - source_id: vn_vimda
+    source_name: Vietnam VIMDA Customer Registration Monitor
+    country: VN
+    organization: Vietnam Infrastructure and Medical Device Administration
+    list_url: https://vimda.moh.gov.vn/van-ban-cong-bo
+    base_url: https://vimda.moh.gov.vn
+    source_type: regulator_targeted
+    workflow: registry_targeted
+    category: customer_registration_and_market_access
+    priority: medium
+    language: vi
+    enabled: true
+    parsing_strategy: custom_parser
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, li, tr", title: "h2, h3, a", date: "time, .date, td", article_link: "a[href]", body: "main, article, .content"}
+    endpoints: [https://vimda.moh.gov.vn/van-ban-cong-bo]
+    search_terms: [B. Braun, Ansell, BD, Becton Dickinson, Molnlycke, Teleflex, Terumo, Ambu, Smith & Nephew, Baxter, Hollister, Nipro, Johnson & Johnson, ResMed]
+    extract_fields: [title, published_date, body, url, company_name, product_name, document_number, registration_event]
+    notes: Target company/product disclosures only. General legal documents and policy drafts are out of scope.
+
+  - source_id: ph_fda_customer_monitor
+    source_name: Philippines FDA Customer Registration and Safety Monitor
+    country: PH
+    organization: Food and Drug Administration Philippines
+    list_url: https://verification.fda.gov.ph/Medical_Device_CMDNsrch.php
+    base_url: https://verification.fda.gov.ph
+    source_type: regulator_targeted
+    workflow: registry_targeted
+    category: customer_registration_recall_and_market_access
+    priority: medium
+    language: en
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "tr, article, .post", title: "a, h2, h3", date: "td, time, .date", article_link: "a[href]", body: "body, main, article"}
+    endpoints:
+      - https://verification.fda.gov.ph/Medical_Device_CMDNsrch.php
+      - https://www.fda.gov.ph/category/fda-advisories/
+    search_terms: [B. Braun, Ansell, BD, Becton Dickinson, Molnlycke, Teleflex, Terumo, Ambu, Smith & Nephew, Baxter, Hollister, Nipro, Johnson & Johnson, Aurolab, ResMed]
+    extract_fields: [title, published_date, body, url, company_name, product_name, registration_number, issuance_date, expiry_date, safety_event_type]
+    notes: Incremental company-name search in the public verification portal plus named-company advisories. Never automate authenticated eServices.
+
+  # Company-owned sources are split by website so each domain can declare its
+  # own article URL shape. The old multi-domain groups remain below as disabled
+  # migration references.
+  - source_id: customer_bd_news
+    source_name: BD Official Press Releases
+    country: GLOBAL
+    organization: Becton Dickinson
+    list_url: https://news.bd.com/press-releases?l=50&o=0
+    base_url: https://news.bd.com
+    source_type: customer_official
+    workflow: customer_news
+    category: customer_product_commercialization_capacity_and_partnership
+    priority: critical
+    language: en
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "li.wd_item, article, .wd_item", title: "a[href]", date: "time, .wd_date, .date", article_link: "a[href]", body: "main, article, .wd_body"}
+    endpoints: ["https://news.bd.com/press-releases?l=50&o=0"]
+    article_url_patterns: ["news\\.bd\\.com/2026-"]
+    search_terms: [BD, Becton Dickinson, Pyxis, ChloraPrep, launch, authorization, approval, recall, contract, partnership, manufacturing, facility, capacity, investment, acquisition]
+    extract_fields: [title, published_date, body, url, matched_customer, products, product_event, safety_event, partnership_event, facility_event]
+    notes: Single-company first-party feed. Exclude awards, personnel-only items and earnings-call notices during downstream analysis.
+
+  - source_id: customer_baxter_news
+    source_name: Baxter Official News and Insights
+    country: GLOBAL
+    organization: Baxter
+    list_url: https://www.baxter.com/news-insights
+    base_url: https://www.baxter.com
+    source_type: customer_official
+    workflow: customer_news
+    category: customer_product_commercialization_capacity_and_partnership
+    priority: critical
+    language: en
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .views-row, .card", title: "h2, h3, a", date: "time, .date, .field--name-field-date", article_link: "a[href]", body: "main, article, .field--name-body"}
+    endpoints: [https://www.baxter.com/news-insights]
+    article_url_patterns: ["baxter\\.com/news-insights/[^?/#]+$"]
+    search_terms: [Baxter, launch, approval, recall, manufacturing, facility, capacity, investment, acquisition, distribution, partnership, sales]
+    extract_fields: [title, published_date, body, url, matched_customer, products, product_event, safety_event, partnership_event, facility_event]
+    notes: First-party Baxter articles only; listing pages are rejected.
+
+  - source_id: customer_resmed_news
+    source_name: ResMed Official News Releases
+    country: GLOBAL
+    organization: ResMed
+    list_url: https://newsroom.resmed.com/news-releases/
+    base_url: https://newsroom.resmed.com
+    source_type: customer_official
+    workflow: customer_news
+    category: customer_product_commercialization_capacity_and_partnership
+    priority: critical
+    language: en
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .wd_item, .module_item", title: "h2, h3, a", date: "time, .wd_date, .date", article_link: "a[href]", body: "main, article, .wd_body"}
+    endpoints: [https://newsroom.resmed.com/news-releases/]
+    article_url_patterns: ["newsroom\\.resmed\\.com/news-releases/news-details/"]
+    seed_articles:
+      - title: Resmed Announces Agreement to Sell MatrixCare Business
+        published_date: 07/07/2026
+        url: https://newsroom.resmed.com/news-releases/news-details/2026/Resmed-Announces-Agreement-to-Sell-MatrixCare-Business/default.aspx
+    search_terms: [ResMed, AirSense, AirCurve, Astral, launch, approval, recall, acquisition, divestiture, distribution, facility, investment, partnership]
+    extract_fields: [title, published_date, body, url, matched_customer, products, product_event, safety_event, acquisition_event, partnership_event]
+    notes: First-party ResMed releases only; include material portfolio transactions and product/safety events.
+
+  - source_id: customer_smith_nephew_news
+    source_name: Smith+Nephew Official News
+    country: GLOBAL
+    organization: Smith & Nephew
+    list_url: https://www.smith-nephew.com/en/data/tabs/news?sc_mode=normal
+    base_url: https://www.smith-nephew.com
+    source_type: customer_official
+    workflow: customer_news
+    category: customer_product_commercialization_capacity_and_partnership
+    priority: critical
+    language: en
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, li, .cmp-teaser", title: "h2, h3, h4, a", date: "time, .date", article_link: "a[href]", body: "main, article, .cmp-text"}
+    endpoints: ["https://www.smith-nephew.com/en/data/tabs/news?sc_mode=normal"]
+    article_url_patterns: ["smith-nephew\\.com/en/news/2026/07/"]
+    seed_articles:
+      - title: Smith+Nephew introduces groundbreaking LYNX COBLATION Laryngeal Wand for ENT surgeons
+        published_date: 15 July 2026
+        url: https://www.smith-nephew.com/en/news/2026/07/15/introduces-groundbreaking-lynx-coblation-laryngeal-wand
+      - title: New German expert consensus provides first risk-based recommendations for sNPWT use in closed surgical incisions
+        published_date: 6 July 2026
+        url: https://www.smith-nephew.com/en/news/2026/07/06/new-german-expert-consensus-provides-first-risk-based-recommendations
+    search_terms: [Smith+Nephew, Smith & Nephew, PICO, LYNX, CORI, launch, introduces, approval, acquisition, manufacturing, partnership, distribution]
+    extract_fields: [title, published_date, body, url, matched_customer, products, product_event, commercialization_event, partnership_event]
+    notes: First-party July article URLs only; clinical evidence is retained only when tied to a named commercial product.
+
+  - source_id: customer_jnj_medtech_news
+    source_name: Johnson & Johnson Medical Technology Press Releases
+    country: GLOBAL
+    organization: Johnson & Johnson MedTech
+    list_url: https://www.jnj.com/media-center/press-releases/medical-technologies
+    base_url: https://www.jnj.com
+    source_type: customer_official
+    workflow: customer_news
+    category: customer_product_commercialization_capacity_and_partnership
+    priority: critical
+    language: en
+    enabled: true
+    parsing_strategy: playwright
+    report_frequency: weekly
+    requires_javascript: true
+    selectors: {article_card: "article, .card, li, .result", title: "h2, h3, a", date: "time, .date", article_link: "a[href]", body: "main, article, .content"}
+    endpoints: [https://www.jnj.com/media-center/press-releases/medical-technologies]
+    article_url_patterns: ["jnj\\.com/media-center/press-releases/[^?/#]+$"]
+    seed_articles:
+      - title: Johnson & Johnson Receives FDA Market Authorization in the U.S. for its OTTAVA Robotic Surgical System
+        published_date: 22 July 2026
+        url: https://www.jnj.com/media-center/press-releases/johnson-johnson-receives-fda-market-authorization-in-the-u-s-for-its-ottava-robotic-surgical-system
+      - title: Johnson & Johnson Announces FDA Approval for the Dual Energy THERMOCOOL SMARTTOUCH SF Platform
+        published_date: 8 July 2026
+        url: https://www.jnj.com/media-center/press-releases/johnson-johnson-announces-fda-approval-for-the-dual-energy-thermocool-smarttouch-sf-platform
+    search_terms: [Johnson & Johnson, J&J MedTech, DePuy Synthes, Ethicon, Biosense Webster, OTTAVA, THERMOCOOL, launch, approval, authorization, acquisition, manufacturing, partnership]
+    extract_fields: [title, published_date, body, url, matched_customer, products, approval_event, acquisition_event, commercialization_event]
+    notes: Medical-technology topic feed only; pharmaceutical releases are excluded.
+
+  - source_id: competitor_olympus_news
+    source_name: Olympus Official Medical and Corporate News
+    country: GLOBAL
+    organization: Olympus
+    list_url: https://www.olympus-global.com/news/release/
+    base_url: https://www.olympus-global.com
+    source_type: competitor_official
+    workflow: competitor_news
+    category: competitor_product_capacity_market_access_and_partnership
+    priority: high
+    language: [en, ja]
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, li, .news-list-item", title: "h2, h3, a", date: "time, .date", article_link: "a[href]", body: "main, article, .content"}
+    endpoints:
+      - https://www.olympus-global.com/news/release/
+      - https://olycojp.olympus-global.com/news/
+    article_url_patterns: ["olympus-global\\.com/news/2026/", "olycojp\\.olympus-global\\.com/news/2026/"]
+    search_terms: [Olympus, medical device, endoscopy, factory, facility, supply, launch, approval, recall, acquisition, distribution]
+    extract_fields: [title, published_date, body, url, competitor_company, products, facility_event, product_event, approval_event, partnership_event]
+    notes: Competes with Ambu and other endoscopy customers; retain product, capacity, safety and channel events.
+
+  # TOP 20 company-owned sources: disabled legacy multi-domain groups.
+  - source_id: top20_customer_newsrooms_a
+    source_name: TOP 20 Customer Official Newsrooms A
+    country: GLOBAL
+    organization: TOP 20 customer companies
+    list_url: https://www.bbraun.com/en/about-us/media/press-releases.html
+    base_url: https://www.bbraun.com
+    source_type: customer_official
+    workflow: customer_news
+    category: customer_manufacturing_product_export_partnership
+    priority: critical
+    language: [en, de, ja]
+    enabled: false
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, .news-item, .teaser", title: "h2, h3, h4", date: "time, .date", article_link: "a[href]", body: "main, article, .content, .article-content"}
+    endpoints:
+      - https://www.bbraun.com/en/about-us/media/press-releases.html
+      - https://www.ansell.com/us/en/about-us/newsroom
+      - https://news.bd.com/
+      - https://www.molnlycke.com/news-media/
+      - https://www.teleflex.com/usa/en/about-us/news/
+      - https://www.terumo.co.jp/newsrelease
+      - https://www.ambu.com/corporate-info/media/news
+      - https://www.smith-nephew.com/en/news
+    search_terms: [B. Braun, Ansell, Becton Dickinson, BD, Molnlycke, Mölnlycke, Teleflex, Terumo, Ambu, Smith & Nephew, factory, facility, capacity, investment, acquisition, launch, approval, distribution, export, recall]
+    extract_fields: [title, published_date, body, url, matched_customer, products, facility_event, export_event, approval_event, financing_event, partnership_event]
+    notes: First-party customer intelligence. Retain concrete manufacturing, investment, product, market-access, M&A, channel, sales or supply events; exclude CSR, awards and general thought leadership.
+
+  - source_id: top20_customer_newsrooms_b
+    source_name: TOP 20 Customer Official Newsrooms B
+    country: GLOBAL
+    organization: TOP 20 customer companies
+    list_url: https://www.baxter.com/baxter-newsroom
+    base_url: https://www.baxter.com
+    source_type: customer_official
+    workflow: customer_news
+    category: customer_manufacturing_product_export_partnership
+    priority: critical
+    language: en
+    enabled: false
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, .news-item, .teaser", title: "h2, h3, h4", date: "time, .date", article_link: "a[href]", body: "main, article, .content, .article-content"}
+    endpoints:
+      - https://www.baxter.com/baxter-newsroom
+      - https://www.nipro-group.com/en/news/
+      - https://www.jnj.com/media-center/press-releases
+      - https://www.jnjmedtech.com/en-US/news/press-releases/
+      - https://www.aurolab.com/news-and-events/
+      - https://newsroom.resmed.com/
+    search_terms: [Baxter, Hollister, Nipro, Johnson & Johnson, J&J MedTech, Ethicon, DePuy Synthes, Biosense Webster, Aurolab, ResMed, factory, facility, capacity, investment, acquisition, launch, approval, distribution, export, recall]
+    extract_fields: [title, published_date, body, url, matched_customer, products, facility_event, export_event, approval_event, financing_event, partnership_event]
+    notes: First-party customer intelligence; enforce watchlist aliases and concrete-event requirements.
+
+  - source_id: malaysia_glove_customer_ir
+    source_name: Malaysia Glove Customer IR and Announcements
+    country: MY
+    organization: Top Glove, Hartalega and Careplus
+    list_url: https://www.topglove.com/investor-relations
+    base_url: https://www.topglove.com
+    source_type: customer_investor_relations
+    workflow: disclosure_monitor
+    category: customer_capacity_sales_investment_and_exports
+    priority: critical
+    language: en
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, .announcement, tr", title: "h2, h3, a", date: "time, .date, td", article_link: "a[href]", body: "main, article, .content, body"}
+    endpoints:
+      - https://www.topglove.com/investor-relations
+      # Hartalega's first-party announcements page exposes the full site
+      # navigation as article candidates. Use its structured Insage feed below.
+      - https://www.insage.com.my/IR/HARTAV2/default.aspx
+      - https://careplus.com/investor-relations/bursa-annoucements/general-announcement/
+    search_terms: [Top Glove, Hartalega, Careplus, capacity, utilisation, utilization, plant, factory, capital expenditure, capex, sales volume, export, acquisition, investment]
+    extract_fields: [title, published_date, body, url, matched_customer, revenue, sales_volume, capacity, utilization, capex, facility_event, export_event, financing_event]
+    notes: Prioritize quarterly operating data, capex, plant commissioning/closure, capacity utilization, export demand and material transactions. Exclude routine director/shareholding notices.
+
+  - source_id: customer_market_disclosures
+    source_name: Customer Market and Regulatory Disclosures
+    country: GLOBAL
+    organization: Stock exchanges and securities regulators
+    list_url: https://www.sec.gov/edgar/search/
+    base_url: https://www.sec.gov
+    source_type: regulated_disclosure
+    workflow: disclosure_monitor
+    category: customer_financial_investment_capacity_and_ma
+    priority: high
+    language: en
+    enabled: false
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .result, tr, .announcement", title: "h2, h3, a", date: "time, .date, td", article_link: "a[href]", body: "main, article, .content, body"}
+    endpoints:
+      - https://www.sec.gov/edgar/search/
+      - https://www.asx.com.au/markets/company/ann
+      - https://www.londonstockexchange.com/news?tab=news-explorer
+      - https://www.bursamalaysia.com/market_information/announcements/company_announcement
+    search_terms: [BDX, TFX, BAX, JNJ, RMD, Ansell, Smith & Nephew, Top Glove, Hartalega, Careplus, acquisition, investment, manufacturing, capacity, restructuring, distribution]
+    extract_fields: [title, published_date, body, url, company_name, filing_type, revenue, capex, facility_event, restructuring_event, financing_event, acquisition_event]
+    notes: Company-filtered material disclosures only. Exclude ownership forms, routine governance and dividend notices unless they indicate a strategic transaction.
+
+  # Competitor universe is split by segment to keep matching precise.
+  - source_id: glove_competitor_news
+    source_name: Medical Glove Competitor Official News
+    country: APAC
+    organization: Kossan, Supermax, Sri Trang Gloves, Riverstone and UG Healthcare
+    list_url: https://kossan.com.my/news/
+    base_url: https://kossan.com.my
+    source_type: competitor_official
+    workflow: competitor_news
+    category: competitor_capacity_sales_investment_and_exports
+    priority: high
+    language: en
+    enabled: false
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, .news-item, tr", title: "h2, h3, a", date: "time, .date, td", article_link: "a[href]", body: "main, article, .content, body"}
+    endpoints:
+      - https://kossan.com.my/news/
+      - https://www.supermax.com.my/html/ir_news.aspx
+      - https://www.sritranggloves.com/en/newsroom
+      - https://www.riverstone.com.my/newsroom/
+      - https://www.ughealthcarecorporation.com/newsroom.html
+    search_terms: [Kossan, Supermax, Sri Trang Gloves, STGT, Riverstone, UG Healthcare, glove capacity, utilization, factory, plant, expansion, export, sales volume]
+    extract_fields: [title, published_date, body, url, competitor_company, capacity, utilization, sales_volume, facility_event, export_event, financing_event]
+    notes: Use company_watchlist competition dimensions to relate events to Ansell, Top Glove, Hartalega and Careplus.
+
+  - source_id: device_competitor_news
+    source_name: Priority Device Competitor Official News
+    country: GLOBAL
+    organization: Priority MedTech competitors
+    list_url: https://www.medtronic.com/en-us/our-company/news.html
+    base_url: https://www.medtronic.com
+    source_type: competitor_official
+    workflow: competitor_news
+    category: competitor_product_capacity_market_access_and_partnership
+    priority: high
+    language: en
+    enabled: false
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, .news-item, .teaser", title: "h2, h3, h4", date: "time, .date", article_link: "a[href]", body: "main, article, .content, .article-content"}
+    endpoints:
+      - https://www.medtronic.com/en-us/our-company/news.html
+      - https://www.olympus-global.com/news/
+      - https://www.convatecgroup.com/media/press-releases/
+      - https://www.coloplast.com/about-coloplast/news-and-media/
+      - https://www.fphcare.com/us/our-company/investor/news/
+      - https://www.philips.com/a-w/about/news/archive/standard/news/press/
+      - https://www.icumed.com/about-us/news/
+      - https://investors.edwards.com/news/default.aspx
+    search_terms: [Medtronic, Olympus, Convatec, Coloplast, Fisher & Paykel Healthcare, Philips, ICU Medical, Edwards Lifesciences, medical device, launch, approval, manufacturing, capacity, acquisition, distribution, Southeast Asia]
+    extract_fields: [title, published_date, body, url, competitor_company, products, facility_event, approval_event, export_event, acquisition_event, partnership_event]
+    notes: Retain only events sharing an approved competition dimension with a TOP 20 customer, or creating a concrete Southeast Asia packaging opportunity.
+
+  - source_id: southeast_asia_local_investment
+    source_name: Southeast Asia Local Investment and Footprint Expansion
+    country: APAC
+    organization: Southeast Asian investment promotion agencies
+    list_url: https://www.edb.gov.sg/en/about-edb/media-releases-publications.html
+    base_url: https://www.edb.gov.sg
+    source_type: investment_agency
+    workflow: investment_news
+    category: local_investment_and_footprint_expansion
+    priority: high
+    language: [en, id, th, vi]
+    enabled: false
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, .news-item, .teaser", title: "h2, h3, h4", date: "time, .date", article_link: "a[href]", body: "main, article, .content, .article-content"}
+    endpoints:
+      - https://www.edb.gov.sg/en/about-edb/media-releases-publications.html
+      - https://www.mida.gov.my/media-release/
+      - https://investpenang.gov.my/press-release/
+      - https://www.boi.go.th/index.php?page=press_releases
+      - https://investindonesia.go.id/
+      - https://www.peza.gov.ph/press-releases
+    search_terms: [medical device, MedTech, diagnostics, healthcare manufacturing, glove, catheter, consumables, factory, facility, production line, investment, expansion, local manufacturing, B. Braun, BD, Terumo, Baxter, Johnson & Johnson, ResMed, Top Glove, Hartalega, Careplus]
+    extract_fields: [title, published_date, body, url, company_name, investment_value, facility_location, facility_event, capacity_event, jobs, export_event]
+    notes: Keep named-company greenfield, brownfield, regional-hub, R&D, warehouse and manufacturing investment. Exclude incentive-policy explainers without an actual company project.
+
+  - source_id: healthcare_channel_partners
+    source_name: Southeast Asia Healthcare Channel Partners
+    country: APAC
+    organization: DKSH, Zuellig Pharma, Getz Healthcare and Device Technologies
+    list_url: https://www.dksh.com/global-en/home/media/news
+    base_url: https://www.dksh.com
+    source_type: distributor_official
+    workflow: channel_news
+    category: distribution_channel_and_commercialization
+    priority: high
+    language: en
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, .news-item, .teaser", title: "h2, h3, h4", date: "time, .date", article_link: "a[href]", body: "main, article, .content, .article-content"}
+    endpoints:
+      - https://www.dksh.com/global-en/home/media/news
+      - https://www.zuelligpharma.com/news-insights
+      - https://www.getzhealthcare.com/news/
+      - https://www.device.com.au/news/
+    search_terms: [medical device, diagnostics, distribution agreement, exclusive distributor, channel partnership, commercialization, market access, B. Braun, BD, Teleflex, Terumo, Ambu, Smith & Nephew, Baxter, Hollister, Nipro, Johnson & Johnson, ResMed]
+    extract_fields: [title, published_date, body, url, company_name, partner_company, products, countries, agreement_type, distribution_scope, commercialization_event]
+    notes: Retain device/diagnostic distribution, commercialization and market-access agreements. Exclude pharmaceutical-only and consumer-goods stories.
+
+  - source_id: medtech_press_release_wires
+    source_name: MedTech Customer and Competitor Press-Release Wires
+    country: GLOBAL
+    organization: PR Newswire, Business Wire and GlobeNewswire
+    list_url: https://www.prnewswire.com/apac/news-releases/
+    base_url: https://www.prnewswire.com
+    source_type: press_release_wire
+    workflow: press_release_search
+    category: customer_competitor_product_investment_and_partnership
+    priority: medium
+    language: en
+    enabled: false
+    parsing_strategy: static_html
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .card, .row, .news-item", title: "h2, h3, h4", date: "time, .date", article_link: "a[href]", body: "main, article, .release-body, .article-content"}
+    endpoints:
+      - https://www.prnewswire.com/apac/news-releases/
+      - https://www.businesswire.com/newsroom/industry/health/medical-devices
+      - https://www.globenewswire.com/en/search/organization/Medical%2520Devices
+    search_terms: [B. Braun, Ansell, Becton Dickinson, BD, Molnlycke, Teleflex, Terumo, Ambu, Smith & Nephew, Baxter, Top Glove, Hollister, Nipro, Johnson & Johnson, Aurolab, ResMed, Hartalega, Careplus, Kossan, Supermax, Convatec, Coloplast, Medtronic, Olympus, distribution agreement, manufacturing facility]
+    extract_fields: [title, published_date, body, url, issuer, company_name, products, countries, facility_event, approval_event, financing_event, acquisition_event, partnership_event]
+    notes: Require a watchlist customer/competitor name plus a concrete event. A country name or generic medical-device term alone is insufficient.
+
+  - source_id: my_mida_ammi
+    source_name: Malaysia MIDA and AMMI Company Investment Monitor
+    country: MY
+    organization: Malaysian Investment Development Authority and Association of Malaysian Medical Industries
+    list_url: https://www.mida.gov.my/media-release/
+    base_url: https://www.mida.gov.my
+    source_type: investment_and_industry
+    workflow: investment_news
+    category: local_investment_manufacturing_and_exports
+    priority: high
+    language: en
+    enabled: true
+    parsing_strategy: custom_parser
+    report_frequency: weekly
+    requires_javascript: false
+    selectors: {article_card: "article, .post, .card", title: "h2, h3", date: "time, .date", article_link: "a[href]", body: "main, article, .entry-content"}
+    endpoints:
+      - https://www.mida.gov.my/media-release/
+      - "https://www.mida.gov.my/?s=medical+device"
+      - https://ammi.com.my/news/
+    search_terms: [medical device, MedTech, healthcare manufacturing, investment, factory, facility, expansion, export, Top Glove, Hartalega, Careplus, Ansell, B. Braun, BD, Teleflex, ResMed]
+    extract_fields: [title, published_date, body, url, company_name, investment_value, facility_location, capacity_event, export_event]
+    notes: Named-company projects and quantitative sector results only; exclude generic investment-policy promotion.
+
+  - source_id: mddi_packaging
+    source_name: MDDI Customer Packaging and Manufacturing News
+    country: GLOBAL
+    organization: Medical Device and Diagnostic Industry
+    list_url: https://www.mddionline.com/
+    base_url: https://www.mddionline.com
+    source_type: trade_media
+    workflow: packaging_news
+    category: customer_packaging_manufacturing_and_commercialization
+    priority: low
+    language: en
+    enabled: true
+    parsing_strategy: static_html
+    report_frequency: monthly
+    requires_javascript: false
+    selectors: {article_card: "article, .card", title: "h2, h3", date: "time, .date", article_link: "a[href]", body: "main, article"}
+    endpoints:
+      - https://www.mddionline.com/
+      - https://www.mddionline.com/manufacturing
+      - https://www.mddionline.com/packaging
+    search_terms: [B. Braun, BD, Teleflex, Terumo, Ambu, Smith & Nephew, Baxter, Hollister, Nipro, Johnson & Johnson, ResMed, medical device packaging, sterile packaging, manufacturing expansion]
+    extract_fields: [title, published_date, body, url, company_name, product_name, packaging_material, packaging_format, sterilization_method, facility_event]
+    notes: Secondary discovery source. Require a named watchlist company or a concrete sterile-device manufacturing/packaging event.

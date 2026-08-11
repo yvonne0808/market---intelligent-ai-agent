@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import unittest
+from unittest.mock import patch
+
+from southeast_asia_medtech.config import config_loader
 
 from southeast_asia_medtech.config.config_loader import (
     load_company_watchlist,
@@ -44,6 +47,27 @@ REQUIRED_TERMS = {
 
 
 class ConfigLoadingTest(unittest.TestCase):
+    def test_default_config_paths_follow_section_ownership(self) -> None:
+        with patch.object(config_loader, "_load_yaml", return_value={}) as loader:
+            config_loader.load_sources()
+            self.assertEqual(
+                loader.call_args.args[0],
+                config_loader.MODULE_DIR / "monthly_report" / "config" / "sources.yaml",
+            )
+            config_loader.load_keywords()
+            self.assertEqual(
+                loader.call_args.args[0],
+                config_loader.MODULE_DIR / "monthly_report" / "config" / "keywords.yaml",
+            )
+            config_loader.load_company_watchlist()
+            self.assertEqual(
+                loader.call_args.args[0],
+                config_loader.MODULE_DIR
+                / "customer_analysis"
+                / "config"
+                / "company_watchlist.yaml",
+            )
+
     def test_sources_have_customer_first_source_families(self) -> None:
         config = load_sources()
         sources = config["sources"]

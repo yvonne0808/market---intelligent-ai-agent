@@ -3,9 +3,6 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-import yaml
-
-
 MODULE_DIR = Path(__file__).resolve().parents[1]
 
 
@@ -44,28 +41,29 @@ class ReportStreamLayoutTests(unittest.TestCase):
                     owned.read_text(encoding="utf-8"),
                 )
 
-    def test_sources_are_partitioned_without_rewriting_rows(self):
-        legacy = yaml.safe_load(
-            (MODULE_DIR / "config" / "sources.yaml").read_text(encoding="utf-8")
+    def test_complete_sources_registry_belongs_to_monthly_report(self):
+        legacy = MODULE_DIR / "config" / "sources.yaml"
+        owned = MODULE_DIR / "monthly_report" / "config" / "sources.yaml"
+        self.assertEqual(
+            legacy.read_text(encoding="utf-8"),
+            owned.read_text(encoding="utf-8"),
         )
-        monthly = yaml.safe_load(
-            (
-                MODULE_DIR / "monthly_report" / "config" / "sources.yaml"
-            ).read_text(encoding="utf-8")
+        self.assertFalse(
+            (MODULE_DIR / "customer_analysis" / "config" / "sources.yaml").exists()
         )
-        customer = yaml.safe_load(
-            (
-                MODULE_DIR / "customer_analysis" / "config" / "sources.yaml"
-            ).read_text(encoding="utf-8")
+
+    def test_company_watchlist_belongs_to_customer_analysis(self):
+        legacy = MODULE_DIR / "config" / "company_watchlist.yaml"
+        owned = (
+            MODULE_DIR
+            / "customer_analysis"
+            / "config"
+            / "company_watchlist.yaml"
         )
-        legacy_by_id = {row["source_id"]: row for row in legacy["sources"]}
-        monthly_ids = {row["source_id"] for row in monthly["sources"]}
-        customer_ids = {row["source_id"] for row in customer["sources"]}
-        self.assertFalse(monthly_ids & customer_ids)
-        self.assertEqual(len(monthly_ids), 9)
-        self.assertEqual(len(customer_ids), 7)
-        for row in monthly["sources"] + customer["sources"]:
-            self.assertEqual(row, legacy_by_id[row["source_id"]])
+        self.assertEqual(
+            legacy.read_text(encoding="utf-8"),
+            owned.read_text(encoding="utf-8"),
+        )
 
     def test_section_owned_script_entrypoints_exist(self):
         self.assertTrue(
