@@ -1,0 +1,1 @@
+"""Monthly Report configuration layout."""
