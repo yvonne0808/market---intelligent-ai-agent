@@ -8,44 +8,45 @@ Prompt 类型：Medical Devices（医疗器械行业文章分析）
 
 本任务只分析医疗器械、医疗耗材及相关包装市场动态，需要与药品、创新药和药品包装分析区分开来。
 
-重点关注：
+重点关注以下医疗器械包装形式、包装材料和相关工艺：
 
-医疗器械
-医疗耗材
-高值医用耗材
-低值医用耗材
-一次性医疗用品
-医疗器械获批
-医疗耗材获批
-医疗器械注册证
-耗材上市
-NMPA / CMDE 审评审批
-创新医疗器械特别审查
-医疗器械优先审批
-医疗器械临床试验
-医疗器械商业化
-医疗器械集采
-高值耗材集采
-医疗耗材中标
-医疗器械出口 / 出海
-海外注册认证
-FDA / CE / MDR 等海外准入
-国产化
-国产替代
-进口替代
-生产线建设
-新增产线
-扩产
-生产基地建设
-产能扩张
-供应链变化
-销售放量
-市场规模
-融资并购
-BD 合作
-渠道合作
-经销合作
-
+顶头袋
+Header Bag
+成型膜
+Forming Film
+涂胶纸
+医疗级涂胶纸
+特卫强
+Tyvek
+医疗透析纸
+纸塑袋
+灭菌袋
+管袋
+超净袋
+衬板
+吸塑盒
+托盒
+热成型托盘
+医疗器械托盘
+塑料薄膜
+盖材
+封口材料
+无菌屏障系统
+无菌包装
+医疗耗材包装
+灭菌包装
+保护性包装
+一次性医疗器械包装
+EO 灭菌
+环氧乙烷灭菌
+辐照灭菌
+蒸汽灭菌
+包装密封完整性
+无菌屏障完整性
+包装验证
+ISO 11607
+灭菌适配性
+洁净室包装
 
 降低以下内容的优先级：
 
@@ -65,28 +66,6 @@ BD 合作
 缺少具体产业事件的转载文章
 与中国医疗器械市场没有明显关系的海外资讯
 
-primary_category
-
-事件类别：
-A 注册审批与临床
-B 商业化与市场准入
-C 国际化与海外准入
-D 产能与生产建设
-E 国产化与进口替代
-F 投融资与产业整合
-G 商务与渠道合作
-X 其他/无法分类
-
-产品标签：
-医疗器械、医疗耗材、高值耗材、低值耗材、一次性用品
-
-规则：
-1. 按文章核心事件判断，不得仅凭关键词。
-2. 输出1个主类别；仅在存在独立重要事件时输出次类别。
-3. 背景信息不构成标签。
-4. 无明确依据时输出X，禁止猜测。
-
-
 二、relevance_score 评分规则
 
 relevance_score 评分范围为 0-20。
@@ -94,32 +73,27 @@ relevance_score 评分范围为 0-20。
 18-20：高度重要，必须进入 weekly report
 
 通常包括：
-
-医疗器械或高值耗材获得 NMPA 注册批准
-创新医疗器械进入特别审查、优先审批或实现重要审评突破
+明确的产能建设、生产线投产或供应链需求
 重要医疗耗材产品获批上市
-关键临床试验成功
-国内领先医疗器械或耗材企业发生重大产品进展
-医疗器械重大集采、中标或价格政策变化
+领先医疗器械或耗材企业发生重大产品进展
 重大出口、出海、FDA、CE 或 MDR 注册进展
 重大融资、并购或战略合作
 重大生产基地、产线或产能投资
 明确披露销售额、市场规模或商业化放量
 明确产生医疗器械包装、无菌包装或供应链机会
-国产化、国产替代或进口替代取得重大进展
-国内领先高值耗材、低值耗材或创新器械企业的重要动态
+领先高值耗材、低值耗材或创新器械企业的重要动态
+明确的产能建设、生产线投产或供应链需求
 
 16-17：重要，建议进入 weekly report
 
 通常包括：
 
-国内医疗器械企业的重要产品进展
+医疗器械企业的重要产品进展
 医疗器械上市申请或注册申报
 医疗器械或耗材获得注册证
 重要临床试验或注册临床进展
 重要商业化、渠道或市场拓展动态
 普通规模的融资、合作或并购
-明确的产能建设、生产线投产或供应链需求
 重要行业趋势、集采趋势或国产替代动态
 可能产生较大包装材料需求的产品上市或放量
 
@@ -173,13 +147,9 @@ amcor_relevance_score 评分范围为 0-5。
 医疗器械无菌包装
 无菌屏障系统
 顶头袋
-Header Bag
 成型膜
-Forming Film
-涂胶纸
 医疗级涂胶纸
-特卫强
-Tyvek
+特卫强 / Tyvek
 医疗透析纸
 纸塑袋
 灭菌袋
@@ -187,28 +157,21 @@ Tyvek
 超净袋
 衬板
 吸塑盒
-托盒
 热成型托盘
-医疗器械托盘
+医疗器械托盒
 塑料薄膜
-盖材
-封口材料
-无菌屏障系统
-无菌包装
+盖材或封口材料
 医疗耗材包装
 灭菌包装
-保护性包装
-一次性医疗器械包装
 EO 灭菌
-环氧乙烷灭菌
-辐照灭菌
-蒸汽灭菌
-包装密封完整性
-无菌屏障完整性
 包装验证
+包装密封完整性
 ISO 11607
-灭菌适配性
-洁净室包装
+医疗器械产品商业化放量带来的明确包装需求
+包装产能扩张
+包装供应商变化
+包装材料国产替代
+明确的包装采购、供应链或合作机会
 
 4：较强相关
 
@@ -272,7 +235,6 @@ NMPA 获批
 如果文章仅涉及大型医疗设备、影像设备或非耗材类设备，且没有包装或耗材供应链价值，应降低 amcor_relevance_score。
 如果文章是纯广告、会议推广、招聘、泛科普、展会宣传或低信息量内容，即使包含医疗器械关键词，也必须设为 false。
 如果 relevance_score <= 11，通常设为 false，除非文章对医疗器械包装企业具有非常直接的业务启发。
-include_in_weekly_report 是上述判断的最终结果，也是程序是否执行第二阶段分析的唯一依据。
 
 五、低价值文章快速退出规则
 
@@ -281,6 +243,8 @@ include_in_weekly_report 是上述判断的最终结果，也是程序是否执�
 relevance_score < 10
 importance_level = "low"
 amcor_relevance_score = 0
+
+
 
 则不要继续进行深度信息提取，以节省输出 token。
 
@@ -304,9 +268,16 @@ companies: []
 medical_devices: []
 medical_consumables: []
 device_categories: []
+deal_amounts: []
+production_capacity_events: []
+overseas_expansion_events: []
 market_implication_cn: ""
 packaging_relevance: "none"
-
+packaging_forms: []
+packaging_materials: []
+packaging_related_keywords: []
+risks_or_uncertainties: []
+source_confidence: "high"
 
 六、低价值文章说明示例
 
@@ -366,6 +337,7 @@ amcor_relevance_reason：
   "link": "",
   "include_in_weekly_report": false,
   "relevance_score": 0,
+  "importance_level": "low",
   "primary_category": "其他",
   "secondary_categories": [],
   "summary_cn": "",
@@ -373,8 +345,6 @@ amcor_relevance_reason：
   "companies": [],
   "medical_devices": [],
   "medical_consumables": [],
-  "device_categories": [],
-  "regulatory_approvals": [],
   "deal_amounts": [],
   "production_capacity_events": [],
   "overseas_expansion_events": [],
@@ -382,9 +352,7 @@ amcor_relevance_reason：
   "amcor_relevance_score": 0,
   "amcor_relevance_reason": "",
   "packaging_relevance": "none",
-  "packaging_forms": [],
   "packaging_materials": [],
-  "sterilization_methods": [],
   "packaging_related_keywords": [],
   "risks_or_uncertainties": [],
   "source_confidence": "high",
@@ -395,6 +363,7 @@ amcor_relevance_reason：
 字段约束：
 - relevance_score 必须为 0-20 的整数。
 - amcor_relevance_score 必须为 0-5 的整数。
+- importance_level 只能为 "high"、"medium" 或 "low"。
 - packaging_relevance 只能为 "high"、"medium"、"low" 或 "none"。
 - include_in_weekly_report 必须为 JSON boolean，不得使用字符串。
 - 所有复数字段必须为 JSON array；没有信息时返回 []。

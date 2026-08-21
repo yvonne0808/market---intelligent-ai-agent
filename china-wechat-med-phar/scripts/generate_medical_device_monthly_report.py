@@ -9,7 +9,7 @@ from typing import Any
 
 import requests
 
-from generate_monthly_report import (
+from generate_pharma_monthly_report import (
     PROJECT_DIR,
     filter_articles,
     group_articles_by_week,
@@ -17,6 +17,7 @@ from generate_monthly_report import (
     load_analyzed_articles,
     load_deepseek_config,
     parse_date,
+    render_report_outputs,
 )
 
 
@@ -188,6 +189,9 @@ def main() -> int:
     )
     print(f"- Markdown: {md_path}", flush=True)
     print(f"- JSON: {json_path}", flush=True)
+    pdf_path, html_path = render_report_outputs(md_path, json_path)
+    print(f"- PDF: {pdf_path}", flush=True)
+    print(f"- HTML: {html_path}", flush=True)
     return 0
 
 

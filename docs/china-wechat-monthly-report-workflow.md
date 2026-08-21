@@ -144,9 +144,9 @@ china-wechat-med-phar/
 Frequently used scripts include:
 
 ```text
-scripts/analyze_articles.py
+scripts/analyze_pharma_articles.py
 scripts/analyze_medical_device_articles.py
-scripts/generate_monthly_report.py
+scripts/generate_pharma_monthly_report.py
 scripts/generate_medical_device_monthly_report.py
 scripts/generate_readable_monthly_html.py
 scripts/convert_monthly_markdown_to_pdf.py

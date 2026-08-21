@@ -12,7 +12,7 @@
 1. 先判断文章是否属于低价值内容：纯广告、会议推广、招商推广、课程/培训报名、招聘、泛科普、节日祝福、低信息量转载、缺少具体公司/产品/监管/临床/商业化事件。
 2. 再判断是否与中国医药行业、药品包装、剂型、产能、商业化、供应链、监管或市场准入相关。
 3. 如果文章明显低价值，立即使用“低价值文章快速退出规则”，不要继续做深度实体抽取。
-4. 只有当文章 relevance_score >= 10 且 amcor_relevance_score > 0 时，才展开 key_points、companies、drugs、targets_or_mechanisms、indications、deal_amounts、market_implication_cn 等深度字段。
+4. 只有当文章 relevance_score >= 10 时，才展开 key_points、companies、drugs、targets_or_mechanisms、indications、deal_amounts、market_implication_cn 等深度字段；amcor_relevance_score 只用于衡量包装业务关联度，不得单独决定是否展开医药行业分析。
 
 重点关注：
 - 中国医药行业
@@ -62,9 +62,9 @@
 relevance_score 评分范围为 0-20：
 
 - 18-20：高度重要，必须进入 weekly report。通常包括明确集采中标/中选结果及执行、明确采购量或覆盖范围的带量采购、重磅新药/新剂型中国上市、国外药品引进、重大融资并购、重大产线投资、明确销售额/市场规模、重大商业化放量、明确包装/剂型/供应链机会。
-- 16-17：重要，建议进入 weekly report。通常包括国内药企重要产品海外进展、药企动态、普通融资、行业趋势文章、重磅新药海外获批、关键临床成功、BD 出海
-- 12-15：中等重要，可选进入 weekly report，优先选择高度重要和重要，法律法规。
-- 8-11：相关但价值有限，一般不进入 weekly report。通常是泛行业分析、缺少具体公司或产品信息、缺少明确市场影响。我们也不关注生物制药，包装政策法规。通常包括早中期临床进展、NMPA/CDE、临床 III 期、普通合作。
+- 16-17：重要，建议进入 weekly report。通常包括国内药企重要产品海外进展、重要药企动态、普通融资、行业趋势文章、重磅新药海外获批、关键临床成功、BD 出海。
+- 12-15：中等重要，可选进入 weekly report。优先保留对医药行业、药品包装或商业化有明确影响的法律法规；普通行业文章不应因为分数处于该区间就自动进入。
+- 8-11：相关但价值有限，一般不进入 weekly report。通常是泛行业分析、缺少具体公司或产品信息、缺少明确市场影响、早中期临床进展、普通 NMPA/CDE 信息、商业价值不明确的临床 III 期或普通合作。生物制药、一般包装政策法规不作为重点，除非文章明确说明其业务影响。
 - 0-7：低相关或无关，不进入 weekly report。通常是广告、会议、招聘、泛科普、海外无关信息、信息量很低的文章。
 
 
@@ -78,14 +78,14 @@ amcor_relevance_score 评分范围为 0-5：
 
 
 include_in_weekly_report 判断规则：
-- 如果 relevance_score >= 16，通常设为 true。
-- 如果 relevance_score 在 12-15 之间，且 amcor_relevance_score >= 3，可以设为 true。
-- 如果文章直接涉及包装、剂型、药包材、产能、集采，融资并购，即使 relevance_score 只有 12-15，也可以设为 true。
+- relevance_score 18-20：必须设为 true。
+- relevance_score 16-17：如果文章包含明确的药企、产品、海外、融资、临床成功、BD 或行业事件，建议设为 true。
+- relevance_score 12-15：仅在法律法规或其他明确影响医药行业、药品包装或商业化的事件中考虑设为 true；其他文章设为 false。
 - 如果是纯广告、会议推广、招聘、泛科普、低信息量文章，即使包含医药关键词，也应设为 false。
-- 如果 relevance_score <= 11，通常设为 false，除非文章对包装企业有非常直接的启发。
+- relevance_score 0-11：必须设为 false。
 
 低价值文章快速退出规则：
-- 如果你判断文章满足以下任一条件：relevance_score < 10，或 amcor_relevance_score = 0，请不要继续展开深度信息提取，以节省输出 token。
+- 如果你判断文章满足以下条件：relevance_score < 10，请不要继续展开深度信息提取，以节省输出 token。
 - 对这类文章，include_in_weekly_report 必须为 false。
 - 对这类文章，summary_cn、why_it_matters、one_sentence_takeaway、amcor_relevance_reason 必须简短说明原因，不要写长段分析。
 - 对这类文章，summary_cn 不超过 40 字；why_it_matters 不超过 50 字；one_sentence_takeaway 不超过 40 字；amcor_relevance_reason 不超过 60 字。
@@ -165,10 +165,8 @@ source_confidence 必须从以下三个值中选择一个：
 - low
 
 信息提取规则：
-- 只有高价值或中价值文章才进行完整信息提取：
-  - relevance_score >= 10
-  - amcor_relevance_score > 1
-- 如果不同时满足以上三项，必须执行低价值文章快速退出规则。
+- 只有 relevance_score >= 10 的文章才进行完整信息提取。
+- 如果 relevance_score < 10，必须执行低价值文章快速退出规则。
 - companies 只提取文章中明确出现的公司名称。
 - drugs 只提取文章中明确出现的药品名称、产品名称或候选药物名称。
 - targets_or_mechanisms 只提取文章中明确出现的靶点、机制、技术平台。

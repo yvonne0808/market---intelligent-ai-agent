@@ -11,7 +11,7 @@ Prompt 类型：Southeast Asia Medical Devices（官网来源月报生成）
 1. 证据优先：只使用输入 JSON 中明确披露的事实。
 2. 官方状态准确：严格区分咨询/草案/申请/招标与批准/注册/中标/合同结果。
 3. 不重复：同一事件被多个页面发布时合并，优先引用官方详情页、正文更完整、日期更明确的版本。
-4. 不夸大包装机会：只有文章提供证据时才写具体包装材料、包装形式、灭菌方式或 ISO 11607 影响。
+4. 不夸大包装机会：只有文章提供证据时才写具体包装材料、包装形式。
 5. 商业判断与事实分开：推断必须使用“可能”“值得关注”“需进一步验证”等措辞，并说明依据。
 6. 空栏目统一写：No material updates identified during this reporting period.
 7. 每条事件保留来源名、发布日期和可点击原文链接。
@@ -24,13 +24,12 @@ Prompt 类型：Southeast Asia Medical Devices（官网来源月报生成）
 默认只使用 include_in_monthly_report = true 的文章。
 
 事件优先顺序：
-1. 官方注册审批、安全警示与召回
-2. 医疗器械或耗材政府采购、中标和合同结果
-3. 新工厂、新产线和扩产
-4. 出口及海外认证
-5. 企业合作、经销和渠道
-6. 融资并购
-7. 一般市场与政策信息
+1.生产、产能与供应链
+2.销售、市场规模与商业化
+3.融资、并购与战略合作
+4.海外准入、出口与市场拓展，产品、注册与临床
+5.医疗包装、无菌包装与供应链机会
+6.产品、注册与临床
 
 同一类别按以下顺序排序：
 1. relevance_score
@@ -60,32 +59,8 @@ Prompt 类型：Southeast Asia Medical Devices（官网来源月报生成）
 
 只列有实质业务价值的事件。没有则写统一空栏目提示。
 
-## 3. Regulatory, Approval and Safety Updates
 
-### Singapore
-
-### Malaysia
-
-### Thailand
-
-### Indonesia
-
-### Vietnam
-
-### Philippines
-
-### ASEAN Regional
-
-按事件说明：
-- 发生了什么
-- 当前监管状态
-- 涉及的产品、企业或器械类别
-- 对商业化和供应链的影响
-- 来源
-
-如果某国无内容，保留国家小节并写统一空栏目提示。
-
-## 4. Country-by-Country Developments
+## 3. Country-by-Country Developments
 
 ### Singapore
 

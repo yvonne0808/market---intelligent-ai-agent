@@ -73,6 +73,8 @@ FDA、CE、MDR 等海外注册认证
 
 仅获得注册证、进入审评程序、完成一般性认证，但尚未体现商业化、放量或包装需求的新闻，不应优先进入 Executive Summary。
 
+### Evidence / Supporting articles
+在 Executive Summary 统一格式补充所有 条summary信息出处来源。
 
 ## 2. Monthly Amcor Relevance Ranking
 
@@ -96,35 +98,11 @@ FDA、CE、MDR 等海外注册认证
 
 ## 3. Week-by-Week News Digest
 
-按照用户输入中的 weeks 分组输出。
-
-每一周必须包含：
+按照用户输入中的 weeks 分组。每周只输出一个简洁的周度总结：
 
 ### Week X: YYYY-MM-DD 至 YYYY-MM-DD
 
-#### 3.X.1 本周概览
-
-用 2-4 句话说明这一周医疗器械和耗材行业主要发生了什么。
-
-#### 3.X.2 Most Relevant to Amcor / Medical Device Packaging
-
-列出本周与医疗器械包装、无菌屏障、灭菌工艺、商业化、产能、供应链、耗材上市或集采放量最相关，且 relevance_score / amcor_relevance_score 较高的新闻。
-
-如果没有强相关，写“本周暂无直接医疗器械包装相关强信号”，但可列出 1-2 条间接相关行业观察。
-
-每条重点新闻包含：
-- 标题
-- 来源和发布时间
-- 分类
-- relevance_score / amcor_relevance_score
-- 一句话 takeaway
-- 关键信息
-- 与 Amcor / 医疗器械包装业务的关系
-- 原文链接
-
-#### 3.X.3 Other Important Medical Device News
-
-列出本周其他重要医疗器械和医疗耗材新闻，例如注册申报/获批、临床进展、集采中标、海外准入、融资并购、渠道合作及市场数据。
+用 2–4 句话概括本周最重要的行业动态，优先提及高分、高影响力和与 Amcor 业务相关的事件。不要逐条列出文章、分数、来源或包装关联分析；所有文章明细统一放在 Appendix。
 
 ## 4. Category Summary
 
@@ -309,20 +287,11 @@ FDA、CE、MDR 等海外注册认证
 
 所有推断必须使用“可能”“潜在”“值得跟踪”等谨慎表述，不得将推断表述为已确认事实。
 
-## 8. Risks and Uncertainties
-
-说明：
-- 部分信息来自公众号文章，需要后续核验
-- OCR 可能不准确
-- 注册证、审批阶段、临床和海外认证状态应以监管机构正式信息为准
-- 集采、中标和采购信息可能存在执行时间、采购量及价格变化
-- 融资或交易金额可能包含分期付款、里程碑或未披露条件，不等于即时现金收入
-- 临床、审批、商业化、产能释放及出口进展存在不确定性
-- 包装业务相关性中，哪些是文章直接信息，哪些是基于文章内容的谨慎推断
-- 不得将潜在包装需求表述为已确认订单或客户关系
 
 ## 9. Appendix: Articles Reviewed by Week
+这是完整的可追溯文章清单，不是精选摘要。按 Week 分组，列出本次纳入月报分析的全部文章。每篇文章只占一行，使用以下格式：
 
-按周列出纳入月报分析的文章表格：
+### Week 1
+- 2026-07-01 · [文章标题](原文链接) · 来源名称
 
-| Week | Date | Title | Source | Category | Relevance Score | Amcor Relevance | Packaging Relevance | Link |
+要求：保留每篇文章的原文链接；按输入中的周分组和文章顺序输出；不要合并、删减或只列 Top 10；不要额外添加长摘要、分数或包装判断。

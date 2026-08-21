@@ -17,7 +17,7 @@ existing report filters, rather than limiting the report to 120 articles.
 
 ## Design
 
-`generate_monthly_report.py` will continue to select and sort the complete
+`generate_pharma_monthly_report.py` will continue to select and sort the complete
 article set. Before calling DeepSeek, it will project each article to only the
 fields required by the monthly-report prompt: identity, title, source, date,
 category, relevance scores, importance, summary/takeaway, key points,

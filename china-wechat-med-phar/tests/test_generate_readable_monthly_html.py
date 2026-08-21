@@ -11,6 +11,43 @@ SPEC.loader.exec_module(module)
 
 
 class SplitWeekArticlesTests(unittest.TestCase):
+    def test_extracts_week_summary_without_a_nested_overview_heading(self):
+        markdown = """# Monthly Pharma News Report
+
+### Week 1: 2026-07-01 至 2026-07-07
+
+本周以药包材政策监管为主线，并出现多项新药商业化进展。
+
+### Week 2: 2026-07-08 至 2026-07-14
+
+本周行业重点转向 BD 出海。
+"""
+
+        self.assertEqual(
+            module.extract_week_overview(markdown, "Week 1"),
+            "本周以药包材政策监管为主线，并出现多项新药商业化进展。",
+        )
+
+    def test_pharma_sorting_prioritizes_relevance_before_amcor_score(self):
+        articles = [
+            {"title": "High Pharma Relevance", "relevance_score": 20, "amcor_relevance_score": 1},
+            {"title": "High Amcor Relevance", "relevance_score": 12, "amcor_relevance_score": 5},
+        ]
+
+        featured, _ = module.split_week_articles(articles, "Pharma")
+
+        self.assertEqual(featured[0]["title"], "High Pharma Relevance")
+
+    def test_medical_device_sorting_keeps_amcor_priority(self):
+        articles = [
+            {"title": "High Pharma Relevance", "relevance_score": 20, "amcor_relevance_score": 1},
+            {"title": "High Amcor Relevance", "relevance_score": 12, "amcor_relevance_score": 5},
+        ]
+
+        featured, _ = module.split_week_articles(articles, "Medical Device")
+
+        self.assertEqual(featured[0]["title"], "High Amcor Relevance")
+
     def test_render_badges_omits_packaging_when_attribute_is_absent(self):
         html = module.render_badges(
             {

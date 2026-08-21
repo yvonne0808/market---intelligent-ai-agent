@@ -4,6 +4,48 @@ This document is for the AI that operates this repository. It is not a mentor
 tutorial. Follow it when the user asks to run, analyze, or generate the China
 WeChat monthly report.
 
+The only user-facing final deliverables are two files per report: one concise
+PDF and one readable HTML report. Markdown and JSON remain intermediate
+traceability artifacts. The monthly report generation scripts create both
+automatically after the LLM report is saved.
+
+## 0. Script scope
+
+For the normal monthly workflow, use only these scripts:
+
+```text
+main.py
+prepare_llm_data.py
+analyze_pharma_articles.py
+analyze_medical_device_articles.py
+generate_pharma_monthly_report.py
+generate_medical_device_monthly_report.py
+```
+
+The report generation scripts automatically call these post-processing tools:
+
+```text
+convert_monthly_markdown_to_pdf.py
+generate_readable_monthly_html.py
+```
+
+The maintenance tools `sync_article_source_metadata.py` and
+`update_llm_ready.py` are not part of a normal run. Use them only when a
+specific metadata or LLM-ready repair is requested and describe the repair
+before changing data.
+
+Historical, weekly, July-specific, procurement-award, website-scraping, and
+Pharma-opportunity scripts are kept under:
+
+```text
+china-wechat-med-phar/scripts/archive/
+```
+
+Do not call archive scripts for the monthly workflow. They are retained as
+historical reference files and are not part of the supported current workflow;
+do not move them back or delete them merely because a normal run does not use
+them.
+
 ## 1. Trigger and input contract
 
 Accept either of these forms:
@@ -161,7 +203,7 @@ do not pass the combined file if it contains Medical Device articles.
 The current analyzer interface is:
 
 ```bash
-.venv/bin/python china-wechat-med-phar/scripts/analyze_articles.py \
+.venv/bin/python china-wechat-med-phar/scripts/analyze_pharma_articles.py \
   --input <PHARMA_LLM_READY_JSON> \
   --output china-wechat-med-phar/data/analyzed/Pharma/articles_analyzed_START_END.json \
   --selected-output china-wechat-med-phar/data/analyzed/Pharma/articles_analyzed_START_END.json \
@@ -204,7 +246,7 @@ the user has confirmed the candidate counts (unless the user explicitly asked
 for an unattended run).
 
 ```bash
-.venv/bin/python china-wechat-med-phar/scripts/generate_monthly_report.py \
+.venv/bin/python china-wechat-med-phar/scripts/generate_pharma_monthly_report.py \
   --input <PHARMA_ANALYZED_JSON> \
   --start START_DATE \
   --end END_DATE
@@ -290,10 +332,13 @@ Date range: START_DATE to END_DATE (inclusive)
 | Medical Device Monthly Analysis | | | | | | |
 
 ## Final reports
-- Pharma Markdown:
-- Pharma JSON:
-- Medical Device Markdown:
-- Medical Device JSON:
+- Pharma concise PDF:
+- Pharma readable HTML:
+- Medical Device concise PDF:
+- Medical Device readable HTML:
+
+Markdown and JSON are intermediate traceability files and should not be
+presented as the final report formats.
 
 ## QA
 - Date range:

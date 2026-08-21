@@ -245,7 +245,7 @@ END_DATE = 2026-08-31
 3. 运行 prepare_llm_data.py，使用 --start 2026-08-01 --end 2026-08-31，并保留 source_category 为“医药”和“医疗器械”的文章。
 4. 检查输出 JSON 中每篇文章的 published 日期，确认没有超出日期范围。
 5. 分别统计 Pharma/医药和 Medical Device/医疗器械的文章数量，并告诉我输出文件路径。
-完成后停止，不要运行任何 analyze 或 generate_monthly_report 脚本。
+完成后停止，不要运行任何 Article Analysis 或 Monthly Analysis 脚本。
 ```
 
 ## Codex 执行的核心命令
@@ -334,7 +334,7 @@ Step 4 的日期筛选结果是 0。请只诊断，不调用 DeepSeek，也不�
 只运行医药分析，不运行医疗器械分析和月报生成。
 
 使用：
-.venv/bin/python china-wechat-med-phar/scripts/analyze_articles.py \
+.venv/bin/python china-wechat-med-phar/scripts/analyze_pharma_articles.py \
   --input china-wechat-med-phar/data/llm_ready/articles_llm_ready_2026_08.json \
   --output china-wechat-med-phar/data/analyzed/articles_analyzed.json \
   --selected-output china-wechat-med-phar/data/analyzed/Pharma/articles_analyzed_2026_08.json \
@@ -419,7 +419,7 @@ china-wechat-med-phar/data/analyzed/Pharma/articles_analyzed_2026_08.json
 ## Pharma 月报命令
 
 ```bash
-.venv/bin/python china-wechat-med-phar/scripts/generate_monthly_report.py \
+.venv/bin/python china-wechat-med-phar/scripts/generate_pharma_monthly_report.py \
   --input china-wechat-med-phar/data/analyzed/articles_analyzed.json \
   --start 2026-08-01 --end 2026-08-31
 ```

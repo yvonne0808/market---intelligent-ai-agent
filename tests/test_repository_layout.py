@@ -43,9 +43,8 @@ class RepositoryLayoutTests(unittest.TestCase):
 
     def test_llm_scripts_resolve_shared_environment_from_repository_root(self):
         script_names = (
-            "analyze_articles.py",
-            "generate_monthly_report.py",
-            "generate_weekly_report.py",
+            "analyze_pharma_articles.py",
+            "generate_pharma_monthly_report.py",
         )
         for script_name in script_names:
             with self.subTest(script_name=script_name):
@@ -58,23 +57,6 @@ class RepositoryLayoutTests(unittest.TestCase):
                 self.assertEqual(
                     getattr(module, "REPOSITORY_ROOT", None), REPOSITORY_ROOT
                 )
-
-    def test_coverage_script_resolves_sibling_wewe_rss_database(self):
-        script_path = (
-            CHINA_ROOT / "scripts" / "check_july_pharma_coverage.py"
-        )
-        spec = importlib.util.spec_from_file_location(
-            "layout_test_check_july_pharma_coverage", script_path
-        )
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
-        expected = (
-            REPOSITORY_ROOT.parent
-            / "wewe-rss-local"
-            / "data"
-            / "wewe-rss.db"
-        )
-        self.assertEqual(module.DEFAULT_DB_PATH, expected)
 
     def test_china_readme_has_no_obsolete_script_commands(self):
         readme = (CHINA_ROOT / "README.md").read_text(encoding="utf-8")

@@ -29,9 +29,9 @@
 - Read: `docs/china-wechat-monthly-report-workflow.md`
 - Read: `china-wechat-med-phar/scripts/main.py`
 - Read: `china-wechat-med-phar/scripts/prepare_llm_data.py`
-- Read: `china-wechat-med-phar/scripts/analyze_articles.py`
+- Read: `china-wechat-med-phar/scripts/analyze_pharma_articles.py`
 - Read: `china-wechat-med-phar/scripts/analyze_medical_device_articles.py`
-- Read: `china-wechat-med-phar/scripts/generate_monthly_report.py`
+- Read: `china-wechat-med-phar/scripts/generate_pharma_monthly_report.py`
 - Read: `china-wechat-med-phar/scripts/generate_medical_device_monthly_report.py`
 - Create: `docs/mentor_manual_command_map.md`
 
@@ -46,9 +46,9 @@ Run:
 cd /Users/yvonne/Desktop/forecasting/monthly-report-library
 ../.venv/bin/python china-wechat-med-phar/scripts/main.py --help
 ../.venv/bin/python china-wechat-med-phar/scripts/prepare_llm_data.py --help
-../.venv/bin/python china-wechat-med-phar/scripts/analyze_articles.py --help
+../.venv/bin/python china-wechat-med-phar/scripts/analyze_pharma_articles.py --help
 ../.venv/bin/python china-wechat-med-phar/scripts/analyze_medical_device_articles.py --help
-../.venv/bin/python china-wechat-med-phar/scripts/generate_monthly_report.py --help
+../.venv/bin/python china-wechat-med-phar/scripts/generate_pharma_monthly_report.py --help
 ../.venv/bin/python china-wechat-med-phar/scripts/generate_medical_device_monthly_report.py --help
 ```
 

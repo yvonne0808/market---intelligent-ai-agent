@@ -293,6 +293,12 @@ def coerce_analysis(raw: dict[str, Any], article: dict[str, Any]) -> dict[str, A
     result["relevance_score"] = int(result.get("relevance_score") or 0)
     result["amcor_relevance_score"] = int(result.get("amcor_relevance_score") or 0)
 
+    # Enforce the Pharma report score bands after the model response.
+    if result["relevance_score"] >= 18:
+        result["include_in_weekly_report"] = True
+    elif result["relevance_score"] <= 11:
+        result["include_in_weekly_report"] = False
+
     list_fields = [
         "secondary_categories",
         "key_points",
@@ -320,10 +326,7 @@ def coerce_analysis(raw: dict[str, Any], article: dict[str, Any]) -> dict[str, A
 
 
 def should_minimize_low_value_analysis(analysis: dict[str, Any]) -> bool:
-    return (
-        int(analysis.get("relevance_score", 0) or 0) < 10
-        or int(analysis.get("amcor_relevance_score", 0) or 0) == 0
-    )
+    return int(analysis.get("relevance_score", 0) or 0) < 10
 
 
 def minimize_low_value_analysis(analysis: dict[str, Any]) -> None:

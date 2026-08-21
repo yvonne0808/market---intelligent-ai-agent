@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from analyze_articles import (
+from analyze_pharma_articles import (
     PROJECT_DIR,
     call_deepseek,
     filter_articles,
