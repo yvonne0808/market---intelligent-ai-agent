@@ -10,7 +10,7 @@
 - 使用中文为主，保留必要英文术语。
 - 只基于输入 JSON 中的信息写作，不要联网搜索，不要补充外部知识，不要编造。
 - 月报必须按照“周”来组织：每周发生了什么新闻、哪些新闻与 Amcor 包装业务最相关、哪些新闻只是行业背景。
-- 每一周内部新闻必须按重要性排序：优先 Amcor 相关性，其次 relevance_score，最后按发布时间。
+- 每一周内部新闻必须按 Pharma relevance_score 重要性排序，其次考虑 Amcor 相关性，最后按发布时间。
 - 最重要、最有包装业务启发的新闻放在每周最前面。
 - 所有重点新闻必须保留原文链接，方便人工核验。
 - 对 OCR、公众号来源、BD 交易金额、商业化推断等不确定性要在风险部分说明。
@@ -55,15 +55,10 @@
 
 
 
-不重点关注一般政策、法规审批、生物制剂和注射笔新闻，除非其直接涉及大规模商业化、扩产或明确的包装需求。
+不重点关注一般政策、法规审批、生物制药、注射笔和一般包装政策法规新闻，除非其直接涉及大规模商业化、扩产、明确的包装需求或对医药行业/包装业务有明确影响。
 
 ### Evidence / Supporting articles
-
-每一条 Executive Summary bullet 后必须追加 2–5 篇支持文章，格式为：
-- [article_id] Title — source_name，published — link
-
-只能引用本次输入中已分析文章的字段；不得编造 article_id、Title、source_name、published 或 link。
-不要在 Executive Summary 正文内写 direct / indirect 或“直接支持 / 间接支持”标签。对于基于多篇文章的推断，使用谨慎措辞，并将证据统一列在文末 Supporting Articles 中。
+在 Executive Summary 统一格式补充所有 条summary信息出处来源。
 
 ## 2. Monthly Amcor Relevance Ranking
 
@@ -91,7 +86,7 @@ Top 10 为四个类别合并后的整体排名，不要求每个类别都必须�
 
 排序规则：
 
-1. `relevance_score` 高的优先
+1. `relevance_score` 高的优先；18-20 分文章必须优先保留
 2. `relevance_score` 相同时，`amcor_relevance_score` 高的优先
 3. 两项评分均相同时，为能够带来更明确包装需求或商业机会的新闻加分并优先选择，包括：
    * 包装材料、包装形式及包装供应链变化
@@ -102,28 +97,12 @@ Top 10 为四个类别合并后的整体排名，不要求每个类别都必须�
 
 
 ## 3. Week-by-Week News Digest
-按照用户输入中的 weeks 分组输出。
 
-每一周必须包含：
+按照用户输入中的 weeks 分组。每周只输出一个简洁的周度总结：
 
 ### Week X: YYYY-MM-DD 至 YYYY-MM-DD
 
-#### 3.X.1 本周概览
-用 2-4 句话说明这一周主要发生了什么。
-
-#### 3.X.2 Most Relevant to Amcor / Packaging
-列出本周最相关的包装、剂型、商业化、产能、供应链、新药上市/申报,  relevance_score / amcor_relevance_score 高的新闻。
-如果没有强相关，写“本周暂无直接包装相关强信号”，但可列出 1-2 条间接相关行业观察。
-
-每条重点新闻包含：
-- 标题
-- 来源和发布时间
-- 分类
-- relevance_score / amcor_relevance_score
-- 一句话 takeaway
-- 关键信息
-- 与 Amcor / 包装业务的关系
-- 原文链接
+用 2–4 句话概括本周最重要的行业动态，优先提及高分、高影响力和与 Amcor 业务相关的事件。不要逐条列出文章、分数、来源或包装关联分析；所有文章明细统一放在 Appendix。
 
 
 ## 4. Category Summary
@@ -300,6 +279,9 @@ Top 10 为四个类别合并后的整体排名，不要求每个类别都必须�
 - 包装业务相关性中，哪些是文章直接信息，哪些是基于文章内容的谨慎推断
 
 ## 9. Appendix: Articles Reviewed by Week
-按周列出纳入月报分析的文章表格：
+这是完整的可追溯文章清单，不是精选摘要。按 Week 分组，列出输入 JSON 中的全部文章（包括低分文章和未进入 Top 10 的文章）。每篇文章只占一行，使用以下格式：
 
-| Week | Date | Title | Source | Category | Relevance Score | Amcor Relevance | Packaging Relevance | Link |
+### Week 1
+- 2026-07-01 · [文章标题](原文链接) · 来源名称
+
+要求：保留每篇文章的原文链接；按输入中的周分组和文章顺序输出；不要合并、删减或只列 Top 10；不要额外添加长摘要、分数或包装判断。

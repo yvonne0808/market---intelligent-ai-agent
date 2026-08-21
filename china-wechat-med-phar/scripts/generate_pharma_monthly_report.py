@@ -4,6 +4,8 @@ import argparse
 import json
 import os
 import re
+import subprocess
+import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -17,6 +19,8 @@ ANALYZED_PATH = PROJECT_DIR / "data/analyzed/articles_analyzed.json"
 PROMPT_PATH = PROJECT_DIR / "prompts/Pharma/monthly_report_prompt.txt"
 AMCOR_CONTEXT_PATH = PROJECT_DIR / "prompts/amcor_apac_context.txt"
 REPORTS_DIR = PROJECT_DIR / "reports" / "Pharma"
+PDF_RENDERER = PROJECT_DIR / "scripts" / "convert_monthly_markdown_to_pdf.py"
+HTML_RENDERER = PROJECT_DIR / "scripts" / "generate_readable_monthly_html.py"
 
 DEFAULT_BASE_URL = "https://api.deepseek.com"
 DEFAULT_MODEL = "deepseek-chat"
@@ -312,6 +316,15 @@ def save_report_files(
     return md_path, json_path
 
 
+def render_report_outputs(md_path: Path, json_path: Path) -> tuple[Path, Path]:
+    """Create the only two user-facing deliverables: PDF and HTML."""
+    pdf_path = md_path.with_suffix(".pdf")
+    html_path = json_path.with_suffix(".html")
+    subprocess.run([sys.executable, str(PDF_RENDERER), str(md_path), str(pdf_path)], check=True)
+    subprocess.run([sys.executable, str(HTML_RENDERER), str(json_path), str(html_path)], check=True)
+    return pdf_path, html_path
+
+
 def main() -> int:
     args = parse_args()
     start_date = parse_date(args.start)
@@ -367,6 +380,9 @@ def main() -> int:
     print("Monthly report saved")
     print(f"- Markdown: {md_path}")
     print(f"- JSON: {json_path}")
+    pdf_path, html_path = render_report_outputs(md_path, json_path)
+    print(f"- PDF: {pdf_path}")
+    print(f"- HTML: {html_path}")
     return 0
 
 

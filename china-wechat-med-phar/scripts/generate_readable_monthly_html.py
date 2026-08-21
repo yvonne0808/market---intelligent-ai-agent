@@ -39,8 +39,17 @@ def packaging_class(value: str) -> str:
     return "pack-none"
 
 
-def article_sort_key(article: dict[str, Any]) -> tuple[int, int, int, str]:
+def article_sort_key(
+    article: dict[str, Any], report_type: str = "Pharma"
+) -> tuple[int, int, int, str]:
     packaging_rank = {"high": 3, "medium": 2, "low": 1, "none": 0}
+    if report_type.lower() == "pharma":
+        return (
+            int(article.get("relevance_score", 0) or 0),
+            int(article.get("amcor_relevance_score", 0) or 0),
+            packaging_rank.get(str(article.get("packaging_relevance", "")).lower(), 0),
+            str(article.get("published", "")),
+        )
     return (
         int(article.get("amcor_relevance_score", 0) or 0),
         packaging_rank.get(str(article.get("packaging_relevance", "")).lower(), 0),
@@ -137,8 +146,10 @@ def render_compact_article(article: dict[str, Any]) -> str:
     """
 
 
-def split_week_articles(articles: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    ordered = sorted(articles, key=article_sort_key, reverse=True)
+def split_week_articles(
+    articles: list[dict[str, Any]], report_type: str = "Pharma"
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    ordered = sorted(articles, key=lambda item: article_sort_key(item, report_type), reverse=True)
     return ordered[:4], ordered[4:]
 
 
@@ -147,7 +158,7 @@ def render_week(
     overview_html: str = "",
     report_type: str = "Pharma",
 ) -> str:
-    direct, other = split_week_articles(week.get("articles", []))
+    direct, other = split_week_articles(week.get("articles", []), report_type)
     article_count = len(direct) + len(other)
     direct_html = (
         "".join(render_article_card(article) for article in direct[:4])
@@ -350,6 +361,35 @@ def render_watchlists_and_implications(markdown: str) -> str:
     """
 
 
+def render_appendix(weeks: list[dict[str, Any]], articles: list[dict[str, Any]]) -> str:
+    """Render the complete traceability list grouped by report week."""
+    groups = []
+    if weeks:
+        groups = [(str(week.get("week", "")), week.get("articles", [])) for week in weeks]
+    elif articles:
+        groups = [("Articles Reviewed", articles)]
+    rendered = []
+    for label, week_articles in groups:
+        items = []
+        for article in week_articles:
+            title = esc(article.get("title", ""))
+            link = esc(article.get("link", ""))
+            linked_title = (
+                f'<a href="{link}" target="_blank" rel="noopener">{title}</a>'
+                if link
+                else title
+            )
+            items.append(
+                f'<li>{esc(text_date(article.get("published", "")))} · '
+                f'{linked_title} · {esc(article.get("source_name", ""))}</li>'
+            )
+        rendered.append(
+            f'<div class="appendix-week"><h3>{esc(label)}</h3>'
+            f'<ul class="appendix-list">{"".join(items)}</ul></div>'
+        )
+    return "".join(rendered)
+
+
 def extract_week_overview(markdown: str, week_label: str) -> str:
     week_match = re.search(rf"^###\s+{re.escape(week_label)}:.*$", markdown, flags=re.M)
     if not week_match:
@@ -358,10 +398,14 @@ def extract_week_overview(markdown: str, week_label: str) -> str:
     next_week = re.search(r"^###\s+Week\s+\d+:", week_text, flags=re.M)
     if next_week:
         week_text = week_text[: next_week.start()]
+    else:
+        next_section = re.search(r"^##\s+", week_text, flags=re.M)
+        if next_section:
+            week_text = week_text[: next_section.start()]
 
     overview_match = re.search(r"^####\s+3\.\d+\.1\s+本周概览\s*$", week_text, flags=re.M)
     if not overview_match:
-        return ""
+        return week_text.strip()
     overview = week_text[overview_match.end() :]
     next_subsection = re.search(r"^####\s+3\.\d+\.\d+", overview, flags=re.M)
     if next_subsection:
@@ -376,7 +420,11 @@ def build_html(report: dict[str, Any]) -> str:
         if report_type.lower() == "medical device"
         else "Monthly Pharma News Report"
     )
-    articles = sorted(report.get("articles", []), key=article_sort_key, reverse=True)
+    articles = sorted(
+        report.get("articles", []),
+        key=lambda item: article_sort_key(item, report_type),
+        reverse=True,
+    )
     weeks = report.get("weeks", [])
     start = report.get("start_date", "")
     end = report.get("end_date", "")
@@ -393,6 +441,7 @@ def build_html(report: dict[str, Any]) -> str:
         week.get("week", ""): simple_markdown_to_html(extract_week_overview(markdown_report, week.get("week", "")))
         for week in weeks
     }
+    appendix_html = render_appendix(weeks, articles)
 
     top_html = "".join(render_article_card(article, i + 1) for i, article in enumerate(top_articles))
     week_html = "".join(
@@ -558,10 +607,10 @@ def build_html(report: dict[str, Any]) -> str:
     .compact-article p {{ margin: 3px 0 0; color: #3f4c59; }}
     .empty-note {{ color: var(--muted); background: var(--panel); border: 1px dashed #cbd6e2; border-radius: 8px; padding: 14px; }}
     .risks {{ border: 1px solid var(--line); border-radius: 8px; padding: 18px; background: #fff; }}
-    .appendix-table {{ width: 100%; border-collapse: collapse; font-size: 13px; }}
-    .appendix-wrap {{ overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }}
-    .appendix-table th, .appendix-table td {{ border-bottom: 1px solid #e3e9f0; padding: 8px 10px; text-align: left; vertical-align: top; }}
-    .appendix-table th {{ background: #f2f5f9; color: #31465b; position: sticky; top: 0; }}
+    .appendix-week {{ margin: 22px 0 28px; }}
+    .appendix-week h3 {{ margin: 0 0 8px; color: #1c3654; }}
+    .appendix-list {{ margin: 0; padding-left: 24px; }}
+    .appendix-list li {{ margin: 6px 0; }}
     footer {{ color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); margin-top: 36px; padding-top: 14px; }}
     @media (max-width: 820px) {{
       .shell {{ padding: 18px 16px 40px; }}
@@ -633,18 +682,7 @@ def build_html(report: dict[str, Any]) -> str:
 
     <section id="appendix">
       <div class="section-title"><h2>Appendix: Articles Reviewed</h2></div>
-      <div class="appendix-wrap">
-        <table class="appendix-table">
-          <thead>
-            <tr>
-              <th>Date</th><th>Title</th><th>Source</th><th>Category</th><th>Rel.</th><th>Amcor</th><th>Packaging</th>
-            </tr>
-          </thead>
-          <tbody>
-            {''.join(f"<tr><td>{esc(text_date(a.get('published','')))}</td><td><a href='{esc(a.get('link',''))}' target='_blank' rel='noopener'>{esc(a.get('title',''))}</a></td><td>{esc(a.get('source_name',''))}</td><td>{esc(a.get('primary_category',''))}</td><td>{esc(a.get('relevance_score',''))}</td><td>{esc(a.get('amcor_relevance_score',''))}</td><td>{esc(a.get('packaging_relevance',''))}</td></tr>" for a in articles)}
-          </tbody>
-        </table>
-      </div>
+      <div class="appendix-wrap">{appendix_html}</div>
     </section>
 
     <footer>

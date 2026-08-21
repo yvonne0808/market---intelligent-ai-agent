@@ -48,10 +48,10 @@
 - `china-wechat-med-phar/README.md`
 - `docs/china-wechat-monthly-report-workflow.md`
 - `china-wechat-med-phar/scripts/main.py`
-- `china-wechat-med-phar/scripts/collect_july_pharma_articles.py`
-- `china-wechat-med-phar/scripts/analyze_articles.py`
+- `china-wechat-med-phar/scripts/archive/collect_july_pharma_articles.py`
+- `china-wechat-med-phar/scripts/analyze_pharma_articles.py`
 - `china-wechat-med-phar/scripts/analyze_medical_device_articles.py`
-- `china-wechat-med-phar/scripts/generate_monthly_report.py`
+- `china-wechat-med-phar/scripts/generate_pharma_monthly_report.py`
 - `china-wechat-med-phar/scripts/generate_medical_device_monthly_report.py`
 
 手册会把日期示例写成变量形式，避免把某一个月误当成永久配置。对于当前代码中不同报告流使用不同脚本的情况，手册会明确列出 Pharma 与 Medical Device 两条命令，不用一个模糊命令代替。

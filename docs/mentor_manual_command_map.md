@@ -69,7 +69,7 @@ china-wechat-med-phar/data/llm_ready/articles_llm_ready_2026_08.md
 ### Pharma
 
 ```bash
-.venv/bin/python china-wechat-med-phar/scripts/analyze_articles.py \
+.venv/bin/python china-wechat-med-phar/scripts/analyze_pharma_articles.py \
   --input china-wechat-med-phar/data/llm_ready/articles_llm_ready_2026_08.json \
   --output china-wechat-med-phar/data/analyzed/articles_analyzed.json \
   --selected-output china-wechat-med-phar/data/analyzed/Pharma/articles_analyzed_2026_08.json \
@@ -99,7 +99,7 @@ china-wechat-med-phar/data/llm_ready/articles_llm_ready_2026_08.md
 ### Pharma monthly report
 
 ```bash
-.venv/bin/python china-wechat-med-phar/scripts/generate_monthly_report.py \
+.venv/bin/python china-wechat-med-phar/scripts/generate_pharma_monthly_report.py \
   --input china-wechat-med-phar/data/analyzed/articles_analyzed.json \
   --start 2026-08-01 --end 2026-08-31
 ```

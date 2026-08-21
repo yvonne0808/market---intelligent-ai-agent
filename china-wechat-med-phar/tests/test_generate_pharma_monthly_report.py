@@ -3,8 +3,8 @@ import unittest
 from pathlib import Path
 
 
-MODULE_PATH = Path(__file__).parents[1] / "scripts" / "generate_monthly_report.py"
-SPEC = importlib.util.spec_from_file_location("generate_monthly_report", MODULE_PATH)
+MODULE_PATH = Path(__file__).parents[1] / "scripts" / "generate_pharma_monthly_report.py"
+SPEC = importlib.util.spec_from_file_location("generate_pharma_monthly_report", MODULE_PATH)
 module = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
 SPEC.loader.exec_module(module)

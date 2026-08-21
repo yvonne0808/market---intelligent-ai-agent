@@ -20,8 +20,8 @@
 ### Task 1: Compact the narrative API payload
 
 **Files:**
-- Create: `china-wechat-med-phar/tests/test_generate_monthly_report.py`
-- Modify: `china-wechat-med-phar/scripts/generate_monthly_report.py:182-219`
+- Create: `china-wechat-med-phar/tests/test_generate_pharma_monthly_report.py`
+- Modify: `china-wechat-med-phar/scripts/generate_pharma_monthly_report.py:182-219`
 
 **Interfaces:**
 - Consumes full selected article records and weekly groups.
@@ -49,7 +49,7 @@ def test_compact_article_keeps_report_fields_and_removes_raw_text():
 
 - [ ] **Step 2: Verify the test fails**
 
-Run `.venv/bin/python -m unittest china-wechat-med-phar/tests/test_generate_monthly_report.py -v`.
+Run `.venv/bin/python -m unittest china-wechat-med-phar/tests/test_generate_pharma_monthly_report.py -v`.
 
 Expected: it fails because `compact_article_for_report` is not defined.
 
@@ -79,7 +79,7 @@ Run the unittest and a Python check that selects the July articles, asserts 281 
 
 - [ ] **Step 5: Commit Task 1**
 
-Run `git add china-wechat-med-phar/scripts/generate_monthly_report.py china-wechat-med-phar/tests/test_generate_monthly_report.py` followed by `git commit -m "feat: compact full-month pharma report input"`.
+Run `git add china-wechat-med-phar/scripts/generate_pharma_monthly_report.py china-wechat-med-phar/tests/test_generate_pharma_monthly_report.py` followed by `git commit -m "feat: compact full-month pharma report input"`.
 
 ### Task 2: Generate and publish the complete report
 
@@ -97,7 +97,7 @@ Run `git add china-wechat-med-phar/scripts/generate_monthly_report.py china-wech
 - [ ] **Step 1: Generate uncapped report**
 
 ```bash
-.venv/bin/python china-wechat-med-phar/scripts/generate_monthly_report.py \
+.venv/bin/python china-wechat-med-phar/scripts/generate_pharma_monthly_report.py \
   --input china-wechat-med-phar/data/analyzed/articles_analyzed_2026_07_pharma.json \
   --start 2026-07-01 --end 2026-07-31 --min-score 12 --max-articles 0
 ```

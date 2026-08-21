@@ -8,7 +8,7 @@
 2. 清洗成 LLM-ready 数据。
 3. 使用 DeepSeek API 分析文章价值、Amcor 相关性和包装机会。
 4. 生成 Markdown / JSON 月报。
-5. 可选转换成 PDF 或更适合阅读的 HTML report。
+5. 自动生成最终交付的 concise PDF 和 readable HTML report。
 
 ## 和 WeWe RSS 的关系
 
@@ -246,7 +246,7 @@ data/llm_ready/articles_llm_ready.md
 ## 如何分析文章
 
 ```bash
-../.venv/bin/python scripts/analyze_articles.py --start 2026-06-01 --end 2026-06-30 --force
+../.venv/bin/python scripts/analyze_pharma_articles.py --start 2026-06-01 --end 2026-06-30 --force
 ```
 
 分析结果会保存到：
@@ -258,7 +258,7 @@ data/analyzed/articles_analyzed.json
 ## 如何生成月报
 
 ```bash
-../.venv/bin/python scripts/generate_monthly_report.py --start 2026-06-01 --end 2026-06-30
+../.venv/bin/python scripts/generate_pharma_monthly_report.py --start 2026-06-01 --end 2026-06-30
 ```
 
 输出会保存到：
@@ -268,7 +268,11 @@ reports/Pharma/monthly_report_20260601_20260630.md
 reports/Pharma/monthly_report_20260601_20260630.json
 ```
 
-## 如何生成更适合阅读的版本
+## 最终交付格式
+
+每次月报最终只交付两种格式：concise PDF 和 readable HTML report。运行月报生成脚本后会自动创建这两个文件；Markdown 和 JSON 只作为中间文件保留，用于追溯和重新渲染。
+
+## 如何单独重新生成 PDF 或 HTML
 
 把月报 Markdown 转成 PDF：
 
@@ -435,7 +439,7 @@ DEEPSEEK_MODEL=deepseek-chat
 
 ```bash
 cd /Users/yvonne/Desktop/forecasting/monthly-report-library/china-wechat-med-phar
-../.venv/bin/python scripts/analyze_articles.py --start 2026-06-27 --end 2026-07-03
+../.venv/bin/python scripts/analyze_pharma_articles.py --start 2026-06-27 --end 2026-07-03
 ```
 
 默认会跳过已经分析过的文章，避免重复调用 API。
@@ -443,13 +447,13 @@ cd /Users/yvonne/Desktop/forecasting/monthly-report-library/china-wechat-med-pha
 如果要重新分析同一批文章，使用：
 
 ```bash
-../.venv/bin/python scripts/analyze_articles.py --start 2026-06-27 --end 2026-07-03 --force
+../.venv/bin/python scripts/analyze_pharma_articles.py --start 2026-06-27 --end 2026-07-03 --force
 ```
 
 如果某些文章图表很多，需要把 OCR 文本也传给 DeepSeek，使用：
 
 ```bash
-../.venv/bin/python scripts/analyze_articles.py --start 2026-06-27 --end 2026-07-03 --include-ocr
+../.venv/bin/python scripts/analyze_pharma_articles.py --start 2026-06-27 --end 2026-07-03 --include-ocr
 ```
 
 输出文件：
@@ -466,7 +470,7 @@ data/analyzed/articles_analyzed.json
 
 ```bash
 cd /Users/yvonne/Desktop/forecasting/monthly-report-library/china-wechat-med-phar
-../.venv/bin/python scripts/generate_weekly_report.py --start 2026-06-27 --end 2026-07-03
+../.venv/bin/python scripts/archive/generate_weekly_report.py --start 2026-06-27 --end 2026-07-03
 ```
 
 默认只纳入：
@@ -648,7 +652,7 @@ YAML 对缩进敏感。请保持空格缩进，不要用 Tab。列表项前面�
 公开网页抓取统一从同一个入口运行：
 
 ```bash
-../.venv/bin/python scripts/run_website_scraper.py --max_articles 10
+../.venv/bin/python scripts/archive/run_website_scraper.py --max_articles 10
 ```
 
 当前配置在 `website_sources.yaml`，支持 `static_html`、`dynamic_js`、`rss_if_available` 三类策略。CAMDI 使用静态 HTML 抓取；动脉网 7x24H 情报优先使用公开 JSON 接口抓取，Playwright 作为动态页面兜底。
@@ -673,4 +677,4 @@ logs/website_scraper.log
 - 每条记录至少包含 `title`，以及 `url` 或 `body`。
 - `body_length` 大于 0。
 - 如果抓不到内容，会生成 `data/website/raw/debug_vbdata_intelList.html`，方便后续调整 selector。
-- CAMDI 仍然通过同一个 `scripts/run_website_scraper.py` 运行。
+- CAMDI 仍然通过同一个 `scripts/archive/run_website_scraper.py` 运行。
