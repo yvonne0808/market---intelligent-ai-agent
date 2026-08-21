@@ -7,6 +7,9 @@ import yaml
 
 
 CONFIG_DIR = Path(__file__).resolve().parent
+MODULE_DIR = CONFIG_DIR.parent
+MONTHLY_CONFIG_DIR = MODULE_DIR / "monthly_report" / "config"
+CUSTOMER_CONFIG_DIR = MODULE_DIR / "customer_analysis" / "config"
 
 
 def _load_yaml(path: Path) -> dict[str, Any]:
@@ -21,14 +24,14 @@ def _load_yaml(path: Path) -> dict[str, Any]:
 
 def load_sources(path: Path | None = None) -> dict[str, Any]:
     """Load source definitions without starting network or scraping work."""
-    return _load_yaml(path or CONFIG_DIR / "sources.yaml")
+    return _load_yaml(path or MONTHLY_CONFIG_DIR / "sources.yaml")
 
 
 def load_keywords(path: Path | None = None) -> dict[str, Any]:
     """Load the weighted keyword taxonomy."""
-    return _load_yaml(path or CONFIG_DIR / "keywords.yaml")
+    return _load_yaml(path or MONTHLY_CONFIG_DIR / "keywords.yaml")
 
 
 def load_company_watchlist(path: Path | None = None) -> dict[str, Any]:
     """Load identities, Southeast Asia footprints and approved mappings."""
-    return _load_yaml(path or CONFIG_DIR / "company_watchlist.yaml")
+    return _load_yaml(path or CUSTOMER_CONFIG_DIR / "company_watchlist.yaml")

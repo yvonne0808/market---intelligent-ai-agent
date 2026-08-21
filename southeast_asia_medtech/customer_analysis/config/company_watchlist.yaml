@@ -1,0 +1,274 @@
+schema_version: "1.2"
+description: Customer-first Southeast Asia MedTech watchlist. Canonical names, verified Southeast Asia footprints, aliases, product segments and evidence-based competitor mappings are maintained separately from source URLs and prompt rules.
+
+southeast_asia_footprint_metadata:
+  definition: Countries with a verified local entity, office, regional headquarters, manufacturing site or other established operating presence. Export-only markets are excluded.
+  country_code_format: ISO 3166-1 alpha-2
+  allowed_country_codes: [SG, MY, TH, ID, VN, PH]
+  empty_list_meaning: No qualifying Southeast Asia operating presence verified yet.
+  article_event_country_field: report_countries
+
+customer_relevance_values:
+  - direct_customer
+  - competitor
+  - potential_customer_or_partner
+  - industry_only
+  - none
+
+customers:
+  - customer_id: b_braun
+    canonical_name: B. Braun
+    southeast_asia_footprint: [MY, VN]
+    aliases: [B Braun, B. Braun SE, B. Braun Melsungen, Aesculap, B. Braun Avitum]
+    product_segments: [infusion_therapy, vascular_access, dialysis, surgical_instruments, hospital_consumables]
+    competitors:
+      - {company_id: bd, competition_dimensions: [infusion_therapy, vascular_access, hospital_consumables]}
+      - {company_id: baxter, competition_dimensions: [infusion_therapy, dialysis]}
+      - {company_id: fresenius_kabi, competition_dimensions: [infusion_therapy]}
+      - {company_id: icu_medical, competition_dimensions: [infusion_therapy, vascular_access]}
+      - {company_id: medline, competition_dimensions: [hospital_consumables]}
+
+  - customer_id: ansell
+    canonical_name: Ansell
+    southeast_asia_footprint: [MY, TH, VN]
+    aliases: [Ansell Limited, Ansell Healthcare]
+    product_segments: [medical_gloves, surgical_gloves, protective_apparel]
+    competitors:
+      - {company_id: kossan, competition_dimensions: [medical_gloves, surgical_gloves]}
+      - {company_id: supermax, competition_dimensions: [medical_gloves]}
+      - {company_id: sri_trang_gloves, competition_dimensions: [medical_gloves, surgical_gloves]}
+      - {company_id: riverstone, competition_dimensions: [medical_gloves]}
+      - {company_id: yty_group, competition_dimensions: [medical_gloves]}
+
+  - customer_id: bd
+    canonical_name: Becton Dickinson
+    southeast_asia_footprint: [SG]
+    aliases: [BD, Becton, Dickinson and Company, Becton Dickinson and Company, C. R. Bard, CR Bard]
+    product_segments: [needles_and_syringes, vascular_access, diagnostics, medication_management, surgical_consumables]
+    competitors:
+      - {company_id: cardinal_health, competition_dimensions: [needles_and_syringes, hospital_consumables]}
+      - {company_id: terumo, competition_dimensions: [needles_and_syringes, vascular_access]}
+      - {company_id: icu_medical, competition_dimensions: [vascular_access, medication_management]}
+      - {company_id: medline, competition_dimensions: [hospital_consumables, surgical_consumables]}
+      - {company_id: poly_medicure, competition_dimensions: [needles_and_syringes, vascular_access]}
+
+  - customer_id: molnlycke
+    canonical_name: Mölnlycke
+    southeast_asia_footprint: [MY]
+    aliases: [Molnlycke, Mölnlycke Health Care, Molnlycke Health Care]
+    product_segments: [wound_care, surgical_drapes, surgical_gloves, procedure_trays]
+    competitors:
+      - {company_id: convatec, competition_dimensions: [wound_care]}
+      - {company_id: coloplast, competition_dimensions: [wound_care]}
+      - {company_id: solventum, competition_dimensions: [wound_care]}
+      - {company_id: paul_hartmann, competition_dimensions: [wound_care, surgical_drapes]}
+      - {company_id: lohmann_rauscher, competition_dimensions: [wound_care]}
+
+  - customer_id: teleflex
+    canonical_name: Teleflex
+    southeast_asia_footprint: [MY]
+    aliases: [Teleflex Incorporated, Arrow, LMA]
+    product_segments: [vascular_access, airway_management, anesthesia, urology, interventional_devices]
+    competitors:
+      - {company_id: icu_medical, competition_dimensions: [vascular_access]}
+      - {company_id: vygon, competition_dimensions: [vascular_access, airway_management]}
+      - {company_id: merit_medical, competition_dimensions: [interventional_devices]}
+      - {company_id: medtronic, competition_dimensions: [airway_management, interventional_devices]}
+
+  - customer_id: terumo
+    canonical_name: Terumo
+    southeast_asia_footprint: [SG, VN]
+    aliases: [Terumo Corporation, Terumo Medical, Terumo Asia, Terumo Penpol, MicroVention, Terumo Aortic]
+    product_segments: [blood_bags, needles_and_syringes, vascular_access, cardiovascular_devices, neurovascular_devices]
+    competitors:
+      - {company_id: bd, competition_dimensions: [needles_and_syringes, vascular_access]}
+      - {company_id: fresenius_kabi, competition_dimensions: [blood_bags]}
+      - {company_id: merit_medical, competition_dimensions: [cardiovascular_devices]}
+      - {company_id: edwards_lifesciences, competition_dimensions: [cardiovascular_devices]}
+
+  - customer_id: ambu
+    canonical_name: Ambu
+    southeast_asia_footprint: [MY]
+    aliases: [Ambu A/S, Ambu Inc.]
+    product_segments: [single_use_endoscopy, airway_management, anesthesia, patient_monitoring]
+    competitors:
+      - {company_id: olympus, competition_dimensions: [single_use_endoscopy, endoscopy]}
+      - {company_id: karl_storz, competition_dimensions: [endoscopy]}
+      - {company_id: fujifilm_healthcare, competition_dimensions: [endoscopy]}
+      - {company_id: medtronic, competition_dimensions: [airway_management, patient_monitoring]}
+      - {company_id: intersurgical, competition_dimensions: [airway_management, anesthesia]}
+
+  - customer_id: smith_nephew
+    canonical_name: Smith & Nephew
+    southeast_asia_footprint: [SG, MY]
+    aliases: [Smith+Nephew, Smith and Nephew, Smith & Nephew plc]
+    product_segments: [advanced_wound_care, orthopaedics, sports_medicine, surgical_devices]
+    competitors:
+      - {company_id: convatec, competition_dimensions: [advanced_wound_care]}
+      - {company_id: solventum, competition_dimensions: [advanced_wound_care]}
+      - {company_id: integra_lifesciences, competition_dimensions: [surgical_devices]}
+      - {company_id: medtronic, competition_dimensions: [surgical_devices]}
+
+  - customer_id: baxter
+    canonical_name: Baxter
+    southeast_asia_footprint: [SG]
+    aliases: [Baxter International, Baxter Healthcare, Hillrom, Hill-Rom]
+    product_segments: [infusion_therapy, dialysis, hospital_equipment, patient_monitoring]
+    competitors:
+      - {company_id: b_braun, competition_dimensions: [infusion_therapy, dialysis]}
+      - {company_id: fresenius_kabi, competition_dimensions: [infusion_therapy]}
+      - {company_id: icu_medical, competition_dimensions: [infusion_therapy]}
+      - {company_id: fresenius_medical_care, competition_dimensions: [dialysis]}
+
+  - customer_id: top_glove
+    canonical_name: Top Glove
+    southeast_asia_footprint: [MY, TH, VN]
+    aliases: [Top Glove Corporation, Top Glove Corporation Bhd]
+    product_segments: [medical_gloves, surgical_gloves]
+    competitors:
+      - {company_id: kossan, competition_dimensions: [medical_gloves, surgical_gloves]}
+      - {company_id: supermax, competition_dimensions: [medical_gloves]}
+      - {company_id: sri_trang_gloves, competition_dimensions: [medical_gloves, surgical_gloves]}
+      - {company_id: riverstone, competition_dimensions: [medical_gloves]}
+      - {company_id: ug_healthcare, competition_dimensions: [medical_gloves]}
+
+  - customer_id: medisafe
+    canonical_name: Medisafe
+    southeast_asia_footprint: []
+    aliases: [Medisafe International, Medisafe Technologies]
+    product_segments: [medical_consumables, sterilization, infection_prevention]
+    competitors: []
+
+  - customer_id: hollister
+    canonical_name: Hollister
+    southeast_asia_footprint: [SG]
+    aliases: [Hollister Incorporated, Hollister Ostomy, Dansac]
+    product_segments: [ostomy_care, continence_care, wound_care]
+    competitors:
+      - {company_id: convatec, competition_dimensions: [ostomy_care, wound_care]}
+      - {company_id: coloplast, competition_dimensions: [ostomy_care, continence_care]}
+
+  - customer_id: nipro
+    canonical_name: Nipro Corporation
+    southeast_asia_footprint: [TH, VN]
+    aliases: [Nipro, Nipro Medical, Nipro Asia]
+    product_segments: [dialysis, needles_and_syringes, infusion_therapy, diagnostics]
+    competitors:
+      - {company_id: fresenius_medical_care, competition_dimensions: [dialysis]}
+      - {company_id: b_braun, competition_dimensions: [dialysis, infusion_therapy]}
+      - {company_id: bd, competition_dimensions: [needles_and_syringes]}
+      - {company_id: poly_medicure, competition_dimensions: [needles_and_syringes, infusion_therapy]}
+
+  - customer_id: johnson_johnson
+    canonical_name: Johnson & Johnson
+    southeast_asia_footprint: [SG]
+    aliases: [J&J, Johnson and Johnson, Johnson & Johnson MedTech, J&J MedTech, Ethicon, DePuy Synthes, Biosense Webster, Cerenovus, Shockwave Medical]
+    product_segments: [surgical_devices, orthopaedics, cardiovascular_devices, electrophysiology, wound_closure]
+    competitors:
+      - {company_id: medtronic, competition_dimensions: [surgical_devices, cardiovascular_devices]}
+      - {company_id: olympus, competition_dimensions: [surgical_devices]}
+      - {company_id: smith_nephew, competition_dimensions: [orthopaedics]}
+      - {company_id: edwards_lifesciences, competition_dimensions: [cardiovascular_devices]}
+      - {company_id: integra_lifesciences, competition_dimensions: [surgical_devices]}
+
+  - customer_id: aurolab
+    canonical_name: Aurolab
+    southeast_asia_footprint: []
+    aliases: [Aurolab Trust, Aurolab India]
+    product_segments: [ophthalmic_devices, intraocular_lenses, surgical_consumables]
+    competitors:
+      - {company_id: alcon, competition_dimensions: [ophthalmic_devices, intraocular_lenses]}
+      - {company_id: johnson_johnson_vision, competition_dimensions: [ophthalmic_devices, intraocular_lenses]}
+      - {company_id: zeiss_meditec, competition_dimensions: [ophthalmic_devices]}
+
+  - customer_id: meditop
+    canonical_name: Meditop
+    southeast_asia_footprint: [TH]
+    aliases: [Meditop Corporation, Meditop Thailand]
+    product_segments: [medical_distribution, hospital_equipment, medical_consumables]
+    competitors: []
+
+  - customer_id: resmed
+    canonical_name: ResMed
+    southeast_asia_footprint: [SG]
+    aliases: [ResMed Inc., ResMed Asia, AirSense, AirFit]
+    product_segments: [sleep_apnea, respiratory_devices, masks, digital_health]
+    competitors:
+      - {company_id: fisher_paykel_healthcare, competition_dimensions: [sleep_apnea, respiratory_devices, masks]}
+      - {company_id: philips, competition_dimensions: [sleep_apnea, respiratory_devices]}
+      - {company_id: draeger, competition_dimensions: [respiratory_devices]}
+
+  - customer_id: hartalega
+    canonical_name: Hartalega
+    southeast_asia_footprint: [MY]
+    aliases: [Hartalega Holdings, Hartalega Holdings Berhad]
+    product_segments: [medical_gloves, nitrile_gloves]
+    competitors:
+      - {company_id: kossan, competition_dimensions: [medical_gloves, nitrile_gloves]}
+      - {company_id: supermax, competition_dimensions: [medical_gloves, nitrile_gloves]}
+      - {company_id: sri_trang_gloves, competition_dimensions: [medical_gloves]}
+      - {company_id: riverstone, competition_dimensions: [medical_gloves, nitrile_gloves]}
+
+  - customer_id: careplus
+    canonical_name: Careplus
+    southeast_asia_footprint: [MY]
+    aliases: [Careplus Group, Careplus Group Berhad]
+    product_segments: [medical_gloves, nitrile_gloves]
+    competitors:
+      - {company_id: kossan, competition_dimensions: [medical_gloves, nitrile_gloves]}
+      - {company_id: supermax, competition_dimensions: [medical_gloves, nitrile_gloves]}
+      - {company_id: sri_trang_gloves, competition_dimensions: [medical_gloves]}
+      - {company_id: riverstone, competition_dimensions: [medical_gloves, nitrile_gloves]}
+
+  - customer_id: medipro
+    canonical_name: Medipro
+    southeast_asia_footprint: [MY]
+    aliases: [Medipro Group, Medipro Malaysia]
+    product_segments: [medical_consumables, medical_distribution]
+    competitors: []
+
+competitor_companies:
+  alcon: {canonical_name: Alcon, southeast_asia_footprint: [SG], aliases: [Alcon Inc.]}
+  b_braun: {canonical_name: B. Braun, southeast_asia_footprint: [MY, VN], aliases: [B Braun, B. Braun SE]}
+  baxter: {canonical_name: Baxter, southeast_asia_footprint: [SG], aliases: [Baxter International]}
+  bd: {canonical_name: Becton Dickinson, southeast_asia_footprint: [SG], aliases: [BD, Becton Dickinson and Company]}
+  cardinal_health: {canonical_name: Cardinal Health, southeast_asia_footprint: [SG], aliases: []}
+  coloplast: {canonical_name: Coloplast, southeast_asia_footprint: [SG], aliases: [Coloplast A/S]}
+  convatec: {canonical_name: Convatec, southeast_asia_footprint: [SG], aliases: [ConvaTec, Convatec Group]}
+  draeger: {canonical_name: Dräger, southeast_asia_footprint: [SG], aliases: [Draeger, Drägerwerk]}
+  edwards_lifesciences: {canonical_name: Edwards Lifesciences, southeast_asia_footprint: [SG], aliases: [Edwards]}
+  fisher_paykel_healthcare: {canonical_name: Fisher & Paykel Healthcare, southeast_asia_footprint: [SG], aliases: [F&P Healthcare]}
+  fresenius_kabi: {canonical_name: Fresenius Kabi, southeast_asia_footprint: [SG], aliases: []}
+  fresenius_medical_care: {canonical_name: Fresenius Medical Care, southeast_asia_footprint: [SG, MY, TH, ID, VN, PH], aliases: [FMC]}
+  fujifilm_healthcare: {canonical_name: Fujifilm Healthcare, southeast_asia_footprint: [SG], aliases: [FUJIFILM Healthcare]}
+  icu_medical: {canonical_name: ICU Medical, southeast_asia_footprint: [SG], aliases: []}
+  integra_lifesciences: {canonical_name: Integra LifeSciences, southeast_asia_footprint: [SG], aliases: [Integra]}
+  intersurgical: {canonical_name: Intersurgical, southeast_asia_footprint: [MY], aliases: []}
+  johnson_johnson_vision: {canonical_name: Johnson & Johnson Vision, southeast_asia_footprint: [SG], aliases: [J&J Vision]}
+  karl_storz: {canonical_name: KARL STORZ, southeast_asia_footprint: [SG], aliases: [Karl Storz, KARL STORZ Endoscopy]}
+  kossan: {canonical_name: Kossan, southeast_asia_footprint: [MY], aliases: [Kossan Rubber Industries]}
+  lohmann_rauscher: {canonical_name: Lohmann & Rauscher, southeast_asia_footprint: [], aliases: [L&R]}
+  medline: {canonical_name: Medline, southeast_asia_footprint: [SG], aliases: [Medline Industries]}
+  medtronic: {canonical_name: Medtronic, southeast_asia_footprint: [SG], aliases: [Medtronic plc]}
+  merit_medical: {canonical_name: Merit Medical, southeast_asia_footprint: [SG], aliases: [Merit Medical Systems]}
+  olympus: {canonical_name: Olympus, southeast_asia_footprint: [SG], aliases: [Olympus Corporation, Olympus Asia Pacific]}
+  paul_hartmann: {canonical_name: PAUL HARTMANN, southeast_asia_footprint: [], aliases: [HARTMANN Group]}
+  philips: {canonical_name: Philips, southeast_asia_footprint: [SG], aliases: [Koninklijke Philips, Philips Respironics]}
+  poly_medicure: {canonical_name: Poly Medicure, southeast_asia_footprint: [], aliases: [Polymed]}
+  riverstone: {canonical_name: Riverstone, southeast_asia_footprint: [SG, MY, TH], aliases: [Riverstone Holdings]}
+  smith_nephew: {canonical_name: Smith & Nephew, southeast_asia_footprint: [SG, MY], aliases: [Smith+Nephew]}
+  solventum: {canonical_name: Solventum, southeast_asia_footprint: [SG], aliases: [3M Health Care, 3M Healthcare]}
+  sri_trang_gloves: {canonical_name: Sri Trang Gloves, southeast_asia_footprint: [TH], aliases: [Sri Trang Gloves Thailand, STGT]}
+  supermax: {canonical_name: Supermax, southeast_asia_footprint: [MY], aliases: [Supermax Corporation]}
+  terumo: {canonical_name: Terumo, southeast_asia_footprint: [SG, VN], aliases: [Terumo Corporation]}
+  ug_healthcare: {canonical_name: UG Healthcare, southeast_asia_footprint: [SG, MY], aliases: [UG Healthcare Corporation]}
+  vygon: {canonical_name: Vygon, southeast_asia_footprint: [SG], aliases: [Vygon Group]}
+  yty_group: {canonical_name: YTY Group, southeast_asia_footprint: [MY], aliases: [YTY Industry]}
+  zeiss_meditec: {canonical_name: ZEISS Medical Technology, southeast_asia_footprint: [SG], aliases: [Carl Zeiss Meditec, ZEISS Meditec]}
+
+matching_rules:
+  require_explicit_company_or_alias_match: true
+  require_shared_competition_dimension_for_competitor_label: true
+  do_not_infer_parent_company_without_article_evidence: true
+  empty_competitors_means_no_preapproved_mapping: true
+  others_is_not_a_company: true
